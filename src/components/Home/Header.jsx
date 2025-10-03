@@ -1,101 +1,187 @@
-import React, { useState } from 'react';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+"use client";
 
-const HeroSection = () => {
-  const slides = [
-    {
-      image: "/h1.avif", // Replace with actual image path
-      title: "Da Vinci 5",
-      subtitle: "The most advanced and integrated platform we’ve ever created.",
-      link: "/en-us/products-and-services/da-vinci/5"
-    },
-    {
-      image: "/h2.avif", // Replace with actual image path
-      title: "Da Vinci SP",
-      subtitle: "Inspiring new and transformative surgical approaches.",
-      link: "/en-us/products-and-services/da-vinci/sp"
-    },
-    {
-      image: "/h3.avif", // Replace with actual image path
-      title: "Ion robotic bronchoscopy",
-      subtitle: "Advancing lung cancer care with minimally invasive biopsies.",
-      link: "/en-us/products-and-services/ion"
-    }
-  ];
+import React, { useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
-  const [currentSlide, setCurrentSlide] = useState(0);
+const CORE_VALUES = [
+  {
+    key: "A",
+    heading: "Agility",
+    lines: [
+      "We move fast and adapt even faster.",
+      "We stay ahead of trends, embrace new technologies, and thrive in an ever-changing landscape.",
+      "Change isn't something we fear — it's the constant that drives our growth.",
+    ],
+  },
+  {
+    key: "N",
+    heading: "No-Nonsense Honesty",
+    lines: [
+      "We believe in brutal honesty.",
+      "We speak openly and transparently, even when it's uncomfortable.",
+      "Truth builds trust, and trust builds teams.",
+    ],
+  },
+  {
+    key: "S",
+    heading: "Service to Customers",
+    lines: [
+      "Our customers' success is our success.",
+      "We go above and beyond to deliver long-term value, building partnerships that last.",
+      "Every decision starts with what's best for the people we serve.",
+    ],
+  },
+  {
+    key: "E",
+    heading: "Excellence through Effort",
+    lines: [
+      "We work hard, we work smart, and we never settle.",
+      "We believe in meritocracy — where results, contribution, and teamwork drive recognition.",
+      "Every achievement is earned.",
+    ],
+  },
+  {
+    key: "L",
+    heading: "Lifelong Learning",
+    lines: [
+      "Technology never stands still, and neither do we.",
+      "We constantly seek new skills, insights, and ideas to stay at the cutting edge.",
+      "Curiosity fuels our progress.",
+    ],
+  },
+  {
+    key: "Y",
+    heading: "Yes to Change",
+    lines: [
+      "The only constant with us is change.",
+      "We embrace it, initiate it, and lead it — because innovation demands momentum.",
+      "We don't just react to the future; we help build it.",
+    ],
+  },
+];
 
-  // Function to navigate to the previous slide
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+export default function CoreValuesCarousel() {
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const active = CORE_VALUES[index];
+
+  const goPrev = () => {
+    setDirection(-1);
+    setIndex((i) => (i === 0 ? CORE_VALUES.length - 1 : i - 1));
+  };
+  const goNext = () => {
+    setDirection(1);
+    setIndex((i) => (i === CORE_VALUES.length - 1 ? 0 : i + 1));
   };
 
-  // Function to navigate to the next slide
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  };
+  const brandWord = useMemo(() => {
+    const letters = ["A", "N", "S", "E", "L", "Y"];
+    return letters.map((ch, i) => {
+      const isActive = ch === active.key;
+      return (
+        <span
+          key={`${ch}-${i}`}
+          className={`transition-all duration-500 ${
+            isActive ? "scale-110 text-white" : "scale-100 text-slate-400"
+          }`}
+        >
+          {ch}
+        </span>
+      );
+    });
+  }, [active.key]);
 
   return (
-    <section className="relative py-12 px-6 bg-gray-50">
-      <div className="max-w-310 mx-auto">
-        {/* Carousel */}
-        <div className="relative">
-          <div className="flex overflow-hidden">
-            {/* Carousel Slides */}
-            <div
-              className="flex transition-transform duration-700 ease-in-out"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {slides.map(({ image, title, subtitle, link }, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 w-full" // Ensure only one image per slide
-                >
-                  <div className="relative">
-                    {/* Image */}
-                    <img
-                      src={image}
-                      alt={title}
-                      className="w-full h-[500px] object-cover rounded-lg" // Adjust the height for your design
-                    />
-                    <div className="absolute top-0 left-0 bg-opacity-30 p-4 text-white">
-                      {/* Content in top-left corner */}
-                      <h2 className="text-7xl font-semibold mb-2 p-5">{title}</h2>
-                      <p className="text-xl p-5 mb-4">{subtitle}</p>
-                      <div className='p-5'>
-                        <a
-                          href={link}
-                          className="bg-blue-600 text-white px-6 font-semibold py-3 rounded-full hover:bg-blue-700 transition duration-300"
-                        >
-                          Learn more
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+    <div className="relative w-full max-w-5xl mx-auto">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 px-6 py-12 md:px-12 md:py-16 shadow-xl">
+        
+        {/* Content */}
+        <div className="relative z-10 max-w-2xl">
+          <div className="mb-8">
+            <div className="mb-4 flex items-center gap-2 text-4xl md:text-6xl font-extrabold tracking-wide">
+              {brandWord}
             </div>
+            <p className="text-xs font-medium uppercase tracking-widest text-slate-300">
+              Our Core Values
+            </p>
+          </div>
 
-            {/* Left Arrow */}
-            <button
-              className="absolute top-1/2 -left-12 transform -translate-y-1/2 p-3 bg-gray-800 text-white rounded-full focus:outline-none"
-              onClick={prevSlide}
-            >
-              <FaArrowLeft size={20} />
-            </button>
-
-            {/* Right Arrow */}
-            <button
-              className="absolute top-1/2 -right-12 transform -translate-y-1/2 p-3 bg-gray-800 text-white rounded-full focus:outline-none"
-              onClick={nextSlide}
-            >
-              <FaArrowRight size={20} />
-            </button>
+          {/* Slide wrapper with reduced height */}
+          <div className="relative min-h-[200px] md:min-h-[240px] overflow-hidden">
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.div
+                key={active.key}
+                custom={direction}
+                initial={{ opacity: 0, x: direction > 0 ? 80 : -80 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: direction > 0 ? -80 : 80 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="absolute inset-0"
+              >
+                <h2 className="mb-4 text-2xl md:text-4xl font-bold text-white">
+                  {active.heading}
+                </h2>
+                <div className="space-y-2 text-base text-slate-200 md:text-lg">
+                  {active.lines.map((t, i) => (
+                    <p key={i} className="leading-relaxed">
+                      {t}
+                    </p>
+                  ))}
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
 
-export default HeroSection;
+        {/* Prev Button */}
+        <button
+          onClick={goPrev}
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-slate-900/80 text-white shadow-md backdrop-blur-md hover:scale-110 transition"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+
+        {/* Next Button */}
+        <button
+          onClick={goNext}
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-slate-900/80 text-white shadow-md backdrop-blur-md hover:scale-110 transition"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+
+      {/* Dots */}
+      <div className="mt-6 flex justify-center gap-2">
+        {CORE_VALUES.map((s, i) => {
+          const isActive = i === index;
+          return (
+            <button
+              key={s.key}
+              onClick={() => {
+                setDirection(i > index ? 1 : -1);
+                setIndex(i);
+              }}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                isActive ? "w-6 bg-slate-800" : "w-2 bg-slate-300"
+              }`}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
+}
