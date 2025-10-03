@@ -16,7 +16,7 @@ const Home = () => {
       <AboutSection />
       <CardCarousel />
       <QuoteSection />
-      <SafetyInformation />
+      {/* <SafetyInformation /> */}
     </div>
   )
 }

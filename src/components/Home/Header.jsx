@@ -92,13 +92,12 @@ export default function CoreValuesCarousel() {
   }, [active.key]);
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto py-18 px-6 md:px-0">
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 px-6 py-12 md:px-12 md:py-16 shadow-xl">
-        
+    <div className="relative w-full max-w-5xl mx-auto py-12 px-4 sm:px-6">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 px-4 py-10 sm:px-10 sm:py-14 shadow-xl">
         {/* Content */}
         <div className="relative z-10 max-w-2xl">
-          <div className="mb-8">
-            <div className="mb-4 flex items-center gap-2 text-4xl md:text-6xl font-extrabold tracking-wide">
+          <div className="mb-6 sm:mb-8">
+            <div className="mb-3 flex items-center gap-2 text-3xl sm:text-5xl font-extrabold tracking-wide">
               {brandWord}
             </div>
             <p className="text-xs font-medium uppercase tracking-widest text-slate-300">
@@ -106,8 +105,8 @@ export default function CoreValuesCarousel() {
             </p>
           </div>
 
-          {/* Slide wrapper with reduced height */}
-          <div className="relative min-h-[200px] md:min-h-[240px] overflow-hidden">
+          {/* Slide */}
+          <div className="relative min-h-[200px] sm:min-h-[240px] overflow-hidden">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={active.key}
@@ -118,10 +117,10 @@ export default function CoreValuesCarousel() {
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 className="absolute inset-0"
               >
-                <h2 className="mb-4 text-2xl md:text-4xl font-bold text-white">
+                <h2 className="mb-3 text-xl sm:text-3xl font-bold text-white">
                   {active.heading}
                 </h2>
-                <div className="space-y-2 text-base text-slate-200 md:text-lg">
+                <div className="space-y-2 text-sm sm:text-lg text-slate-200">
                   {active.lines.map((t, i) => (
                     <p key={i} className="leading-relaxed">
                       {t}
@@ -136,10 +135,10 @@ export default function CoreValuesCarousel() {
         {/* Prev Button */}
         <button
           onClick={goPrev}
-          className="absolute left-3 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-slate-900/80 text-white shadow-md backdrop-blur-md hover:scale-110 transition"
+          className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-20 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-slate-900/80 text-white shadow-md backdrop-blur-md hover:scale-110 transition"
         >
           <svg xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+            className="h-4 w-4 sm:h-5 sm:w-5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -151,10 +150,10 @@ export default function CoreValuesCarousel() {
         {/* Next Button */}
         <button
           onClick={goNext}
-          className="absolute right-3 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-slate-900/80 text-white shadow-md backdrop-blur-md hover:scale-110 transition"
+          className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-20 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-slate-900/80 text-white shadow-md backdrop-blur-md hover:scale-110 transition"
         >
           <svg xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+            className="h-4 w-4 sm:h-5 sm:w-5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -165,7 +164,7 @@ export default function CoreValuesCarousel() {
       </div>
 
       {/* Dots */}
-      <div className="mt-6 flex justify-center gap-2">
+      <div className="mt-5 flex justify-center gap-2">
         {CORE_VALUES.map((s, i) => {
           const isActive = i === index;
           return (
@@ -176,7 +175,7 @@ export default function CoreValuesCarousel() {
                 setIndex(i);
               }}
               className={`h-2 rounded-full transition-all duration-300 ${
-                isActive ? "w-6 bg-slate-800" : "w-2 bg-slate-300"
+                isActive ? "w-5 bg-slate-800" : "w-2 bg-slate-400"
               }`}
             />
           );
