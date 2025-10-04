@@ -6,10 +6,11 @@ import CardCarousel from '../components/Home/CardCarousel'
 import QuoteSection from '../components/Home/QuoteSection'
 import SafetyInformation from '../components/Home/SafetyInformation'
 import HeroSection from '../components/Home/Header'
-
+import ServiceInquiry from "../components/Home/ServiceInquiry"
 const Home = () => {
   return (
     <div>
+      <ServiceInquiry />
       <HeroSection/>
       <CardsSection />
       <VideoSection />
