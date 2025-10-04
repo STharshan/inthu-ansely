@@ -18,21 +18,22 @@ const ServiceInquiryForm = () => {
   const [step, setStep] = useState(1)
   const [formData, setFormData] = useState({})
 
-  // Handle all input updates
+  // Handle input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  // Step navigation
+  // Move to next step
   const nextStep = () => {
     console.log(`👉 Step ${step} completed:`)
     console.table(formData)
     setStep((prev) => prev + 1)
   }
 
+  // Move to previous step
   const prevStep = () => setStep((prev) => prev - 1)
 
-  // Final submit with EmailJS
+  // Final submission
   const handleSubmit = (e) => {
     e.preventDefault()
     if (step < steps.length) {
@@ -41,13 +42,13 @@ const ServiceInquiryForm = () => {
       console.log('✅ Final form data submitted:')
       console.table(formData)
 
-      // 🚀 EmailJS integration (replace placeholders below)
+      // EmailJS integration (replace IDs below)
       emailjs
         .send(
-          'your_service_id', // 🔧 Replace
-          'your_template_id', // 🔧 Replace
+          'your_service_id', // Replace
+          'your_template_id', // Replace
           formData,
-          'your_public_key'  // 🔧 Replace
+          'your_public_key' // Replace
         )
         .then(
           () => {
@@ -66,53 +67,58 @@ const ServiceInquiryForm = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-950 px-4 text-white">
       <main className="w-full max-w-4xl px-4 sm:px-6 md:px-8 py-10 sm:py-16">
-        {/* Heading */}
+        {/* Title */}
         <div className="mb-12 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">
             <span className="text-orange-500">Service Inquiry</span> Form
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
-            Please complete the sections below to help us understand your project requirements.
+            Click any section below to view or edit that part of your project inquiry.
           </p>
         </div>
 
-        {/* Stepper (2 rows of 3) */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-8">
-          {steps.map((label, idx) => (
-            <div
-              key={idx}
-              className={`flex flex-col sm:flex-row items-center gap-2 p-3 rounded-lg transition-all duration-300 ${
-                step === idx + 1
-                  ? 'bg-orange-500/10 border border-orange-500 text-orange-400'
-                  : step > idx + 1
-                  ? 'bg-green-500/10 border border-green-500 text-green-400'
-                  : 'bg-gray-900 border border-gray-800 text-gray-400'
-              }`}
-            >
-              <div
-                className={`w-8 h-8 flex items-center justify-center rounded-full border text-sm font-medium ${
-                  step === idx + 1
-                    ? 'border-orange-400 text-orange-400'
-                    : step > idx + 1
-                    ? 'border-green-400 text-green-400'
-                    : 'border-gray-600 text-gray-400'
+        {/* Stepper — fully clickable */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-10">
+          {steps.map((label, idx) => {
+            const isActive = step === idx + 1
+            const isCompleted = step > idx + 1
+
+            return (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setStep(idx + 1)} // ✅ Clickable steps
+                className={`flex flex-col sm:flex-row items-center justify-center gap-2 p-4 rounded-lg transition-all duration-300 text-center ${
+                  isActive
+                    ? 'bg-orange-500/10 border border-orange-500 text-orange-400'
+                    : isCompleted
+                    ? 'bg-green-500/10 border border-green-500 text-green-400'
+                    : 'bg-gray-900 border border-gray-800 text-gray-400 hover:bg-gray-800/70 hover:text-orange-400'
                 }`}
               >
-                {step > idx + 1 ? <CheckCircle size={18} /> : idx + 1}
-              </div>
-              <span className="text-sm sm:text-base font-medium text-center sm:text-left">
-                {label}
-              </span>
-            </div>
-          ))}
+                <div
+                  className={`w-8 h-8 flex items-center justify-center rounded-full border text-sm font-medium ${
+                    isActive
+                      ? 'border-orange-400 text-orange-400'
+                      : isCompleted
+                      ? 'border-green-400 text-green-400'
+                      : 'border-gray-600 text-gray-400'
+                  }`}
+                >
+                  {isCompleted ? <CheckCircle size={18} /> : idx + 1}
+                </div>
+                <span className="text-sm sm:text-base font-medium">{label}</span>
+              </button>
+            )
+          })}
         </div>
 
-        {/* Form Body */}
+        {/* Form Section */}
         <form
           onSubmit={handleSubmit}
-          className="bg-gray-900 border border-gray-800 rounded-2xl p-6 sm:p-10 md:p-12 mt-8 shadow-lg space-y-6 transition-all duration-300"
+          className="bg-gray-900 border border-gray-800 rounded-2xl p-6 sm:p-10 md:p-12 shadow-lg space-y-6 transition-all duration-300"
         >
-          {/* 1️⃣ Client Information */}
+          {/* Step 1: Client Info */}
           {step === 1 && (
             <>
               <InputField label="Business Name *" name="businessName" required onChange={handleChange} placeholder="Your Business Name" />
@@ -124,7 +130,7 @@ const ServiceInquiryForm = () => {
             </>
           )}
 
-          {/* 2️⃣ Project Scope & Requirements */}
+          {/* Step 2: Project Scope */}
           {step === 2 && (
             <>
               <SelectField label="Type of Website *" name="websiteType" required onChange={handleChange}>
@@ -148,7 +154,7 @@ const ServiceInquiryForm = () => {
             </>
           )}
 
-          {/* 3️⃣ Design Preferences */}
+          {/* Step 3: Design Preferences */}
           {step === 3 && (
             <>
               <InputField label="Design Style" name="designStyle" onChange={handleChange} placeholder="Modern, minimal, bold, professional..." />
@@ -159,7 +165,7 @@ const ServiceInquiryForm = () => {
             </>
           )}
 
-          {/* 4️⃣ Content */}
+          {/* Step 4: Content */}
           {step === 4 && (
             <>
               <TextAreaField label="Text Content for Each Page" name="textContent" onChange={handleChange} placeholder="Who will provide the text content?" />
@@ -169,7 +175,7 @@ const ServiceInquiryForm = () => {
             </>
           )}
 
-          {/* 5️⃣ SEO & Tracking */}
+          {/* Step 5: SEO & Tracking */}
           {step === 5 && (
             <>
               <TextAreaField label="Keywords / SEO Goals" name="seoGoals" onChange={handleChange} placeholder="Important keywords or goals" />
@@ -178,7 +184,7 @@ const ServiceInquiryForm = () => {
             </>
           )}
 
-          {/* 6️⃣ Timeline & Deadlines */}
+          {/* Step 6: Timeline & Deadlines */}
           {step === 6 && (
             <>
               <InputField label="Project Start Date" name="startDate" type="date" onChange={handleChange} />
