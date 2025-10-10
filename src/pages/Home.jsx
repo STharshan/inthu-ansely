@@ -7,10 +7,12 @@ import QuoteSection from '../components/Home/QuoteSection'
 import SafetyInformation from '../components/Home/SafetyInformation'
 import HeroSection from '../components/Home/Header'
 import ServiceInquiry from "../components/Home/ServiceInquiry"
+import Hero from "../components/Home/Hero"
 const Home = () => {
   return (
     <div>
       {/* <ServiceInquiry /> */}
+      <Hero />
       <HeroSection/>
       <CardsSection />
       <VideoSection />
