@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
@@ -9,10 +9,28 @@ export default function Navbar() {
   const [isSocialOpen, setIsSocialOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const companyRef = useRef(null);
+  const socialRef = useRef(null);
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Close dropdowns on outside click
+    const handleClickOutside = (e) => {
+      if (companyRef.current && !companyRef.current.contains(e.target)) {
+        setIsCompanyOpen(false);
+      }
+      if (socialRef.current && !socialRef.current.contains(e.target)) {
+        setIsSocialOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   return (
@@ -20,31 +38,15 @@ export default function Navbar() {
       <style>{`
         /* === Shutter Animations === */
         @keyframes shutterDown {
-          0% {
-            clip-path: inset(0 0 100% 0);
-            opacity: 0;
-          }
-          40% {
-            opacity: 0.7;
-          }
-          100% {
-            clip-path: inset(0 0 0 0);
-            opacity: 1;
-          }
+          0% { clip-path: inset(0 0 100% 0); opacity: 0; }
+          40% { opacity: 0.7; }
+          100% { clip-path: inset(0 0 0 0); opacity: 1; }
         }
 
         @keyframes shutterUp {
-          0% {
-            clip-path: inset(0 0 0 0);
-            opacity: 1;
-          }
-          60% {
-            opacity: 0.6;
-          }
-          100% {
-            clip-path: inset(0 0 100% 0);
-            opacity: 0;
-          }
+          0% { clip-path: inset(0 0 0 0); opacity: 1; }
+          60% { opacity: 0.6; }
+          100% { clip-path: inset(0 0 100% 0); opacity: 0; }
         }
 
         .navbar-bg {
@@ -81,15 +83,21 @@ export default function Navbar() {
           background-color: rgba(0, 0, 0, 0.12);
         }
 
-        /* === Mobile Menu Animation === */
-        @keyframes slideDown {
-          0% { transform: translateY(-20px); opacity: 0; }
-          100% { transform: translateY(0); opacity: 1; }
-        }
-
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(-10px); }
           to { opacity: 1; transform: translateY(0); }
+        }
+
+        .social-dropdown::before {
+          content: "";
+          position: absolute;
+          top: -8px;
+          right: 22px;
+          width: 0;
+          height: 0;
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+          border-bottom: 8px solid white;
         }
       `}</style>
 
@@ -131,13 +139,10 @@ export default function Navbar() {
               </a>
             ))}
 
-            {/* Dropdown */}
-            <div
-              className="relative text-[13px] uppercase tracking-[0.18em] font-medium"
-              onMouseEnter={() => setIsCompanyOpen(true)}
-              onMouseLeave={() => setIsCompanyOpen(false)}
-            >
+            {/* Company dropdown (click toggle) */}
+            <div ref={companyRef} className="relative text-[13px] uppercase tracking-[0.18em] font-medium">
               <button
+                onClick={() => setIsCompanyOpen(!isCompanyOpen)}
                 className={`flex items-center gap-1 ${
                   scrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-300"
                 }`}
@@ -152,17 +157,13 @@ export default function Navbar() {
 
               {isCompanyOpen && (
                 <div
-                  className={`absolute top-full left-0 mt-3 w-44 rounded-md shadow-lg py-2 ${
-                    scrolled ? "bg-white text-black" : "bg-[#2b2b2b]/95 text-white"
-                  } animate-[fadeIn_0.3s_ease_forwards]`}
+                  className="absolute top-full left-0 mt-3 w-44 rounded-md shadow-lg py-2 bg-white text-black animate-[fadeIn_0.3s_ease_forwards]"
                 >
                   {["ABOUT", "JOURNAL", "CONTACT"].map((item) => (
                     <a
                       key={item}
                       href={`/${item.toLowerCase()}`}
-                      className={`block px-4 py-2 text-sm ${
-                        scrolled ? "hover:bg-gray-100" : "hover:bg-[#3a3a3a]"
-                      }`}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       {item}
                     </a>
@@ -174,20 +175,14 @@ export default function Navbar() {
 
           {/* Right Section */}
           <div className="flex items-center gap-5 relative z-10">
-            {/* Social Dropdown (Visible on all screens) */}
-            <div
-              className="relative block"
-              onMouseEnter={() => window.innerWidth >= 768 && setIsSocialOpen(true)}
-              onMouseLeave={() => window.innerWidth >= 768 && setIsSocialOpen(false)}
-            >
+            {/* Social dropdown (click toggle) */}
+            <div ref={socialRef} className="relative">
               <button
-                onClick={() => {
-                  if (window.innerWidth < 768) setIsSocialOpen(!isSocialOpen);
-                }}
-                className={`p-2 border rounded-full transition-all duration-700 ease-in-out ${
+                onClick={() => setIsSocialOpen(!isSocialOpen)}
+                className={`p-[9px] border rounded-full transition-all duration-500 ease-in-out ${
                   scrolled
                     ? "border-black/20 hover:bg-black/10"
-                    : "border-white/30 hover:bg-white/10"
+                    : "border-white/40 hover:bg-white/20"
                 }`}
               >
                 <img
@@ -198,15 +193,11 @@ export default function Navbar() {
               </button>
 
               {isSocialOpen && (
-                <div
-                  className={`absolute right-0 mt-3 rounded-md shadow-lg p-3 flex gap-3 ${
-                    scrolled ? "bg-white text-black" : "bg-[#2b2b2b]/95 text-white"
-                  } animate-[fadeIn_0.3s_ease_forwards]`}
-                >
-                  <a href="#" className="hover:text-gray-400"><FaInstagram /></a>
-                  <a href="#" className="hover:text-gray-400"><FaFacebookF /></a>
-                  <a href="#" className="hover:text-gray-400"><FaLinkedinIn /></a>
-                  <a href="#" className="hover:text-gray-400"><FaTwitter /></a>
+                <div className="absolute right-0 mt-4 bg-white text-black px-4 py-3 rounded-full shadow-lg flex gap-4 social-dropdown animate-[fadeIn_0.3s_ease_forwards]">
+                  <a href="#" className="text-lg border border-gray-300 rounded-full p-2 hover:bg-gray-100 transition"><FaInstagram /></a>
+                  <a href="#" className="text-lg border border-gray-300 rounded-full p-2 hover:bg-gray-100 transition"><FaFacebookF /></a>
+                  <a href="#" className="text-lg border border-gray-300 rounded-full p-2 hover:bg-gray-100 transition"><FaLinkedinIn /></a>
+                  <a href="#" className="text-lg border border-gray-300 rounded-full p-2 hover:bg-gray-100 transition"><FaTwitter /></a>
                 </div>
               )}
             </div>
@@ -234,13 +225,13 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Divider Line */}
+          {/* Divider line */}
           <div className={`nav-line ${scrolled ? "scrolled" : ""}`}></div>
         </div>
 
-        {/* === Mobile Menu === */}
+        {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-white text-black text-center shadow-md animate-[slideDown_0.4s_ease_forwards] overflow-hidden">
+          <div className="md:hidden absolute top-full left-0 w-full bg-white text-black text-center shadow-md animate-[fadeIn_0.4s_ease_forwards] overflow-hidden">
             {["PROJECTS", "SERVICES", "COMPANY"].map((item) => (
               <div
                 key={item}
@@ -251,16 +242,12 @@ export default function Navbar() {
                 </a>
               </div>
             ))}
-
-            {/* Social Icons (Visible in Mobile) */}
             <div className="flex justify-center gap-6 py-5 text-xl">
               <a href="#" className="hover:text-gray-500"><FaInstagram /></a>
               <a href="#" className="hover:text-gray-500"><FaFacebookF /></a>
               <a href="#" className="hover:text-gray-500"><FaLinkedinIn /></a>
               <a href="#" className="hover:text-gray-500"><FaTwitter /></a>
             </div>
-
-            {/* CTA Button for Mobile */}
             <div className="py-4">
               <a
                 href="/contact"

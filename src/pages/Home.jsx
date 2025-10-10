@@ -14,9 +14,10 @@ const Home = () => {
       {/* <ServiceInquiry /> */}
       <Hero />
       <HeroSection/>
+      <AboutSection />
       <CardsSection />
       <VideoSection />
-      <AboutSection />
+      
       <CardCarousel />
       <QuoteSection />
       {/* <SafetyInformation /> */}

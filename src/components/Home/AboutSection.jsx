@@ -1,39 +1,43 @@
-import React from 'react';
+'use client';
+import React from "react";
 
-const AboutSection = () => {
-  const cards = [
-    {
-      title: "Intuitive’s da Vinci 5 surgical system receives CE mark approval in Europe",
-      description: "Intuitive’s da Vinci 5 surgical system has received CE mark approval in Europe, expanding its reach and improving surgical outcomes.",
-      category: "Press Release",
-      image: "/m1.avif", // Replace with actual image path
-    },
-    {
-      title: "The impact of our environmental, social, and governance commitment",
-      description: "Explore the impact of our environmental, social, and governance (ESG) commitment in advancing sustainability in healthcare.",
-      category: "Feature",
-      image: "/m1.avif", // Replace with actual image path
-    },
-  ];
-
+export default function AboutUs() {
   return (
-    <section className="py-12 px-6 bg-gray-50">
-      <div className="max-w-310 mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {cards.map(({ title, description, category, image }, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
+    <section className="bg-white py-20">
+      <div className="max-w-7xl mx-auto px-6 text-center md:text-left">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight max-w-3xl">
+            Thoughtful ingenuity meets precise technology
+          </h2>
+          <span className="uppercase text-[#C0752E] tracking-wide font-semibold mt-4 md:mt-0">
+            About Us
+          </span>
+        </div>
+        <p className="text-gray-600 max-w-4xl mx-auto md:mx-0 mb-12">
+          In the ever-evolving world of innovation, our mission is to bridge elegance and precision.
+          From smart automation to optimized solutions, we combine artistry and science to deliver
+          transformative results. Our team continues to push the boundaries of what’s possible.
+        </p>
+
+        {/* Image Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[1, 2, 3, 4].map((item) => (
+            <div
+              key={item}
+              className="bg-gray-50 rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300"
+            >
               <img
-                src={image}
-                alt={title}
-                className="w-full h-48 object-cover"
+                src={`/images/about-${item}.jpg`}
+                alt={`About ${item}`}
+                className="w-full h-56 object-cover"
               />
-              <div className="p-6">
-                <div className="text-blue-600 text-sm font-semibold">{category}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mt-2">{title}</h3>
-                <p className="text-gray-600 mt-2">{description}</p>
-                <button className="mt-4 text-blue-600 font-medium hover:text-blue-800">
-                  Read more →
-                </button>
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                  Title {item}
+                </h3>
+                <p className="text-sm text-gray-500">
+                  Short description or supporting text goes here for item {item}.
+                </p>
               </div>
             </div>
           ))}
@@ -41,6 +45,4 @@ const AboutSection = () => {
       </div>
     </section>
   );
-};
-
-export default AboutSection;
+}
