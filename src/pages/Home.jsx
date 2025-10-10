@@ -10,7 +10,7 @@ import ServiceInquiry from "../components/Home/ServiceInquiry"
 const Home = () => {
   return (
     <div>
-      <ServiceInquiry />
+      {/* <ServiceInquiry /> */}
       <HeroSection/>
       <CardsSection />
       <VideoSection />
