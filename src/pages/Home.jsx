@@ -8,6 +8,9 @@ import SafetyInformation from '../components/Home/SafetyInformation'
 import HeroSection from '../components/Home/Header'
 import ServiceInquiry from "../components/Home/ServiceInquiry"
 import Hero from "../components/Home/Hero"
+import TeamCarousel from '../components/Home/TeamCard'
+import PlatformProcess from '../components/Home/PlatformProcess'
+import OurProcessSection from '../components/Home/OurProcess'
 const Home = () => {
   return (
     <div>
@@ -17,9 +20,11 @@ const Home = () => {
       <AboutSection />
       <CardsSection />
       <VideoSection />
-      
       <CardCarousel />
       <QuoteSection />
+      <TeamCarousel />
+      <PlatformProcess />
+      <OurProcessSection />
       {/* <SafetyInformation /> */}
     </div>
   )
