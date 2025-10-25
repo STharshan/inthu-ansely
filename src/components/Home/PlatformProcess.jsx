@@ -73,21 +73,24 @@ export default function PlatformProcess() {
 
                     {/* MIDDLE - Content */}
                     <div className="flex flex-col gap-1">
-                        <div className="flex bg-[#2d2e32] p-10 rounded-lg">
-                            <p className="text-[#7a7b7f] text-sm mb-4">Platform Process</p>
-                            <div className="flex items-center justify-between mb-6">
-                                <div className="flex gap-1.5">
-                                    {steps.map((_, index) => (
-                                        <div
-                                            key={index}
-                                            className={`h-2 w-2 rounded-full ${index === currentStep ? "bg-[#FA6F45]" : "bg-[#4a4b4f]"
-                                                }`}
-                                        ></div>
-                                    ))}
-                                </div>
+                        <div className="flex justify-between items-center bg-[#2d2e32] p-10 rounded-lg">
+                            <span className="text-[18px] text-[#D0D0D0] font-semibold">
+                                Platform Process
+                            </span>
+                            <div className="flex items-center gap-2">
+                                {steps.map((_, i) => (
+                                    <span
+                                        key={i}
+                                        className={`h-[6px] rounded-full transition-all ${i === currentStep
+                                            ? "w-7 bg-[#FF5C1D]"
+                                            : "w-2 bg-[#444]"
+                                            }`}
+                                    ></span>
+                                ))}
                             </div>
                         </div>
-                        <div className="bg-[#2d2e32] p-10 rounded-lg">
+
+                        <div className="bg-[#2d2e32] h-122.5 p-10 rounded-lg">
                             <div>
                                 <h2 className="text-4xl font-semibold text-[#b8b9bc] mb-6 leading-tight">
                                     {currentStepData.title}
@@ -115,7 +118,7 @@ export default function PlatformProcess() {
                     <div className=" flex flex-col">
 
                         {/* Top Section - Platform Process */}
-                        <div className="p-10.5 bg-[#35363a] rounded-lg">
+                        <div className="h-26.5 p-10 bg-[#35363a] rounded-lg">
 
                             {/* Navigation Arrows */}
                             <div className="flex justify-center gap-8">
