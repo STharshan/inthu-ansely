@@ -11,6 +11,8 @@ import Hero from "../components/Home/Hero"
 import TeamCarousel from '../components/Home/TeamCard'
 import PlatformProcess from '../components/Home/PlatformProcess'
 import OurProcessSection from '../components/Home/OurProcess'
+import ExpenseControlCenter from '../components/Home/Port/port'
+
 const Home = () => {
   return (
     <div>
@@ -25,6 +27,7 @@ const Home = () => {
       <TeamCarousel />
       <PlatformProcess />
       <OurProcessSection />
+      <ExpenseControlCenter />
       {/* <SafetyInformation /> */}
     </div>
   )
