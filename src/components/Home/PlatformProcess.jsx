@@ -140,7 +140,7 @@ export default function PlatformProcess() {
                         </div>
 
                         {/* Bottom - CTA */}
-                        <div className="h-119.5 p-5 mt-1.5 bg-[#35363a] rounded-lg">
+                        <div className="h-122 p-5 mt-1.5 bg-[#35363a] rounded-lg">
                             <button className="w-full bg-[#FA6F45] text-black mt-40 rounded-xl px-6 py-3.5 flex items-center justify-center gap-2 hover:bg-[#ff7d56] transition-colors mb-3">
                                 <Calendar className="w-5 h-5" />
                                 <span className="text-sm">Book a Demo</span>
