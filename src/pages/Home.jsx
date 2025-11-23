@@ -13,6 +13,7 @@ import PlatformProcess from '../components/Home/PlatformProcess'
 import OurProcessSection from '../components/Home/OurProcess'
 import ExpenseControlCenter from '../components/Home/Port/port'
 import Newabout from "../components/Home/Newabout"
+import ShowArea from "../components/Home/ShowArea"
 const Home = () => {
   return (
     <div>
@@ -21,6 +22,7 @@ const Home = () => {
       <Newabout />
       <HeroSection/>
       <AboutSection />
+      <ShowArea />
       <CardsSection />
       <VideoSection />
       <CardCarousel />
