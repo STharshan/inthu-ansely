@@ -12,12 +12,13 @@ import TeamCarousel from '../components/Home/TeamCard'
 import PlatformProcess from '../components/Home/PlatformProcess'
 import OurProcessSection from '../components/Home/OurProcess'
 import ExpenseControlCenter from '../components/Home/Port/port'
+import UnifyFinances from '../components/Home/Animation'
 
 const Home = () => {
   return (
     <div>
       {/* <ServiceInquiry /> */}
-      <Hero />
+      {/* <Hero />
       <HeroSection/>
       <AboutSection />
       <CardsSection />
@@ -26,8 +27,9 @@ const Home = () => {
       <QuoteSection />
       <TeamCarousel />
       <PlatformProcess />
-      <OurProcessSection />
-      <ExpenseControlCenter />
+      <OurProcessSection /> */}
+      {/* <ExpenseControlCenter /> */}
+      <UnifyFinances />
       {/* <SafetyInformation /> */}
     </div>
   )
