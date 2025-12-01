@@ -3,6 +3,10 @@ import Navbar from "./components/Navbar"
 import Home from './pages/Home';
 import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer';
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
 
