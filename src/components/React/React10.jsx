@@ -658,7 +658,7 @@ const ReactComparisonGuide = () => {
   ];
 
   return (
-    <div className="relative overflow-hidden min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="relative overflow-hidden h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-gray-200 dark:bg-gray-800 z-50">
         <div 
@@ -670,13 +670,13 @@ const ReactComparisonGuide = () => {
         </div>
       </div>
 
-      {/* Sections Container */}
+      {/* Sections Container - Horizontal Sliding */}
       <div 
-        className="transition-transform duration-700 ease-out"
-        style={{ transform: `translateY(-${currentSection * 100}vh)` }}
+        className="flex h-full transition-transform duration-700 ease-out"
+        style={{ transform: `translateX(-${currentSection * 100}%)` }}
       >
         {sections.map((section, index) => (
-          <div key={index} className="min-h-screen">
+          <div key={index} className="min-w-full h-full overflow-y-auto">
             {section}
           </div>
         ))}
