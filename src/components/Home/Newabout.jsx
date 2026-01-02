@@ -5,12 +5,12 @@ import AnimatedShow from "../Animations/AnimatedShow";
 
 export default function Newabout() {
   const features = [
-    "Responsive design optimized for all devices",
-    "Lightning-fast page loads with optimized assets",
-    "Intuitive user interface with accessibility support",
-    "Secure authentication and data protection",
-    "Seamless third-party service integrations",
-    "Comprehensive analytics and reporting tools",
+    "Component-based architecture for fully bespoke design & functionality",
+    "Lightning-fast performance with client-side rendering and smart caching",
+    "Highly scalable for complex systems, dashboards, and SaaS platforms",
+    "Seamless integration with APIs, CRMs, ERPs, and third-party services",
+    "Superior control over UX/UI animations, transitions, and interactions",
+    "Ideal for long-term growth, custom features, and future expansion",
   ];
 
   return (
@@ -24,12 +24,13 @@ export default function Newabout() {
           {/* LEFT CONTENT */}
           <div>
             <h1 className="max-w-2xl text-4xl font-bold">
-              Modern Solutions for Tomorrow&apos;s Digital Landscape
+              React Websites — Built for Performance, Scale & Custom Experiences
             </h1>
+
             <h3 className="my-8 max-w-2xl text-xl opacity-80">
-              Discover Libran: A powerful, flexible library showcasing
-              cutting-edge React development techniques and innovative user
-              experience design principles for modern web applications.
+              Discover React: a powerful JavaScript framework designed for
+              high-performance, fully custom web applications where speed,
+              scalability, and user experience come first.
             </h3>
 
             <div className="mt-12 grid grid-cols-2 gap-4 font-semibold opacity-80">
@@ -55,6 +56,16 @@ export default function Newabout() {
                 </div>
               ))}
             </div>
+
+            {/* LEARN MORE BUTTON */}
+            <div className="mt-12">
+              <a
+                href="#"
+                className="inline-flex items-center justify-center rounded-lg bg-black px-8 py-4 text-white font-semibold transition-all duration-300 hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+              >
+                Learn More
+              </a>
+            </div>
           </div>
 
           {/* RIGHT IMAGES — DESKTOP */}
@@ -62,14 +73,14 @@ export default function Newabout() {
             <img
               className="absolute -top-20 left-0 w-full max-w-[200px] -rotate-15 rounded-lg shadow-2xl sm:max-w-sm md:max-w-md"
               src="/t2.jpg"
-              alt="libran"
+              alt="react website"
             />
 
             <AnimatedScrollMove x={40} y={40}>
               <img
                 className="absolute -top-10 left-20 w-full max-w-[200px] -rotate-5 rounded-lg shadow-2xl transition-transform duration-500 ease-in-out group-hover:translate-2 sm:max-w-sm md:max-w-md"
                 src="/t3.jpg"
-                alt="libran"
+                alt="react development"
               />
             </AnimatedScrollMove>
 
@@ -77,7 +88,7 @@ export default function Newabout() {
               <img
                 className="absolute top-0 left-40 w-full max-w-[200px] rounded-lg shadow-2xl transition-transform duration-500 ease-in-out group-hover:translate-4 sm:max-w-sm md:max-w-md"
                 src="/t1.jpg"
-                alt="libran"
+                alt="react ui"
               />
             </AnimatedScrollMove>
           </div>
@@ -87,14 +98,14 @@ export default function Newabout() {
             <img
               className="absolute -top-20 left-[10%] w-full max-w-[200px] -rotate-15 rounded-lg shadow-2xl"
               src="/t2m.jpg"
-              alt="libran"
+              alt="react website"
             />
 
             <AnimatedScrollMove x={40} y={40}>
               <img
                 className="absolute -top-10 left-[20%] w-full max-w-[200px] -rotate-5 rounded-lg shadow-2xl transition-transform duration-500 ease-in-out group-hover:translate-2"
                 src="/t3m.jpg"
-                alt="libran"
+                alt="react development"
               />
             </AnimatedScrollMove>
 
@@ -102,7 +113,7 @@ export default function Newabout() {
               <img
                 className="absolute top-0 left-[30%] w-full max-w-[200px] rounded-lg shadow-2xl transition-transform duration-500 ease-in-out group-hover:translate-4"
                 src="/t1m.jpg"
-                alt="libran"
+                alt="react ui"
               />
             </AnimatedScrollMove>
           </div>
