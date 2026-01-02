@@ -4,48 +4,89 @@ import { ChevronLeft, ChevronRight, Calendar } from "lucide-react";
 export default function PlatformProcess() {
     const [currentStep, setCurrentStep] = useState(1);
 
-    const steps = [
-        {
-            id: 1,
-            title: "Step 1 — Smart Connect",
-            description:
-                "Platform's AI analyzes your tech stack and swiftly configures your ideal environment. One connection is all it takes to set everything up following industry best practices",
-            stat: "30",
-            statUnit: "sec",
-            statLabel: "Average connection time",
-            image: "https://framerusercontent.com/images/doOWlMqhqwP4x0xbsvKC46CBCo.png",
-        },
-        {
-            id: 2,
-            title: "Step 2 — Auto Optimize",
-            description:
-                "Once connected, our system continuously fine-tunes configurations and resource allocation in real time. The platform adapts to your usage patterns, ensuring peak performance and efficiency without manual tweaking.",
-            stat: "55",
-            statUnit: "sec",
-            statLabel: "Average optimization time",
-            image: "https://framerusercontent.com/images/S5XIptHBdqOEMUjcY1ACj1Qig.png",
-        },
-        {
-            id: 3,
-            title: "Step 3 — Monitor & Scale",
-            description:
-                "Our intelligent monitoring system tracks performance metrics and automatically scales resources based on demand.",
-            stat: "24/7",
-            statUnit: "",
-            statLabel: "Continuous monitoring",
-            image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=800&fit=crop",
-        },
-        {
-            id: 4,
-            title: "Step 4 — Deploy",
-            description:
-                "Machine learning algorithms analyze historical data to predict future needs and suggest optimizations.",
-            stat: "99%",
-            statUnit: "",
-            statLabel: "Success rate",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=800&fit=crop",
-        },
-    ];
+   const steps = [
+    {
+        id: 1,
+        title: "Customers Search Online First",
+        description: "93% of buying decisions begin with an online search — if you’re not visible, you’re missing demand.",
+        stat: "93",
+        statUnit: "%",
+        statLabel: "Buying decisions start online",
+        image: "",
+    },
+    {
+        id: 2,
+        title: "Builds Trust & Credibility",
+        description: "75% of users judge a business’s credibility based on its website and online presence.",
+        stat: "75",
+        statUnit: "%",
+        statLabel: "Judged on credibility",
+        image: "",
+    },
+    {
+        id: 3,
+        title: "Works for You 24/7",
+        description: "60%+ of enquiries happen outside standard business hours through websites and online forms.",
+        stat: "60",
+        statUnit: "%",
+        statLabel: "Outside business hours enquiries",
+        image: "",
+    },
+    {
+        id: 4,
+        title: "Competes With Bigger Brands",
+        description: "Small businesses with strong digital presence see up to 3× higher engagement than those relying on offline marketing alone.",
+        stat: "3",
+        statUnit: "×",
+        statLabel: "Higher engagement",
+        image: "",
+    },
+    {
+        id: 5,
+        title: "Drives More Qualified Leads",
+        description: "SEO-driven leads convert 8× better than outbound or cold marketing methods.",
+        stat: "8",
+        statUnit: "×",
+        statLabel: "Better lead conversion",
+        image: "",
+    },
+    {
+        id: 6,
+        title: "Improves Customer Experience",
+        description: "88% of users are less likely to return after a poor digital experience — speed and usability matter.",
+        stat: "88",
+        statUnit: "%",
+        statLabel: "Users less likely to return",
+        image: "",
+    },
+    {
+        id: 7,
+        title: "Strengthens Brand Identity",
+        description: "Consistent branding increases revenue by up to 23% across digital touchpoints.",
+        stat: "23",
+        statUnit: "%",
+        statLabel: "Revenue increase",
+        image: "",
+    },
+    {
+        id: 8,
+        title: "Provides Measurable Growth",
+        description: "Data-led businesses are 5× more likely to make faster, better growth decisions.",
+        stat: "5",
+        statUnit: "×",
+        statLabel: "Faster growth decisions",
+        image: "",
+    },
+    {
+        id: 9,
+        title: "Future-Proofs the Business",
+        description: "70%+ of consumers prefer to engage with businesses that have a strong, modern digital presence.",
+        stat: "70",
+        statUnit: "%",
+        statLabel: "Consumers prefer modern presence",
+        image: "",
+    },
+];
 
     const currentStepData = steps[currentStep];
 
@@ -75,7 +116,7 @@ export default function PlatformProcess() {
                     <div className="flex flex-col gap-1">
                         <div className="flex justify-between items-center bg-[#2d2e32] p-10 rounded-lg">
                             <span className="text-[18px] text-[#D0D0D0] font-semibold">
-                                Platform Process
+                                Importance of Digital Presence
                             </span>
                             <div className="flex items-center gap-2">
                                 {steps.map((_, i) => (
