@@ -47,8 +47,8 @@ const ReactComparisonGuide = () => {
 
   const sections = [
     // Section 0: Hero
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-50 via-white to-white dark:from-blue-950/20 dark:via-gray-900 dark:to-gray-900"></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 bg-black">
+      <div className="absolute inset-0"></div>
       <div className="container relative z-10 mx-auto py-12 md:py-20 text-center max-w-6xl">
         <div className="mx-auto space-y-6 md:space-y-8">
           <div className="inline-block rounded-full bg-blue-100 dark:bg-blue-900/30 px-4 py-1.5 text-sm text-blue-900 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
@@ -84,7 +84,7 @@ const ReactComparisonGuide = () => {
     </section>,
 
     // Section 1: What Is React?
-    <section className="py-12 md:py-24 px-4">
+    <section className="py-12 md:py-24 px-4 bg-black">
       <div className="container mx-auto max-w-6xl">
         <div className="space-y-8 md:space-y-12">
           <div className="space-y-4">
@@ -146,7 +146,7 @@ const ReactComparisonGuide = () => {
     </section>,
 
     // Section 2: Performance
-    <section className="py-12 md:py-24 px-4">
+    <section className="py-12 md:py-24 px-4 bg-black">
       <div className="container mx-auto max-w-6xl">
         <div className="space-y-8 md:space-y-12">
           <div className="space-y-4 text-center">
@@ -215,7 +215,7 @@ const ReactComparisonGuide = () => {
     </section>,
 
     // Section 3: SEO
-    <section className="py-12 md:py-24 px-4 bg-gray-50 dark:bg-gray-900/30">
+    <section className="py-12 md:py-24 px-4 bg-black">
       <div className="container mx-auto max-w-6xl">
         <div className="space-y-8 md:space-y-12">
           <div className="space-y-4 text-center">
@@ -274,7 +274,7 @@ const ReactComparisonGuide = () => {
     </section>,
 
     // Section 4: Security
-    <section className="py-12 md:py-24 px-4">
+    <section className="py-12 md:py-24 px-4 bg-black">
       <div className="container mx-auto max-w-6xl">
         <div className="space-y-8 md:space-y-12">
           <div className="space-y-4 text-center">
@@ -334,7 +334,7 @@ const ReactComparisonGuide = () => {
     </section>,
 
     // Section 5: Scalability
-    <section className="py-12 md:py-24 px-4">
+    <section className="py-12 md:py-24 px-4 bg-black">
       <div className="container mx-auto max-w-6xl">
         <div className="space-y-8 md:space-y-12">
           <div className="space-y-4 text-center">
@@ -389,7 +389,7 @@ const ReactComparisonGuide = () => {
     </section>,
 
     // Section 6: User Experience
-    <section className="py-12 md:py-24 px-4 bg-gray-50 dark:bg-gray-900/30">
+    <section className="py-12 md:py-24 px-4 bg-black">
       <div className="container mx-auto max-w-6xl">
         <div className="space-y-8 md:space-y-12">
           <div className="space-y-4 text-center">
@@ -441,7 +441,7 @@ const ReactComparisonGuide = () => {
     </section>,
 
     // Section 7: Comparison Table
-    <section className="py-12 md:py-24 px-4">
+    <section className="py-12 md:py-24 px-4 bg-black">
       <div className="container mx-auto max-w-6xl">
         <div className="space-y-8 md:space-y-12">
           <div className="space-y-4 text-center">
@@ -504,7 +504,7 @@ const ReactComparisonGuide = () => {
     </section>,
 
     // Section 8: Cost Efficiency
-    <section className="py-12 md:py-24 px-4 bg-gray-50 dark:bg-gray-900/30">
+    <section className="py-12 md:py-24 px-4 bg-black">
       <div className="container mx-auto max-w-6xl">
         <div className="space-y-8 md:space-y-12">
           <div className="space-y-4 text-center">
@@ -596,7 +596,7 @@ const ReactComparisonGuide = () => {
     </section>,
 
     // Section 9: Bottom Line
-    <section className="py-12 md:py-24 px-4">
+    <section className="py-12 md:py-24 px-4 bg-black">
       <div className="container mx-auto max-w-6xl">
         <div className="space-y-8 md:space-y-12">
           <div className="space-y-4 text-center">

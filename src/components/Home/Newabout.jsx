@@ -2,6 +2,7 @@ import React from "react";
 import CenterContent from "../Animations/CenterContent";
 import AnimatedScrollMove from "../Animations/AnimatedScrollMove";
 import AnimatedShow from "../Animations/AnimatedShow";
+import { Link } from "react-router-dom";
 
 export default function Newabout() {
   const features = [
@@ -59,12 +60,12 @@ export default function Newabout() {
 
             {/* LEARN MORE BUTTON */}
             <div className="mt-12">
-              <a
-                href="#"
+              <Link
+                to="/React"
                 className="inline-flex items-center justify-center rounded-lg bg-black px-8 py-4 text-white font-semibold transition-all duration-300 hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
               >
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
 
