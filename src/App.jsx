@@ -5,6 +5,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import ReactComparisonGuide from './components/React/React10';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,6 +17,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<ReactComparisonGuide />} />
       </Routes>
       {/* <Footer /> */}
     </Router>
