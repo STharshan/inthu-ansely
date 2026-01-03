@@ -61,7 +61,7 @@ export default function Newabout() {
             {/* LEARN MORE BUTTON */}
             <div className="mt-12">
               <Link
-                to="/"
+                to="/React"
                 className="inline-flex items-center justify-center rounded-lg bg-black px-8 py-4 text-white font-semibold transition-all duration-300 hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
               >
                 Learn More
