@@ -6,52 +6,36 @@ export default function TeamCarousel() {
 
     const teamMembers = [
         {
-            name: "Lisa Weber",
-            title: "VP Technology",
+            name: "G. Selva",
+            title: "Everything Guy (Founder)",
             description:
-                "In my role as VP of Technology, I oversee the architecture and implementation of our cutting-edge infrastructure platforms. Our team is committed to leveraging AI to deliver powerful and efficient technological solutions. We prioritise adaptability and performance to meet evolving business demands.",
+                "Founder on paper. Team support in practice. With 16 years of experience building businesses online, driving SaaS companies to billion-dollar annual sales milestones and working at the forefront of technology in surgical robotics. I combine visionary leadership, cutting-edge innovation, and unmatched expertise to create extraordinary results.",
             image:
                 "https://framerusercontent.com/images/ld1Isq9iOdLryzyA7HZCe7cNgA.jpg",
         },
         {
-            name: "Chloe Yoon",
-            title: "Head of Engineering",
+            name: "D. Copp",
+            title: "Everything Sales",
             description:
-                "I oversee the engineering division, driving the technical vision for our AI-powered infrastructure products. Our focus is on innovation and delivering high-performance systems that empower businesses.",
+                "I’m a digital strategist with over a decade of experience helping businesses transition into the digital age. I’ve worked at one of Europe’s largest software companies, where I was rapidly promoted multiple times for performance and impact. My approach blends deep technical expertise with creative, solution-driven thinking to drive growth. I lead a high-performing sales team of five—and when volume ramps up, even the founder gets pulled into sales duty under my direction.",
             image:
                 "https://framerusercontent.com/images/m1PGVBKWCMad7sb62mX2oeTx8S8.png",
         },
         {
-            name: "Alex Martinez",
-            title: "Senior Developer",
+            name: "C. Wooldrige",
+            title: "Everything Marketing ",
             description:
-                "As a Senior Developer, I focus on building scalable solutions and mentoring our development team. My passion lies in creating efficient, maintainable code that drives business value.",
+                "Outside of running marathons most weekends, I’m driven by creativity and a passion for optimising SEO to help hidden gems get discovered. I’ve worked in the corporate world helping large companies increase their online visibility and digital performance. That experience allows me to understand what search engines truly reward and how users actually find businesses. I now bring this expertise into everything we build at Ansely. My focus is on turning strong businesses into brands that can’t be ignored online.",
             image:
                 "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop",
         },
         {
-            name: "Sarah Chen",
-            title: "Product Manager",
+            name: "S. Bandarai",
+            title: "Everything Tech ",
             description:
-                "I drive product strategy and roadmap, ensuring we deliver solutions that truly meet customer needs. My approach combines data-driven insights with user empathy.",
+                "I’m driven by technology and obsessed with turning vision into working, scalable code. Having worked with some of the world’s leading AI businesses, I bring clarity, speed, and execution to ambitious ideas. Currently lead a high-performance team of six leaders delivering real-world impact.",
             image:
-                "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&h=1000&fit=crop",
-        },
-        {
-            name: "James Wilson",
-            title: "UX Designer",
-            description:
-                "I craft intuitive user experiences that bridge the gap between complex technology and user needs. My design philosophy centers on simplicity and accessibility.",
-            image:
-                "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=1000&fit=crop",
-        },
-        {
-            name: "Emma Thompson",
-            title: "Data Scientist",
-            description:
-                "I transform data into actionable insights that drive strategic decisions. My work involves developing machine learning models and analytics frameworks.",
-            image:
-                "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&h=1000&fit=crop",
+                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop",
         },
     ];
 
@@ -66,7 +50,7 @@ export default function TeamCarousel() {
         <div className=" bg-[#2b2d31] text-white font-sans">
             <div className="flex items-center max-w-6xl mx-auto justify-center p-4 sm:p-6 lg:p-8">
                 <div className="rounded-lg w-full">
-                    
+
                     {/* Desktop Layout (lg and above) */}
                     <div className="hidden lg:grid lg:grid-cols-[7fr_5fr_2fr] gap-2">
                         {/* Left Section */}
@@ -75,10 +59,14 @@ export default function TeamCarousel() {
                                 <div className="flex items-center bg-[#36383c] rounded-xl p-10 justify-between mb-1">
                                     <span className="text-[#8b8d91] text-lg font-semibold">Team Platform</span>
                                     <div className="flex gap-1.5">
-                                        {[0, 1, 2, 3, 4, 5, 6].map((i) => (
-                                            <div
+                                        {teamMembers.map((_, i) => (
+                                            <button
                                                 key={i}
-                                                className={`w-2 h-2 rounded-full ${i === 2 ? "bg-[#ff6b47]" : "bg-[#4a4c51]"}`}
+                                                onClick={() => setCurrentIndex(i)}
+                                                className={`w-2 h-2 rounded-full transition-all duration-300 ${i === currentIndex
+                                                    ? "bg-[#ff6b47] scale-125"
+                                                    : "bg-[#4a4c51]"
+                                                    }`}
                                             />
                                         ))}
                                     </div>
@@ -87,8 +75,8 @@ export default function TeamCarousel() {
                                     <h2 className="text-5xl font-light text-[#e4e5e7] mb-3">
                                         {current.name}
                                     </h2>
-                                    <p className="text-[#8b8d91] text-xl font-semibold mb-8">{current.title}</p>
-                                    <p className="text-[#a5a7ab] mt-40 text-lg leading-relaxed">
+                                    <p className="text-[#8b8d91] text-xl font-semibold mb-5">{current.title}</p>
+                                    <p className="text-[#a5a7ab] mt-2 text-lg leading-relaxed">
                                         {current.description}
                                     </p>
                                 </div>
@@ -225,7 +213,7 @@ export default function TeamCarousel() {
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

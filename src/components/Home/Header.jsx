@@ -92,7 +92,8 @@ export default function CoreValuesCarousel() {
   }, [active.key]);
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto py-12 px-4 sm:px-6">
+    <div className="relative w-full max-w-5xl mx-auto py-1 px-4 sm:px-6">
+      <h1 className="text-center text-2xl sm:text-4xl font-bold text-white mb-10">Values That Power Everything We Build</h1>
       <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 px-4 py-10 sm:px-10 sm:py-14 shadow-xl">
         {/* Content */}
         <div className="relative z-10 max-w-2xl">

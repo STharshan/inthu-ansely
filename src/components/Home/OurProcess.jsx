@@ -9,58 +9,44 @@ const OurProcess = () => {
       name: "Sarah Johnson",
       role: "Product Designer",
       company: "DesignCo",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop",
+      image: "w8.png",
       quote: "Working with this platform has completely transformed how we approach product development. The tools are intuitive and powerful."
     },
     {
       name: "Michael Davis",
       role: "Engineering Lead",
       company: "TechStart",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop",
+      image: "w12.png",
       quote: "The technical architecture and scalability options provided exceeded our expectations. Deployment was seamless."
     },
     {
       name: "Emma Wilson",
       role: "CEO",
       company: "Innovate",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=800&fit=crop",
+      image: "w11.png",
       quote: "This solution helped us scale from startup to enterprise level. The support team is always there when we need them."
     },
     {
       name: "Jonas Klein",
       role: "Growth Hacker",
       company: "Brava",
-      image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=600&h=800&fit=crop",
+      image: "w13.png",
       quote: "Platform Labs' ability to simplify complex AI workflows was a game changer. We now deploy new features faster, with confidence and traceability."
     },
     {
       name: "Sophia Martinez",
       role: "Marketing Director",
       company: "GrowthLabs",
-      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&h=800&fit=crop",
+      image: "w9.png",
       quote: "The analytics and insights we get from this platform have been instrumental in driving our marketing strategy forward."
     },
     {
       name: "David Chen",
       role: "CTO",
       company: "DataFlow",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=800&fit=crop",
+      image: "w14.png",
       quote: "Security and performance were our top priorities. This platform delivered on both fronts without compromise."
     },
-    {
-      name: "Rachel Thompson",
-      role: "Operations Manager",
-      company: "Streamline",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=800&fit=crop",
-      quote: "Our operational efficiency increased by 40% after implementing this solution. It's been a game-changer for our team."
-    },
-    {
-      name: "Alex Turner",
-      role: "Founder",
-      company: "StartupX",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=800&fit=crop",
-      quote: "From day one, this platform has been the backbone of our business. Couldn't imagine running without it now."
-    }
   ];
 
   const handlePrevious = () => {

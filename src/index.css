@@ -47,15 +47,8 @@
   --color-light-100: #adb5bd;
 }
 
-html {
-  width: 100vw;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
 body {
   width: 100vw;
-  overflow-x: hidden;
   background-color: #000;
   color: var(--color-dark-100);
   font-family: var(--font-semibold);

@@ -22,12 +22,12 @@ const Home = () => {
       <Hero />
       <Newabout />
       <HeroSection/>
-      <AboutSection />
+      {/* <AboutSection /> */}
       <ShowArea />
       <CardsSection />
       <VideoSection />
       <CardCarousel />
-      <QuoteSection />
+      {/* <QuoteSection /> */}
       <TeamCarousel />
       <PlatformProcess />
       <OurProcessSection />
