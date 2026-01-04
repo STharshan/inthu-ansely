@@ -9,6 +9,7 @@ import Digitaltransformation from './pages/Digitaltransformation';
 import Businessconsultancy from './pages/Businessconsultancy';
 import DigitalMarketing from './pages/DigitalMarketing';
 import CustomWebsite from './pages/CustomWebsite';
+import Blog from './pages/Blog';
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/business-consultancy" element={<Businessconsultancy />} />
         <Route path="/digital-marketing" element={<DigitalMarketing />} />
         <Route path='/customwebsite' element={<CustomWebsite />} />
+        <Route path='/blog' element={<Blog />} />
       </Routes>
       <Footer />
     </Router>
