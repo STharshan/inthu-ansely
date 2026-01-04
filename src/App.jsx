@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import ReactComparisonGuide from './components/React';
-
+import Digitaltransformation from './pages/Digitaltransformation';
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/React" element={<ReactComparisonGuide />} />
+        <Route path="/digital-transformation" element={<Digitaltransformation />} />
       </Routes>
       {/* <Footer /> */}
     </Router>
