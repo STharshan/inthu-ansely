@@ -24,7 +24,7 @@ function App() {
         <Route path="/digital-marketing" element={<DigitalMarketing />} />
         <Route path='/customwebsite' element={<CustomWebsite />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   )
 }

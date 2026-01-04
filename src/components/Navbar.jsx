@@ -113,7 +113,7 @@ export default function Navbar() {
           {/* Logo */}
           <a
             href="/"
-            className={`font-sans text-[18px] font-bold tracking-[0.25em] z-10 relative ${
+            className={`text-[18px] font-bold tracking-[0.25em] z-10 relative ${
               scrolled ? "text-black" : "text-white"
             }`}
           >
