@@ -12,6 +12,8 @@ import CustomWebsite from './pages/CustomWebsite';
 import Blog from './pages/Blog';
 import Insidecustomsoftwareservice from './pages/Insidecustomsoftwareservice';
 import DigitalPartnership from './pages/DigitalPartnership';
+import PPCLearningModule from "./pages/PPCLearningModule"
+import AILearningModule from "./pages/AILearningModule"
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
         <Route path='/blog' element={<Blog />} />
         <Route path='/insidecustomsoftwareservice' element={<Insidecustomsoftwareservice />} />
         <Route path="/digital-partnership" element={<DigitalPartnership />} />
+        <Route path="/PPCLearningModule" element={<PPCLearningModule />} />
+        <Route path="/AILearningModule" element={<AILearningModule />} />
       </Routes>
       <Footer />
     </Router>
