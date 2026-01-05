@@ -1,6 +1,6 @@
 import React from 'react'
 import CardsSection from '../components/Home/CardSection'
-import VideoSection from '../components/Home/VedioSection'
+import VideoSection from '../components/Home/VideoSection'
 import AboutSection from '../components/Home/AboutSection'
 import CardCarousel from '../components/Home/CardCarousel'
 import QuoteSection from '../components/Home/QuoteSection'
@@ -25,7 +25,7 @@ const Home = () => {
       {/* <AboutSection /> */}
       <ShowArea />
       <CardsSection />
-      {/* <VideoSection /> */}
+      <VideoSection />
       {/* <CardCarousel /> */}
       {/* <QuoteSection /> */}
       <TeamCarousel />

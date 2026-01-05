@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, Target, Lightbulb, Zap, Users, TrendingUp, CircleCheck } from 'lucide-react';
-
+import CustomSoftwareModule from '../components/Insidecustomsoftwareservice/CustomSoftwareModule';
+import FounderMindset from '../components/Insidecustomsoftwareservice/FounderMindset';
+import ManualWorkCost from '../components/Insidecustomsoftwareservice/ManualWorkCost';
+import CustomSoftwareMeaning from '../components/Insidecustomsoftwareservice/CustomSoftwareMeaning';
+import BuildWhatMatters from '../components/Insidecustomsoftwareservice/BuildWhatMatters';
+import KeyTakeaway from '../components/Insidecustomsoftwareservice/KeyTakeaway';
 const Insidecustomsoftwareservice = () => {
   const [currentSection, setCurrentSection] = useState(0);
 
@@ -9,340 +14,42 @@ const Insidecustomsoftwareservice = () => {
       id: 'overview',
       title: 'Custom Software — Think Like a Tech Founder',
       content: (
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Custom Software — Think Like a Tech Founder</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Every successful business reaches a point where off-the-shelf tools start slowing it down. As the leader in your field, your time should be spent on growth, strategy, and decisions that move the business forward — not buried in repetitive admin, disconnected systems, or manual processes that drain your team's energy.
-            </p>
-          </div>
-
-          <div className="bg-orange-50 border-2 border-orange-200 rounded-xl p-6 md:p-8">
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-orange-100 rounded-lg">
-                <Target className="w-6 h-6 text-orange-600" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Module Objective</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  This module is about shifting your mindset from business operator to tech-enabled founder. You'll learn to identify opportunities for automation and understand how custom software creates competitive advantage.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-white rounded-xl border shadow-sm p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                <Lightbulb className="w-6 h-6 text-orange-600" />
-              </div>
-              <h3 className="font-semibold mb-2">Strategic Thinking</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Learn to question processes and identify what should be automated rather than optimized
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl border shadow-sm p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                <Zap className="w-6 h-6 text-orange-600" />
-              </div>
-              <h3 className="font-semibold mb-2">Remove Friction</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Understand the real cost of manual work and how it compounds over time
-              </p>
-            </div>
-          </div>
-        </div>
+        <CustomSoftwareModule />
       )
     },
     {
       id: 'mindset',
       title: 'The Founder Mindset',
       content: (
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">The Founder Mindset</h2>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-sm p-6 md:p-8 border-2 border-orange-200">
-            <h3 className="text-xl font-semibold mb-4">The best founders don't ask:</h3>
-            <blockquote className="text-2xl md:text-3xl font-medium text-gray-500 italic mb-6">
-              "How do I do this task faster?"
-            </blockquote>
-            <h3 className="text-xl font-semibold mb-4">They ask:</h3>
-            <blockquote className="text-2xl md:text-3xl font-bold text-orange-600">
-              "Why does this task exist at all?"
-            </blockquote>
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold">If a process:</h3>
-            <div className="space-y-3">
-              {[
-                'Eats hours every week',
-                'Requires double entry or manual checking',
-                'Depends on one person "just knowing how it works"',
-                'Causes delays, mistakes, or missed opportunities'
-              ].map((item, idx) => (
-                <div key={idx} className="bg-white rounded-xl border shadow-sm p-4 hover:border-orange-500 transition-colors">
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-xs font-bold text-orange-600">{idx + 1}</span>
-                    </div>
-                    <p className="leading-relaxed">{item}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-gray-900 text-white rounded-xl border shadow-sm p-6 md:p-8">
-            <p className="text-xl md:text-2xl font-semibold text-center">
-              …it's a software problem, not a people problem.
-            </p>
-          </div>
-        </div>
+       <FounderMindset />
       )
     },
     {
       id: 'cost',
       title: 'Real Cost of Manual Work',
       content: (
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">The Real Cost of Manual Work</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Most businesses underestimate how much time and money is lost to inefficient processes. That time compounds. And it quietly blocks scale.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                icon: Users,
-                title: 'Admin-heavy workflows',
-                desc: 'Staff spending hours on tasks that could be automated',
-                stat: '10-15 hours/week per employee'
-              },
-              {
-                icon: TrendingUp,
-                title: 'Copying data between systems',
-                desc: 'Manual data entry leading to errors and delays',
-                stat: 'Up to 20% error rate'
-              },
-              {
-                icon: Zap,
-                title: 'Chasing updates & approvals',
-                desc: 'Time lost following up on processes and payments',
-                stat: '5-8 hours/week per manager'
-              },
-              {
-                icon: Target,
-                title: 'Disconnected tools',
-                desc: 'Using 5–6 tools that don\'t talk to each other',
-                stat: '30% productivity loss'
-              }
-            ].map((item, idx) => (
-              <div key={idx} className="bg-white rounded-xl border shadow-sm p-6 hover:shadow-lg transition-all hover:scale-105">
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                  <item.icon className="w-6 h-6 text-orange-600" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600 mb-3 leading-relaxed">{item.desc}</p>
-                <div className="px-3 py-1 bg-orange-100 text-orange-600 text-xs font-medium rounded-full inline-block">
-                  {item.stat}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-orange-600 text-white rounded-xl border shadow-sm p-6 md:p-8">
-            <p className="text-lg md:text-xl font-semibold text-center">
-              Custom software removes friction by designing your business logic directly into a system — the way you actually operate.
-            </p>
-          </div>
-        </div>
+       <ManualWorkCost />
       )
     },
     {
       id: 'meaning',
       title: 'What Custom Software Means',
       content: (
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">What Custom Software Really Means</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Custom software isn't "big tech" or overkill. It's simply software built around your business, not the other way round.
-            </p>
-          </div>
-
-          <div className="grid gap-4">
-            {[
-              'Software built around your business, not the other way round',
-              'Automating tasks you already do every day',
-              'Giving you visibility, control, and speed'
-            ].map((item, idx) => (
-              <div key={idx} className="bg-gray-50 rounded-xl border shadow-sm p-5 border-l-4 border-l-orange-600">
-                <div className="flex items-start gap-3">
-                  <CircleCheck className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
-                  <p className="leading-relaxed">{item}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-semibold mb-6">Examples Include:</h3>
-            <div className="space-y-4">
-              {[
-                {
-                  title: 'Internal dashboards',
-                  desc: 'Replacing spreadsheets with real-time data visualization'
-                },
-                {
-                  title: 'Automated workflows',
-                  desc: 'Instead of manual follow-ups and reminders'
-                },
-                {
-                  title: 'Custom CRM, ERP, or booking systems',
-                  desc: 'Designed specifically for your business processes'
-                },
-                {
-                  title: 'Tools that scale',
-                  desc: 'Growing seamlessly alongside your business'
-                }
-              ].map((item, idx) => (
-                <div key={idx} className="bg-white rounded-xl border shadow-sm p-6 hover:border-orange-500 transition-colors">
-                  <h4 className="font-semibold text-lg mb-2">{item.title}</h4>
-                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-gray-900 text-white rounded-xl border shadow-sm p-6 md:p-8 text-center">
-            <p className="text-xl font-semibold mb-2">Built once. Used every day.</p>
-            <p className="text-gray-300">Investment that compounds over time</p>
-          </div>
-        </div>
+        <CustomSoftwareMeaning />
       )
     },
     {
       id: 'approach',
       title: 'Our Approach',
       content: (
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Approach: Build What Matters</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              We don't start with code. We start with your bottlenecks.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {[
-              {
-                num: '01',
-                title: 'Identify tasks wasting founder or staff time',
-                desc: 'We analyze your current workflows to find where time is being lost'
-              },
-              {
-                num: '02',
-                title: 'Map where friction, delays, or errors occur',
-                desc: 'Understanding the pain points in your processes'
-              },
-              {
-                num: '03',
-                title: 'Decide what should be automated, simplified, or removed',
-                desc: 'Strategic decisions about what deserves custom software'
-              },
-              {
-                num: '04',
-                title: 'Design software that solves those exact problems',
-                desc: 'Building solutions tailored to your specific needs'
-              },
-              {
-                num: '05',
-                title: 'Build systems that grow with your business',
-                desc: 'Creating scalable infrastructure for long-term success'
-              }
-            ].map((item) => (
-              <div key={item.num} className="bg-white rounded-xl border shadow-sm p-6 md:p-8 hover:shadow-lg transition-all">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-orange-600 text-white rounded-lg flex items-center justify-center font-bold text-lg flex-shrink-0">
-                    {item.num}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-orange-600 text-white rounded-xl border shadow-sm p-8 text-center">
-            <p className="text-xl md:text-2xl font-semibold mb-3">
-              You stay focused on what matters.
-            </p>
-            <p className="text-lg">Your software handles the rest.</p>
-          </div>
-        </div>
+       <BuildWhatMatters />
       )
     },
     {
       id: 'takeaway',
       title: 'Key Takeaway',
       content: (
-        <div className="space-y-8">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Key Takeaway</h2>
-          </div>
-
-          <div className="bg-gray-900 text-white rounded-xl border shadow-sm p-8 md:p-12">
-            <div className="max-w-2xl mx-auto text-center space-y-6">
-              <p className="text-xl md:text-2xl font-semibold leading-relaxed">
-                If you're leading a business today, thinking like a tech founder isn't optional — it's a competitive advantage.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-xl border shadow-sm p-6 md:p-8">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                <Lightbulb className="w-6 h-6 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Your Expertise</h3>
-              <p className="text-gray-600 leading-relaxed">
-                You already know your industry better than anyone. That knowledge is your competitive advantage.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl border shadow-sm p-6 md:p-8">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                <Zap className="w-6 h-6 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Our Role</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Our job is to turn that knowledge into software that works for you, not against you.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-orange-600 text-white rounded-xl border shadow-sm p-8 md:p-12 text-center">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              When you're ready, we don't just build tools —
-            </h3>
-            <p className="text-xl md:text-2xl font-semibold">we help you build leverage.</p>
-          </div>
-
-          <div className="pt-8 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 text-orange-600 rounded-full">
-              <CircleCheck className="w-5 h-5" />
-              <span className="font-semibold">Module Complete!</span>
-            </div>
-          </div>
-        </div>
+        <KeyTakeaway />
       )
     }
   ];

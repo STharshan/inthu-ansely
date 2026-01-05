@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState, useEffect, useRef } from "react";
 import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
@@ -74,7 +74,7 @@ export default function Navbar() {
         }
 
         .nav-line.scrolled {
-          background-color: rgba(0, 0, 0, 0.12);
+          // background-color: rgba(0, 0, 0, 0.12);
         }
 
         @keyframes fadeIn {
