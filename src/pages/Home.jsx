@@ -25,7 +25,7 @@ const Home = () => {
       {/* <AboutSection /> */}
       <ShowArea />
       <CardsSection />
-      <VideoSection />
+      {/* <VideoSection /> */}
       {/* <CardCarousel /> */}
       {/* <QuoteSection /> */}
       <TeamCarousel />
