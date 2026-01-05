@@ -11,8 +11,9 @@ import DigitalMarketing from './pages/DigitalMarketing';
 import CustomWebsite from './pages/CustomWebsite';
 import Blog from './pages/Blog';
 import Insidecustomsoftwareservice from './pages/Insidecustomsoftwareservice';
+import AILearningModule from './pages/AILearningModule';
+import PPCLearningModule from './pages/PPCLearningModule';
 import DigitalPartnership from './pages/DigitalPartnership';
-import DigitalPartnershipService from './components/DigitalPartnership/DigitalPartnershipService';
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
         <Route path='/customwebsite' element={<CustomWebsite />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/insidecustomsoftwareservice' element={<Insidecustomsoftwareservice />} />
+        <Route path='/ailearningmodule' element={<AILearningModule />} />
+        <Route path='/ppclearningmodule' element={<PPCLearningModule />} />
         <Route path="/digital-partnership" element={<DigitalPartnership />} />
       </Routes>
       <Footer />
