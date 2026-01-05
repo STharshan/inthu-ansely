@@ -12,6 +12,10 @@ import CustomWebsite from './pages/CustomWebsite';
 import Blog from './pages/Blog';
 import Insidecustomsoftwareservice from './pages/Insidecustomsoftwareservice';
 import DigitalPartnership from './pages/DigitalPartnership';
+import Navbar from './components/Navbar';
+import SEOLearningPlatform from './components/SEO/SeoHome';
+import SEOLesson from './pages/SEOLesson';
+
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -19,6 +23,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/React" element={<ReactComparisonGuide />} />
@@ -29,6 +34,8 @@ function App() {
         <Route path='/blog' element={<Blog />} />
         <Route path='/insidecustomsoftwareservice' element={<Insidecustomsoftwareservice />} />
         <Route path="/digital-partnership" element={<DigitalPartnership />} />
+        <Route path='/SEOLearningPlatform' element={<SEOLearningPlatform />} />
+        <Route path="/lesson" element={<SEOLesson />} />
       </Routes>
       <Footer />
     </Router>

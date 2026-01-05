@@ -1,5 +1,5 @@
 import React from "react";
-import { Linkedin, Instagram, Twitter } from "lucide-react";
+import { Linkedin, Instagram, Twitter, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -12,20 +12,18 @@ const Footer = () => {
           {/* Company Info (Wider Column) */}
           <div className="md:col-span-5 space-y-4">
             <h2 className="text-white text-2xl font-light tracking-wider">
-              scion
+              ANSELY
             </h2>
 
-            <address className="not-italic text-sm leading-relaxed">
+            {/* <address className="not-italic text-sm leading-relaxed">
               458 Harper Crescent<br />
               Vancouver, BC V6J 3T2<br />
               Canada
-            </address>
+            </address> */}
 
             <p className="text-sm leading-relaxed max-w-md">
-              This text is intended for legal and compliance disclosures relevant
-              to scientific and technological operations. For example: Scion web
-              and mobile applications are properties of Scion GmbH and Scion SA
-              (Pty) Ltd.
+              Let us guide you in your digital evolution
+We transform your vision into reality with innovation and precision. Let’s make it a success.
             </p>
           </div>
 
@@ -84,7 +82,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
-            <p>Copyright © Medium Rare.</p>
+            <p>Copyright © Ansely.</p>
             <div className="flex gap-3">
               <a href="#" className="hover:text-white">Terms & Conditions</a>
               <span className="text-gray-600">|</span>
@@ -95,8 +93,7 @@ const Footer = () => {
           {/* Social Icons */}
           <div className="flex gap-4">
             <Instagram size={18} className="hover:text-white cursor-pointer" />
-            <Twitter size={18} className="hover:text-white cursor-pointer" />
-            <Linkedin size={18} className="hover:text-white cursor-pointer" />
+            <Facebook size={18} className="hover:text-white cursor-pointer" />
           </div>
         </div>
 
