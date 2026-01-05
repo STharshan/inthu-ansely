@@ -1,34 +1,27 @@
-import React from "react";
+import FloatingLines from "../FloatingLines";
 
 export default function Hero() {
   return (
-    <section
-      className="relative h-screen flex flex-col justify-center items-center text-center bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/hero.jpeg')", // ✅ wrap the image path in url()
-      }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30"></div>
+    <div style={{ width: "100%", height: "100vh", position: "relative", overflow: "hidden" }}>
+      <div style={{ position: "absolute", inset: 0, zIndex: 1 }}>
+        <FloatingLines
+          enabledWaves={["top", "middle", "bottom"]}
+          lineCount={[4, 8, 12]}
+          lineDistance={[8, 6, 4]}
+          bendRadius={5.0}
+          bendStrength={4}
+          interactive={true}
+          parallax={true}
+          linesGradient={["#001F7F", "#0045EF", "#0066FF", "#3399FF", "#66B3FF"]}
+        />
+      </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-white px-6">
-        {/* Decorative Line */}
-        <div className="w-20 h-[2px] bg-white mx-auto mb-6"></div>
-
-        {/* Headline */}
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight max-w-3xl mx-auto">
+      {/* Headline */}
+      <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight max-w-3xl mx-auto text-white text-center px-6 drop-shadow-[0_0_20px_rgba(0,0,0,0.8)]">
           Driving Innovation <br /> Pushing Boundaries <br /> Elevated by AI
         </h1>
-
-        {/* CTA Button */}
-        <a
-          href="/projects"
-          className="mt-8 inline-block border border-white px-8 py-3 rounded-full text-sm uppercase tracking-widest hover:bg-white hover:text-black transition"
-        >
-          View Our Projects
-        </a>
       </div>
-    </section>
+    </div>
   );
 }

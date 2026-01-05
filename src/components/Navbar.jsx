@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState, useEffect, useRef } from "react";
 import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
@@ -80,7 +80,7 @@ export default function Navbar() {
         }
 
         .nav-line.scrolled {
-          background-color: rgba(0, 0, 0, 0.12);
+          // background-color: rgba(0, 0, 0, 0.12);
         }
 
         @keyframes fadeIn {
@@ -140,7 +140,10 @@ export default function Navbar() {
             ))}
 
             {/* Company dropdown (click toggle) */}
-            <div ref={companyRef} className="relative text-[13px] uppercase tracking-[0.18em] font-medium">
+            <div
+              ref={companyRef}
+              className="relative text-[13px] uppercase tracking-[0.18em] font-medium"
+            >
               <button
                 onClick={() => setIsCompanyOpen(!isCompanyOpen)}
                 className={`flex items-center gap-1 ${
@@ -156,9 +159,7 @@ export default function Navbar() {
               </button>
 
               {isCompanyOpen && (
-                <div
-                  className="absolute top-full left-0 mt-3 w-44 rounded-md shadow-lg py-2 bg-white text-black animate-[fadeIn_0.3s_ease_forwards]"
-                >
+                <div className="absolute top-full left-0 mt-3 w-44 rounded-md shadow-lg py-2 bg-white text-black animate-[fadeIn_0.3s_ease_forwards]">
                   {["ABOUT", "JOURNAL", "CONTACT"].map((item) => (
                     <a
                       key={item}
@@ -194,10 +195,30 @@ export default function Navbar() {
 
               {isSocialOpen && (
                 <div className="absolute right-0 mt-4 bg-white text-black px-4 py-3 rounded-full shadow-lg flex gap-4 social-dropdown animate-[fadeIn_0.3s_ease_forwards]">
-                  <a href="#" className="text-lg border border-gray-300 rounded-full p-2 hover:bg-gray-100 transition"><FaInstagram /></a>
-                  <a href="#" className="text-lg border border-gray-300 rounded-full p-2 hover:bg-gray-100 transition"><FaFacebookF /></a>
-                  <a href="#" className="text-lg border border-gray-300 rounded-full p-2 hover:bg-gray-100 transition"><FaLinkedinIn /></a>
-                  <a href="#" className="text-lg border border-gray-300 rounded-full p-2 hover:bg-gray-100 transition"><FaTwitter /></a>
+                  <a
+                    href="#"
+                    className="text-lg border border-gray-300 rounded-full p-2 hover:bg-gray-100 transition"
+                  >
+                    <FaInstagram />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-lg border border-gray-300 rounded-full p-2 hover:bg-gray-100 transition"
+                  >
+                    <FaFacebookF />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-lg border border-gray-300 rounded-full p-2 hover:bg-gray-100 transition"
+                  >
+                    <FaLinkedinIn />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-lg border border-gray-300 rounded-full p-2 hover:bg-gray-100 transition"
+                  >
+                    <FaTwitter />
+                  </a>
                 </div>
               )}
             </div>
@@ -216,9 +237,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Button */}
             <button
-              className={`md:hidden text-2xl transition ${
-                scrolled ? "text-black" : "text-white"
-              }`}
+              className={`md:hidden text-2xl transition ${scrolled ? "text-black" : "text-white"}`}
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <FiX /> : <FiMenu />}
@@ -243,10 +262,18 @@ export default function Navbar() {
               </div>
             ))}
             <div className="flex justify-center gap-6 py-5 text-xl">
-              <a href="#" className="hover:text-gray-500"><FaInstagram /></a>
-              <a href="#" className="hover:text-gray-500"><FaFacebookF /></a>
-              <a href="#" className="hover:text-gray-500"><FaLinkedinIn /></a>
-              <a href="#" className="hover:text-gray-500"><FaTwitter /></a>
+              <a href="#" className="hover:text-gray-500">
+                <FaInstagram />
+              </a>
+              <a href="#" className="hover:text-gray-500">
+                <FaFacebookF />
+              </a>
+              <a href="#" className="hover:text-gray-500">
+                <FaLinkedinIn />
+              </a>
+              <a href="#" className="hover:text-gray-500">
+                <FaTwitter />
+              </a>
             </div>
             <div className="py-4">
               <a

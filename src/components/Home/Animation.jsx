@@ -1,10 +1,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import {
-  performanceImages,
-  performanceImgPositions,
-} from "../../constants/index.js";
+import { performanceImages, performanceImgPositions } from "../../constants/index.js";
 import { useMediaQuery } from "react-responsive";
 
 const Performance = () => {
@@ -69,7 +66,7 @@ const Performance = () => {
 
   return (
     <section id="performance" ref={sectionRef}>
-      <h2>Next-level graphics performance. Game on.</h2>
+      <h2>Empowering small businesses to stand tall in a digital world.</h2>
 
       <div className="wrapper">
         {performanceImages.map((item, index) => (
@@ -84,16 +81,12 @@ const Performance = () => {
 
       <div className="content">
         <p>
-          Run graphics-intensive workflows with a responsiveness that keeps up
-          with your imagination. The M4 family of chips features a GPU with a
-          second-generation hardware-accelerated ray tracing engine that renders
-          images faster, so{" "}
-          <span className="text-white">
-            gaming feels more immersive and realistic than ever.
-          </span>{" "}
-          And Dynamic Caching optimizes fast on-chip memory to dramatically
-          increase average GPU utilization — driving a huge performance boost
-          for the most demanding pro apps and games.
+          Run graphics-intensive workflows with a responsiveness that keeps up with your
+          imagination. The M4 family of chips features a GPU with a second-generation
+          hardware-accelerated ray tracing engine that renders images faster, so{" "}
+          <span className="text-white">gaming feels more immersive and realistic than ever.</span>{" "}
+          And Dynamic Caching optimizes fast on-chip memory to dramatically increase average GPU
+          utilization — driving a huge performance boost for the most demanding pro apps and games.
         </p>
       </div>
     </section>
