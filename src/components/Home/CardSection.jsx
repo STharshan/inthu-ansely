@@ -91,11 +91,17 @@ const ServicesSection = () => {
 
   return (
     <>
-      <section id="services" className="relative px-4 sm:px-6 lg:px-8 py-20 text-white bg-black">
+      <section
+        id="services"
+        className="relative px-4 sm:px-6 lg:px-8 py-20 text-white"
+        style={{
+          background: "#000000",
+        }}
+      >
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-5xl sm:text-6xl font-extrabold tracking-wide mb-6 drop-shadow-lg">
+            <h1 className="text-5xl sm:text-6xl font-extrabold tracking-wide mb-6 drop-shadow-lg text-white">
               Our Services
             </h1>
           </div>
