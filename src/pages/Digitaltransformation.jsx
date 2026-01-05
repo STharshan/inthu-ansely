@@ -13,8 +13,7 @@ const Digitaltransformation = () => {
       <WorkspaceCleaningHero />
       <WhatsIncludedSection />
       <HowItWorksSection />
-      <OtherServices />
-      <CTASection />
+      
       <ServicePageSection />
       <FAQSection />
     </div>
