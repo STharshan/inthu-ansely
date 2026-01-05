@@ -527,6 +527,37 @@ body {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+@theme {
+  --animate-scroll-left: scrollLeft 30s linear infinite;
+  --animate-scroll-right: scrollRight 30s linear infinite;
+}
+
+.animate-scroll-left {
+  animation: scrollLeft 30s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scrollRight 30s linear infinite;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
