@@ -10,11 +10,11 @@ import FAQSection from "../components/Digitaltransformation/FAQSection";
 const Digitaltransformation = () => {
   return (
     <div>
-      {/* <WorkspaceCleaningHero />
+      <WorkspaceCleaningHero />
       <WhatsIncludedSection />
       <HowItWorksSection />
       <OtherServices />
-      <CTASection /> */}
+      <CTASection />
       <ServicePageSection />
       <FAQSection />
     </div>
