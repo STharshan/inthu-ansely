@@ -67,7 +67,7 @@ const Section = ({ section, index }) => {
           >
 
             {/* Title */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight uppercase">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight mt-10 lg:mt-0 uppercase">
               {section.id}
             </h2>
 
@@ -75,7 +75,7 @@ const Section = ({ section, index }) => {
             <div className="w-20 h-1 bg-gray-900"></div>
 
             {/* Description Text - Hidden on mobile */}
-            <p className="hidden lg:block text-gray-500 text-sm leading-relaxed max-w-sm">
+            <p className="block text-gray-800 text-sm leading-relaxed max-w-sm">
               Exploring the journey of transformation through strategic design and purposeful innovation.
             </p>
           </motion.div>
@@ -85,7 +85,7 @@ const Section = ({ section, index }) => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-white rounded-lg shadow-2xl p-6 sm:p-8 lg:p-10 mt-10 space-y-6 border border-gray-100"
+            className="bg-white rounded-lg shadow-2xl p-6 sm:p-8 lg:p-10 mt-0 lg:mt-10 space-y-6 border border-gray-100"
           >
             {/* Section Label */}
             <div className="flex items-center gap-3">
@@ -146,18 +146,6 @@ const DigitalPartnershipService = () => {
         {sectionData.map((section, index) => (
           <Section key={section.id} section={section} index={index} />
         ))}
-        
-        {/* Spacer to allow last section to scroll away */}
-        <div className="h-screen bg-white flex items-center justify-center">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
-              Ready to Transform Your Brand?
-            </h2>
-            <p className="text-gray-600 text-lg">
-              Let's create something exceptional together.
-            </p>
-          </div>
-        </div>
       </div>
     </main>
   );

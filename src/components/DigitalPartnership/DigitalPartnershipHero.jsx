@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function DigitalPartnershipHero() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="h-[100vh] bg-black text-white">
       {/* Main Container */}
       <div className="min-h-screen flex flex-col lg:flex-row">
         {/* Left Section - Content */}
