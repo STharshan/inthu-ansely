@@ -64,14 +64,14 @@ const OurProcess = () => {
       <div className="w-full max-w-6xl mx-auto">
         
         {/* Main Card Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-0 mb-6 md:mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-5 mb-6 md:mb-10">
           
           {/* Left Side - Large Image */}
-          <div className="h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px]">
+          <div className="h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] w-120 p-6 ">
             <img
               src={activeTestimonial.image}
               alt={activeTestimonial.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-xl"
             />
           </div>
 
@@ -175,7 +175,7 @@ const OurProcess = () => {
                   <img
                     src={person.image}
                     alt={person.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full  object-cover"
                   />
                 </button>
               </div>
