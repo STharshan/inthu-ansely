@@ -1,4 +1,3 @@
-import React from "react";
 import LightPillar from "../LightPillar";
 
 const VideoSection = () => {
