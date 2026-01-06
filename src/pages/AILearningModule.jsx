@@ -27,9 +27,9 @@ const AILearningModule = () => {
   const progress = ((currentLesson + 1) / lessons.length) * 100;
 
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-white dark:bg-black text-gray-900 dark:text-white">
+    <div className="min-h-screen transition-colors duration-300 bg-white dark:bg-black text-gray-900 dark:text-white mt-20">
       {/* Header */}
-      <header className="border-b border-gray-200 dark:border-gray-800 backdrop-blur-sm sticky top-0 z-10 bg-white/80 dark:bg-black/80 transition-colors duration-300">
+      <div className="border-b border-gray-200 dark:border-gray-800 backdrop-blur-sm sticky top-0 z-10 bg-white/80 dark:bg-black/80 transition-colors duration-300">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-[#0045EF] rounded-lg flex items-center justify-center">
@@ -38,7 +38,7 @@ const AILearningModule = () => {
             <h1 className="text-xl font-semibold">AI for Business Growth</h1>
           </div>
         </div>
-      </header>
+      </div>
 
       <div className="container mx-auto px-4 py-8">
         <div className="grid md:grid-cols-[300px_1fr] gap-8">
