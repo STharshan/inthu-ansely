@@ -31,8 +31,10 @@ const BuildWhatMatters = () => {
     <div className="space-y-8">
       {/* Heading */}
       <div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Approach: Build What Matters</h2>
-        <p className="text-lg text-gray-600 leading-relaxed">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black dark:text-white">
+          Our Approach: Build What Matters
+        </h2>
+        <p className="text-lg leading-relaxed text-gray-800 dark:text-gray-300">
           We don't start with code. We start with your bottlenecks.
         </p>
       </div>
@@ -42,15 +44,15 @@ const BuildWhatMatters = () => {
         {steps.map((item) => (
           <div
             key={item.num}
-            className="bg-white rounded-xl border shadow-sm p-6 md:p-8 hover:shadow-lg transition-all"
+            className="bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6 md:p-8 hover:shadow-lg transition-all"
           >
             <div className="flex items-start gap-4">
-              <div className="w-14 h-14 bg-orange-600 text-white rounded-lg flex items-center justify-center font-bold text-lg flex-shrink-0">
+              <div className="w-14 h-14 bg-blue-600 dark:bg-blue-700 text-white rounded-lg flex items-center justify-center font-bold text-lg flex-shrink-0">
                 {item.num}
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                <h3 className="text-lg font-semibold mb-2 text-black dark:text-white">{item.title}</h3>
+                <p className="text-gray-800 dark:text-gray-300 leading-relaxed">{item.desc}</p>
               </div>
             </div>
           </div>
@@ -58,7 +60,7 @@ const BuildWhatMatters = () => {
       </div>
 
       {/* Conclusion */}
-      <div className="bg-orange-600 text-white rounded-xl border shadow-sm p-8 text-center">
+      <div className="bg-blue-600 dark:bg-blue-700 text-white rounded-xl border border-blue-600 dark:border-blue-700 shadow-sm p-8 text-center transition-colors">
         <p className="text-xl md:text-2xl font-semibold mb-3">
           You stay focused on what matters.
         </p>

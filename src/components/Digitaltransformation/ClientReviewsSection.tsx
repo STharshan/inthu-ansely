@@ -1,8 +1,8 @@
 import React from "react";
 import { ClientReviewsSection } from "../organisms/ClientReviewsSection";
 import {
-  digitalTransformationClientReviews,
-  digitalTransformationStatistics,
+  sampleClientReviews,
+  sampleStatistics,
   digitalTransformationClientReviewsConfig,
 } from "../../constants/clientReviews";
 import { digitalTransformationCTAButtons } from "../../constants/servicePage";
@@ -18,11 +18,10 @@ const DigitalTransformationClientReviewsSection: React.FC = () => {
       imageAlt={digitalTransformationClientReviewsConfig.imageAlt}
       imagePosition={digitalTransformationClientReviewsConfig.imagePosition}
       ctaButtons={digitalTransformationCTAButtons}
-      reviews={digitalTransformationClientReviews}
-      statistics={digitalTransformationStatistics}
+      reviews={sampleClientReviews}
+      statistics={sampleStatistics}
     />
   );
 };
 
 export default DigitalTransformationClientReviewsSection;
-
