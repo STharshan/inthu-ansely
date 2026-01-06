@@ -1,63 +1,54 @@
-import { FAQItem } from '../components/types/faq';
+import { FAQItem } from "../components/types/faq";
 
 export const digitalTransformationFAQs: FAQItem[] = [
   {
-    id: 'services',
-    question: 'What services do you provide?',
-    answer: 'I specialize in brand identity and package design, with experience in web design, UI/UX, and to create brand experiences.',
+    id: "processes-automation",
+    question: "What processes in our business can actually be automated?",
+    answer:
+      "Almost any repetitive, rule-based task is a candidate for automation—data entry, invoice processing, customer onboarding, report generation, email responses, inventory updates, appointment scheduling, approval workflows, and much more. During our discovery phase, we map your current processes, identify bottlenecks, and prioritize automations based on time savings, error reduction, and ROI. Most businesses find 30-40% of their manual tasks can be fully or partially automated.",
   },
   {
-    id: 'start-working',
-    question: 'How do I start working with you?',
-    answer: 'You can start by booking a free consultation call where we discuss your project requirements, timeline, and expectations.',
+    id: "automation-replace-employees",
+    question: "Will automation replace our employees?",
+    answer:
+      "No—automation augments your team, it doesn't replace them. We automate the tedious, repetitive work that drains energy and causes errors, freeing your people to focus on strategy, creativity, relationships, and problem-solving—the uniquely human skills that actually drive business value. Most clients redeploy staff to higher-value activities rather than reducing headcount. Smart automation makes teams more productive and satisfied, not obsolete.",
   },
   {
-    id: 'design-tools',
-    question: 'What design tools do you use?',
-    answer: 'I use industry-standard tools including Figma, Adobe Creative Suite, and modern development frameworks to deliver high-quality results.',
+    id: "roi-timeline",
+    question: "How quickly will we see ROI from digital transformation?",
+    answer:
+      "Quick wins often appear within 30-60 days—immediate time savings from automated workflows, reduced errors, or faster process completion. Comprehensive ROI typically materializes over 6-12 months as efficiency gains compound, costs decrease, and new capabilities enable growth. We build ROI tracking into every project, measuring time saved, costs reduced, revenue enabled, and customer satisfaction improved. Most clients see positive ROI within the first year, with benefits accelerating over time.",
   },
   {
-    id: 'project-timeline',
-    question: 'How long does a project take?',
-    answer: 'Project timelines vary based on scope and complexity. Typically, a complete digital transformation project takes 4-12 weeks.',
+    id: "team-resistance",
+    question: "What if our team resists the changes?",
+    answer:
+      "Change resistance is normal and expected. That's why change management is central to our approach. We involve users early, gather their input, address concerns transparently, and demonstrate how automation makes their jobs easier, not harder. We provide hands-on training, create internal champions, and ensure people feel supported throughout transition. Most resistance comes from fear of the unknown—once teams experience automation benefits firsthand, they become advocates who request more.",
   },
   {
-    id: 'revisions',
-    question: 'Do you provide revisions?',
-    answer: 'Yes, I include a specified number of revision rounds in each project to ensure the final deliverable meets your expectations.',
+    id: "replace-existing-software",
+    question: "Do we need to replace all our existing software to transform digitally?",
+    answer:
+      "Usually not. We typically work with your existing tech stack, adding integration layers, automation tools, and new capabilities that enhance what you already have. Complete system replacement is expensive, disruptive, and rarely necessary. Our approach is evolutionary, not revolutionary—we modernize incrementally, replacing only what truly needs replacement while maximizing value from current investments. Strategic transformation doesn't mean starting from scratch.",
   },
   {
-    id: 'industries',
-    question: 'What industries do you work with?',
-    answer: 'I work with businesses across various industries including technology, healthcare, finance, retail, and more.',
-  },
-  {
-    id: 'development',
-    question: 'Do you offer development services?',
-    answer: 'Yes, I provide full-stack development services alongside design, ensuring seamless implementation of your digital solutions.',
-  },
-  {
-    id: 'pricing',
-    question: 'What is your pricing structure?',
-    answer: 'Pricing is customized based on project scope and requirements. Contact me for a detailed quote tailored to your needs.',
-  },
-  {
-    id: 'redesign',
-    question: 'Can you redesign my existing website?',
-    answer: 'Absolutely! I specialize in modernizing existing websites and digital platforms to improve user experience and performance.',
+    id: "measure-success",
+    question: "How do you measure transformation success?",
+    answer:
+      "We establish clear KPIs before starting—metrics like process cycle time reduction, cost per transaction, error rates, employee productivity, customer satisfaction scores, and revenue impact. We implement dashboards that track these metrics in real-time, providing visibility into what's improving and what needs adjustment. Success isn't just about technology deployment—it's about measurable business outcomes that justify investment and demonstrate ongoing value.",
   },
 ];
 
 export const digitalTransformationFAQConfig = {
   categoryTag: "FAQ'S",
-  heading: 'Answers',
-  description: 'Find answers to common questions about my design process, services etc…',
-  imageUrl: '/d1.avif',
-  imageAlt: 'FAQ illustration',
-  serviceTags: ['Product Design', 'Brand Identity Design', 'Branding'],
+  heading: "Answers",
+  description:
+    "Find answers to common questions about digital transformation, automation, and how we help businesses modernize and thrive.",
+  imageUrl: "/d1.avif",
+  imageAlt: "FAQ illustration",
+  serviceTags: ["Digital Transformation", "Smart Automation", "Process Optimization"],
   ctaButton: {
-    label: 'Book a Free Call',
-    href: '/contact',
+    label: "Book a Free Call",
+    href: "/contact",
   },
 };
-

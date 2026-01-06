@@ -1,55 +1,48 @@
-import {
-  FaChartLine,
-  FaCloud,
-  FaMobileAlt,
-  FaDatabase,
-  FaRobot,
-  FaShieldAlt,
-} from "react-icons/fa";
+import { FaRobot, FaHandshake, FaGlobe, FaLaptopCode, FaBrain, FaPalette } from "react-icons/fa";
 import { ServiceCard, TopicButton, CTAButton } from "../components/ServicePage/types";
 
 export const digitalTransformationServiceCards: ServiceCard[] = [
   {
-    id: "digital-strategy",
-    icon: FaChartLine,
-    title: "Digital Strategy",
-    description:
-      "Crafting comprehensive digital strategies that align with your business goals and drive measurable results.",
-  },
-  {
-    id: "cloud-migration",
-    icon: FaCloud,
-    title: "Cloud Migration",
-    description:
-      "Seamlessly migrating your infrastructure to the cloud for enhanced scalability, security, and cost efficiency.",
-  },
-  {
-    id: "mobile-transformation",
-    icon: FaMobileAlt,
-    title: "Mobile Transformation",
-    description:
-      "Enabling mobile-first experiences that engage customers and empower your workforce on any device.",
-  },
-  {
-    id: "data-modernization",
-    icon: FaDatabase,
-    title: "Data Modernization",
-    description:
-      "Transforming data into actionable insights with modern analytics platforms and AI-driven solutions.",
-  },
-  {
-    id: "automation",
+    id: "digital-transformation-automation",
     icon: FaRobot,
-    title: "Process Automation",
+    title: "Digital Transformation & Smart Automation",
     description:
-      "Streamlining operations through intelligent automation that reduces manual work and increases efficiency.",
+      "Modernize your business with comprehensive digital transformation strategies and intelligent automation solutions that streamline operations, reduce costs, and drive innovation across your organization.",
   },
   {
-    id: "security",
-    icon: FaShieldAlt,
-    title: "Security Enhancement",
+    id: "digital-partnerships",
+    icon: FaHandshake,
+    title: "Digital Partnerships",
     description:
-      "Implementing robust security frameworks to protect your digital assets and ensure compliance.",
+      "Build strategic alliances and channel partnerships that expand your market reach, integrate with leading platforms, and create collaborative opportunities for mutual growth and success.",
+  },
+  {
+    id: "custom-websites",
+    icon: FaGlobe,
+    title: "Custom Websites",
+    description:
+      "Create stunning, responsive websites and web applications tailored to your brand that deliver exceptional user experiences, drive conversions, and establish your strong online presence.",
+  },
+  {
+    id: "custom-software-development",
+    icon: FaLaptopCode,
+    title: "Custom Software Development",
+    description:
+      "Develop scalable, enterprise-grade software solutions and applications that perfectly align with your business needs, from cloud applications to mobile apps and legacy system modernization.",
+  },
+  {
+    id: "business-ai-consultancy",
+    icon: FaBrain,
+    title: "Business Consultancy & AI Consultancy",
+    description:
+      "Get expert strategic guidance on business optimization, AI implementation, and digital transformation to unlock growth opportunities, improve efficiency, and make data-driven decisions.",
+  },
+  {
+    id: "digital-marketing-branding",
+    icon: FaPalette,
+    title: "Digital Marketing, Branding & Social Media",
+    description:
+      "Elevate your brand with comprehensive digital marketing strategies, compelling brand identity design, and powerful social media campaigns that engage audiences and drive measurable results.",
   },
 ];
 
