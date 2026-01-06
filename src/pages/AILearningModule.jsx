@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BookOpen, Target, Lightbulb, Rocket, Layers, Search, Shield, Users, ChevronRight, ChevronLeft, Check } from 'lucide-react';
+import { BookOpen, Target, Lightbulb, Rocket, Layers, Search, Shield, Users, ChevronRight, ChevronLeft, Check, Moon, Sun } from 'lucide-react';
 import FounderBottleneck from '../components/AILearningModule/FounderBottleneck';
 import AIOverview from '../components/AILearningModule/AIOverview';
 import AIValueAreas from '../components/AILearningModule/AIValueAreas';
@@ -8,8 +8,10 @@ import AIOpportunityChecklist from '../components/AILearningModule/AIOpportunity
 import AIImplementationChecklist from '../components/AILearningModule/AIImplementationChecklist';
 import AIStrengthsAndLimits from '../components/AILearningModule/AIStrengthsAndLimits';
 import AINextSteps from '../components/AILearningModule/AINextSteps';
+
 const AILearningModule = () => {
   const [currentLesson, setCurrentLesson] = useState(0);
+  const [isDark, setIsDark] = useState(true);
 
   const lessons = [
     {
@@ -81,17 +83,29 @@ const AILearningModule = () => {
   const currentContent = lessons[currentLesson];
   const progress = ((currentLesson + 1) / lessons.length) * 100;
 
+  const theme = {
+    bg: isDark ? 'bg-black' : 'bg-white',
+    text: isDark ? 'text-white' : 'text-gray-900',
+    cardBg: isDark ? 'bg-gray-900' : 'bg-gray-100',
+    border: isDark ? 'border-gray-800' : 'border-gray-200',
+    hover: isDark ? 'hover:bg-gray-800' : 'hover:bg-gray-200',
+    inactive: isDark ? 'bg-gray-800' : 'bg-gray-200',
+    progressBg: isDark ? 'bg-gray-800' : 'bg-gray-300',
+    textMuted: isDark ? 'text-gray-400' : 'text-gray-600'
+  };
+
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className={`min-h-screen ${theme.bg} ${theme.text}`}>
       {/* Header */}
-      <header className="border-b border-gray-800 backdrop-blur-sm sticky top-0 z-10 bg-gray-950/80">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center">
-              <BookOpen className="w-5 h-5 text-white" />
-            </div>
-            <h1 className="text-xl font-semibold">AI for Business Growth</h1>
-          </div>
+      <header className={`border-b ${theme.border} backdrop-blur-sm sticky top-0 z-10 ${isDark ? 'bg-black/80' : 'bg-white/80'}`}>
+        <div className="container mx-auto px-4 py-4 flex items-center justify-end">
+          <button
+            onClick={() => setIsDark(!isDark)}
+            className={`p-2 rounded-lg ${theme.hover} transition-colors`}
+            aria-label="Toggle theme"
+          >
+            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </button>
         </div>
       </header>
 
@@ -99,15 +113,15 @@ const AILearningModule = () => {
         <div className="grid md:grid-cols-[300px_1fr] gap-8">
           {/* Sidebar */}
           <aside className="hidden md:block">
-            <div className="bg-gray-900 rounded-xl border border-gray-800 p-6 sticky top-24">
+            <div className={`${theme.cardBg} rounded-xl border ${theme.border} p-6 sticky top-24`}>
               <div className="mb-6">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-gray-400">Progress</span>
+                  <span className={`text-sm ${theme.textMuted}`}>Progress</span>
                   <span className="text-sm font-semibold">{currentLesson + 1}/8</span>
                 </div>
-                <div className="bg-gray-800 rounded-full h-2 overflow-hidden">
+                <div className={`${theme.progressBg} rounded-full h-2 overflow-hidden`}>
                   <div 
-                    className="bg-orange-600 h-full transition-all duration-500"
+                    className="bg-[#0045EF] h-full transition-all duration-500"
                     style={{ width: `${progress}%` }}
                   ></div>
                 </div>
@@ -125,14 +139,14 @@ const AILearningModule = () => {
                       onClick={() => setCurrentLesson(index)}
                       className={`w-full flex items-center gap-3 p-3 rounded-lg text-left transition-all ${
                         isActive 
-                          ? 'bg-orange-600 text-white' 
-                          : 'hover:bg-gray-800'
+                          ? 'bg-[#0045EF] text-white' 
+                          : theme.hover
                       }`}
                     >
                       <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${
                         isActive 
                           ? 'bg-white/20' 
-                          : 'bg-gray-800'
+                          : theme.inactive
                       }`}>
                         <Icon className="w-4 h-4" />
                       </div>
@@ -143,7 +157,7 @@ const AILearningModule = () => {
                         <div className="text-sm font-medium truncate">{lesson.title}</div>
                       </div>
                       {isCompleted && !isActive && (
-                        <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                        <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
                       )}
                     </button>
                   );
@@ -154,16 +168,16 @@ const AILearningModule = () => {
 
           {/* Main Content */}
           <main>
-            <div className="bg-gray-900 rounded-xl border border-gray-800 p-8 md:p-12">
+            <div className={`${theme.cardBg} rounded-xl border ${theme.border} p-8 md:p-12`}>
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-orange-600/10 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[#0045EF]/10 rounded-xl flex items-center justify-center">
                     {React.createElement(currentContent.icon, {
-                      className: "w-6 h-6 text-orange-600"
+                      className: "w-6 h-6 text-[#0045EF]"
                     })}
                   </div>
                   <div>
-                    <div className="text-sm text-gray-400 mb-1">
+                    <div className={`text-sm ${theme.textMuted} mb-1`}>
                       Lesson {currentLesson + 1} of {lessons.length}
                     </div>
                     <h2 className="text-3xl font-bold">{currentContent.title}</h2>
@@ -174,14 +188,14 @@ const AILearningModule = () => {
               {currentContent.content}
 
               {/* Navigation */}
-              <div className="mt-12 pt-8 border-t border-gray-800 flex items-center justify-between">
+              <div className={`mt-12 pt-8 border-t ${theme.border} flex items-center justify-between`}>
                 <button
                   onClick={() => setCurrentLesson(Math.max(0, currentLesson - 1))}
                   disabled={currentLesson === 0}
                   className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${
                     currentLesson === 0
-                      ? 'opacity-50 cursor-not-allowed border border-gray-800'
-                      : 'border border-gray-700 hover:bg-gray-800'
+                      ? `opacity-50 cursor-not-allowed border ${theme.border}`
+                      : `border ${isDark ? 'border-gray-700' : 'border-gray-300'} ${theme.hover}`
                   }`}
                 >
                   <ChevronLeft className="w-4 h-4" />
@@ -193,8 +207,8 @@ const AILearningModule = () => {
                   disabled={currentLesson === lessons.length - 1}
                   className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${
                     currentLesson === lessons.length - 1
-                      ? 'bg-orange-600 text-white opacity-50 cursor-not-allowed'
-                      : 'bg-orange-600 text-white hover:bg-orange-700'
+                      ? 'bg-[#0045EF] text-white opacity-50 cursor-not-allowed'
+                      : 'bg-[#0045EF] text-white hover:bg-[#0039CC]'
                   }`}
                 >
                   Next Lesson
