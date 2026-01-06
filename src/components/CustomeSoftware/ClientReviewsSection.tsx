@@ -1,8 +1,8 @@
 import React from "react";
 import { ClientReviewsSection } from "../organisms/ClientReviewsSection";
 import {
-  customSoftwareClientReviews,
-  customSoftwareStatistics,
+  sampleClientReviews,
+  sampleStatistics,
   customSoftwareClientReviewsConfig,
 } from "../../constants/clientReviews";
 import { customSoftwareCTAButtons } from "../../constants/servicePage";
@@ -18,8 +18,8 @@ const CustomSoftwareClientReviewsSection: React.FC = () => {
       imageAlt={customSoftwareClientReviewsConfig.imageAlt}
       imagePosition={customSoftwareClientReviewsConfig.imagePosition}
       ctaButtons={customSoftwareCTAButtons}
-      reviews={customSoftwareClientReviews}
-      statistics={customSoftwareStatistics}
+      reviews={sampleClientReviews}
+      statistics={sampleStatistics}
     />
   );
 };

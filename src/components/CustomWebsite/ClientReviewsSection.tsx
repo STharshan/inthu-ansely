@@ -1,8 +1,8 @@
 import React from "react";
 import { ClientReviewsSection } from "../organisms/ClientReviewsSection";
 import {
-  customWebsitesClientReviews,
-  customWebsitesStatistics,
+  sampleClientReviews,
+  sampleStatistics,
   customWebsitesClientReviewsConfig,
 } from "../../constants/clientReviews";
 import { customWebsitesCTAButtons } from "../../constants/servicePage";
@@ -18,8 +18,8 @@ const CustomWebsitesClientReviewsSection: React.FC = () => {
       imageAlt={customWebsitesClientReviewsConfig.imageAlt}
       imagePosition={customWebsitesClientReviewsConfig.imagePosition}
       ctaButtons={customWebsitesCTAButtons}
-      reviews={customWebsitesClientReviews}
-      statistics={customWebsitesStatistics}
+      reviews={sampleClientReviews}
+      statistics={sampleStatistics}
     />
   );
 };

@@ -2,58 +2,58 @@ import { ClientReview, Statistic } from "../components/types/clientReviews";
 
 export const sampleClientReviews: ClientReview[] = [
   {
-    id: "richards-johnson",
-    name: "Richards Johnson",
-    title: "Creative Director & Lead Designer",
+    id: "sarah-johnson",
+    name: "Sarah Johnson",
+    title: "Product Designer at DesignCo",
     quote:
-      "Working with Melly was a seamless experience. Her ability to merge creativity with functionality resulted in designs that not only looked stunning but also drove meaningful engagement. Highly recommended!",
+      "Working with this platform has completely transformed how we approach product development. The tools are intuitive and powerful.",
     rating: 5,
-    avatarUrl: undefined,
+    avatarUrl: "/w8.png",
   },
   {
-    id: "june-lee",
-    name: "June Lee",
-    title: "CEO of GreenRoots",
+    id: "michael-davis",
+    name: "Michael Davis",
+    title: "Engineering Lead at TechStart",
     quote:
-      "Meily's strategic approach to design brought our brand vision to life. The packaging and brand elements she developed elevated our aesthetic and aligned perfectly with our sustainability values.",
+      "The technical architecture and scalability options provided exceeded our expectations. Deployment was seamless.",
     rating: 5,
-    avatarUrl: undefined,
+    avatarUrl: "/w12.png",
   },
   {
-    id: "jona-carter",
-    name: "Jona Carter",
-    title: "Founder of EcoLux",
+    id: "emma-wilson",
+    name: "Emma Wilson",
+    title: "CEO of Innovate",
     quote:
-      "Every project Melly touches becomes a perfect blend of design and purpose that reflected our eco-conscious values. Our products stand out on shelves and resonate with our target audience.",
+      "This solution helped us scale from startup to enterprise level. The support team is always there when we need them.",
     rating: 5,
-    avatarUrl: undefined,
+    avatarUrl: "/w11.png",
   },
   {
-    id: "michael-chen",
-    name: "Michael Chen",
-    title: "CTO of TechFlow Solutions",
+    id: "jonas-klein",
+    name: "Jonas Klein",
+    title: "Growth Hacker at Brava",
     quote:
-      "The digital transformation strategy provided by Ansely revolutionized our operations. Their technical expertise and strategic vision helped us achieve 40% efficiency gains in just six months.",
+      "Platform Labs' ability to simplify complex AI workflows was a game changer. We now deploy new features faster, with confidence and traceability.",
     rating: 5,
-    avatarUrl: undefined,
+    avatarUrl: "/w13.png",
   },
   {
-    id: "sarah-martinez",
-    name: "Sarah Martinez",
-    title: "Marketing Director at BrandVibe",
+    id: "sophia-martinez",
+    name: "Sophia Martinez",
+    title: "Marketing Director at GrowthLabs",
     quote:
-      "Ansely delivered exceptional results for our digital marketing campaigns. Their data-driven approach and creative strategies increased our online engagement by 250% and significantly boosted our ROI.",
+      "The analytics and insights we get from this platform have been instrumental in driving our marketing strategy forward.",
     rating: 5,
-    avatarUrl: undefined,
+    avatarUrl: "/w9.png",
   },
   {
-    id: "david-thompson",
-    name: "David Thompson",
-    title: "CEO of InnovateNow",
+    id: "david-chen",
+    name: "David Chen",
+    title: "CTO of DataFlow",
     quote:
-      "Working with Ansely was a game-changer for our business. Their custom software solution streamlined our entire workflow, reducing manual processes and enabling us to scale rapidly.",
+      "Security and performance were our top priorities. This platform delivered on both fronts without compromise.",
     rating: 5,
-    avatarUrl: undefined,
+    avatarUrl: "/w14.png",
   },
 ];
 
@@ -75,10 +75,6 @@ export const sampleStatistics: Statistic[] = [
   },
 ];
 
-export const digitalTransformationClientReviews: ClientReview[] = sampleClientReviews;
-
-export const digitalTransformationStatistics: Statistic[] = sampleStatistics;
-
 export const digitalTransformationClientReviewsConfig = {
   categoryTag: "00 Reviews",
   reviewCount: "00 Reviews",
@@ -91,8 +87,6 @@ export const digitalTransformationClientReviewsConfig = {
 };
 
 // Reuse the same reviews and statistics for all services
-export const digitalPartnershipsClientReviews: ClientReview[] = sampleClientReviews;
-export const digitalPartnershipsStatistics: Statistic[] = sampleStatistics;
 export const digitalPartnershipsClientReviewsConfig = {
   categoryTag: "00 Reviews",
   reviewCount: "00 Reviews",
@@ -104,8 +98,6 @@ export const digitalPartnershipsClientReviewsConfig = {
   imagePosition: "left" as const,
 };
 
-export const customWebsitesClientReviews: ClientReview[] = sampleClientReviews;
-export const customWebsitesStatistics: Statistic[] = sampleStatistics;
 export const customWebsitesClientReviewsConfig = {
   categoryTag: "00 Reviews",
   reviewCount: "00 Reviews",
@@ -117,8 +109,6 @@ export const customWebsitesClientReviewsConfig = {
   imagePosition: "left" as const,
 };
 
-export const customSoftwareClientReviews: ClientReview[] = sampleClientReviews;
-export const customSoftwareStatistics: Statistic[] = sampleStatistics;
 export const customSoftwareClientReviewsConfig = {
   categoryTag: "00 Reviews",
   reviewCount: "00 Reviews",
@@ -130,8 +120,6 @@ export const customSoftwareClientReviewsConfig = {
   imagePosition: "left" as const,
 };
 
-export const businessConsultancyClientReviews: ClientReview[] = sampleClientReviews;
-export const businessConsultancyStatistics: Statistic[] = sampleStatistics;
 export const businessConsultancyClientReviewsConfig = {
   categoryTag: "00 Reviews",
   reviewCount: "00 Reviews",
@@ -143,8 +131,6 @@ export const businessConsultancyClientReviewsConfig = {
   imagePosition: "left" as const,
 };
 
-export const digitalMarketingClientReviews: ClientReview[] = sampleClientReviews;
-export const digitalMarketingStatistics: Statistic[] = sampleStatistics;
 export const digitalMarketingClientReviewsConfig = {
   categoryTag: "00 Reviews",
   reviewCount: "00 Reviews",
