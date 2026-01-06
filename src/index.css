@@ -558,6 +558,33 @@ body {
   animation: scrollRight 30s linear infinite;
 }
 
+/* Testimonials Swiper Styles */
+.testimonials-swiper :global(.swiper-pagination) {
+  bottom: 0;
+  padding: 20px 0;
+  gap: 12px;
+}
+
+.testimonials-swiper :global(.swiper-pagination-bullet) {
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  width: 8px;
+  height: 8px;
+  margin: 0 6px !important;
+}
+
+.testimonials-swiper :global(.swiper-pagination-bullet-active) {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.testimonials-swiper :global(.swiper-slide) {
+  height: auto;
+}
+
+.testimonials-swiper :global(.swiper-slide > div) {
+  height: 100%;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
