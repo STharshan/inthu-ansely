@@ -182,7 +182,7 @@ export default function Navbar() {
 
             {/* Desktop Nav - Center */}
             <nav className="hidden lg:flex items-center justify-center space-x-6 xl:space-x-10">
-              {["PROJECTS", "SERVICES"].map((item) => (
+              {["Home","About","Blog"].map((item) => (
                 <a
                   key={item}
                   href={`/${item.toLowerCase()}`}
@@ -199,7 +199,7 @@ export default function Navbar() {
                 </a>
               ))}
 
-              {/* Company dropdown */}
+              {/* Service dropdown */}
               <div ref={companyRef} className="relative text-[13px] uppercase tracking-[0.18em] font-medium">
                 <button
                   onClick={() => setIsCompanyOpen(!isCompanyOpen)}
@@ -209,30 +209,99 @@ export default function Navbar() {
                       : "text-white hover:text-gray-300"
                   }`}
                 >
-                  COMPANY
+                  SERVICE
                   <FiChevronDown
                     className={`text-sm mt-[2px] transition-transform duration-300 ${isCompanyOpen ? "rotate-180" : ""}`}
                   />
                 </button>
+                
 
                 {isCompanyOpen && (
-                  <div className={`absolute top-full left-0 mt-3 w-44 rounded-md shadow-lg py-2 animate-[fadeIn_0.3s_ease_forwards] ${
+                  <div className={`absolute top-full left-0 mt-3 w-56 rounded-md shadow-lg py-2 animate-[fadeIn_0.3s_ease_forwards] ${
                     isDark ? 'bg-gray-800 text-white' : 'bg-white text-black border border-gray-200'
                   }`}>
-                    {["ABOUT", "JOURNAL", "CONTACT"].map((item) => (
-                      <a
-                        key={item}
-                        href={`/${item.toLowerCase()}`}
-                        className={`block px-4 py-2 text-sm transition-colors ${
-                          isDark 
-                            ? 'text-gray-200 hover:bg-gray-700 hover:text-blue-400'
-                            : 'text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]'
-                        }`}
-                      >
-                        {item}
-                      </a>
-                    ))}
+                    <a
+                      href="/CustomeSoftware"
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-200 hover:bg-gray-700 hover:text-blue-400'
+                          : 'text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Custom Software
+                    </a>
+                    <a
+                      href="/digital-transformation"
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-200 hover:bg-gray-700 hover:text-blue-400'
+                          : 'text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Digital Transformation
+                    </a>
+                    <a
+                      href="/business-consultancy"
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-200 hover:bg-gray-700 hover:text-blue-400'
+                          : 'text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Consultancy
+                    </a>
+                    <a
+                      href="/digital-marketing"
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-200 hover:bg-gray-700 hover:text-blue-400'
+                          : 'text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Digital Marketing
+                    </a>
+                    <a
+                      href="/customwebsite"
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-200 hover:bg-gray-700 hover:text-blue-400'
+                          : 'text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Custom Website
+                    </a>
+                    <a
+                      href="/smart-automation"
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-200 hover:bg-gray-700 hover:text-blue-400'
+                          : 'text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Smart Automation
+                    </a>
+                    <a
+                      href="/digital-marketing"
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-200 hover:bg-gray-700 hover:text-blue-400'
+                          : 'text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Digital Branding
+                    </a>
+                    <a
+                      href="/digital-partnership"
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-200 hover:bg-gray-700 hover:text-blue-400'
+                          : 'text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Digital Partnerships
+                    </a>
                   </div>
+                  
                 )}
               </div>
             </nav>
@@ -321,7 +390,7 @@ export default function Navbar() {
           }`}>
             <div className="max-w-[1350px] mx-auto px-5 sm:px-8">
               {/* Navigation Links */}
-              {["PROJECTS", "SERVICES"].map((item, index) => (
+              {["Home", "About", "Blog"].map((item, index) => (
                 <div
                   key={item}
                   className={`border-b py-4 text-[13px] tracking-[0.18em] uppercase font-medium ${
@@ -337,13 +406,13 @@ export default function Navbar() {
                 </div>
               ))}
 
-              {/* Company Dropdown */}
+              {/* Service Dropdown */}
               <div className={`border-b py-4 ${isDark ? 'border-gray-700' : 'border-gray-200'}`}>
                 <button
                   onClick={() => setIsCompanyOpen(!isCompanyOpen)}
                   className="flex items-center justify-between w-full text-[13px] tracking-[0.18em] uppercase font-medium"
                 >
-                  COMPANY
+                  Service
                   <FiChevronDown
                     className={`text-sm transition-transform duration-300 ${isCompanyOpen ? "rotate-180" : ""}`}
                   />
@@ -351,19 +420,86 @@ export default function Navbar() {
 
                 {isCompanyOpen && (
                   <div className="mt-3 pl-4 space-y-2 animate-[fadeIn_0.3s_ease_forwards]">
-                    {["ABOUT", "JOURNAL", "CONTACT"].map((item) => (
-                      <a
-                        key={item}
-                        href={`/${item.toLowerCase()}`}
-                        className={`block py-2 text-sm transition-colors ${
-                          isDark 
-                            ? 'text-gray-300 hover:text-blue-400'
-                            : 'text-gray-600 hover:text-[#0045EF]'
-                        }`}
-                      >
-                        {item}
-                      </a>
-                    ))}
+                    <a
+                      href="/CustomeSoftware"
+                      className={`block py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-300 hover:text-blue-400'
+                          : 'text-gray-600 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Custom Software
+                    </a>
+                    <a
+                      href="/digital-transformation"
+                      className={`block py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-300 hover:text-blue-400'
+                          : 'text-gray-600 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Digital Transformation
+                    </a>
+                    <a
+                      href="/business-consultancy"
+                      className={`block py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-300 hover:text-blue-400'
+                          : 'text-gray-600 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Consultancy
+                    </a>
+                    <a
+                      href="/digital-marketing"
+                      className={`block py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-300 hover:text-blue-400'
+                          : 'text-gray-600 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Digital Marketing
+                    </a>
+                    <a
+                      href="/customwebsite"
+                      className={`block py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-300 hover:text-blue-400'
+                          : 'text-gray-600 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Custom Website
+                    </a>
+                    <a
+                      href="/smart-automation"
+                      className={`block py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-300 hover:text-blue-400'
+                          : 'text-gray-600 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Smart Automation
+                    </a>
+                    <a
+                      href="/digital-marketing"
+                      className={`block py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-300 hover:text-blue-400'
+                          : 'text-gray-600 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Digital Branding
+                    </a>
+                    <a
+                      href="/digital-partnership"
+                      className={`block py-2 text-sm transition-colors ${
+                        isDark 
+                          ? 'text-gray-300 hover:text-blue-400'
+                          : 'text-gray-600 hover:text-[#0045EF]'
+                      }`}
+                    >
+                      Digital Partnerships
+                    </a>
                   </div>
                 )}
               </div>
