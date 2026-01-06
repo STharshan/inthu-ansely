@@ -40,7 +40,7 @@ function App() {
         <Route path='/SEOLearningPlatform' element={<SEOLearningPlatform />} />
           <Route path='/CustomeSoftware' element={<CustomeSoftware />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   )
 }
