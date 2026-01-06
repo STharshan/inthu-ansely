@@ -16,7 +16,7 @@ import PPCLearningModule from "./pages/PPCLearningModule"
 import AILearningModule from "./pages/AILearningModule"
 import SEOLearningPlatform from './components/SEO/SeoHome';
 import Navbar from './components/Navbar';
-
+import CustomeSoftware from './pages/CustomeSoftware'
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -38,6 +38,7 @@ function App() {
         <Route path="/PPCLearningModule" element={<PPCLearningModule />} />
         <Route path="/AILearningModule" element={<AILearningModule />} />
         <Route path='/SEOLearningPlatform' element={<SEOLearningPlatform />} />
+          <Route path='/CustomeSoftware' element={<CustomeSoftware />} />
       </Routes>
       <Footer />
     </Router>
