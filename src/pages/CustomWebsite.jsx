@@ -4,6 +4,9 @@ import ProjectChallenges from '../components/CustomWebsite/ProjectChallenges'
 import ProjectSolution from '../components/CustomWebsite/ProjectSolution'
 import ProjectDetails from '../components/CustomWebsite/CustomWebsiteHero'
 import ViewMoreSection from '../components/CustomWebsite/ViewMoreSection'
+import ServicePageSection from '../components/CustomWebsite/ServicePageSection'
+import ClientReviewsSection from '../components/CustomWebsite/ClientReviewsSection'
+import FAQSection from '../components/CustomWebsite/FAQSection'
 
 const CustomWebsite = () => {
   return (
@@ -13,6 +16,9 @@ const CustomWebsite = () => {
       <ProjectChallenges />
       <ProjectSolution />
       <ViewMoreSection />
+      <ServicePageSection />
+      <ClientReviewsSection />
+      <FAQSection />
     </div>
   )
 }
