@@ -1,7 +1,7 @@
 import React from "react";
 import { ServicePageTemplate } from "../ServicePage";
 import {
-  digitalTransformationServiceCards,
+  serviceCards,
   digitalTransformationTopicButtons,
   digitalTransformationCTAButtons,
 } from "../../constants/servicePage";
@@ -16,7 +16,7 @@ const ServicePageSection: React.FC = () => {
       ctaButtons={digitalTransformationCTAButtons}
       imageUrl="/d1.avif"
       imageAlt="Digital transformation illustration"
-      serviceCards={digitalTransformationServiceCards}
+      serviceCards={serviceCards}
     />
   );
 };
