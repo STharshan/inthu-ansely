@@ -1,54 +1,65 @@
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 
-const OtherArticlesSection = () => {
+export default function OtherArticlesSection() {
   const articles = [
     {
       id: 1,
-      image: "https://framerusercontent.com/images/xQHTLAJm5NoiLEu2lyjmJCm1Lk.jpg",
+      image:
+        "https://framerusercontent.com/images/xQHTLAJm5NoiLEu2lyjmJCm1Lk.jpg",
       date: "May 13, 2025",
       category: "Ops & Strategy",
       title: "Scaling Finance Ops Without Slowing Down",
-      authorImage: "https://framerusercontent.com/images/LZYY71GfAAmwFGFURcEc4dfpoY.jpg",
+      authorImage:
+        "https://framerusercontent.com/images/LZYY71GfAAmwFGFURcEc4dfpoY.jpg",
       authorName: "Ella Navarro",
       authorRole: "Head of Finance Ops",
-      link: "#"
+      link: "#",
     },
     {
       id: 2,
-      image: "https://framerusercontent.com/images/vzV4ud1UQ7xLnwDx99ukoOvBW4.jpg",
+      image:
+        "https://framerusercontent.com/images/vzV4ud1UQ7xLnwDx99ukoOvBW4.jpg",
       date: "May 9, 2025",
       category: "Guides & Resources",
       title: "Modern Budget Workflows That Don't Break Under Pressure",
-      authorImage: "https://framerusercontent.com/images/JKorM5B0WmJOc8WoLSGW2e0hNG8.jpg",
+      authorImage:
+        "https://framerusercontent.com/images/JKorM5B0WmJOc8WoLSGW2e0hNG8.jpg",
       authorName: "Jordan Malik",
       authorRole: "Head of Customer Success",
-      link: "#"
+      link: "#",
     },
     {
       id: 3,
-      image: "https://framerusercontent.com/images/ONkjvQAz3gacwCm0BbwyHGXM9Y.jpg",
+      image:
+        "https://framerusercontent.com/images/ONkjvQAz3gacwCm0BbwyHGXM9Y.jpg",
       date: "May 2, 2025",
       category: "Ops & Strategy",
-      title: "Two Speeds, One Team: Keeping Weekly Work Aligned With Strategy",
-      authorImage: "https://framerusercontent.com/images/LZYY71GfAAmwFGFURcEc4dfpoY.jpg",
+      title:
+        "Two Speeds, One Team: Keeping Weekly Work Aligned With Strategy",
+      authorImage:
+        "https://framerusercontent.com/images/LZYY71GfAAmwFGFURcEc4dfpoY.jpg",
       authorName: "Ella Navarro",
       authorRole: "Head of Finance Ops",
-      link: "#"
-    }
+      link: "#",
+    },
   ];
 
   const [hoveredCard, setHoveredCard] = useState(null);
 
   return (
-    <section className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-white dark:bg-black py-16 px-4 sm:px-6 lg:px-8 transition-colors">
       <div className="max-w-7xl mx-auto">
+
         {/* Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-0 leading-tight">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight
+            text-black dark:text-white max-w-3xl">
             Looking for more? Dive into our other articles, updates, and strategies
           </h2>
-          
-          <button className="bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors whitespace-nowrap">
+
+          <button className="rounded-full px-6 py-3 font-medium transition
+            bg-[#0045EF] text-white hover:opacity-90 whitespace-nowrap">
             Browse all articles
           </button>
         </div>
@@ -59,65 +70,81 @@ const OtherArticlesSection = () => {
             <a
               key={article.id}
               href={article.link}
-              className="block bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
+              className="group block rounded-2xl overflow-hidden
+                bg-gray-100 dark:bg-gray-900
+                border border-gray-200 dark:border-white/10
+                transition hover:shadow-lg"
               onMouseEnter={() => setHoveredCard(article.id)}
               onMouseLeave={() => setHoveredCard(null)}
             >
-              {/* Image with Read More Button */}
-              <div className="relative overflow-hidden rounded-2xl group">
-                <img 
+              {/* Image */}
+              <div className="relative overflow-hidden">
+                <img
                   src={article.image}
                   alt={article.title}
                   className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                
-                {/* Read More Button - Shows on Hover */}
-                <div 
-                  className={`absolute bottom-4 right-4 transition-all duration-300 ${
-                    hoveredCard === article.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-                  }`}
+
+                {/* Read More */}
+                <div
+                  className={`absolute bottom-4 right-4 transition-all duration-300
+                    ${
+                      hoveredCard === article.id
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-2"
+                    }`}
                 >
-                  <div className="bg-white bg-opacity-15 backdrop-blur-sm px-4 py-2 rounded-full">
-                    <span className="text-black text-sm font-medium">Read more</span>
+                  <div className="rounded-full px-4 py-2 text-sm font-medium
+                    bg-white dark:bg-black
+                    text-[#0045EF] border border-[#0045EF]/30">
+                    Read more
                   </div>
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-6">
-                {/* Meta Info */}
-                <div className="flex items-center gap-2 mb-4 text-sm text-gray-600">
+                {/* Meta */}
+                <div className="flex items-center gap-2 mb-4 text-sm
+                  text-gray-600 dark:text-gray-400">
                   <span>{article.date}</span>
                   <span>•</span>
-                  <span className="bg-amber-50 px-3 py-1 rounded-lg text-xs">
+                  <span className="px-3 py-1 rounded-lg text-xs
+                    bg-gray-200 dark:bg-gray-800
+                    text-[#0045EF] border border-[#0045EF]/20">
                     {article.category}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold mb-6 leading-tight">
+                <h3 className="text-xl font-bold mb-6 leading-tight
+                  text-black dark:text-white">
                   {article.title}
                 </h3>
 
-                {/* Author Info */}
+                {/* Author */}
                 <div className="flex items-center gap-3">
-                  <img 
+                  <img
                     src={article.authorImage}
                     alt={article.authorName}
                     className="w-11 h-11 rounded-full object-cover"
                   />
                   <div>
-                    <p className="font-semibold text-sm">{article.authorName}</p>
-                    <p className="text-sm text-gray-600 opacity-70">{article.authorRole}</p>
+                    <p className="font-semibold text-sm
+                      text-black dark:text-white">
+                      {article.authorName}
+                    </p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {article.authorRole}
+                    </p>
                   </div>
                 </div>
               </div>
             </a>
           ))}
         </div>
+
       </div>
     </section>
   );
-};
-
-export default OtherArticlesSection;
+}
