@@ -43,7 +43,7 @@ export default function ThemeToggle() {
             className={`rounded-full border p-2 flex items-center transition-colors
        
         ${scrolled
-                    ? "border-black/15 text-black hover:border-black/30 hover:bg-black/5"
+                    ? "border-black/15 text-[#0045EF] hover:border-black/30 hover:bg-black/5"
                     : "border-[#0045EF] text-black hover:border-white/50 hover:bg-white/10"
                 }`}
         >

@@ -3,6 +3,7 @@ import CenterContent from "../Animations/CenterContent";
 import AnimatedScrollMove from "../Animations/AnimatedScrollMove";
 import AnimatedShow from "../Animations/AnimatedShow";
 import { Link } from "react-router-dom";
+import { Check } from "lucide-react";
 
 export default function Newabout() {
   const features = [
@@ -15,45 +16,33 @@ export default function Newabout() {
   ];
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden bg-white dark:bg-black transition-colors duration-500">
       <CenterContent>
         <AnimatedShow
           scale={0.6}
           inViewShow
-          className="grid grid-cols-1 items-center justify-center gap-24 py-15 lg:grid-cols-2"
+          className="grid grid-cols-1 items-center justify-center gap-24 py-1 lg:grid-cols-2"
         >
           {/* LEFT CONTENT */}
           <div>
-            <h1 className="max-w-2xl text-4xl font-bold">
+            <h1 className="max-w-2xl text-4xl font-bold text-black dark:text-white">
               React Websites — Built for Performance, Scale & Custom Experiences
             </h1>
 
-            <h3 className="my-8 max-w-2xl text-xl opacity-80">
+            <h3 className="my-8 max-w-2xl text-xl opacity-80 text-gray-700 dark:text-gray-300">
               Discover React: a powerful JavaScript framework designed for
               high-performance, fully custom web applications where speed,
               scalability, and user experience come first.
             </h3>
 
+
             <div className="mt-12 grid grid-cols-2 gap-4 font-semibold opacity-80">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center gap-2">
-                  <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-gray-500/20 dark:bg-gray-500/80">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="size-4"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="m4.5 12.75 6 6 9-13.5"
-                      />
-                    </svg>
+                  <div className="flex w-6 h-6 shrink-0 items-center justify-center rounded-full bg-[#0045EF]">
+                    <Check className="w-4 h-4 text-black dark:text-white" strokeWidth={2} />
                   </div>
-                  {feature}
+                  <span className="text-gray-900 dark:text-white">{feature}</span>
                 </div>
               ))}
             </div>
@@ -62,7 +51,7 @@ export default function Newabout() {
             <div className="mt-12">
               <Link
                 to="/React"
-                className="inline-flex items-center justify-center rounded-lg bg-black px-8 py-4 text-white font-semibold transition-all duration-300 hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+                className="inline-flex items-center justify-center rounded-lg bg-[#0045EF] px-5 py-2 text-white font-semibold text-lg transition-all duration-300 hover:bg-gray-800  dark:text-black dark:hover:bg-gray-200"
               >
                 Learn More
               </Link>

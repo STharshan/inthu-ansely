@@ -128,7 +128,7 @@ export default function WallScrollContainer({ children, debug = false }) {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "100vh" }}>
+    <div  ref={containerRef} className="relative bg-white dark:bg-black" style={{ height: "100vh" }}>
       <div
         ref={galleryRef}
         className="sticky top-0 w-full overflow-hidden px-4 py-20 md:top-[20%]"

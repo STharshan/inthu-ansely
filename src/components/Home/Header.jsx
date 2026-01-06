@@ -81,9 +81,10 @@ export default function CoreValuesCarousel() {
       return (
         <span
           key={`${ch}-${i}`}
-          className={`transition-all duration-500 ${
-            isActive ? "scale-110 text-white" : "scale-100 text-slate-400"
-          }`}
+          className={`transition-all duration-500 ${isActive
+              ? "scale-110 text-[#0045EF]"
+              : "scale-100 text-slate-400 dark:text-slate-500"
+            }`}
         >
           {ch}
         </span>
@@ -92,11 +93,14 @@ export default function CoreValuesCarousel() {
   }, [active.key]);
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto py-1 px-4 sm:px-6">
-      <h1 className="text-center text-2xl sm:text-4xl font-bold text-white mb-10">Values That Power Everything We Build</h1>
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 px-4 py-10 sm:px-10 sm:py-14 shadow-xl">
+    <div className="relative w-full py-5 px-4 sm:px-6 transition-colors duration-500 bg-white dark:bg-black">
+      <h1 className="text-center text-2xl sm:text-4xl font-bold text-black dark:text-white mb-10 mt-10">
+        Values That Power Everything We Build
+      </h1>
+
+      <div className="relative overflow-hidden max-w-5xl mx-auto  rounded-2xl bg-[#36383C] px-4 py-10 sm:px-10 sm:py-14 shadow-xl transition-colors duration-500">
         {/* Content */}
-        <div className="relative z-10 max-w-2xl">
+        <div className="relative z-10 max-w-2xl p-6">
           <div className="mb-6 sm:mb-8">
             <div className="mb-3 flex items-center gap-2 text-3xl sm:text-5xl font-extrabold tracking-wide">
               {brandWord}
@@ -107,7 +111,7 @@ export default function CoreValuesCarousel() {
           </div>
 
           {/* Slide */}
-          <div className="relative min-h-[200px] sm:min-h-[240px] overflow-hidden">
+          <div className="relative min-h-[180px] overflow-hidden">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={active.key}
@@ -118,10 +122,10 @@ export default function CoreValuesCarousel() {
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 className="absolute inset-0"
               >
-                <h2 className="mb-3 text-xl sm:text-3xl font-bold text-white">
+                <h2 className="mb-3 text-xl sm:text-3xl font-bold text-black dark:text-white">
                   {active.heading}
                 </h2>
-                <div className="space-y-2 text-sm sm:text-lg text-slate-200">
+                <div className="space-y-2 text-sm sm:text-lg text-black dark:text-slate-300">
                   {active.lines.map((t, i) => (
                     <p key={i} className="leading-relaxed">
                       {t}
@@ -136,30 +140,34 @@ export default function CoreValuesCarousel() {
         {/* Prev Button */}
         <button
           onClick={goPrev}
-          className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-20 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-slate-900/80 text-white shadow-md backdrop-blur-md hover:scale-110 transition"
+          className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-20 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-slate-300/80 dark:bg-slate-800/80 text-black dark:text-white shadow-md backdrop-blur-md hover:scale-110 transition"
         >
-          <svg xmlns="http://www.w3.org/2000/svg"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4 sm:h-5 sm:w-5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 18l-6-6 6-6"/>
+            strokeWidth="2"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 18l-6-6 6-6" />
           </svg>
         </button>
 
         {/* Next Button */}
         <button
           onClick={goNext}
-          className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-20 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-slate-900/80 text-white shadow-md backdrop-blur-md hover:scale-110 transition"
+          className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-20 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-slate-300/80 dark:bg-slate-800/80 text-black dark:text-white shadow-md backdrop-blur-md hover:scale-110 transition"
         >
-          <svg xmlns="http://www.w3.org/2000/svg"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4 sm:h-5 sm:w-5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6"/>
+            strokeWidth="2"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6" />
           </svg>
         </button>
       </div>
@@ -175,9 +183,10 @@ export default function CoreValuesCarousel() {
                 setDirection(i > index ? 1 : -1);
                 setIndex(i);
               }}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                isActive ? "w-5 bg-slate-800" : "w-2 bg-slate-400"
-              }`}
+              className={`h-2 rounded-full transition-all duration-300 ${isActive
+                  ? "w-5 bg-[#0045EF]"
+                  : "w-2 bg-[#36383C]"
+                }`}
             />
           );
         })}

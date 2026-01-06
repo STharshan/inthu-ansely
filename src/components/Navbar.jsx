@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FiChevronDown, FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,10 +13,9 @@ export default function Navbar() {
 
   useEffect(() => {
     // Check for saved theme preference or default to light mode
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    if (savedTheme) {
       setIsDark(true);
       document.documentElement.classList.add('dark');
     }
@@ -41,11 +39,9 @@ export default function Navbar() {
   const toggleTheme = () => {
     if (isDark) {
       document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
       setIsDark(false);
     } else {
       document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
       setIsDark(true);
     }
   };
@@ -152,17 +148,17 @@ export default function Navbar() {
 
         /* Theme toggle animation */
         .theme-toggle-icon {
-          transition: transform 0.3s ease, opacity 0.3s ease;
+          transition: transform 0.5s ease, opacity 0.3s ease;
         }
 
         .theme-toggle-icon.rotate {
-          transform: rotate(180deg);
+          transform: rotate(360deg);
         }
       `}</style>
 
       <header className="fixed top-0 left-0 w-full z-50">
         {/* Shutter background - changes based on theme */}
-        <div className={`navbar-bg max-w-6xl mx-auto rounded-b-xl ${scrolled ? "active" : "inactive"} ${isDark ? 'bg-black' : 'bg-white'}`}></div>
+        <div className={`navbar-bg max-w-6xl mx-auto rounded-b-xl ${scrolled ? "active" : "inactive"} ${isDark ? 'bg-gray-900' : 'bg-white'}`}></div>
 
         <div className={`relative w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-5 transition-all duration-700 ease-in-out ${
           scrolled 
@@ -178,7 +174,7 @@ export default function Navbar() {
               className={`text-[16px] sm:text-[18px] font-bold tracking-[0.25em] transition-all duration-700 flex-shrink-0 justify-self-start ${
                 scrolled 
                   ? (isDark ? "text-white" : "text-black")
-                  : "text-black"
+                  : "text-white"
               }`}
             >
               ANSELY
@@ -193,7 +189,7 @@ export default function Navbar() {
                   className={`relative text-[13px] uppercase tracking-[0.18em] font-medium group transition-colors duration-700 whitespace-nowrap ${
                     scrolled 
                       ? (isDark ? "text-white hover:text-blue-400" : "text-black hover:text-[#0045EF]")
-                      : "text-black hover:text-gray-300"
+                      : "text-white hover:text-gray-300"
                   }`}
                 >
                   {item}
@@ -210,7 +206,7 @@ export default function Navbar() {
                   className={`flex items-center gap-1 transition-colors duration-700 whitespace-nowrap ${
                     scrolled 
                       ? (isDark ? "text-white hover:text-blue-400" : "text-black hover:text-[#0045EF]")
-                      : "text-black hover:text-gray-300"
+                      : "text-white hover:text-gray-300"
                   }`}
                 >
                   COMPANY
@@ -221,7 +217,7 @@ export default function Navbar() {
 
                 {isCompanyOpen && (
                   <div className={`absolute top-full left-0 mt-3 w-44 rounded-md shadow-lg py-2 animate-[fadeIn_0.3s_ease_forwards] ${
-                    isDark ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black'
+                    isDark ? 'bg-gray-800 text-white' : 'bg-white text-black border border-gray-200'
                   }`}>
                     {["ABOUT", "JOURNAL", "CONTACT"].map((item) => (
                       <a
@@ -229,8 +225,8 @@ export default function Navbar() {
                         href={`/${item.toLowerCase()}`}
                         className={`block px-4 py-2 text-sm transition-colors ${
                           isDark 
-                            ? 'text-gray-200 hover:bg-gray-700 hover:text-[#0045EF]'
-                            : 'text-gray-700 hover:bg-gray-200 hover:text-[#0045EF]'
+                            ? 'text-gray-200 hover:bg-gray-700 hover:text-blue-400'
+                            : 'text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]'
                         }`}
                       >
                         {item}
@@ -258,9 +254,9 @@ export default function Navbar() {
                     className={`social-icon p-2 rounded-full transition-all duration-500 ease-in-out border ${
                       scrolled
                         ? (isDark 
-                            ? "border-[#0045EF]/30 text-[#0045EF] hover:border-[#0045EF] hover:bg-[#0045EF]/10"
+                            ? "border-blue-500/30 text-blue-400 hover:border-blue-500 hover:bg-blue-500/10"
                             : "border-[#0045EF]/30 text-[#0045EF] hover:border-[#0045EF] hover:bg-[#0045EF]/10")
-                        : "border-[#0045EF] text-black hover:border-white/50 hover:bg-white/10"
+                        : "border-white/30 text-white hover:border-white/50 hover:bg-white/10"
                     }`}
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
@@ -270,7 +266,23 @@ export default function Navbar() {
               </div>
 
               {/* Theme Toggle Button */}
-              <ThemeToggle />
+              <button
+                onClick={toggleTheme}
+                className={`hidden sm:flex p-2 rounded-full border transition-all duration-500 ${
+                  scrolled
+                    ? (isDark 
+                        ? "border-blue-500/30 text-blue-400 hover:border-blue-500 hover:bg-blue-500/10"
+                        : "border-[#0045EF]/30 text-[#0045EF] hover:border-[#0045EF] hover:bg-[#0045EF]/10")
+                    : "border-white/30 text-white hover:border-white/50 hover:bg-white/10"
+                }`}
+                aria-label="Toggle theme"
+              >
+                {isDark ? (
+                  <FiMoon className="w-[15px] h-[15px] theme-toggle-icon" />
+                ) : (
+                  <FiSun className="w-[15px] h-[15px] theme-toggle-icon" />
+                )}
+              </button>
 
               {/* CTA Button - Tablet and Desktop */}
               <a
@@ -305,7 +317,7 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isOpen && (
           <div className={`lg:hidden absolute top-full left-0 w-full shadow-lg animate-[fadeIn_0.4s_ease_forwards] overflow-hidden ${
-            isDark ? 'bg-gray-900 text-white' : 'bg-gray-100 text-black'
+            isDark ? 'bg-gray-900 text-white' : 'bg-white text-black'
           }`}>
             <div className="max-w-[1350px] mx-auto px-5 sm:px-8">
               {/* Navigation Links */}
@@ -313,18 +325,20 @@ export default function Navbar() {
                 <div
                   key={item}
                   className={`border-b py-4 text-[13px] tracking-[0.18em] uppercase font-medium ${
-                    isDark ? 'border-gray-700' : 'border-gray-300'
+                    isDark ? 'border-gray-700' : 'border-gray-200'
                   }`}
                   style={{ animation: `slideIn 0.3s ease forwards ${index * 0.1}s` }}
                 >
-                  <a href={`/${item.toLowerCase()}`} className="block hover:text-[#0045EF] transition-colors">
+                  <a href={`/${item.toLowerCase()}`} className={`block transition-colors ${
+                    isDark ? 'hover:text-blue-400' : 'hover:text-[#0045EF]'
+                  }`}>
                     {item}
                   </a>
                 </div>
               ))}
 
               {/* Company Dropdown */}
-              <div className={`border-b py-4 ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
+              <div className={`border-b py-4 ${isDark ? 'border-gray-700' : 'border-gray-200'}`}>
                 <button
                   onClick={() => setIsCompanyOpen(!isCompanyOpen)}
                   className="flex items-center justify-between w-full text-[13px] tracking-[0.18em] uppercase font-medium"
@@ -343,7 +357,7 @@ export default function Navbar() {
                         href={`/${item.toLowerCase()}`}
                         className={`block py-2 text-sm transition-colors ${
                           isDark 
-                            ? 'text-gray-300 hover:text-[#0045EF]'
+                            ? 'text-gray-300 hover:text-blue-400'
                             : 'text-gray-600 hover:text-[#0045EF]'
                         }`}
                       >
@@ -355,7 +369,7 @@ export default function Navbar() {
               </div>
 
               {/* Social Icons - Mobile */}
-              <div className={`flex justify-center gap-4 py-6 border-b ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
+              <div className={`flex justify-center gap-4 py-6 border-b ${isDark ? 'border-gray-700' : 'border-gray-200'}`}>
                 {[
                   { Icon: FaInstagram, href: "#instagram" },
                   { Icon: FaFacebookF, href: "#facebook" },
@@ -367,7 +381,7 @@ export default function Navbar() {
                     href={href}
                     className={`social-icon p-3 rounded-full border transition-all ${
                       isDark
-                        ? 'border-[#0045EF]/30 text-[#0045EF] hover:border-[#0045EF] hover:bg-[#0045EF]/10'
+                        ? 'border-blue-500/30 text-blue-400 hover:border-blue-500 hover:bg-blue-500/10'
                         : 'border-[#0045EF]/30 text-[#0045EF] hover:border-[#0045EF] hover:bg-[#0045EF]/10'
                     }`}
                   >
@@ -382,13 +396,13 @@ export default function Navbar() {
                   onClick={toggleTheme}
                   className={`p-3 rounded-full border transition-all ${
                     isDark
-                      ? 'border-[#0045EF]/30 text-[#0045EF] hover:border-[#0045EF] hover:bg-[#0045EF]/10'
+                      ? 'border-blue-500/30 text-blue-400 hover:border-blue-500 hover:bg-blue-500/10'
                       : 'border-[#0045EF]/30 text-[#0045EF] hover:border-[#0045EF] hover:bg-[#0045EF]/10'
                   }`}
                   aria-label="Toggle theme"
                 >
                   {isDark ? (
-                    <FiSun className="w-5 h-5 theme-toggle-icon" />
+                    <FiSun className="w-5 h-5 theme-toggle-icon rotate" />
                   ) : (
                     <FiMoon className="w-5 h-5 theme-toggle-icon" />
                   )}
