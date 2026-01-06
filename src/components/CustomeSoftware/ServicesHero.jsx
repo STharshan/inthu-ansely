@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function ServicesHero() {
   return (
-    <div className="relative w-full h-screen bg-[#1e1e1e] overflow-hidden flex items-center justify-center p-8">
+    <div className="relative w-full h-screen bg-white dark:bg-black overflow-hidden flex items-center justify-center p-8 pb-30 mt-20">
       {/* Main Content Card */}
-      <div className="relative w-full max-w-7xl h-[600px] bg-[#6c588d] rounded-xl overflow-hidden">
+      <div className="relative w-full max-w-8xl h-[600px] bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-2xl mt-20">
         {/* Background Textures */}
         <div className="absolute inset-0 opacity-100">
           {/* Noise Texture */}
@@ -19,9 +19,9 @@ export default function ServicesHero() {
           
           {/* Dot Grid */}
           <div 
-            className="absolute inset-0 opacity-50"
+            className="absolute inset-0 opacity-30"
             style={{
-              backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)',
+              backgroundImage: 'radial-gradient(circle, rgba(0,69,239,0.1) 1px, transparent 1px)',
               backgroundSize: '30px 30px'
             }}
           />
@@ -29,44 +29,44 @@ export default function ServicesHero() {
 
         {/* Animated Blobs */}
         <div className="absolute inset-0" style={{ filter: 'blur(96px)' }}>
-          {/* Teal Blob */}
+          {/* Blue Blob Bottom */}
           <div 
-            className="absolute w-64 h-64 rounded-full opacity-100"
+            className="absolute w-64 h-64 rounded-full opacity-40"
             style={{
-              background: 'radial-gradient(circle, #a2b79f 0%, transparent 70%)',
+              background: 'radial-gradient(circle, #0045EF 0%, transparent 70%)',
               left: 'calc(50% + 90px)',
               top: 'calc(50% + 430px)',
               transform: 'translate(-50%, -50%)'
             }}
           />
           
-          {/* Orange Blob Top Right */}
+          {/* Blue Blob Top Right */}
           <div 
             className="absolute w-72 h-72 rounded-full opacity-30"
             style={{
-              background: 'radial-gradient(circle, #d8a373 0%, transparent 70%)',
+              background: 'radial-gradient(circle, #0045EF 0%, transparent 70%)',
               right: 'calc(0% - 100px)',
               top: 'calc(50% - 170px)',
               transform: 'rotate(-13deg)'
             }}
           />
           
-          {/* Orange/Red Blob Left */}
+          {/* Blue Blob Left */}
           <div 
-            className="absolute w-80 h-80 rounded-full opacity-100"
+            className="absolute w-80 h-80 rounded-full opacity-35"
             style={{
-              background: 'radial-gradient(circle, #e0835c 0%, #d8a373 50%, transparent 70%)',
+              background: 'radial-gradient(circle, #0045EF 0%, transparent 70%)',
               left: 'calc(0% + 70px)',
               top: 'calc(50% - 200px)',
               transform: 'translateY(-50%) rotate(-7deg) scale(0.8)'
             }}
           />
           
-          {/* Purple Blob */}
+          {/* Blue Blob Center */}
           <div 
-            className="absolute w-96 h-96 rounded-full opacity-100"
+            className="absolute w-96 h-96 rounded-full opacity-25"
             style={{
-              background: 'radial-gradient(circle, #6c588d 0%, transparent 70%)',
+              background: 'radial-gradient(circle, #0045EF 0%, transparent 70%)',
               left: 'calc(50% - 570px)',
               top: 'calc(50% - 375px)',
               transform: 'translateX(-50%) scale(0.8)'
@@ -75,9 +75,9 @@ export default function ServicesHero() {
           
           {/* Bottom Right Blob */}
           <div 
-            className="absolute w-64 h-64 rounded-full opacity-100"
+            className="absolute w-64 h-64 rounded-full opacity-30"
             style={{
-              background: 'radial-gradient(circle, #e0835c 30%, #d8a373 60%, transparent 80%)',
+              background: 'radial-gradient(circle, #0045EF 30%, transparent 80%)',
               right: '-50px',
               bottom: '-50px'
             }}
@@ -88,21 +88,21 @@ export default function ServicesHero() {
         <div className="relative z-10 h-full flex flex-col justify-center px-16 py-20">
           {/* Tag */}
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-3 h-3 bg-white rounded-sm" />
-            <span className="text-white text-xs uppercase tracking-widest font-medium">
-              our services
+            <div className="w-3 h-3 bg-[#0045EF] rounded-sm" />
+            <span className="text-gray-900 dark:text-white text-xs uppercase tracking-widest font-medium">
+              hero section
             </span>
           </div>
 
           {/* Heading */}
           <div className="space-y-2 mb-8">
-            <h1 className="text-white text-7xl font-bold leading-tight">
-              From data to insight
+            <h1 className="text-gray-900 dark:text-white text-7xl font-bold leading-tight">
+              From concept to code
             </h1>
             <div className="flex items-baseline gap-6">
-              <h1 className="text-white text-7xl font-bold">and</h1>
+              <h1 className="text-gray-900 dark:text-white text-7xl font-bold">and</h1>
               <h1 
-                className="text-white text-7xl font-serif italic"
+                className="text-gray-900 dark:text-white text-7xl font-serif italic"
                 style={{ fontFamily: 'Georgia, serif' }}
               >
                 beyond.
@@ -110,9 +110,14 @@ export default function ServicesHero() {
             </div>
           </div>
 
+          {/* Subheading */}
+          <h2 className="text-gray-800 dark:text-gray-200 text-2xl font-semibold mb-6">
+            Helping hidden gems stand tall in the digital world.
+          </h2>
+
           {/* Description */}
-          <p className="text-white text-xl max-w-2xl leading-relaxed opacity-90">
-            We help science-led teams build with structure, clarity, and speed.
+          <p className="text-gray-700 dark:text-gray-300 text-xl max-w-2xl leading-relaxed">
+            We build custom software that doesn't just work—it evolves with you. Whether you're scaling a startup or modernizing legacy systems, we craft solutions that are powerful, intuitive, and built to last.
           </p>
         </div>
       </div>

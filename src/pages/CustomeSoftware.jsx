@@ -9,7 +9,7 @@ const CustomeSoftware = () => {
       
       <ServicesHero />
       <ServiceCard />
-      <StoryCard />
+      {/* <StoryCard /> */}
           
     </div>
   )
