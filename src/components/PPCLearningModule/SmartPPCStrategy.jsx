@@ -33,8 +33,10 @@ const SmartPPCStrategy = () => {
     <div className="space-y-8 animate-in fade-in duration-500">
       {/* Header */}
       <div>
-        <h2 className="text-4xl font-bold mb-4">Smart PPC Strategy</h2>
-        <p className="text-xl text-gray-600 leading-relaxed">
+        <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+          Smart PPC Strategy
+        </h2>
+        <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
           How to approach PPC like a professional.
         </p>
       </div>
@@ -44,25 +46,25 @@ const SmartPPCStrategy = () => {
         {strategies.map((strategy, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-xl border border-gray-200 shadow-sm p-6
+            className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6
                        hover:shadow-lg transition-shadow"
           >
             <Lightbulb className="h-10 w-10 text-yellow-500 mb-4" />
-            <h3 className="text-xl font-bold mb-2">{strategy.title}</h3>
-            <p className="text-gray-600 leading-relaxed">{strategy.desc}</p>
+            <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">{strategy.title}</h3>
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{strategy.desc}</p>
           </div>
         ))}
       </div>
 
       {/* 80/20 Rule Highlight */}
-      <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl shadow-sm p-8 border-2 border-blue-200">
+      <div className="bg-gradient-to-br from-[#0045EF]/10 to-[#0045EF]/20 dark:from-[#0045EF]/20 dark:to-[#0045EF]/10 rounded-xl shadow-sm p-8 border-2 border-[#0045EF]/30 dark:border-[#0045EF]/50">
         <div className="flex items-start gap-4">
-          <div className="p-3 bg-blue-600 rounded-lg">
+          <div className="p-3 bg-[#0045EF] rounded-lg">
             <Target className="h-8 w-8 text-white" />
           </div>
           <div>
-            <h3 className="text-2xl font-bold mb-2">The 80/20 Rule</h3>
-            <p className="text-lg leading-relaxed">
+            <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-gray-100">The 80/20 Rule</h3>
+            <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
               80% of your results come from 20% of your campaigns.
               Find those winners and double down on them ruthlessly.
             </p>

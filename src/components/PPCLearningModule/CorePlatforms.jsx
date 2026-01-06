@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-  Search,
-  Users,
-  Play,
-  ChevronDown,
-  ChevronUp,
-} from "lucide-react";
+import { Search, Users, Play, ChevronDown, ChevronUp } from "lucide-react";
 
 const CorePlatforms = () => {
   const [expandedPlatform, setExpandedPlatform] = useState(-1);
@@ -16,54 +10,26 @@ const CorePlatforms = () => {
       title: "Google Ads",
       badge: "Intent-based advertising",
       description: "Capturing high-intent traffic from active searchers",
-      formats: [
-        "Search ads (text)",
-        "Display ads",
-        "YouTube ads",
-        "Performance Max",
-      ],
-      examples: [
-        '"car garage near me"',
-        '"timing belt replacement cost"',
-        '"emergency plumber Leicester"',
-      ],
-      bestFor: [
-        "Local services",
-        "Emergency services",
-        "ROI-focused campaigns",
-      ],
+      formats: ["Search ads (text)", "Display ads", "YouTube ads", "Performance Max"],
+      examples: ['"car garage near me"', '"timing belt replacement cost"', '"emergency plumber Leicester"'],
+      bestFor: ["Local services", "Emergency services", "ROI-focused campaigns"],
     },
     {
       icon: Users,
       title: "Meta Ads",
       badge: "Interest & behaviour-based",
-      description:
-        "Targeting people based on interests, behaviors, and life events",
+      description: "Targeting people based on interests, behaviors, and life events",
       formats: ["Feed ads", "Stories", "Reels", "Messenger ads"],
-      examples: [
-        "Age 30–45, interested in home improvement",
-        "Parents of teenagers",
-        "Recently engaged",
-      ],
+      examples: ["Age 30–45, interested in home improvement", "Parents of teenagers", "Recently engaged"],
       bestFor: ["Brand awareness", "E-commerce", "Visual products"],
     },
     {
       icon: Play,
       title: "TikTok Ads",
       badge: "Attention-based advertising",
-      description:
-        "Massive reach at low cost with short-form native video",
-      formats: [
-        "In-feed ads",
-        "Spark ads",
-        "TopView",
-        "Branded effects",
-      ],
-      examples: [
-        "18–35 year olds",
-        "Trending content",
-        "Viral challenges",
-      ],
+      description: "Massive reach at low cost with short-form native video",
+      formats: ["In-feed ads", "Spark ads", "TopView", "Branded effects"],
+      examples: ["18–35 year olds", "Trending content", "Viral challenges"],
       bestFor: ["Young audiences", "Viral marketing", "Brand building"],
     },
   ];
@@ -72,10 +38,10 @@ const CorePlatforms = () => {
     <div className="space-y-8 animate-in fade-in duration-500">
       {/* Header */}
       <div>
-        <h2 className="text-4xl font-bold mb-4">
+        <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
           Core Platforms You Must Understand
         </h2>
-        <p className="text-xl text-gray-600 leading-relaxed">
+        <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
           Each platform serves a different purpose. Here's what you need to know.
         </p>
       </div>
@@ -89,57 +55,53 @@ const CorePlatforms = () => {
           return (
             <div
               key={idx}
-              className={`bg-white rounded-xl border transition-all ${
+              className={`rounded-xl border transition-all ${
                 isExpanded ? "shadow-lg" : "shadow-sm"
-              }`}
+              } bg-white dark:bg-black border-gray-200 dark:border-gray-700`}
             >
               <button
-                onClick={() =>
-                  setExpandedPlatform(isExpanded ? -1 : idx)
-                }
-                className="w-full p-6 text-left hover:bg-gray-50"
+                onClick={() => setExpandedPlatform(isExpanded ? -1 : idx)}
+                className="w-full p-6 text-left  transition-colors"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex gap-4">
-                    <div className="p-3 bg-gray-100 rounded-lg">
-                      <Icon className="h-8 w-8 text-gray-700" />
+                    <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg">
+                      <Icon className="h-8 w-8 text-[#0045EF]" />
                     </div>
 
                     <div>
                       <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-2xl font-bold">
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                           {platform.title}
                         </h3>
-                        <span className="px-2 py-0.5 rounded-md bg-gray-100 text-xs font-medium">
+                        <span className="px-2 py-0.5 rounded-md bg-[#0045EF]/10 text-[#0045EF] text-xs font-medium">
                           {platform.badge}
                         </span>
                       </div>
-                      <p className="text-gray-600">
-                        {platform.description}
-                      </p>
+                      <p className="text-gray-600 dark:text-gray-300">{platform.description}</p>
                     </div>
                   </div>
 
                   {isExpanded ? (
-                    <ChevronUp className="h-6 w-6 text-gray-400" />
+                    <ChevronUp className="h-6 w-6 text-gray-400 dark:text-gray-300" />
                   ) : (
-                    <ChevronDown className="h-6 w-6 text-gray-400" />
+                    <ChevronDown className="h-6 w-6 text-gray-400 dark:text-gray-300" />
                   )}
                 </div>
               </button>
 
               {isExpanded && (
                 <div className="px-6 pb-6 space-y-6 animate-in fade-in slide-in-from-top-2 duration-300">
-                  <div className="h-px bg-gray-200" />
+                  <div className="h-px bg-gray-200 dark:bg-gray-700" />
 
                   {/* Formats */}
                   <div>
-                    <h4 className="font-semibold mb-3">Ad Formats</h4>
+                    <h4 className="font-semibold mb-3 text-gray-900 dark:text-white">Ad Formats</h4>
                     <div className="flex flex-wrap gap-2">
                       {platform.formats.map((format, i) => (
                         <span
                           key={i}
-                          className="px-2 py-1 border rounded-md text-xs"
+                          className="px-2 py-1 border border-gray-300 dark:border-gray-600 rounded-md text-xs text-gray-900 dark:text-white"
                         >
                           {format}
                         </span>
@@ -149,16 +111,16 @@ const CorePlatforms = () => {
 
                   {/* Examples */}
                   <div>
-                    <h4 className="font-semibold mb-3">
+                    <h4 className="font-semibold mb-3 text-gray-900 dark:text-white">
                       Example Targets / Searches
                     </h4>
                     <ul className="space-y-2">
                       {platform.examples.map((example, i) => (
                         <li
                           key={i}
-                          className="flex items-center gap-2 text-sm text-gray-600"
+                          className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300"
                         >
-                          <span className="w-1.5 h-1.5 bg-blue-600 rounded-full" />
+                          <span className="w-1.5 h-1.5 bg-[#0045EF] rounded-full" />
                           {example}
                         </li>
                       ))}
@@ -167,12 +129,12 @@ const CorePlatforms = () => {
 
                   {/* Best For */}
                   <div>
-                    <h4 className="font-semibold mb-3">Best For</h4>
+                    <h4 className="font-semibold mb-3 text-gray-900 dark:text-white">Best For</h4>
                     <div className="flex flex-wrap gap-2">
                       {platform.bestFor.map((item, i) => (
                         <span
                           key={i}
-                          className="px-2 py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-medium"
+                          className="px-2 py-1 bg-[#0045EF]/10 text-[#0045EF] rounded-md text-xs font-medium"
                         >
                           {item}
                         </span>
