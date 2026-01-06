@@ -29,7 +29,7 @@ const Home = () => {
       {/* <QuoteSection /> */}
       <TeamCarousel />
       <PlatformProcess />
-      {/* <OurProcessSection /> */}
+      <OurProcessSection />
       {/* <ExpenseControlCenter /> */}
       <Performance />
       {/* <SafetyInformation /> */}
