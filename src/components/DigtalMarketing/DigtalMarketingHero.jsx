@@ -18,13 +18,13 @@ export default function DigitalMarketingHero() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-12 pb-10 sm:pb-16">
           {/* Breadcrumb */}
           <p className="text-xs sm:text-sm text-gray-300 uppercase tracking-widest mb-2">
-            Service <span className="mx-2">•</span> Service Details
+            From visibility to loyalty—and beyond.
           </p>
 
           {/* Title */}
           <h1 className="text-white font-bold leading-tight
             text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-            Landscape Design
+            Helping hidden gems stand tall in the digital world.
           </h1>
         </div>
       </div>

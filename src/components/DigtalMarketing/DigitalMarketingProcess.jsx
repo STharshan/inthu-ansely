@@ -1,35 +1,39 @@
 import React, { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Subtitles } from "lucide-react";
 
 const processData = [
     {
         id: "consultation",
         title: "Consultation",
+        Subtitle: "Strategy Development & Creative Concepting",
         description:
-            "Our interior architecture services are designed enhance the functionality & flow of your space, while also ensuring it is visually stunning.",
+            "We begin with deep discovery—understanding your business goals, target audience, competitive landscape, brand history, and market opportunities. Through stakeholder interviews, customer research, and competitive audits, we develop comprehensive insights that inform strategy. We analyze your current digital presence, assess what's working (and what isn't), and identify gaps between where you are and where you want to be. This foundation ensures our recommendations are grounded in your unique reality, not generic best practices.",
         image: "/w1.jpg",
     },
     {
         id: "design",
-        title: "Design",
+        title: "DESIGN",
+        Subtitle: "Strategy Development & Creative Concepting",
         description:
-            "We craft unique and functional design concepts tailored precisely to your vision and requirements.",
-        image: "/w2.jpg",
+            "Our strategists and creatives collaborate to develop integrated marketing plans that align brand positioning with tactical execution. We create detailed buyer personas, map customer journeys, develop messaging frameworks, and design content strategies across all relevant channels. You receive a comprehensive marketing playbook including visual identity guidelines, content themes, campaign concepts, channel strategies, budget allocation recommendations, and success metrics. Every element is designed to work together—creating consistent brand experiences that build recognition and trust over time.",
+        image: "/w1.jpg",
     },
     {
         id: "execution",
-        title: "Execution",
+        title: "EXECUTION",
+        Subtitle: "Campaign Launch & Content Production",
         description:
-            "Our team ensures flawless execution with precision, quality control, and attention to detail.",
-        image: "/w4.jpeg",
+            "We bring strategies to life through high-quality content creation, campaign setup, and multi-channel deployment. Our team produces engaging social media content, compelling ad creative, persuasive email campaigns, SEO-optimized blog posts, video content, and landing pages—all aligned with your brand voice and strategic objectives. We manage campaign launches across platforms, monitor initial performance, make rapid adjustments based on early data, and ensure flawless execution during critical launch windows. Quality and speed go hand-in-hand as we deliver professional marketing that meets deadlines without compromising excellence.",
+        image: "/w2.jpg",
     },
     {
         id: "communication",
-        title: "Communication",
+        title: "COMMUNICATION",
+        Subtitle: "Optimization, Reporting & Continuous Improvement",
         description:
-            "We maintain transparent communication throughout the project lifecycle to ensure clarity and confidence.",
-        image: "/w5.jpeg",
-    },
+            "Marketing success requires ongoing monitoring, analysis, and refinement. We provide regular performance reports with clear insights—not just data dumps—explaining what's working, why it matters, and what we're doing about it. Through A/B testing, audience feedback, analytics review, and competitive monitoring, we continuously optimize campaigns for better results. We maintain transparent communication about budget pacing, creative performance, and strategic adjustments. Our commitment extends beyond launch—we stay engaged, proactive, and focused on improving your marketing ROI month after month.",
+        image: "/w3.jpg",
+    }
 ];
 
 export default function DigitalMarketingProcess() {
@@ -88,10 +92,11 @@ export default function DigitalMarketingProcess() {
                             </span>
                         </div>
 
+                        <h1 className="font-bold text-xl sm:text-2xl md:text-3xl leading-relaxed mb-3">Get market-ready in four strategic phases</h1>
+
                         {/* Heading */}
-                        <h2 className="font-bold text-xl sm:text-2xl md:text-3xl leading-relaxed mb-10">
-                            WE START BY GRASPING YOUR VISION AND ASSESSING THE SITE, THEN CRAFT
-                            UNIQUE AND FUNCTIONAL DESIGN CONCEPTS TAILORED TO YOUR NEEDS.
+                        <h2 className="font-bold text-xl sm:text-2xl  leading-relaxed mb-10">
+                            We start by understanding your brand essence and market position, then craft distinctive campaigns tailored to your audience and business goals.
                         </h2>
 
                         {/* Accordion */}
@@ -119,9 +124,14 @@ export default function DigitalMarketingProcess() {
                                         </button>
 
                                         {isActive && (
-                                            <p className="mt-4 text-gray-400 text-sm sm:text-base leading-relaxed">
-                                                {item.description}
-                                            </p>
+                                            <div>
+                                                <h3 className="mt-4 text-xl font-semibold text-gray-300">
+                                                    {item.Subtitle}
+                                                </h3>
+                                                <p className="mt-4 text-gray-400 text-sm sm:text-base leading-relaxed">
+                                                    {item.description}
+                                                </p>
+                                            </div>
                                         )}
                                     </div>
                                 );

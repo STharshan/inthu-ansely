@@ -2,7 +2,7 @@ import React from "react";
 
 const ProjectSolution = () => {
   return (
-    <section className="w-full bg-white px-4 sm:px-6 lg:px-16 py-14">
+    <section className="w-full bg-white dark:bg-black px-4 sm:px-6 lg:px-16 py-14 transition-colors duration-500">
       <div className="max-w-7xl mx-auto space-y-14">
 
         {/* Top Image Grid */}
@@ -16,21 +16,19 @@ const ProjectSolution = () => {
           
           {/* Left Label */}
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-red-500"></span>
-            <p className="text-lg font-medium text-gray-700">
-              Solution
+            <span className="w-2 h-2 rounded-full bg-[#0045EF]"></span>
+            <p className="text-lg font-medium text-gray-700 dark:text-gray-300">
+              Our Approach
             </p>
           </div>
 
           {/* Right Text */}
           <div className="lg:col-span-2 space-y-3">
-            <p className="text-3xl font-medium text-gray-900 leading-snug">
-              We designed a sleek, modern e-commerce platform with a clean UI,
-              high-quality visuals, and a seamless checkout process.
+            <p className="text-3xl font-medium leading-snug text-gray-900 dark:text-white">
+              We take a strategy-first approach to custom website development—designing each website from the ground up to match your brand identity and business goals.
             </p>
-            <p className="text-xl text-gray-500 leading-relaxed">
-              We optimized site performance and mobile UX, resulting in higher
-              engagement and increased conversions.
+            <p className="text-xl leading-relaxed text-gray-500 dark:text-gray-400">
+             By combining modern UI/UX design, responsive development, SEO-ready architecture, and performance optimization, we deliver websites that are fast, scalable, and built to convert.
             </p>
           </div>
 

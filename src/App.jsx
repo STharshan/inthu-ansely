@@ -38,7 +38,7 @@ function App() {
         <Route path="/PPCLearningModule" element={<PPCLearningModule />} />
         <Route path="/AILearningModule" element={<AILearningModule />} />
         <Route path='/SEOLearningPlatform' element={<SEOLearningPlatform />} />
-          <Route path='/CustomeSoftware' element={<CustomeSoftware />} />
+        <Route path='/CustomeSoftware' element={<CustomeSoftware />} />
       </Routes>
       <Footer />
     </Router>

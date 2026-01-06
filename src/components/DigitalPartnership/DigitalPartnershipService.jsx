@@ -4,32 +4,41 @@ import { useRef } from "react";
 
 const sectionData = [
   {
-    id: "Introduction",
-    heading: "Defining a Premium Creative Identity",
+    id: "Care Coordination Platform",
+    heading: "Transforming Care Through Connected Technology",
     paragraphs: [
-      "Studio Nive, a boutique creative agency, came to Avexa Studio looking to sharpen their brand and digital touchpoints. With a growing roster of clients, they wanted a clear, compelling identity to match their reputation for fresh ideas and high-end creative direction.",
-      "During discovery, we uncovered a lack of consistency across their visuals and messaging. The goal became clear: position Studio Nive as a premium partner for ambitious brands while staying true to their experimental roots. We began by studying their target audience and pinpointing gaps in their current brand experience. From there, we built a plan that fused strategy with style.",
+      "Our Care Coordination Platform is designed to streamline communication, data flow, and workflows across healthcare providers, caregivers, and stakeholders.",
+      "Built with scalability and compliance in mind, the platform reduces operational friction, improves patient outcomes, and enables organizations to deliver coordinated, efficient care. As a digital partner, we continuously refine the platform to adapt to evolving healthcare needs and regulations—ensuring long-term reliability and impact."
     ],
-    image: "https://framerusercontent.com/images/2S2u0QCZnr8QEgHxu6IaJQSHXvg.png",
+    image: "https://framerusercontent.com/images/2S2u0QCZnr8QEgHxu6IaJQSHXvg.png"
   },
   {
-    id: "Brand Refresh",
-    heading: "Building a Brand System That Lasts",
+    id: "ERP System",
+    heading: "A Unified System for Smarter Business Operations",
     paragraphs: [
-      "To reimagine Studio Nive's brand, we focused on defining a distinct visual language that reflected their playful yet refined aesthetic. We crafted a new logo, typography system, and color palette that felt both modern and timeless. Alongside the visual update, we fine-tuned their tone of voice for web and social content.",
-      "On the web design side, we built a dynamic site that showcased their projects through immersive case studies and bold imagery. We also streamlined their service pages for clarity, ensuring potential clients could easily grasp their value. The result was a cohesive brand toolkit ready for every touchpoint.",
+      "Our custom-built ERP system centralizes your core business processes into a single, intelligent platform. From finance and inventory to operations and reporting, we design ERP solutions that provide clarity, control, and real-time insights.",
+      "Rather than forcing businesses to adapt to rigid software, we tailor the system around your workflows—supporting growth, automation, and data-driven decision-making. We evolve the platform with you as your business scales."
     ],
-    image: "https://framerusercontent.com/images/TPQGetp3AF31J3T147vrPL296FQ.png",
+    image: "https://framerusercontent.com/images/2S2u0QCZnr8QEgHxu6IaJQSHXvg.png"
   },
   {
-    id: "Impact",
-    heading: "Real Results and Continued Momentum",
+    id: "Salon Booking Management System",
+    heading: "Powering Modern Service Businesses",
     paragraphs: [
-      "Since the rebrand, Studio Nive has seen an uptick in inbound project requests from higher-budget clients. Their social engagement rose by 30% thanks to consistent visuals and clearer messaging. Internally, the new brand guidelines helped their growing team stay aligned and present a unified identity.",
-      "The new website has been praised for its ease of navigation and standout portfolio display. Studio Nive continues to build on this momentum, expanding their creative services while staying anchored by a brand that truly represents who they are. Avexa Studio remains their trusted partner for ongoing updates and creative support.",
+      "The Salon Booking Management System is built to support high-volume, customer-centric service businesses. It enables seamless appointment booking, staff scheduling, client management, and payment tracking through an intuitive digital experience.",
+      "Designed for both business owners and end customers, the system improves operational efficiency while elevating the customer journey. As your tech partner, we continue enhancing the platform to meet changing market expectations and customer behaviors."
     ],
-    image: "https://framerusercontent.com/images/rzHm5dnGquIwCm0XDbImzfQwVno.png",
+    image: "https://framerusercontent.com/images/2S2u0QCZnr8QEgHxu6IaJQSHXvg.png"
   },
+  {
+    id: "Our Partnership Model",
+    heading: "More Than Software. A Long-Term Tech Ally.",
+    paragraphs: [
+      "We work as an extension of your team—handling architecture, development, optimization, and ongoing improvements. From idea validation to product scaling, we help turn technology into a competitive advantage.",
+      "Build with confidence. Scale with clarity. Compete digitally."
+    ],
+    image: "https://framerusercontent.com/images/2S2u0QCZnr8QEgHxu6IaJQSHXvg.png"
+  }
 ];
 
 const Section = ({ section, index }) => {
@@ -45,21 +54,21 @@ const Section = ({ section, index }) => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   return (
-    <div 
-      ref={container} 
+    <div
+      ref={container}
       className=" sticky top-0 flex items-center justify-center overflow-hidden "
-      style={{ 
+      style={{
         background: 'linear-gradient(to bottom, #ffffff 0%, #f9fafb 100%)'
       }}
     >
-      <motion.div 
+      <motion.div
         style={{ scale, opacity, y }}
         className="w-full h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center"
       >
         <div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-16 items-start lg:items-center">
-          
+
           {/* Left Side: Section Title */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -67,7 +76,7 @@ const Section = ({ section, index }) => {
           >
 
             {/* Title */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight mt-10 lg:mt-0 uppercase">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight mt-10 lg:mt-0 uppercase">
               {section.id}
             </h2>
 
@@ -75,13 +84,15 @@ const Section = ({ section, index }) => {
             <div className="w-20 h-1 bg-gray-900"></div>
 
             {/* Description Text - Hidden on mobile */}
-            <p className="block text-gray-800 text-sm leading-relaxed max-w-sm">
-              Exploring the journey of transformation through strategic design and purposeful innovation.
+            <p className="block text-gray-800 leading-relaxed max-w-sm">
+              Digital Partnerships is where strategy meets execution. <br />
+              We don’t just build software—we become your technology partner, working alongside you to create, launch, and evolve digital products that form the backbone of your business. <br />
+              Whether you’re modernizing operations or launching a tech-enabled venture, we bring the expertise, systems, and long-term support needed to compete in a digital-first world.
             </p>
           </motion.div>
 
           {/* Right Side: Content Card */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -104,8 +115,8 @@ const Section = ({ section, index }) => {
             {/* Paragraphs */}
             <div className="space-y-4">
               {section.paragraphs.map((paragraph, i) => (
-                <p 
-                  key={i} 
+                <p
+                  key={i}
                   className="text-sm sm:text-base text-gray-600 leading-relaxed"
                 >
                   {paragraph}
@@ -114,7 +125,7 @@ const Section = ({ section, index }) => {
             </div>
 
             {/* Image */}
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
               className="w-full aspect-[16/9] overflow-hidden rounded-lg shadow-lg mt-6"
