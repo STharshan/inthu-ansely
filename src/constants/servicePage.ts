@@ -1,7 +1,8 @@
 import { FaRobot, FaHandshake, FaGlobe, FaLaptopCode, FaBrain, FaPalette } from "react-icons/fa";
 import { ServiceCard, TopicButton, CTAButton } from "../components/ServicePage/types";
 
-export const digitalTransformationServiceCards: ServiceCard[] = [
+// Shared service cards used across all service pages
+export const serviceCards: ServiceCard[] = [
   {
     id: "digital-transformation-automation",
     icon: FaRobot,
@@ -46,6 +47,9 @@ export const digitalTransformationServiceCards: ServiceCard[] = [
   },
 ];
 
+// Digital Transformation Constants (keeping for backward compatibility)
+export const digitalTransformationServiceCards: ServiceCard[] = serviceCards;
+
 export const digitalTransformationTopicButtons: TopicButton[] = [
   { id: "strategy", label: "Digital Strategy" },
   { id: "cloud", label: "Cloud Solutions" },
@@ -83,4 +87,119 @@ export const digitalTransformationServiceTags: string[] = [
   "DevOps",
   "CI/CD",
   "Infrastructure",
+];
+
+// Digital Partnerships Constants
+export const digitalPartnershipsTopicButtons: TopicButton[] = [
+  { id: "strategic-alliances", label: "Strategic Alliances" },
+  { id: "channel-partnerships", label: "Channel Partnerships" },
+  { id: "technology-integrations", label: "Technology Integrations" },
+  { id: "co-marketing", label: "Co-Marketing" },
+];
+
+export const digitalPartnershipsCTAButtons: CTAButton[] = [
+  {
+    id: "book-call",
+    label: "Book a Free Call",
+    href: "/contact",
+    variant: "primary",
+  },
+  {
+    id: "see-projects",
+    label: "See Projects",
+    href: "/projects",
+    variant: "secondary",
+  },
+];
+
+// Custom Websites Constants
+export const customWebsitesTopicButtons: TopicButton[] = [
+  { id: "responsive-design", label: "Responsive Design" },
+  { id: "ecommerce", label: "E-Commerce" },
+  { id: "cms", label: "CMS Development" },
+  { id: "seo", label: "SEO Optimization" },
+];
+
+export const customWebsitesCTAButtons: CTAButton[] = [
+  {
+    id: "book-call",
+    label: "Book a Free Call",
+    href: "/contact",
+    variant: "primary",
+  },
+  {
+    id: "see-projects",
+    label: "See Projects",
+    href: "/projects",
+    variant: "secondary",
+  },
+];
+
+// Custom Software Development Constants
+export const customSoftwareTopicButtons: TopicButton[] = [
+  { id: "enterprise-software", label: "Enterprise Software" },
+  { id: "api-development", label: "API Development" },
+  { id: "cloud-applications", label: "Cloud Applications" },
+  { id: "mobile-apps", label: "Mobile Applications" },
+];
+
+export const customSoftwareCTAButtons: CTAButton[] = [
+  {
+    id: "book-call",
+    label: "Book a Free Call",
+    href: "/contact",
+    variant: "primary",
+  },
+  {
+    id: "see-projects",
+    label: "See Projects",
+    href: "/projects",
+    variant: "secondary",
+  },
+];
+
+// Business Consultancy Constants
+export const businessConsultancyTopicButtons: TopicButton[] = [
+  { id: "business-strategy", label: "Business Strategy" },
+  { id: "ai-consultancy", label: "AI Consultancy" },
+  { id: "process-optimization", label: "Process Optimization" },
+  { id: "data-strategy", label: "Data Strategy" },
+];
+
+export const businessConsultancyCTAButtons: CTAButton[] = [
+  {
+    id: "book-call",
+    label: "Book a Free Call",
+    href: "/contact",
+    variant: "primary",
+  },
+  {
+    id: "see-projects",
+    label: "See Projects",
+    href: "/projects",
+    variant: "secondary",
+  },
+];
+
+// Digital Marketing Constants
+export const digitalMarketingTopicButtons: TopicButton[] = [
+  { id: "brand-identity", label: "Brand Identity" },
+  { id: "social-media", label: "Social Media Marketing" },
+  { id: "content-marketing", label: "Content Marketing" },
+  { id: "seo-sem", label: "SEO & SEM" },
+];
+
+export const digitalMarketingCTAButtons: CTAButton[] = [
+  {
+    id: "book-call",
+    label: "Book a Free Call",
+    href: "/contact",
+    variant: "primary",
+  },
+  {
+    id: "see-projects",
+    label: "See Projects",
+    href: "/projects",
+    variant: "secondary",
+  },
 ];

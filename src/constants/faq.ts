@@ -52,3 +52,79 @@ export const digitalTransformationFAQConfig = {
     href: "/contact",
   },
 };
+
+// Reuse FAQs for other services (can be customized later)
+export const digitalPartnershipsFAQs: FAQItem[] = digitalTransformationFAQs;
+export const digitalPartnershipsFAQConfig = {
+  categoryTag: "FAQ'S",
+  heading: "Answers",
+  description:
+    "Find answers to common questions about digital partnerships, strategic alliances, and how we help businesses expand their reach.",
+  imageUrl: "/d1.avif",
+  imageAlt: "FAQ illustration",
+  serviceTags: ["Digital Partnerships", "Strategic Alliances", "Channel Partnerships"],
+  ctaButton: {
+    label: "Book a Free Call",
+    href: "/contact",
+  },
+};
+
+export const customWebsitesFAQs: FAQItem[] = digitalTransformationFAQs;
+export const customWebsitesFAQConfig = {
+  categoryTag: "FAQ'S",
+  heading: "Answers",
+  description:
+    "Find answers to common questions about custom website development, design, and how we create exceptional online experiences.",
+  imageUrl: "/d1.avif",
+  imageAlt: "FAQ illustration",
+  serviceTags: ["Custom Websites", "Web Design", "E-Commerce"],
+  ctaButton: {
+    label: "Book a Free Call",
+    href: "/contact",
+  },
+};
+
+export const customSoftwareFAQs: FAQItem[] = digitalTransformationFAQs;
+export const customSoftwareFAQConfig = {
+  categoryTag: "FAQ'S",
+  heading: "Answers",
+  description:
+    "Find answers to common questions about custom software development, enterprise solutions, and how we build scalable applications.",
+  imageUrl: "/d1.avif",
+  imageAlt: "FAQ illustration",
+  serviceTags: ["Custom Software", "Enterprise Solutions", "API Development"],
+  ctaButton: {
+    label: "Book a Free Call",
+    href: "/contact",
+  },
+};
+
+export const businessConsultancyFAQs: FAQItem[] = digitalTransformationFAQs;
+export const businessConsultancyFAQConfig = {
+  categoryTag: "FAQ'S",
+  heading: "Answers",
+  description:
+    "Find answers to common questions about business consultancy, AI implementation, and how we help optimize operations.",
+  imageUrl: "/d1.avif",
+  imageAlt: "FAQ illustration",
+  serviceTags: ["Business Consultancy", "AI Consultancy", "Process Optimization"],
+  ctaButton: {
+    label: "Book a Free Call",
+    href: "/contact",
+  },
+};
+
+export const digitalMarketingFAQs: FAQItem[] = digitalTransformationFAQs;
+export const digitalMarketingFAQConfig = {
+  categoryTag: "FAQ'S",
+  heading: "Answers",
+  description:
+    "Find answers to common questions about digital marketing, branding, social media, and how we help elevate your brand.",
+  imageUrl: "/d1.avif",
+  imageAlt: "FAQ illustration",
+  serviceTags: ["Digital Marketing", "Branding", "Social Media"],
+  ctaButton: {
+    label: "Book a Free Call",
+    href: "/contact",
+  },
+};

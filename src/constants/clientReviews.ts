@@ -89,3 +89,69 @@ export const digitalTransformationClientReviewsConfig = {
   imageAlt: "Client reviews illustration",
   imagePosition: "left" as const,
 };
+
+// Reuse the same reviews and statistics for all services
+export const digitalPartnershipsClientReviews: ClientReview[] = sampleClientReviews;
+export const digitalPartnershipsStatistics: Statistic[] = sampleStatistics;
+export const digitalPartnershipsClientReviewsConfig = {
+  categoryTag: "00 Reviews",
+  reviewCount: "00 Reviews",
+  heading: "Client Reviews",
+  description:
+    "Real feedback from clients who trusted our partnership expertise to expand their market reach and capabilities.",
+  imageUrl: "/d1.avif",
+  imageAlt: "Client reviews illustration",
+  imagePosition: "left" as const,
+};
+
+export const customWebsitesClientReviews: ClientReview[] = sampleClientReviews;
+export const customWebsitesStatistics: Statistic[] = sampleStatistics;
+export const customWebsitesClientReviewsConfig = {
+  categoryTag: "00 Reviews",
+  reviewCount: "00 Reviews",
+  heading: "Client Reviews",
+  description:
+    "Real feedback from clients who trusted our web development expertise to create exceptional online experiences.",
+  imageUrl: "/d1.avif",
+  imageAlt: "Client reviews illustration",
+  imagePosition: "left" as const,
+};
+
+export const customSoftwareClientReviews: ClientReview[] = sampleClientReviews;
+export const customSoftwareStatistics: Statistic[] = sampleStatistics;
+export const customSoftwareClientReviewsConfig = {
+  categoryTag: "00 Reviews",
+  reviewCount: "00 Reviews",
+  heading: "Client Reviews",
+  description:
+    "Real feedback from clients who trusted our software development expertise to build scalable solutions.",
+  imageUrl: "/d1.avif",
+  imageAlt: "Client reviews illustration",
+  imagePosition: "left" as const,
+};
+
+export const businessConsultancyClientReviews: ClientReview[] = sampleClientReviews;
+export const businessConsultancyStatistics: Statistic[] = sampleStatistics;
+export const businessConsultancyClientReviewsConfig = {
+  categoryTag: "00 Reviews",
+  reviewCount: "00 Reviews",
+  heading: "Client Reviews",
+  description:
+    "Real feedback from clients who trusted our consultancy expertise to optimize their business operations.",
+  imageUrl: "/d1.avif",
+  imageAlt: "Client reviews illustration",
+  imagePosition: "left" as const,
+};
+
+export const digitalMarketingClientReviews: ClientReview[] = sampleClientReviews;
+export const digitalMarketingStatistics: Statistic[] = sampleStatistics;
+export const digitalMarketingClientReviewsConfig = {
+  categoryTag: "00 Reviews",
+  reviewCount: "00 Reviews",
+  heading: "Client Reviews",
+  description:
+    "Real feedback from clients who trusted our marketing expertise to elevate their brand and drive growth.",
+  imageUrl: "/d1.avif",
+  imageAlt: "Client reviews illustration",
+  imagePosition: "left" as const,
+};
