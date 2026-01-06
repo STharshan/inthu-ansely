@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -142,13 +143,12 @@ export default function Navbar() {
         <div className={`relative w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-5 transition-all duration-700 ease-in-out ${scrolled ? "text-black" : "text-white"}`}>
           {/* Three Column Grid Layout */}
           <div className="grid grid-cols-3 items-center w-full relative z-10">
-            
+
             {/* Logo - Far Left */}
             <a
               href="/"
-              className={`text-[16px] sm:text-[18px] font-bold tracking-[0.25em] transition-all duration-700 flex-shrink-0 justify-self-start ${
-                scrolled ? "text-black" : "text-white"
-              }`}
+              className={`text-[16px] sm:text-[18px] font-bold tracking-[0.25em] transition-all duration-700 flex-shrink-0 justify-self-start ${scrolled ? "text-black" : "text-white"
+                }`}
             >
               ANSELY
             </a>
@@ -159,15 +159,13 @@ export default function Navbar() {
                 <a
                   key={item}
                   href={`/${item.toLowerCase()}`}
-                  className={`relative text-[13px] uppercase tracking-[0.18em] font-medium group transition-colors duration-700 whitespace-nowrap ${
-                    scrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-300"
-                  }`}
+                  className={`relative text-[13px] uppercase tracking-[0.18em] font-medium group transition-colors duration-700 whitespace-nowrap ${scrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-300"
+                    }`}
                 >
                   {item}
                   <span
-                    className={`absolute left-0 -bottom-[3px] w-0 h-[1px] transition-all duration-500 group-hover:w-full ${
-                      scrolled ? "bg-black" : "bg-white"
-                    }`}
+                    className={`absolute left-0 -bottom-[3px] w-0 h-[1px] transition-all duration-500 group-hover:w-full ${scrolled ? "bg-black" : "bg-white"
+                      }`}
                   ></span>
                 </a>
               ))}
@@ -176,15 +174,13 @@ export default function Navbar() {
               <div ref={companyRef} className="relative text-[13px] uppercase tracking-[0.18em] font-medium">
                 <button
                   onClick={() => setIsCompanyOpen(!isCompanyOpen)}
-                  className={`flex items-center gap-1 transition-colors duration-700 whitespace-nowrap ${
-                    scrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-300"
-                  }`}
+                  className={`flex items-center gap-1 transition-colors duration-700 whitespace-nowrap ${scrolled ? "text-black hover:text-gray-600" : "text-white hover:text-gray-300"
+                    }`}
                 >
                   COMPANY
                   <FiChevronDown
-                    className={`text-sm mt-[2px] transition-transform duration-300 ${
-                      isCompanyOpen ? "rotate-180" : ""
-                    }`}
+                    className={`text-sm mt-[2px] transition-transform duration-300 ${isCompanyOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 
@@ -220,11 +216,10 @@ export default function Navbar() {
                   <a
                     key={index}
                     href={href}
-                    className={`social-icon p-2 rounded-full transition-all duration-500 ease-in-out border ${
-                      scrolled
+                    className={`social-icon p-2 rounded-full transition-all duration-500 ease-in-out border ${scrolled
                         ? "border-black/15 text-black hover:border-black/30 hover:bg-black/5"
                         : "border-white/30 text-white hover:border-white/50 hover:bg-white/10"
-                    }`}
+                      }`}
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <Icon className="w-[13px] h-[13px] sm:w-[14px] sm:h-[14px] lg:w-[15px] lg:h-[15px] relative z-10" />
@@ -232,23 +227,23 @@ export default function Navbar() {
                 ))}
               </div>
 
+              <ThemeToggle scrolled={scrolled} />
+
               {/* CTA Button - Tablet and Desktop */}
               <a
                 href="/contact"
-                className={`cta-button hidden sm:inline-block rounded-full px-5 sm:px-6 lg:px-8 py-2 sm:py-[10px] text-[11px] lg:text-[12px] tracking-[0.16em] sm:tracking-[0.18em] font-semibold transition-all duration-700 ease-in-out relative whitespace-nowrap ${
-                  scrolled
+                className={`cta-button hidden sm:inline-block rounded-full px-5 sm:px-6 lg:px-8 py-2 sm:py-[10px] text-[11px] lg:text-[12px] tracking-[0.16em] sm:tracking-[0.18em] font-semibold transition-all duration-700 ease-in-out relative whitespace-nowrap ${scrolled
                     ? "bg-black text-white hover:shadow-lg"
                     : "bg-white text-black hover:shadow-xl"
-                }`}
+                  }`}
               >
                 <span className="relative z-10">LET'S TALK</span>
               </a>
 
               {/* Mobile Menu Button */}
               <button
-                className={`lg:hidden text-2xl transition-colors duration-700 p-1 ${
-                  scrolled ? "text-black" : "text-white"
-                }`}
+                className={`lg:hidden text-2xl transition-colors duration-700 p-1 ${scrolled ? "text-black" : "text-white"
+                  }`}
                 onClick={() => setIsOpen(!isOpen)}
               >
                 {isOpen ? <FiX /> : <FiMenu />}
@@ -285,12 +280,11 @@ export default function Navbar() {
                 >
                   COMPANY
                   <FiChevronDown
-                    className={`text-sm transition-transform duration-300 ${
-                      isCompanyOpen ? "rotate-180" : ""
-                    }`}
+                    className={`text-sm transition-transform duration-300 ${isCompanyOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
-                
+
                 {isCompanyOpen && (
                   <div className="mt-3 pl-4 space-y-2 animate-[fadeIn_0.3s_ease_forwards]">
                     {["ABOUT", "JOURNAL", "CONTACT"].map((item) => (
@@ -322,6 +316,10 @@ export default function Navbar() {
                     <Icon className="w-5 h-5" />
                   </a>
                 ))}
+              </div>
+
+              <div className="flex justify-center pt-4">
+                <ThemeToggle scrolled />
               </div>
 
               {/* CTA Button - Mobile */}
