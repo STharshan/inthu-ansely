@@ -6,6 +6,7 @@ import ManualWorkCost from '../components/Insidecustomsoftwareservice/ManualWork
 import CustomSoftwareMeaning from '../components/Insidecustomsoftwareservice/CustomSoftwareMeaning';
 import BuildWhatMatters from '../components/Insidecustomsoftwareservice/BuildWhatMatters';
 import KeyTakeaway from '../components/Insidecustomsoftwareservice/KeyTakeaway';
+
 const Insidecustomsoftwareservice = () => {
   const [currentSection, setCurrentSection] = useState(0);
 
@@ -64,17 +65,17 @@ const Insidecustomsoftwareservice = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <section className="relative overflow-hidden bg-gray-900 text-white py-20 md:py-32">
+      <section className="relative overflow-hidden bg-gray-900 text-white py-16 md:py-24">
         <div className="absolute inset-0 bg-gradient-radial from-orange-500/10 to-transparent"></div>
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="max-w-3xl">
-            <div className="inline-block px-3 py-1 mb-6 text-xs font-medium rounded-full bg-orange-600 text-white">
+        <div className="container mx-auto px-6 md:px-8 lg:px-12 relative z-10">
+          <div className="max-w-4xl">
+            <div className="inline-block px-4 py-1.5 mb-6 text-xs font-semibold rounded-full bg-orange-600 text-white">
               Learning Module
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Think Like a Tech Founder
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
               Transform your business by understanding how custom software creates leverage, eliminates friction, and unlocks scale.
             </p>
           </div>
@@ -89,28 +90,28 @@ const Insidecustomsoftwareservice = () => {
             style={{ width: `${progress}%` }}
           ></div>
         </div>
-        <div className="container mx-auto px-4 md:px-6 py-3">
+        <div className="container mx-auto px-6 md:px-8 lg:px-12 py-3">
           <div className="flex items-center justify-between text-sm">
-            <span className="text-gray-600">
+            <span className="text-gray-600 font-medium">
               Section {currentSection + 1} of {sections.length}
             </span>
-            <span className="font-medium">{Math.round(progress)}% Complete</span>
+            <span className="font-semibold text-orange-600">{Math.round(progress)}% Complete</span>
           </div>
         </div>
       </div>
 
       {/* Navigation Tabs */}
       <nav className="border-b border-gray-200 bg-white sticky top-[57px] z-40 backdrop-blur-sm">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex items-center gap-2 py-4 overflow-x-auto">
+        <div className="container mx-auto px-6 md:px-8 lg:px-12">
+          <div className="flex items-center gap-2 py-4 overflow-x-auto scrollbar-hide">
             {sections.map((section, index) => (
               <button
                 key={section.id}
                 onClick={() => goToSection(index)}
-                className={`inline-flex items-center justify-center text-sm font-medium transition-all whitespace-nowrap h-8 rounded-md px-3 ${
+                className={`inline-flex items-center justify-center text-sm font-medium transition-all whitespace-nowrap h-9 rounded-lg px-4 ${
                   currentSection === index
-                    ? 'bg-orange-600 text-white hover:bg-orange-700'
-                    : 'hover:bg-gray-100'
+                    ? 'bg-orange-600 text-white hover:bg-orange-700 shadow-sm'
+                    : 'hover:bg-gray-100 text-gray-700'
                 }`}
               >
                 {section.title}
@@ -121,21 +122,21 @@ const Insidecustomsoftwareservice = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 md:px-6 py-12 md:py-20">
-        <div className="max-w-4xl mx-auto">
+      <main className="container mx-auto px-6 md:px-8 lg:px-12 py-12 md:py-16 lg:py-20">
+        <div className="max-w-5xl mx-auto">
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
             {sections[currentSection].content}
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex items-center justify-between mt-12 pt-8 border-t border-gray-200">
+          <div className="flex items-center justify-between mt-16 pt-8 border-t border-gray-200">
             <button
               onClick={() => goToSection(currentSection - 1)}
               disabled={currentSection === 0}
-              className={`inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 py-2 gap-2 border shadow-sm ${
+              className={`inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-all h-11 px-6 py-2 gap-2 border-2 shadow-sm ${
                 currentSection === 0
-                  ? 'opacity-50 cursor-not-allowed'
-                  : 'hover:bg-gray-100'
+                  ? 'opacity-50 cursor-not-allowed border-gray-200'
+                  : 'hover:bg-gray-100 border-gray-300 hover:border-gray-400'
               }`}
             >
               <ArrowLeft className="w-4 h-4" />
@@ -145,10 +146,10 @@ const Insidecustomsoftwareservice = () => {
             <button
               onClick={() => goToSection(currentSection + 1)}
               disabled={currentSection === sections.length - 1}
-              className={`inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 py-2 gap-2 ${
+              className={`inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-all h-11 px-6 py-2 gap-2 shadow-md ${
                 currentSection === sections.length - 1
                   ? 'bg-orange-600 text-white opacity-50 cursor-not-allowed'
-                  : 'bg-orange-600 text-white hover:bg-orange-700'
+                  : 'bg-orange-600 text-white hover:bg-orange-700 hover:shadow-lg'
               }`}
             >
               {currentSection === sections.length - 1 ? 'Complete' : 'Next Section'}
