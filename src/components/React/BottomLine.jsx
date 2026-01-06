@@ -2,12 +2,13 @@
 
 export default function BottomLine() {
   return (
-    <section className="py-24 bg-[#0B0F14] border-t border-[#1F2933]">
+    <section className="py-24 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800 transition-colors text-black dark:text-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="mx-auto max-w-4xl space-y-12">
+
           {/* Header */}
           <div className="space-y-4 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-cyan-400/10 px-4 py-1.5 text-sm border border-cyan-400/20">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#0045EF]/10 px-4 py-1.5 text-sm border border-[#0045EF]/20">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -16,21 +17,21 @@ export default function BottomLine() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="h-4 w-4 text-cyan-400"
+                className="h-4 w-4 text-[#0045EF]"
               >
                 <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
                 <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
               </svg>
-              <span className="text-cyan-300">The Bottom Line</span>
+              <span className="text-[#0045EF]/80">The Bottom Line</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
+            <h2 className="text-4xl md:text-5xl font-bold">
               React Websites Are:
             </h2>
           </div>
 
           {/* Key Benefits */}
-          <div className="rounded-xl border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 via-[#111827] to-[#111827] p-8 shadow-sm">
+          <div className="rounded-xl border border-[#0045EF]/20 bg-gray-100 dark:bg-gray-800 p-8 shadow-sm transition-colors">
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 "Faster",
@@ -48,14 +49,12 @@ export default function BottomLine() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-6 w-6 text-cyan-400 flex-shrink-0"
+                    className="h-6 w-6 text-[#0045EF] flex-shrink-0"
                   >
                     <circle cx="12" cy="12" r="10" />
                     <path d="m9 12 2 2 4-4" />
                   </svg>
-                  <span className="text-xl font-semibold text-white">
-                    {item}
-                  </span>
+                  <span className="text-xl font-semibold">{item}</span>
                 </div>
               ))}
             </div>
@@ -63,35 +62,40 @@ export default function BottomLine() {
 
           {/* Comparison Statement */}
           <div className="space-y-6">
-            <div className="rounded-xl border border-[#1F2933] bg-[#111827] p-8 text-center">
-              <p className="text-lg text-[#9CA3AF]">
+            <div className="rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 p-8 text-center transition-colors">
+              <p className="text-gray-700 dark:text-gray-300 text-lg">
                 WordPress, Wix, and GoDaddy are fine for{" "}
-                <span className="text-white font-medium">hobby sites</span>.
+                <span className="font-medium text-black dark:text-white">
+                  hobby sites
+                </span>.
               </p>
-              <p className="text-xl text-white font-semibold mt-2">
+              <p className="text-xl font-semibold mt-2 text-black dark:text-white">
                 React is built for{" "}
-                <span className="text-cyan-400">serious businesses</span>.
+                <span className="text-[#0045EF]">serious businesses</span>.
               </p>
             </div>
 
             {/* Final Thought */}
-            <div className="rounded-xl border border-[#1F2933] bg-[#0F172A] p-8">
-              <h3 className="text-2xl font-bold text-center text-white mb-4">
+            <div className="rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-8 transition-colors">
+              <h3 className="text-2xl font-bold text-center mb-4">
                 Final Thought
               </h3>
 
-              <p className="text-lg text-center text-[#9CA3AF] leading-relaxed">
+              <p className="text-lg text-center leading-relaxed text-gray-700 dark:text-gray-300">
                 If your website is part of your{" "}
-                <span className="text-white font-semibold">sales team</span>,{" "}
-                <span className="text-white font-semibold">brand authority</span>,
-                and{" "}
-                <span className="text-white font-semibold">
+                <span className="font-semibold text-black dark:text-white">
+                  sales team
+                </span>,{" "}
+                <span className="font-semibold text-black dark:text-white">
+                  brand authority
+                </span>, and{" "}
+                <span className="font-semibold text-black dark:text-white">
                   growth strategy
                 </span>
                 —React isn’t an upgrade.
               </p>
 
-              <p className="text-2xl font-bold text-center text-cyan-400 mt-4">
+              <p className="text-2xl font-bold text-center text-[#0045EF] mt-4">
                 It’s a business advantage.
               </p>
             </div>
@@ -99,7 +103,7 @@ export default function BottomLine() {
 
           {/* CTA */}
           <div className="flex justify-center pt-6">
-            <button className="inline-flex items-center justify-center rounded-md bg-cyan-400 px-6 py-3 text-base font-medium text-[#0B0F14] transition hover:bg-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50">
+            <button className="inline-flex items-center justify-center rounded-md bg-[#0045EF] px-6 py-3 text-base font-medium text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-[#0045EF]/50">
               Get Started with React
             </button>
           </div>
