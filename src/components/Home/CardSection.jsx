@@ -22,7 +22,7 @@ const serviceContent = [
     title: "Custom Software",
     subtitle: "Tailored. Scalable. Future-Ready.",
     desc: "We build tailor-made software that grows with your business.",
-    route: "/customwebsite",
+    route: "/CustomeSoftware",
   },
   {
     icon: FaChartLine,
