@@ -32,10 +32,10 @@ const ManualWorkCost = () => {
     <div className="space-y-8">
       {/* Heading */}
       <div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black dark:text-white">
           The Real Cost of Manual Work
         </h2>
-        <p className="text-lg text-gray-600 leading-relaxed">
+        <p className="text-lg leading-relaxed text-gray-800 dark:text-gray-300">
           Most businesses underestimate how much time and money is lost to inefficient processes. 
           That time compounds. And it quietly blocks scale.
         </p>
@@ -48,14 +48,14 @@ const ManualWorkCost = () => {
           return (
             <div
               key={idx}
-              className="bg-white rounded-xl border shadow-sm p-6 hover:shadow-lg transition-all hover:scale-105"
+              className="bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6 hover:shadow-lg transition-all hover:scale-105"
             >
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                <Icon className="w-6 h-6 text-orange-600" />
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+                <Icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-              <p className="text-sm text-gray-600 mb-3 leading-relaxed">{item.desc}</p>
-              <div className="px-3 py-1 bg-orange-100 text-orange-600 text-xs font-medium rounded-full inline-block">
+              <h3 className="text-lg font-semibold mb-2 text-black dark:text-white">{item.title}</h3>
+              <p className="text-sm text-gray-800 dark:text-gray-300 mb-3 leading-relaxed">{item.desc}</p>
+              <div className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 text-xs font-medium rounded-full inline-block">
                 {item.stat}
               </div>
             </div>
@@ -64,7 +64,7 @@ const ManualWorkCost = () => {
       </div>
 
       {/* Conclusion */}
-      <div className="bg-orange-600 text-white rounded-xl border shadow-sm p-6 md:p-8">
+      <div className="bg-blue-600 dark:bg-blue-700 text-white rounded-xl border border-blue-600 dark:border-blue-700 shadow-sm p-6 md:p-8 transition-colors">
         <p className="text-lg md:text-xl font-semibold text-center">
           Custom software removes friction by designing your business logic directly into a system — the way you actually operate.
         </p>
