@@ -2,11 +2,14 @@ import { ChevronRight, Check } from "lucide-react";
 
 const FounderBottleneck = () => {
   return (
-    <div className="prose max-w-none space-y-8">
-      <p className="text-lg leading-relaxed text-gray-400">
+    <div className="prose max-w-none space-y-8 text-gray-900 dark:text-white transition-colors duration-300">
+      
+      {/* Intro paragraph */}
+      <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
         Most businesses don't have a growth problem. They have a founder bottleneck.
       </p>
 
+      {/* Founder roles */}
       <div className="space-y-4">
         <p className="leading-relaxed">As a business grows, the founder often becomes:</p>
         <ul className="space-y-2">
@@ -17,32 +20,35 @@ const FounderBottleneck = () => {
             "The fallback when systems fail",
           ].map((item, idx) => (
             <li key={idx} className="flex items-start gap-3">
-              <ChevronRight className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
+              <ChevronRight className="w-5 h-5 text-[#0045EF] flex-shrink-0 mt-0.5" />
               <span className="leading-relaxed">{item}</span>
             </li>
           ))}
         </ul>
       </div>
 
+      {/* Stress explanation */}
       <div className="space-y-4">
         <p className="leading-relaxed">
           This creates stress, delays, and limits scale.
         </p>
-        <blockquote className="border-l-4 border-orange-600 pl-6 py-2 italic text-lg">
+        <blockquote className="border-l-4 border-[#0045EF] pl-6 py-2 italic text-lg text-gray-700 dark:text-gray-300">
           If everything needs you, growth becomes impossible.
         </blockquote>
       </div>
 
-      <div className="bg-gray-800 rounded-xl border border-gray-700 p-6">
-        <h3 className="text-xl font-semibold mb-3">Key Shift in Thinking</h3>
-        <p className="text-lg mb-3 italic">
+      {/* Key shift card */}
+      <div className="bg-gray-100 dark:bg-gray-800 rounded-xl border border-gray-300 dark:border-gray-700 p-6 transition-colors duration-300">
+        <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Key Shift in Thinking</h3>
+        <p className="text-lg mb-3 italic text-gray-700 dark:text-gray-300">
           "If I had an unlimited team, what would I delegate first?"
         </p>
-        <p className="leading-relaxed text-gray-400">
+        <p className="leading-relaxed text-gray-700 dark:text-gray-300">
           The answer reveals where your business is leaking time and energy.
         </p>
       </div>
 
+      {/* What should not require you */}
       <div className="space-y-3">
         <p className="leading-relaxed">Anything that:</p>
         <ul className="space-y-2">
@@ -52,7 +58,7 @@ const FounderBottleneck = () => {
             "Does not require emotional intelligence or creativity",
           ].map((item, idx) => (
             <li key={idx} className="flex items-start gap-3">
-              <Check className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
+              <Check className="w-5 h-5 text-[#0045EF] flex-shrink-0 mt-0.5" />
               <span className="leading-relaxed">{item}</span>
             </li>
           ))}
@@ -63,9 +69,10 @@ const FounderBottleneck = () => {
         </p>
       </div>
 
-      <div className="bg-orange-600/10 border border-orange-600/20 rounded-xl p-6">
-        <h3 className="text-lg font-semibold mb-2">Core Idea</h3>
-        <p className="leading-relaxed">
+      {/* Core idea card */}
+      <div className="bg-[#0045EF]/10 border border-[#0045EF]/20 rounded-xl p-6 transition-colors duration-300">
+        <h3 className="text-lg font-semibold mb-2 text-[#0045EF]">Core Idea</h3>
+        <p className="leading-relaxed text-gray-700 dark:text-gray-300">
           AI exists to remove the founder from unnecessary work, not remove control.
         </p>
       </div>

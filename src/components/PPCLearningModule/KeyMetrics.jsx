@@ -47,17 +47,16 @@ const metrics = [
 
 const KeyMetrics = () => {
   const [selectedMetric, setSelectedMetric] = useState(0);
-
   const ActiveIcon = metrics[selectedMetric].icon;
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       {/* Header */}
       <div>
-        <h2 className="text-4xl font-bold mb-4">
+        <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
           Key Metrics Every Business Owner Must Know
         </h2>
-        <p className="text-xl text-gray-600 leading-relaxed">
+        <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
           You don't need to be a marketer — but you must understand these numbers.
         </p>
       </div>
@@ -72,19 +71,25 @@ const KeyMetrics = () => {
             <button
               key={idx}
               onClick={() => setSelectedMetric(idx)}
-              className={`p-4 rounded-lg border-2 text-left transition-all ${
+              className={`p-4 rounded-lg border-2 text-left transition-all dark:border-gray-700 ${
                 isActive
-                  ? "border-blue-600 bg-blue-50 shadow-md scale-105"
-                  : "border-gray-200 hover:border-blue-300"
+                  ? "border-[#0045EF] bg-[#0045EF]/10 shadow-md scale-105"
+                  : "border-gray-200 hover:border-[#0045EF] dark:bg-gray-800 dark:hover:border-[#0045EF]"
               }`}
             >
               <Icon
                 className={`h-6 w-6 mb-2 ${
-                  isActive ? "text-blue-600" : "text-gray-400"
+                  isActive ? "text-[#0045EF]" : "text-gray-400 dark:text-gray-500"
                 }`}
               />
-              <div className="font-bold text-lg">{metric.title}</div>
-              <div className="text-xs text-gray-600 mt-1">
+              <div
+                className={`font-bold text-lg ${
+                  isActive ? "text-gray-900 dark:text-gray-100" : "text-gray-700 dark:text-gray-300"
+                }`}
+              >
+                {metric.title}
+              </div>
+              <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
                 {metric.subtitle}
               </div>
             </button>
@@ -93,28 +98,28 @@ const KeyMetrics = () => {
       </div>
 
       {/* Metric Detail */}
-      <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-8 animate-in fade-in duration-300">
+      <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-8 animate-in fade-in duration-300">
         <div className="flex items-start gap-6">
-          <div className="p-4 rounded-xl bg-blue-50">
-            <ActiveIcon className="h-12 w-12 text-blue-600" />
+          <div className="p-4 rounded-xl bg-[#0045EF]/10 dark:bg-[#0045EF]/20">
+            <ActiveIcon className="h-12 w-12 text-[#0045EF]" />
           </div>
 
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-4">
-              <h3 className="text-3xl font-bold">
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
                 {metrics[selectedMetric].title}
               </h3>
-              <span className="px-2 py-0.5 rounded-md bg-gray-100 text-gray-700 text-xs font-medium">
+              <span className="px-2 py-0.5 rounded-md bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-medium">
                 {metrics[selectedMetric].subtitle}
               </span>
             </div>
 
-            <p className="text-lg mb-4 leading-relaxed">
+            <p className="text-lg mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
               {metrics[selectedMetric].description}
             </p>
 
-            <div className="p-4 bg-gray-50 rounded-lg">
-              <p className="text-sm font-mono">
+            <div className="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg">
+              <p className="text-sm font-mono text-gray-900 dark:text-gray-100">
                 {metrics[selectedMetric].example}
               </p>
             </div>
@@ -123,8 +128,8 @@ const KeyMetrics = () => {
       </div>
 
       {/* Warning */}
-      <div className="bg-red-50 rounded-xl border-2 border-red-200 shadow-sm p-8">
-        <p className="text-xl font-semibold text-center">
+      <div className="bg-[#0045EF]/10 dark:bg-[#0045EF]/20 rounded-xl border-2 border-[#0045EF]/20 shadow-sm p-8">
+        <p className="text-xl font-semibold text-center text-[#0045EF] dark:text-[#0045EF]">
           ⚠️ If you don't track these, you're gambling — not advertising.
         </p>
       </div>

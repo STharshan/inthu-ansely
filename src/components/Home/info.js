@@ -2,7 +2,7 @@ export const upPhotoList1 = [
   
   {
     id: 1,
-    src: "/c1.jpg",
+    src: "/w1.jpeg",
     alt: "Street photography",
     author: "Caroline Badran",
     authorHref: "https://unsplash.com/@___atmos",

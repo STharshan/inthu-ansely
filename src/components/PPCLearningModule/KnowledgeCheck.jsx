@@ -25,8 +25,10 @@ const KnowledgeCheck = () => {
     <div className="space-y-8 animate-in fade-in duration-500">
       {/* Header */}
       <div>
-        <h2 className="text-4xl font-bold mb-4">Knowledge Check</h2>
-        <p className="text-xl text-gray-600 leading-relaxed">
+        <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+          Knowledge Check
+        </h2>
+        <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
           Test your understanding of PPC fundamentals.
         </p>
       </div>
@@ -36,23 +38,23 @@ const KnowledgeCheck = () => {
         {questions.map((item, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-xl border border-gray-200 shadow-sm p-6
+            className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6
                        hover:shadow-lg transition-shadow"
           >
             <CheckCircle className="h-10 w-10 text-green-600 mb-4" />
-            <h3 className="text-xl font-bold mb-2">{item.q}</h3>
-            <p className="text-gray-600 leading-relaxed">{item.a}</p>
+            <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">{item.q}</h3>
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{item.a}</p>
           </div>
         ))}
       </div>
 
       {/* Completion Message */}
-      <div className="bg-gray-50 rounded-xl border border-gray-200 shadow-sm p-6">
-        <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
-          <Lightbulb className="h-5 w-5 text-blue-600" />
+      <div className="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6">
+        <h3 className="text-lg font-semibold mb-3 flex items-center gap-2 text-gray-900 dark:text-gray-100">
+          <Lightbulb className="h-5 w-5 text-[#0045EF]" />
           Ready to Launch?
         </h3>
-        <p className="text-gray-600 leading-relaxed">
+        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
           You now understand PPC fundamentals. Start small, track everything,
           and scale what works. Remember: PPC is a skill that improves with
           practice and data.

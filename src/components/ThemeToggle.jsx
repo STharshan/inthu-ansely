@@ -44,7 +44,7 @@ export default function ThemeToggle() {
        
         ${scrolled
                     ? "border-black/15 text-black hover:border-black/30 hover:bg-black/5"
-                    : "border-white/30 text-white hover:border-white/50 hover:bg-white/10"
+                    : "border-[#0045EF] text-black hover:border-white/50 hover:bg-white/10"
                 }`}
         >
             {isDark ? <FaMoon size={16} /> : <FaSun size={16} />}

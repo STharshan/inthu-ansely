@@ -18,16 +18,12 @@ export default function DigitalMarketingAbout() {
 
             {/* Title */}
             <h2 className="font-bold leading-relaxed text-xl sm:text-2xl md:text-3xl lg:text-4xl">
-              OUR ARCHITECTURAL DESIGNS HARMONIOUSLY UNITE FORM AND FUNCTION,
-              CRAFTING VISUALLY STRIKING STRUCTURES THAT ARE ALSO HIGHLY
-              PRACTICAL.
+              Strategic marketing that unites creativity and performance
             </h2>
 
             {/* Description */}
             <p className="mt-6 text-gray-400 leading-relaxed text-sm sm:text-base">
-              We take a holistic approach to every project, focusing on
-              aesthetics, sustainability, and the overall experience for
-              occupants.
+             Our digital marketing approach harmoniously blends brand storytelling with data-driven performance, crafting campaigns that are visually compelling and strategically effective. We take a holistic view of every marketing initiative, focusing on brand consistency, audience engagement, conversion optimization, and measurable ROI. From the first touchpoint to customer advocacy, we design experiences that build emotional connections while driving business results. We don't just create content—we architect comprehensive digital ecosystems where every post, ad, and interaction works together to elevate your brand and accelerate growth.
             </p>
           </div>
 
