@@ -87,12 +87,7 @@ export default function ServicesHero() {
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-center px-16 py-20">
           {/* Tag */}
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-3 h-3 bg-[#0045EF] rounded-sm" />
-            <span className="text-gray-900 dark:text-white text-xs uppercase tracking-widest font-medium">
-              hero section
-            </span>
-          </div>
+         
 
           {/* Heading */}
           <div className="space-y-2 mb-8">
