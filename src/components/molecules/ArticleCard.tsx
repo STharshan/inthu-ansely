@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArticleCardProps } from '../types/blog';
 import { DateCategory } from './DateCategory';
 import { AuthorAvatar } from '../atoms/AuthorAvatar';
@@ -8,8 +9,8 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   className = '',
 }) => {
   return (
-    <a
-      href={article.link}
+    <Link
+      to={article.link}
       className={`group block rounded-2xl overflow-hidden
         bg-white dark:bg-gray-900
         border border-gray-200 dark:border-gray-800
@@ -56,7 +57,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 

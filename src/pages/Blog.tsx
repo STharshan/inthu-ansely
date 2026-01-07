@@ -31,11 +31,11 @@ const Blog: React.FC = () => {
         subheadline={blogHeroConfig.subheadline}
         backgroundImageUrl={blogHeroConfig.backgroundImageUrl}
       />
-      {/* <CategoryFilter
+      <CategoryFilter
         categories={blogCategories}
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
-      /> */}
+      />
       <ArticleGrid articles={filteredArticles} />
     </div>
   );

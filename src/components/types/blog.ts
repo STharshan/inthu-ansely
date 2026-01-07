@@ -45,3 +45,30 @@ export interface ArticleGridProps {
   className?: string;
 }
 
+export interface BlogContentBlock {
+  type: 'intro' | 'paragraph' | 'heading';
+  level?: 2 | 3 | 4;
+  text: string;
+}
+
+export interface BlogDetailArticle {
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  date: string;
+  readTime: string;
+  author: Author;
+  imageUrl: string;
+  imageAlt: string;
+  tableOfContents: string[];
+  content: BlogContentBlock[];
+}
+
+export interface BlogDetailProps {
+  article: BlogDetailArticle;
+  relatedArticles?: BlogArticle[];
+  className?: string;
+}
+
