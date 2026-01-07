@@ -40,11 +40,7 @@ export const FAQAccordionItem: React.FC<FAQAccordionItemProps> = ({
           }
         }}
         onMouseLeave={(e) => {
-          if (document.documentElement.classList.contains('dark')) {
-            e.currentTarget.style.boxShadow = 'rgba(0, 0, 0, 0.4) 5px 18px 10px 8px';
-          } else {
-            e.currentTarget.style.boxShadow = 'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px';
-          }
+          e.currentTarget.style.boxShadow = 'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px';
         }}
       >
         {/* Question */}
