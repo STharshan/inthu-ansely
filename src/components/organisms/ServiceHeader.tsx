@@ -30,8 +30,8 @@ export const ServiceHeader: React.FC<ServiceHeaderProps> = ({
       )}
 
       <div className="flex flex-col gap-4">
-        <h1 className="text-5xl sm:text-6xl font-bold text-white">{heading}</h1>
-        <p className="text-white/80 text-lg max-w-2xl">{description}</p>
+        <h1 className="text-5xl sm:text-6xl font-bold text-black dark:text-white transition-colors duration-300">{heading}</h1>
+        <p className="text-gray-700 dark:text-white/80 text-lg max-w-2xl transition-colors duration-300">{description}</p>
       </div>
 
       {topicButtons && topicButtons.length > 0 && <TopicButtonGroup topics={topicButtons} />}

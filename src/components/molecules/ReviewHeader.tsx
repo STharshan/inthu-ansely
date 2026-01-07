@@ -29,7 +29,7 @@ export const ReviewHeader: React.FC<ReviewHeaderProps> = ({
   const imageColumn = (
     <div className="flex items-center justify-center lg:justify-start">
       {imageUrl && (
-        <div className="rounded-2xl overflow-hidden border border-white/10 w-full">
+        <div className="rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 w-full transition-colors duration-300">
           <img
             src={imageUrl}
             alt={imageAlt}
@@ -49,8 +49,8 @@ export const ReviewHeader: React.FC<ReviewHeaderProps> = ({
       )}
 
       <div className="flex flex-col gap-4">
-        <h1 className="text-5xl sm:text-6xl font-bold text-white">{heading}</h1>
-        <p className="text-white/80 text-lg max-w-2xl">{description}</p>
+        <h1 className="text-5xl sm:text-6xl font-bold text-black dark:text-white transition-colors duration-300">{heading}</h1>
+        <p className="text-gray-700 dark:text-white/80 text-lg max-w-2xl transition-colors duration-300">{description}</p>
       </div>
 
       {ctaButtons && ctaButtons.length > 0 && (
