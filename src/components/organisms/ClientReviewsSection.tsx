@@ -1,8 +1,8 @@
-import React from 'react';
-import { ClientReviewsProps } from '../types/clientReviews';
-import { ReviewHeader } from '../molecules/ReviewHeader';
-import { TestimonialsGrid } from './TestimonialsGrid';
-import { StatisticsGrid } from './StatisticsGrid';
+import React from "react";
+import { ClientReviewsProps } from "../types/clientReviews";
+import { ReviewHeader } from "../molecules/ReviewHeader";
+import { TestimonialsGrid } from "./TestimonialsGrid";
+import { StatisticsGrid } from "./StatisticsGrid";
 
 export const ClientReviewsSection: React.FC<ClientReviewsProps> = ({
   categoryTag,
@@ -11,15 +11,15 @@ export const ClientReviewsSection: React.FC<ClientReviewsProps> = ({
   description,
   imageUrl,
   imageAlt,
-  imagePosition = 'left',
+  imagePosition = "left",
   ctaButtons,
   reviews,
   statistics,
-  className = '',
+  className = "",
 }) => {
   return (
     <section
-      className={`relative px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-black text-white ${className}`}
+      className={`relative px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 ${className}`}
     >
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
@@ -52,4 +52,3 @@ export const ClientReviewsSection: React.FC<ClientReviewsProps> = ({
     </section>
   );
 };
-

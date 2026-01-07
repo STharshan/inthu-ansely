@@ -45,14 +45,27 @@ export const Tag: React.FC<TagProps> = ({
         }}
       >
         <div
-          className="bg-[#0D0D0D] rounded-[20px] opacity-100 py-2.5 px-4 inline-flex items-center gap-2.5"
+          className="bg-gray-100 dark:bg-[#0D0D0D] rounded-[20px] opacity-100 py-2.5 px-4 inline-flex items-center gap-2.5 transition-colors duration-300"
           style={{
-            boxShadow:
-              "rgba(0, 0, 0, 0.4) 16px 24px 20px 8px, rgba(184, 180, 180, 0.08) 0px 2px 0px 0px inset",
+            boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.boxShadow =
+              "rgba(0, 0, 0, 0.4) 16px 24px 20px 8px, rgba(184, 180, 180, 0.08) 0px 2px 0px 0px inset";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.boxShadow =
+              "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px";
           }}
         >
-          <CircleDot className="text-white" size={20} strokeWidth={1.5} />
-          <p className="text-white text-sm font-medium whitespace-nowrap uppercase">{children}</p>
+          <CircleDot
+            className="text-gray-900 dark:text-white transition-colors duration-300"
+            size={20}
+            strokeWidth={1.5}
+          />
+          <p className="text-gray-900 dark:text-white text-sm font-medium whitespace-nowrap uppercase transition-colors duration-300">
+            {children}
+          </p>
         </div>
       </div>
     );
@@ -65,9 +78,13 @@ export const Tag: React.FC<TagProps> = ({
       } ${className}`}
       onClick={onClick}
     >
-      <div className="bg-[#0D0D0D] rounded-full opacity-100 flex items-center gap-2 px-4 h-full transition-all duration-300 hover:opacity-90 will-change-transform">
-        {showIcon && <MigrationIcon className="w-5 h-5 text-white opacity-80 flex-shrink-0" />}
-        <p className="text-white text-sm font-medium whitespace-nowrap">{children}</p>
+      <div className="bg-gray-100 dark:bg-[#0D0D0D] rounded-full opacity-100 flex items-center gap-2 px-4 h-full transition-all duration-300 hover:opacity-90 will-change-transform">
+        {showIcon && (
+          <MigrationIcon className="w-5 h-5 text-gray-900 dark:text-white opacity-80 flex-shrink-0 transition-colors duration-300" />
+        )}
+        <p className="text-gray-900 dark:text-white text-sm font-medium whitespace-nowrap transition-colors duration-300">
+          {children}
+        </p>
       </div>
     </div>
   );

@@ -59,11 +59,11 @@ export const TestimonialsGrid: React.FC<TestimonialsGridProps> = ({ reviews, cla
       </Swiper>
 
       {/* Navigation Buttons */}
-      <div className="testimonials-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 border border-white/20 hover:border-white/40 -ml-8 sm:-ml-12 lg:-ml-16">
-        <ChevronLeft className="text-white" size={20} />
+      <div className="testimonials-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 border border-gray-300 dark:border-white/20 hover:border-gray-400 dark:hover:border-white/40 -ml-8 sm:-ml-12 lg:-ml-16">
+        <ChevronLeft className="text-gray-900 dark:text-white transition-colors duration-300" size={20} />
       </div>
-      <div className="testimonials-button-next absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 border border-white/20 hover:border-white/40 -mr-8 sm:-mr-12 lg:-mr-16">
-        <ChevronRight className="text-white" size={20} />
+      <div className="testimonials-button-next absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 border border-gray-300 dark:border-white/20 hover:border-gray-400 dark:hover:border-white/40 -mr-8 sm:-mr-12 lg:-mr-16">
+        <ChevronRight className="text-gray-900 dark:text-white transition-colors duration-300" size={20} />
       </div>
     </div>
   );

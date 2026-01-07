@@ -566,14 +566,24 @@ body {
 }
 
 .testimonials-swiper :global(.swiper-pagination-bullet) {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.3);
   opacity: 1;
   width: 8px;
   height: 8px;
   margin: 0 6px !important;
+  transition: background-color 0.3s ease;
+}
+
+.dark .testimonials-swiper :global(.swiper-pagination-bullet) {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .testimonials-swiper :global(.swiper-pagination-bullet-active) {
+  background: rgba(0, 0, 0, 0.7);
+  transition: background-color 0.3s ease;
+}
+
+.dark .testimonials-swiper :global(.swiper-pagination-bullet-active) {
   background: rgba(255, 255, 255, 0.9);
 }
 

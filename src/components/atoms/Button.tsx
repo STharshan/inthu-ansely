@@ -21,17 +21,27 @@ export const Button: React.FC<ButtonProps> = ({
   if (variant === 'glow') {
     const buttonVisual = (
       <div
-        className="relative"
+        className="relative bg-black dark:bg-black transition-colors duration-300"
         style={{
-          backgroundColor: 'rgb(0, 0, 0)',
           borderRadius: '999px',
           padding: '14px 32px',
           position: 'relative',
         }}
       >
-        {/* Subtle perimeter glow - diffused halo effect */}
+        {/* Subtle perimeter glow - diffused halo effect - Light mode */}
         <div
-          className="absolute -inset-[2px] pointer-events-none"
+          className="absolute -inset-[2px] pointer-events-none dark:hidden"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 40%, transparent 70%)',
+            borderRadius: '999px',
+            filter: 'blur(6px)',
+            WebkitFilter: 'blur(6px)',
+            opacity: 1,
+          }}
+        />
+        {/* Subtle perimeter glow - diffused halo effect - Dark mode */}
+        <div
+          className="absolute -inset-[2px] pointer-events-none hidden dark:block"
           style={{
             background: 'radial-gradient(ellipse at center, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 40%, transparent 70%)',
             borderRadius: '999px',
@@ -41,9 +51,19 @@ export const Button: React.FC<ButtonProps> = ({
           }}
         />
         
-        {/* Enhanced glow on top and bottom edges */}
+        {/* Enhanced glow on top and bottom edges - Light mode */}
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none dark:hidden"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 0%, transparent 20%, transparent 80%, rgba(255, 255, 255, 0.08) 100%)',
+            borderRadius: '999px',
+            filter: 'blur(4px)',
+            WebkitFilter: 'blur(4px)',
+          }}
+        />
+        {/* Enhanced glow on top and bottom edges - Dark mode */}
+        <div
+          className="absolute inset-0 pointer-events-none hidden dark:block"
           style={{
             background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 0%, transparent 20%, transparent 80%, rgba(255, 255, 255, 0.08) 100%)',
             borderRadius: '999px',
@@ -54,7 +74,7 @@ export const Button: React.FC<ButtonProps> = ({
 
         {/* Text Content */}
         <div className="relative z-10">
-          <p className="text-white text-sm font-medium whitespace-nowrap">{children}</p>
+          <p className="text-white text-sm font-medium whitespace-nowrap transition-colors duration-300">{children}</p>
         </div>
       </div>
     );
@@ -240,9 +260,9 @@ export const Button: React.FC<ButtonProps> = ({
   
   const variantStyles = {
     primary:
-      'bg-white text-black hover:shadow-xl border border-white/20 hover:border-white/40',
+      'bg-white dark:bg-white text-black dark:text-black hover:shadow-xl border border-gray-200 dark:border-white/20 hover:border-gray-300 dark:hover:border-white/40 transition-colors duration-300',
     secondary:
-      'bg-transparent text-white border border-white/20 hover:border-white/40 hover:bg-white/10',
+      'bg-transparent text-black dark:text-white border border-gray-300 dark:border-white/20 hover:border-gray-400 dark:hover:border-white/40 hover:bg-gray-50 dark:hover:bg-white/10 transition-colors duration-300',
   };
 
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className} ${

@@ -18,7 +18,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
   return (
     <section
       id="faq"
-      className={`relative px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-black text-white ${className}`}
+      className={`relative px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 ${className}`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -32,12 +32,14 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
             )}
 
             {/* Heading */}
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white opacity-100 will-change-transform">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white opacity-100 will-change-transform transition-colors duration-300">
               {heading}
             </h2>
 
             {/* Description */}
-            <p className="text-white/70 text-base sm:text-lg leading-relaxed">{description}</p>
+            <p className="text-gray-700 dark:text-white/70 text-base sm:text-lg leading-relaxed transition-colors duration-300">
+              {description}
+            </p>
 
             {/* Image */}
             {imageUrl && (
@@ -62,7 +64,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
             )}
 
             {/* Divider Line */}
-            <div className="w-full h-px bg-white/10" />
+            <div className="w-full h-px bg-gray-200 dark:bg-white/10 transition-colors duration-300" />
 
             {/* CTA Button */}
             {ctaButton && (

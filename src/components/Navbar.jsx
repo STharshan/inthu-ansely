@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { FiChevronDown, FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
@@ -8,8 +9,12 @@ export default function Navbar() {
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const location = useLocation();
 
   const companyRef = useRef(null);
+
+  // Check if we're on a blog detail page
+  const isBlogDetailPage = location.pathname.startsWith('/blog/') && location.pathname !== '/blog';
 
   useEffect(() => {
     // Check for saved theme preference or default to light mode
@@ -163,7 +168,9 @@ export default function Navbar() {
         <div className={`relative w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-5 transition-all duration-700 ease-in-out ${
           scrolled 
             ? (isDark ? "text-white" : "text-black")
-            : "text-white"
+            : isBlogDetailPage && !isDark
+              ? "text-black"
+              : "text-white"
         }`}>
           {/* Three Column Grid Layout */}
           <div className="grid grid-cols-3 items-center w-full relative z-10">
@@ -174,7 +181,9 @@ export default function Navbar() {
               className={`text-[16px] sm:text-[18px] font-bold tracking-[0.25em] transition-all duration-700 flex-shrink-0 justify-self-start ${
                 scrolled 
                   ? (isDark ? "text-white" : "text-black")
-                  : "text-white"
+                  : isBlogDetailPage && !isDark
+                    ? "text-black"
+                    : "text-white"
               }`}
             >
               ANSELY
@@ -189,7 +198,9 @@ export default function Navbar() {
                   className={`relative text-[13px] uppercase tracking-[0.18em] font-medium group transition-colors duration-700 whitespace-nowrap ${
                     scrolled 
                       ? (isDark ? "text-white hover:text-blue-400" : "text-black hover:text-[#0045EF]")
-                      : "text-white hover:text-gray-300"
+                      : isBlogDetailPage && !isDark
+                        ? "text-black hover:text-[#0045EF]"
+                        : "text-white hover:text-gray-300"
                   }`}
                 >
                   {item}
@@ -206,7 +217,9 @@ export default function Navbar() {
                   className={`flex items-center gap-1 transition-colors duration-700 whitespace-nowrap ${
                     scrolled 
                       ? (isDark ? "text-white hover:text-blue-400" : "text-black hover:text-[#0045EF]")
-                      : "text-white hover:text-gray-300"
+                      : isBlogDetailPage && !isDark
+                        ? "text-black hover:text-[#0045EF]"
+                        : "text-white hover:text-gray-300"
                   }`}
                 >
                   SERVICE
@@ -325,7 +338,9 @@ export default function Navbar() {
                         ? (isDark 
                             ? "border-blue-500/30 text-blue-400 hover:border-blue-500 hover:bg-blue-500/10"
                             : "border-[#0045EF]/30 text-[#0045EF] hover:border-[#0045EF] hover:bg-[#0045EF]/10")
-                        : "border-white/30 text-white hover:border-white/50 hover:bg-white/10"
+                        : isBlogDetailPage && !isDark
+                          ? "border-[#0045EF]/30 text-[#0045EF] hover:border-[#0045EF] hover:bg-[#0045EF]/10"
+                          : "border-white/30 text-white hover:border-white/50 hover:bg-white/10"
                     }`}
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
@@ -342,7 +357,9 @@ export default function Navbar() {
                     ? (isDark 
                         ? "border-blue-500/30 text-blue-400 hover:border-blue-500 hover:bg-blue-500/10"
                         : "border-[#0045EF]/30 text-[#0045EF] hover:border-[#0045EF] hover:bg-[#0045EF]/10")
-                    : "border-white/30 text-white hover:border-white/50 hover:bg-white/10"
+                    : isBlogDetailPage && !isDark
+                      ? "border-[#0045EF]/30 text-[#0045EF] hover:border-[#0045EF] hover:bg-[#0045EF]/10"
+                      : "border-white/30 text-white hover:border-white/50 hover:bg-white/10"
                 }`}
                 aria-label="Toggle theme"
               >
@@ -366,7 +383,9 @@ export default function Navbar() {
                 className={`lg:hidden text-2xl transition-colors duration-700 p-1 ${
                   scrolled 
                     ? (isDark ? "text-white" : "text-black")
-                    : "text-white"
+                    : isBlogDetailPage && !isDark
+                      ? "text-black"
+                      : "text-white"
                 }`}
                 onClick={() => setIsOpen(!isOpen)}
               >
@@ -379,7 +398,9 @@ export default function Navbar() {
           <div className={`nav-line ${
             scrolled
               ? (isDark ? "bg-white/20" : "bg-black/10")
-              : "bg-white/20"
+              : isBlogDetailPage && !isDark
+                ? "bg-black/10"
+                : "bg-white/20"
           }`}></div>
         </div>
 

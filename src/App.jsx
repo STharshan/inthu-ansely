@@ -10,6 +10,7 @@ import Businessconsultancy from './pages/Businessconsultancy';
 import DigitalMarketing from './pages/DigitalMarketing';
 import CustomWebsite from './pages/CustomWebsite';
 import Blog from './pages/Blog';
+import BlogDetail from './pages/BlogDetail';
 import Insidecustomsoftwareservice from './pages/Insidecustomsoftwareservice';
 import DigitalPartnership from './pages/DigitalPartnership';
 import PPCLearningModule from "./pages/PPCLearningModule"
@@ -33,6 +34,7 @@ function App() {
         <Route path="/digital-marketing" element={<DigitalMarketing />} />
         <Route path='/customwebsite' element={<CustomWebsite />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/blog/:slug' element={<BlogDetail />} />
         <Route path='/insidecustomsoftwareservice' element={<Insidecustomsoftwareservice />} />
         <Route path="/digital-partnership" element={<DigitalPartnership />} />
         <Route path="/PPCLearningModule" element={<PPCLearningModule />} />

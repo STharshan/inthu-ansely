@@ -17,10 +17,10 @@ export const StarRating: React.FC<StarRatingProps> = ({
       {[1, 2, 3, 4, 5].map((star) => (
         <Star
           key={star}
-          className={`h-4 w-4 ${
+          className={`h-4 w-4 transition-colors duration-300 ${
             star <= clampedRating
               ? 'fill-yellow-400 text-yellow-400'
-              : 'text-gray-400 fill-gray-400'
+              : 'text-gray-300 dark:text-gray-600 fill-gray-300 dark:fill-gray-600'
           }`}
         />
       ))}
