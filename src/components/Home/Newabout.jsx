@@ -62,22 +62,22 @@ export default function Newabout() {
           <div className="group relative mt-20 ml-auto hidden min-h-[200px] pb-30 sm:block sm:pb-80 lg:mt-0 lg:pb-0">
             <img
               className="absolute -top-20 left-0 w-full max-w-[200px] -rotate-15 rounded-lg shadow-2xl sm:max-w-sm md:max-w-md"
-              src="/t2.jpg"
-              alt="react website"
+              src="/kml-desk.png"
+              alt="kml website"
             />
 
             <AnimatedScrollMove x={40} y={40}>
               <img
                 className="absolute -top-10 left-20 w-full max-w-[200px] -rotate-5 rounded-lg shadow-2xl transition-transform duration-500 ease-in-out group-hover:translate-2 sm:max-w-sm md:max-w-md"
-                src="/t3.jpg"
-                alt="react development"
+                src="/auto-desk.png"
+                alt="auto-desk. development"
               />
             </AnimatedScrollMove>
 
             <AnimatedScrollMove x={60} y={60} delay={0.1}>
               <img
                 className="absolute top-0 left-40 w-full max-w-[200px] rounded-lg shadow-2xl transition-transform duration-500 ease-in-out group-hover:translate-4 sm:max-w-sm md:max-w-md"
-                src="/t1.jpg"
+                src="/stonley-desk.png"
                 alt="react ui"
               />
             </AnimatedScrollMove>
@@ -87,14 +87,14 @@ export default function Newabout() {
           <div className="group relative block h-[500px] min-h-[200px] sm:hidden">
             <img
               className="absolute -top-20 left-[10%] w-full max-w-[200px] -rotate-15 rounded-lg shadow-2xl"
-              src="/t2m.jpg"
+              src="/kml-mobile.png"
               alt="react website"
             />
 
             <AnimatedScrollMove x={40} y={40}>
               <img
                 className="absolute -top-10 left-[20%] w-full max-w-[200px] -rotate-5 rounded-lg shadow-2xl transition-transform duration-500 ease-in-out group-hover:translate-2"
-                src="/t3m.jpg"
+                src="/auto-mobile.png"
                 alt="react development"
               />
             </AnimatedScrollMove>
@@ -102,7 +102,7 @@ export default function Newabout() {
             <AnimatedScrollMove x={60} y={60} delay={0.1}>
               <img
                 className="absolute top-0 left-[30%] w-full max-w-[200px] rounded-lg shadow-2xl transition-transform duration-500 ease-in-out group-hover:translate-4"
-                src="/t1m.jpg"
+                src="/stonley-mobile.png"
                 alt="react ui"
               />
             </AnimatedScrollMove>
