@@ -81,10 +81,11 @@ export default function CoreValuesCarousel() {
       return (
         <span
           key={`${ch}-${i}`}
-          className={`transition-all duration-500 ${isActive
+          className={`transition-all duration-500 ${
+            isActive
               ? "scale-110 text-[#0045EF]"
               : "scale-100 text-slate-400 dark:text-slate-500"
-            }`}
+          }`}
         >
           {ch}
         </span>
@@ -98,7 +99,7 @@ export default function CoreValuesCarousel() {
         Values That Power Everything We Build
       </h1>
 
-      <div className="relative overflow-hidden max-w-5xl mx-auto  rounded-2xl bg-[#36383C] px-4 py-10 sm:px-10 sm:py-14 shadow-xl transition-colors duration-500">
+      <div className="relative overflow-hidden max-w-5xl mx-auto rounded-2xl bg-[#36383C] px-4 py-10 sm:px-10 sm:py-14 shadow-xl transition-colors duration-500">
         {/* Content */}
         <div className="relative z-10 max-w-2xl p-6">
           <div className="mb-6 sm:mb-8">
@@ -122,10 +123,10 @@ export default function CoreValuesCarousel() {
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 className="absolute inset-0"
               >
-                <h2 className="mb-3 text-xl sm:text-3xl font-bold text-black dark:text-white">
+                <h2 className="mb-3 text-xl sm:text-3xl font-bold text-white">
                   {active.heading}
                 </h2>
-                <div className="space-y-2 text-sm sm:text-lg text-black dark:text-slate-300">
+                <div className="space-y-2 text-sm sm:text-lg text-slate-200">
                   {active.lines.map((t, i) => (
                     <p key={i} className="leading-relaxed">
                       {t}
@@ -183,13 +184,40 @@ export default function CoreValuesCarousel() {
                 setDirection(i > index ? 1 : -1);
                 setIndex(i);
               }}
-              className={`h-2 rounded-full transition-all duration-300 ${isActive
-                  ? "w-5 bg-[#0045EF]"
-                  : "w-2 bg-[#36383C]"
-                }`}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                isActive ? "w-5 bg-[#0045EF]" : "w-2 bg-[#36383C]"
+              }`}
             />
           );
         })}
+      </div>
+
+      {/* Action Buttons */}
+      <div className="mt-8 flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+        <a
+          href="/PPCLearningModule"
+          className="px-6 py-3 rounded-lg font-semibold text-sm sm:text-base bg-[#0045EF] text-white hover:bg-[#0038C4] transition-colors duration-300 shadow-md hover:shadow-lg"
+        >
+          PPC Learning Module
+        </a>
+        <a
+          href="/AILearningModule"
+          className="px-6 py-3 rounded-lg font-semibold text-sm sm:text-base bg-[#0045EF] text-white hover:bg-[#0038C4] transition-colors duration-300 shadow-md hover:shadow-lg"
+        >
+          AI Learning Module
+        </a>
+        <a
+          href="/SEOLearningPlatform"
+          className="px-6 py-3 rounded-lg font-semibold text-sm sm:text-base bg-[#0045EF] text-white hover:bg-[#0038C4] transition-colors duration-300 shadow-md hover:shadow-lg"
+        >
+          SEO Learning Platform
+        </a>
+        <a
+          href="/insidecustomsoftwareservice"
+          className="px-6 py-3 rounded-lg font-semibold text-sm sm:text-base bg-[#0045EF] text-white hover:bg-[#0038C4] transition-colors duration-300 shadow-md hover:shadow-lg"
+        >
+          Custom Software Service
+        </a>
       </div>
     </div>
   );
