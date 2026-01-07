@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 
 const sectionData = [
   {
@@ -48,7 +47,6 @@ const Section = ({ section, index }) => {
     offset: ["start start", "end start"],
   });
 
-  // Scale and opacity effects for scroll
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0]);
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
@@ -56,10 +54,7 @@ const Section = ({ section, index }) => {
   return (
     <div
       ref={container}
-      className=" sticky top-0 flex items-center justify-center overflow-hidden "
-      style={{
-        background: 'linear-gradient(to bottom, #ffffff 0%, #f9fafb 100%)'
-      }}
+      className="sticky top-0 flex items-center justify-center overflow-hidden bg-white dark:bg-black"
     >
       <motion.div
         style={{ scale, opacity, y }}
@@ -74,20 +69,16 @@ const Section = ({ section, index }) => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
-
-            {/* Title */}
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight mt-10 lg:mt-0 uppercase">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white leading-tight mt-10 lg:mt-0 uppercase">
               {section.id}
             </h2>
 
-            {/* Decorative Line */}
-            <div className="w-20 h-1 bg-gray-900"></div>
+            <div className="w-20 h-1 bg-gray-900 dark:bg-white"></div>
 
-            {/* Description Text - Hidden on mobile */}
-            <p className="block text-gray-800 leading-relaxed max-w-sm">
+            <p className="block text-gray-800 dark:text-gray-300 leading-relaxed max-w-sm">
               Digital Partnerships is where strategy meets execution. <br />
-              We don’t just build software—we become your technology partner, working alongside you to create, launch, and evolve digital products that form the backbone of your business. <br />
-              Whether you’re modernizing operations or launching a tech-enabled venture, we bring the expertise, systems, and long-term support needed to compete in a digital-first world.
+              We don't just build software—we become your technology partner, working alongside you to create, launch, and evolve digital products that form the backbone of your business. <br />
+              Whether you're modernizing operations or launching a tech-enabled venture, we bring the expertise, systems, and long-term support needed to compete in a digital-first world.
             </p>
           </motion.div>
 
@@ -96,35 +87,31 @@ const Section = ({ section, index }) => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-white rounded-lg shadow-2xl p-6 sm:p-8 lg:p-10 mt-0 lg:mt-10 space-y-6 border border-gray-100"
+            className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl p-6 sm:p-8 lg:p-10 mt-0 lg:mt-10 space-y-6 border border-gray-100 dark:border-gray-800"
           >
-            {/* Section Label */}
             <div className="flex items-center gap-3">
-              <div className="h-px flex-1 bg-gray-200" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-gray-400">
+              <div className="h-px flex-1 bg-gray-200 dark:bg-gray-700" />
+              <span className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500">
                 {section.id}
               </span>
-              <div className="h-px flex-1 bg-gray-200" />
+              <div className="h-px flex-1 bg-gray-200 dark:bg-gray-700" />
             </div>
 
-            {/* Heading */}
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white leading-tight">
               {section.heading}
             </h3>
 
-            {/* Paragraphs */}
             <div className="space-y-4">
               {section.paragraphs.map((paragraph, i) => (
                 <p
                   key={i}
-                  className="text-sm sm:text-base text-gray-600 leading-relaxed"
+                  className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed"
                 >
                   {paragraph}
                 </p>
               ))}
             </div>
 
-            {/* Image */}
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
@@ -144,12 +131,46 @@ const Section = ({ section, index }) => {
 };
 
 const DigitalPartnershipService = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    // Check for saved theme preference or default to light mode
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = savedTheme === "dark";
+    
+    setIsDark(prefersDark);
+    document.documentElement.classList.toggle("dark", prefersDark);
+    
+    // Set CSS variables for gradients
+    updateGradientColors(prefersDark);
+  }, []);
+
+  const updateGradientColors = (dark) => {
+    const root = document.documentElement;
+    if (dark) {
+      root.style.setProperty('--bg-start', '#000000');
+      root.style.setProperty('--bg-end', '#0a0a0a');
+    } else {
+      root.style.setProperty('--bg-start', '#ffffff');
+      root.style.setProperty('--bg-end', '#f9fafb');
+    }
+  };
+
+  const toggleTheme = () => {
+    const root = document.documentElement;
+    const next = !isDark;
+    setIsDark(next);
+    root.classList.toggle("dark", next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+    updateGradientColors(next);
+  };
+
   return (
-    <main className="relative bg-gray-50">
+    <main className="relative bg-gray-50 dark:bg-black">
       {/* Background Decoration */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden opacity-30">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gray-200 blur-[120px] rounded-full translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gray-300 blur-[100px] rounded-full -translate-x-1/3 translate-y-1/3"></div>
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gray-200 dark:bg-gray-800 blur-[120px] rounded-full translate-x-1/3 -translate-y-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gray-300 dark:bg-gray-800 blur-[100px] rounded-full -translate-x-1/3 translate-y-1/3"></div>
       </div>
 
       {/* Sections */}

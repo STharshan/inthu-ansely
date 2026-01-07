@@ -6,12 +6,14 @@ import HowWeWorkSection from "../components/Businessconsultancy/HowWeWorkSection
 import ServicePageSection from "../components/Businessconsultancy/ServicePageSection";
 import ClientReviewsSection from "../components/Businessconsultancy/ClientReviewsSection";
 import FAQSection from "../components/Businessconsultancy/FAQSection";
+import LearningGuide from "../components/LearningGuide";
 
 const Businessconsultancy = () => {
   return (
     <div>
       <FinancialPlanningHeader />
       <FinancialConfidenceSection />
+      <LearningGuide />
       <ServicesSection />
       <HowWeWorkSection />
       <ServicePageSection />

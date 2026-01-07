@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function DigitalPartnershipHero() {
   return (
-    <div className="h-[100vh] bg-black dark:bg-white text-white dark:text-black transition-colors duration-500">
+    <div className="h-[100vh] dark:bg-black bg-white dark:text-white text-black transition-colors duration-500">
       {/* Main Container */}
       <div className="min-h-screen flex flex-col lg:flex-row">
         {/* Left Section - Content */}
@@ -16,12 +16,12 @@ export default function DigitalPartnershipHero() {
 
           {/* Description */}
           <div className="mt-2 lg:mt-0">
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 dark:text-gray-600 max-w-2xl leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl leading-relaxed">
               Leveling the playing field — bringing businesses into the digital age.
             </p>
           </div>
 
-          <p className="text-gray-300 dark:text-gray-700 mt-4 max-w-2xl leading-relaxed">
+          <p className="text-gray-700 dark:text-gray-500 mt-4 max-w-2xl leading-relaxed">
             We partner with ambitious businesses to design, build, and scale technology-driven products that power real-world growth.
           </p>
         </div>

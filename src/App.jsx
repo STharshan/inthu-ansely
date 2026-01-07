@@ -28,6 +28,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+         <Route path="/home" element={<Home />} />
         <Route path="/React" element={<ReactComparisonGuide />} />
         <Route path="/digital-transformation" element={<Digitaltransformation />} />
         <Route path="/business-consultancy" element={<Businessconsultancy />} />

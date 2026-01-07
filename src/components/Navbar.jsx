@@ -284,7 +284,7 @@ export default function Navbar() {
                       Custom Website
                     </a>
                     <a
-                      href="/smart-automation"
+                      href="/digital-transformation"
                       className={`block px-4 py-2 text-sm transition-colors ${
                         isDark 
                           ? 'text-gray-200 hover:bg-gray-700 hover:text-blue-400'

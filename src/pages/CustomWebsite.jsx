@@ -7,6 +7,7 @@ import ViewMoreSection from '../components/CustomWebsite/ViewMoreSection'
 import ServicePageSection from '../components/CustomWebsite/ServicePageSection'
 import ClientReviewsSection from '../components/CustomWebsite/ClientReviewsSection'
 import FAQSection from '../components/CustomWebsite/FAQSection'
+import LearningGuide from '../components/LearningGuide'
 
 const CustomWebsite = () => {
   return (
@@ -16,6 +17,7 @@ const CustomWebsite = () => {
       <ProjectChallenges />
       <ProjectSolution />
       <ViewMoreSection />
+      <LearningGuide />
       <ServicePageSection />
       <ClientReviewsSection />
       <FAQSection />
