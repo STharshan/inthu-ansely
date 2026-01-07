@@ -13,7 +13,7 @@ export default function PlatformProcess() {
             stat: "93",
             statUnit: "%",
             statLabel: "Buying decisions start online",
-            image: "",
+            image: "logo.png",
         },
         {
             id: 2,
@@ -22,7 +22,7 @@ export default function PlatformProcess() {
             stat: "75",
             statUnit: "%",
             statLabel: "Judged on credibility",
-            image: "",
+            image: "logo.png",
         },
         {
             id: 3,
@@ -31,7 +31,7 @@ export default function PlatformProcess() {
             stat: "60",
             statUnit: "%",
             statLabel: "Outside business hours enquiries",
-            image: "",
+            image: "logo.png",
         },
         {
             id: 4,
@@ -40,7 +40,7 @@ export default function PlatformProcess() {
             stat: "3",
             statUnit: "×",
             statLabel: "Higher engagement",
-            image: "",
+            image: "logo.png",
         },
         {
             id: 5,
@@ -49,7 +49,7 @@ export default function PlatformProcess() {
             stat: "8",
             statUnit: "×",
             statLabel: "Better lead conversion",
-            image: "",
+            image: "logo.png",
         },
         {
             id: 6,
@@ -58,7 +58,7 @@ export default function PlatformProcess() {
             stat: "88",
             statUnit: "%",
             statLabel: "Users less likely to return",
-            image: "",
+            image: "logo.png",
         },
         {
             id: 7,
@@ -67,7 +67,7 @@ export default function PlatformProcess() {
             stat: "23",
             statUnit: "%",
             statLabel: "Revenue increase",
-            image: "",
+            image: "logo.png",
         },
         {
             id: 8,
@@ -76,7 +76,7 @@ export default function PlatformProcess() {
             stat: "5",
             statUnit: "×",
             statLabel: "Faster growth decisions",
-            image: "",
+            image: "logo.png",
         },
         {
             id: 9,
@@ -85,7 +85,7 @@ export default function PlatformProcess() {
             stat: "70",
             statUnit: "%",
             statLabel: "Consumers prefer modern presence",
-            image: "",
+            image: "logo.png",
         },
     ];
 
@@ -94,7 +94,7 @@ export default function PlatformProcess() {
         const checkTheme = () => {
             setIsDarkMode(document.documentElement.classList.contains('dark'));
         };
-        
+
         checkTheme();
 
         const observer = new MutationObserver(checkTheme);
@@ -122,72 +122,65 @@ export default function PlatformProcess() {
                 <div className="w-full grid grid-cols-1 gap-1 md:grid-cols-[380px_1fr_210px]">
 
                     {/* LEFT - Image */}
-                    <div className={`rounded-l-lg overflow-hidden h-[600px] ${
-                        isDarkMode ? 'bg-gray-900' : 'bg-gray-200'
-                    }`}>
+                    <div
+                        className={`relative rounded-l-lg overflow-hidden h-[600px] ${isDarkMode ? "bg-gray-900" : "bg-gray-200"
+                            }`}
+                    >
                         <img
                             src={currentStepData.image}
                             alt={currentStepData.title}
-                            className="w-full h-full object-cover"
+                            className="absolute inset-0 mt-70 w-400 h-20 rotate-270 object-cover"
                         />
                     </div>
 
+
                     {/* MIDDLE - Content */}
                     <div className="flex flex-col gap-1">
-                        <div className={`flex justify-between items-center p-10 rounded-lg ${
-                            isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
-                        }`}>
-                            <span className={`text-[18px] font-semibold ${
-                                isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                        <div className={`flex justify-between items-center p-10 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
                             }`}>
+                            <span className={`text-[18px] font-semibold ${isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                                }`}>
                                 Importance of Digital Presence
                             </span>
                             <div className="flex items-center gap-2">
                                 {steps.map((_, i) => (
                                     <span
                                         key={i}
-                                        className={`h-[6px] rounded-full transition-all ${
-                                            i === currentStep
-                                                ? "w-7 bg-[#0045EF]"
-                                                : isDarkMode ? "w-2 bg-gray-600" : "w-2 bg-gray-400"
-                                        }`}
+                                        className={`h-[6px] rounded-full transition-all ${i === currentStep
+                                            ? "w-7 bg-[#0045EF]"
+                                            : isDarkMode ? "w-2 bg-gray-600" : "w-2 bg-gray-400"
+                                            }`}
                                     ></span>
                                 ))}
                             </div>
                         </div>
 
-                        <div className={`h-122.5 p-10 rounded-lg ${
-                            isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
-                        }`}>
+                        <div className={`h-122.5 p-10 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
+                            }`}>
                             <div>
-                                <h2 className={`text-4xl font-semibold mb-6 leading-tight ${
-                                    isDarkMode ? 'text-gray-200' : 'text-gray-800'
-                                }`}>
+                                <h2 className={`text-4xl font-semibold mb-6 leading-tight ${isDarkMode ? 'text-gray-200' : 'text-gray-800'
+                                    }`}>
                                     {currentStepData.title}
                                 </h2>
-                                <p className={`text-lg leading-relaxed ${
-                                    isDarkMode ? 'text-gray-400' : 'text-gray-600'
-                                }`}>
+                                <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                                    }`}>
                                     {currentStepData.description}
                                 </p>
                             </div>
 
                             <div className="mt-39.5">
                                 <div className="flex items-baseline gap-2 mb-1">
-                                    <span className={`text-3xl font-bold leading-none ${
-                                        isDarkMode ? 'text-gray-400' : 'text-gray-600'
-                                    }`}>
+                                    <span className={`text-3xl font-bold leading-none ${isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                                        }`}>
                                         {currentStepData.stat}
                                     </span>
                                     {currentStepData.statUnit && (
-                                        <span className={`text-xl ${
-                                            isDarkMode ? 'text-gray-500' : 'text-gray-500'
-                                        }`}>{currentStepData.statUnit}</span>
+                                        <span className={`text-xl ${isDarkMode ? 'text-gray-500' : 'text-gray-500'
+                                            }`}>{currentStepData.statUnit}</span>
                                     )}
                                 </div>
-                                <p className={`text-sm ${
-                                    isDarkMode ? 'text-gray-500' : 'text-gray-500'
-                                }`}>{currentStepData.statLabel}</p>
+                                <p className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-gray-500'
+                                    }`}>{currentStepData.statLabel}</p>
                             </div>
                         </div>
                     </div>
@@ -196,9 +189,8 @@ export default function PlatformProcess() {
                     <div className="flex flex-col">
 
                         {/* Top Section - Platform Process */}
-                        <div className={`h-26.5 p-10 rounded-lg ${
-                            isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
-                        }`}>
+                        <div className={`h-26.5 p-10 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
+                            }`}>
 
                             {/* Navigation Arrows */}
                             <div className="flex justify-center gap-8">
@@ -220,16 +212,14 @@ export default function PlatformProcess() {
                         </div>
 
                         {/* Bottom - CTA */}
-                        <div className={`h-122 p-5 mt-1.5 rounded-lg ${
-                            isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
-                        }`}>
+                        <div className={`h-122 p-5 mt-1.5 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
+                            }`}>
                             <button className="w-full bg-[#0045EF] text-white mt-40 rounded-xl px-6 py-3.5 flex items-center justify-center gap-2 hover:bg-[#0039CC] transition-colors mb-3">
                                 <Calendar className="w-5 h-5" />
                                 <span className="text-sm">Book a Demo</span>
                             </button>
-                            <p className={`text-sm text-center leading-relaxed ${
-                                isDarkMode ? 'text-gray-400' : 'text-gray-600'
-                            }`}>
+                            <p className={`text-sm text-center leading-relaxed ${isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                                }`}>
                                 Book a demo to see<br />this process in action.
                             </p>
                         </div>
