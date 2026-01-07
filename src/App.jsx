@@ -18,6 +18,9 @@ import AILearningModule from "./pages/AILearningModule"
 import SEOLearningPlatform from './components/SEO/SeoHome';
 import Navbar from './components/Navbar';
 import CustomeSoftware from './pages/CustomeSoftware'
+import TermsConditions from './components/Term';
+import PrivacyPolicy from './components/ProvacyPolicy';
+import GDPRConsent from './components/GDPRButton';
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -42,8 +45,11 @@ function App() {
         <Route path="/AILearningModule" element={<AILearningModule />} />
         <Route path='/SEOLearningPlatform' element={<SEOLearningPlatform />} />
         <Route path='/CustomeSoftware' element={<CustomeSoftware />} />
+        <Route path="/terms" element={<TermsConditions />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
+      <GDPRConsent />
     </Router>
   )
 }

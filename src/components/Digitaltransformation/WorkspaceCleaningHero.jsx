@@ -2,7 +2,7 @@ import React from "react";
 
 const DigitalTransformationHero = () => {
   return (
-    <section className="bg-white dark:bg-black text-black dark:text-white py-32 px-6 transition-colors duration-500">
+    <section className="bg-white mt-20 dark:bg-black text-black dark:text-white py-32 px-6 transition-colors duration-500">
       <div className="max-w-6xl mx-auto">
 
         {/* Top Content */}

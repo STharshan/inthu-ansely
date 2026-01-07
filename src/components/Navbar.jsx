@@ -222,7 +222,7 @@ export default function Navbar() {
                         : "text-white hover:text-gray-300"
                   }`}
                 >
-                  SERVICE
+                  SERVICES
                   <FiChevronDown
                     className={`text-sm mt-[2px] transition-transform duration-300 ${isCompanyOpen ? "rotate-180" : ""}`}
                   />
@@ -433,7 +433,7 @@ export default function Navbar() {
                   onClick={() => setIsCompanyOpen(!isCompanyOpen)}
                   className="flex items-center justify-between w-full text-[13px] tracking-[0.18em] uppercase font-medium"
                 >
-                  Service
+                  Services
                   <FiChevronDown
                     className={`text-sm transition-transform duration-300 ${isCompanyOpen ? "rotate-180" : ""}`}
                   />

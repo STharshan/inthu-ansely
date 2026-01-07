@@ -9,7 +9,7 @@ const sectionData = [
       "Our Care Coordination Platform is designed to streamline communication, data flow, and workflows across healthcare providers, caregivers, and stakeholders.",
       "Built with scalability and compliance in mind, the platform reduces operational friction, improves patient outcomes, and enables organizations to deliver coordinated, efficient care. As a digital partner, we continuously refine the platform to adapt to evolving healthcare needs and regulations—ensuring long-term reliability and impact."
     ],
-    image: "https://framerusercontent.com/images/2S2u0QCZnr8QEgHxu6IaJQSHXvg.png"
+    image: "d1.avif"
   },
   {
     id: "ERP System",
@@ -18,7 +18,7 @@ const sectionData = [
       "Our custom-built ERP system centralizes your core business processes into a single, intelligent platform. From finance and inventory to operations and reporting, we design ERP solutions that provide clarity, control, and real-time insights.",
       "Rather than forcing businesses to adapt to rigid software, we tailor the system around your workflows—supporting growth, automation, and data-driven decision-making. We evolve the platform with you as your business scales."
     ],
-    image: "https://framerusercontent.com/images/2S2u0QCZnr8QEgHxu6IaJQSHXvg.png"
+    image: "d1.avif"
   },
   {
     id: "Salon Booking Management System",
@@ -27,7 +27,7 @@ const sectionData = [
       "The Salon Booking Management System is built to support high-volume, customer-centric service businesses. It enables seamless appointment booking, staff scheduling, client management, and payment tracking through an intuitive digital experience.",
       "Designed for both business owners and end customers, the system improves operational efficiency while elevating the customer journey. As your tech partner, we continue enhancing the platform to meet changing market expectations and customer behaviors."
     ],
-    image: "https://framerusercontent.com/images/2S2u0QCZnr8QEgHxu6IaJQSHXvg.png"
+    image: "d1.avif"
   },
   {
     id: "Our Partnership Model",
@@ -36,7 +36,7 @@ const sectionData = [
       "We work as an extension of your team—handling architecture, development, optimization, and ongoing improvements. From idea validation to product scaling, we help turn technology into a competitive advantage.",
       "Build with confidence. Scale with clarity. Compete digitally."
     ],
-    image: "https://framerusercontent.com/images/2S2u0QCZnr8QEgHxu6IaJQSHXvg.png"
+    image: "d1.avif"
   }
 ];
 

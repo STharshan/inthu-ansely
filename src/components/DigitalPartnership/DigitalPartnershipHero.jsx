@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function DigitalPartnershipHero() {
   return (
-    <div className="h-[100vh] dark:bg-black bg-white dark:text-white text-black transition-colors duration-500">
+    <div className="h-[100vh] mt-20 dark:bg-black bg-white dark:text-white text-black transition-colors duration-500">
       {/* Main Container */}
       <div className="min-h-screen flex flex-col lg:flex-row">
         {/* Left Section - Content */}
@@ -32,7 +32,7 @@ export default function DigitalPartnershipHero() {
           <div className="relative mb-8 lg:mb-0">
             <div className="aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] overflow-hidden rounded-2xl">
               <img
-                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&h=1000&fit=crop"
+                src="/d1.avif"
                 alt="Fashion model"
                 className="w-full h-full object-cover transition-transform duration-500"
               />

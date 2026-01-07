@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapPin, Users, FileText, Zap, TrendingUp, ChevronRight, ChevronDown, Circle, CheckCircle2, Home } from 'lucide-react';
 
 import Module1Lesson from './Lesson1';
@@ -7,13 +7,28 @@ import Module3Lesson from './Lesson3';
 import Module4Lesson from './Lesson4';
 import Module5Lesson from './Lesson5';
 
-
 const SEOLearningPlatform = () => {
-  const [currentView, setCurrentView] = useState('modules'); // 'modules' or 'lesson'
+  const [currentView, setCurrentView] = useState('modules');
   const [selectedModule, setSelectedModule] = useState(null);
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
   const [expandedModules, setExpandedModules] = useState([0, 1, 4]);
   const [completedLessons, setCompletedLessons] = useState([]);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = savedTheme === "dark";
+    setIsDark(prefersDark);
+    document.documentElement.classList.toggle("dark", prefersDark);
+  }, []);
+
+  const toggleTheme = () => {
+    const root = document.documentElement;
+    const next = !isDark;
+    setIsDark(next);
+    root.classList.toggle("dark", next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+  };
 
   const modules = [
     {
@@ -21,9 +36,8 @@ const SEOLearningPlatform = () => {
       title: "SEO for Local Businesses",
       description: "Dominate your local area on Google",
       icon: MapPin,
-      color: "bg-blue-500",
+      color: "bg-[#0045EF]",
       themeColor: "blue",
-      // Add your lesson component here
       LessonComponent: Module1Lesson,
       lessons: [
         { number: 1, title: "What Is Local SEO?" },
@@ -38,7 +52,7 @@ const SEOLearningPlatform = () => {
       title: "SEO vs Social Media",
       description: "Understanding when to use each channel",
       icon: Users,
-      color: "bg-purple-500",
+      color: "bg-[#0045EF]",
       themeColor: "purple",
       LessonComponent: Module2Lesson,
       lessons: [
@@ -54,7 +68,7 @@ const SEOLearningPlatform = () => {
       title: "Content That Ranks & Converts",
       description: "Create content that Google ranks and customers act on",
       icon: FileText,
-      color: "bg-emerald-500",
+      color: "bg-[#0045EF]",
       themeColor: "emerald",
       LessonComponent: Module3Lesson,
       lessons: [
@@ -70,7 +84,7 @@ const SEOLearningPlatform = () => {
       title: "Technical SEO Explained Simply",
       description: "Remove fear around technical SEO",
       icon: Zap,
-      color: "bg-amber-500",
+      color: "bg-[#0045EF]",
       themeColor: "amber",
       LessonComponent: Module4Lesson,
       lessons: [
@@ -86,7 +100,7 @@ const SEOLearningPlatform = () => {
       title: "Turning SEO Traffic into Sales",
       description: "Turn search traffic into real revenue",
       icon: TrendingUp,
-      color: "bg-rose-500",
+      color: "bg-[#0045EF]",
       themeColor: "rose",
       LessonComponent: Module5Lesson,
       lessons: [
@@ -167,11 +181,9 @@ const SEOLearningPlatform = () => {
     return completedLessons.includes(`${moduleId}-${lessonIndex}`);
   };
 
-  // If viewing a lesson and the module has a custom component, use it
   if (currentView === 'lesson' && selectedModule !== null) {
     const module = modules[selectedModule];
     
-    // If you have a custom LessonComponent, render it
     if (module.LessonComponent) {
       return (
         <module.LessonComponent
@@ -190,31 +202,31 @@ const SEOLearningPlatform = () => {
     }
   }
 
-  // Modules List View
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50">
+    <div className="min-h-screen bg-white dark:bg-black">
+
       {/* Header */}
-      <section className="border-b bg-white/80 backdrop-blur-sm mt-30 z-10 shadow-sm">
+      <section className="border-b bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm mt-30 z-10 shadow-sm dark:border-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div className="flex-1">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">
                 SEO Learning Platform
               </h1>
-              <p className="text-slate-600 mt-1 text-sm sm:text-base">
+              <p className="text-slate-600 dark:text-gray-400 mt-1 text-sm sm:text-base">
                 Master SEO for your business success
               </p>
             </div>
-            <span className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-slate-100 text-slate-700 font-medium px-4 py-2 text-sm whitespace-nowrap">
+            <span className="inline-flex items-center justify-center rounded-lg border border-slate-200 dark:border-gray-700 bg-slate-100 dark:bg-gray-800 text-slate-700 dark:text-gray-300 font-medium px-4 py-2 text-sm whitespace-nowrap">
               {completedCount} / {totalLessons} Lessons Complete
             </span>
           </div>
 
           {/* Progress Bar */}
           <div className="mt-4">
-            <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+            <div className="w-full bg-slate-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
               <div
-                className="bg-blue-600 h-full transition-all duration-500 ease-out"
+                className="bg-[#0045EF] h-full transition-all duration-500 ease-out"
                 style={{ width: `${progressPercentage}%` }}
               />
             </div>
@@ -233,7 +245,7 @@ const SEOLearningPlatform = () => {
             return (
               <div
                 key={module.id}
-                className="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
+                className="bg-white dark:bg-gray-900 rounded-xl border border-slate-200 dark:border-gray-800 shadow-sm hover:shadow-md dark:hover:shadow-gray-800/50 transition-all duration-300 overflow-hidden"
               >
                 <div className="p-4 sm:p-6">
                   {/* Module Header */}
@@ -245,22 +257,22 @@ const SEOLearningPlatform = () => {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-start justify-between gap-3 sm:gap-4 mb-2">
                         <div className="flex-1 min-w-0">
-                          <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1">
+                          <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-1">
                             {module.title}
                           </h3>
-                          <p className="text-xs sm:text-sm text-slate-600">
+                          <p className="text-xs sm:text-sm text-slate-600 dark:text-gray-400">
                             {module.description}
                           </p>
                         </div>
-                        <span className="inline-flex items-center justify-center rounded-md border border-slate-300 px-2 py-0.5 text-xs font-medium text-slate-700 whitespace-nowrap flex-shrink-0">
+                        <span className="inline-flex items-center justify-center rounded-md border border-slate-300 dark:border-gray-700 px-2 py-0.5 text-xs font-medium text-slate-700 dark:text-gray-300 whitespace-nowrap flex-shrink-0">
                           {progress.completed}/{progress.total}
                         </span>
                       </div>
 
                       {/* Module Progress Bar */}
-                      <div className="w-full bg-slate-200 rounded-full h-1.5 mt-3">
+                      <div className="w-full bg-slate-200 dark:bg-gray-700 rounded-full h-1.5 mt-3">
                         <div
-                          className="bg-blue-600 h-full transition-all duration-500 rounded-full"
+                          className="bg-[#0045EF] h-full transition-all duration-500 rounded-full"
                           style={{ width: `${progress.percentage}%` }}
                         />
                       </div>
@@ -271,14 +283,14 @@ const SEOLearningPlatform = () => {
                   <div className="mt-4 flex flex-wrap items-center gap-2 sm:gap-3">
                     <button
                       onClick={() => startModule(index)}
-                      className="inline-flex items-center justify-center bg-blue-600 text-white hover:bg-blue-700 h-9 rounded-md px-3 sm:px-4 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      className="inline-flex items-center justify-center bg-[#0045EF] text-white hover:bg-blue-700 h-9 rounded-md px-3 sm:px-4 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
                     >
                       Start Module
                       <ChevronRight className="h-4 w-4 ml-1" />
                     </button>
                     <button
                       onClick={() => toggleModule(index)}
-                      className="inline-flex items-center justify-center hover:bg-slate-100 h-9 rounded-md px-3 sm:px-4 text-sm font-medium text-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
+                      className="inline-flex items-center justify-center hover:bg-slate-100 dark:hover:bg-gray-800 h-9 rounded-md px-3 sm:px-4 text-sm font-medium text-slate-700 dark:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
                     >
                       {isExpanded ? 'Hide' : 'Show'} Lessons
                       <ChevronDown
@@ -289,7 +301,7 @@ const SEOLearningPlatform = () => {
 
                   {/* Lessons List */}
                   {isExpanded && (
-                    <div className="mt-4 pt-4 border-t border-slate-200 space-y-1">
+                    <div className="mt-4 pt-4 border-t border-slate-200 dark:border-gray-800 space-y-1">
                       {module.lessons.map((lesson, lessonIndex) => {
                         const lessonId = `${module.id}-${lessonIndex}`;
                         const isCompleted = completedLessons.includes(lessonId);
@@ -298,14 +310,14 @@ const SEOLearningPlatform = () => {
                           <button
                             key={lessonIndex}
                             onClick={() => goToLesson(index, lessonIndex)}
-                            className="w-full flex items-center gap-3 p-2 sm:p-3 rounded-lg hover:bg-slate-50 transition-colors text-left group"
+                            className="w-full flex items-center gap-3 p-2 sm:p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-gray-800 transition-colors text-left group"
                           >
                             {isCompleted ? (
-                              <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+                              <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-500 flex-shrink-0" />
                             ) : (
-                              <Circle className="h-4 w-4 text-slate-400 group-hover:text-slate-600 flex-shrink-0" />
+                              <Circle className="h-4 w-4 text-slate-400 dark:text-gray-600 group-hover:text-slate-600 dark:group-hover:text-gray-400 flex-shrink-0" />
                             )}
-                            <span className={`text-sm ${isCompleted ? 'text-slate-500 line-through' : 'text-slate-700'}`}>
+                            <span className={`text-sm ${isCompleted ? 'text-slate-500 dark:text-gray-500 line-through' : 'text-slate-700 dark:text-gray-300'}`}>
                               Lesson {lesson.number}: {lesson.title}
                             </span>
                           </button>
@@ -322,14 +334,14 @@ const SEOLearningPlatform = () => {
         {/* Completion Message */}
         {completedCount === totalLessons && (
           <div className="mt-8 max-w-5xl mx-auto">
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl p-6 sm:p-8 text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-                <CheckCircle2 className="h-8 w-8 text-green-600" />
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30 border-2 border-green-200 dark:border-green-800 rounded-xl p-6 sm:p-8 text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 dark:bg-green-900/50 rounded-full mb-4">
+                <CheckCircle2 className="h-8 w-8 text-green-600 dark:text-green-400" />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
-                Congratulations! 🎉
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                Congratulations! 
               </h2>
-              <p className="text-slate-600 text-sm sm:text-base">
+              <p className="text-slate-600 dark:text-gray-400 text-sm sm:text-base">
                 You've completed all {totalLessons} lessons. You're now ready to implement SEO strategies for your business!
               </p>
             </div>
