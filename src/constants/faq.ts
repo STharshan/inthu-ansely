@@ -27,7 +27,8 @@ export const digitalTransformationFAQs: FAQItem[] = [
   },
   {
     id: "replace-existing-software",
-    question: "Do we need to replace all our existing software to transform digitally?",
+    question:
+      "Do we need to replace all our existing software to transform digitally?",
     answer:
       "Usually not. We typically work with your existing tech stack, adding integration layers, automation tools, and new capabilities that enhance what you already have. Complete system replacement is expensive, disruptive, and rarely necessary. Our approach is evolutionary, not revolutionary—we modernize incrementally, replacing only what truly needs replacement while maximizing value from current investments. Strategic transformation doesn't mean starting from scratch.",
   },
@@ -46,7 +47,11 @@ export const digitalTransformationFAQConfig = {
     "Find answers to common questions about digital transformation, automation, and how we help businesses modernize and thrive.",
   imageUrl: "/d1.avif",
   imageAlt: "FAQ illustration",
-  serviceTags: ["Digital Transformation", "Smart Automation", "Process Optimization"],
+  serviceTags: [
+    "Digital Transformation",
+    "Smart Automation",
+    "Process Optimization",
+  ],
   ctaButton: {
     label: "Book a Free Call",
     href: "/contact",
@@ -63,13 +68,15 @@ export const digitalPartnershipsFAQs: FAQItem[] = [
   },
   {
     id: "partnership-arrangements",
-    question: "How do partnership arrangements work? Can we white-label your software?",
+    question:
+      "How do partnership arrangements work? Can we white-label your software?",
     answer:
       "We offer multiple partnership models tailored to your goals. White-label partnerships let you rebrand our software as your own and resell to your clients. Reseller partnerships allow you to sell our solutions under our brand with commission structures. Revenue-sharing arrangements split ongoing subscription revenue. Implementation partner programs connect you with clients while we handle software delivery. We're flexible, structuring partnerships that align with your business model, technical capabilities, and target market.",
   },
   {
     id: "software-customization",
-    question: "Can your software be customized for our specific industry or client needs?",
+    question:
+      "Can your software be customized for our specific industry or client needs?",
     answer:
       "Yes—while our platforms are feature-complete out of the box, we designed them with customization in mind. We can modify workflows, add industry-specific features, adjust user interfaces, create custom reports, integrate with industry-specific tools, and configure permissions to match unique business processes. During partnership onboarding, we assess your typical client needs and determine what customizations make sense. Some modifications are included, while extensive custom development is quoted separately.",
   },
@@ -87,7 +94,8 @@ export const digitalPartnershipsFAQs: FAQItem[] = [
   },
   {
     id: "roi-implementation",
-    question: "What's the typical ROI and implementation timeline for these solutions?",
+    question:
+      "What's the typical ROI and implementation timeline for these solutions?",
     answer:
       "Implementation timelines vary by solution complexity and customization needs. Standard deployments typically take 4-8 weeks from contract signing to go-live. The Care Coordination Platform helps healthcare organizations improve outcomes and reduce coordination costs by 25-40%. The Salon & Spa system increases booking rates by 30-50% and reduces no-shows through automated reminders. ERP solutions typically deliver 20-35% operational efficiency gains. We provide detailed ROI models during partnership discussions, with real customer case studies demonstrating actual results.",
   },
@@ -99,7 +107,11 @@ export const digitalPartnershipsFAQConfig = {
     "Find answers to common questions about digital partnerships, strategic alliances, and how we help businesses expand their reach.",
   imageUrl: "/d1.avif",
   imageAlt: "FAQ illustration",
-  serviceTags: ["Digital Partnerships", "Strategic Alliances", "Channel Partnerships"],
+  serviceTags: [
+    "Digital Partnerships",
+    "Strategic Alliances",
+    "Channel Partnerships",
+  ],
   ctaButton: {
     label: "Book a Free Call",
     href: "/contact",
@@ -109,7 +121,8 @@ export const digitalPartnershipsFAQConfig = {
 export const customWebsitesFAQs: FAQItem[] = [
   {
     id: "template-vs-custom",
-    question: "What's the difference between a template website and custom development?",
+    question:
+      "What's the difference between a template website and custom development?",
     answer:
       "Template websites use pre-built designs with limited customization—they're faster and cheaper upfront but look generic, have functionality constraints, and can't adapt to unique business needs. Custom websites are built from scratch specifically for your brand, giving you complete control over design, features, and user experience. They're more expensive initially but provide competitive differentiation, superior performance, and flexibility to evolve with your business without template limitations holding you back.",
   },
@@ -127,7 +140,8 @@ export const customWebsitesFAQs: FAQItem[] = [
   },
   {
     id: "seo-ranking",
-    question: "How do you ensure our website ranks well in Google search results?",
+    question:
+      "How do you ensure our website ranks well in Google search results?",
     answer:
       "SEO is built into every website we create, not added afterward. We implement technical SEO fundamentals—clean code, fast loading speeds, mobile optimization, proper heading structure, XML sitemaps, schema markup, and security certificates. We conduct keyword research to optimize page content, write SEO-friendly copy, optimize images, and establish internal linking structures. Post-launch, we can provide ongoing SEO services including content strategy, link building, and continuous optimization to improve rankings over time.",
   },
@@ -167,7 +181,8 @@ export const customSoftwareFAQs: FAQItem[] = [
   },
   {
     id: "custom-vs-off-shelf",
-    question: "What's the difference between custom software and off-the-shelf solutions?",
+    question:
+      "What's the difference between custom software and off-the-shelf solutions?",
     answer:
       "Off-the-shelf software is built for the masses—it's cheaper upfront but forces you to adapt your processes to fit the tool. Custom software is built specifically for your business—it adapts to your workflows, scales with your growth, and gives you competitive advantages competitors can't replicate. While initial investment is higher, custom solutions eliminate ongoing licensing fees, unnecessary features, and the compromises that come with generic tools.",
   },
@@ -219,7 +234,8 @@ export const businessConsultancyFAQs: FAQItem[] = [
   },
   {
     id: "ai-knowledge-requirement",
-    question: "Do we need to understand AI before engaging your AI consultancy services?",
+    question:
+      "Do we need to understand AI before engaging your AI consultancy services?",
     answer:
       "Not at all—that's what we're here for. We demystify AI, explaining concepts in business terms without technical jargon. Many clients come to us feeling overwhelmed by AI hype, unsure where to start or which use cases make sense. We assess your data readiness, identify practical applications relevant to your industry, and guide you through implementation step-by-step. Our job is making AI accessible and valuable, regardless of your starting knowledge level.",
   },
@@ -255,7 +271,11 @@ export const businessConsultancyFAQConfig = {
     "Find answers to common questions about business consultancy, AI implementation, and how we help optimize operations.",
   imageUrl: "/d1.avif",
   imageAlt: "FAQ illustration",
-  serviceTags: ["Business Consultancy", "AI Consultancy", "Process Optimization"],
+  serviceTags: [
+    "Business Consultancy",
+    "AI Consultancy",
+    "Process Optimization",
+  ],
   ctaButton: {
     label: "Book a Free Call",
     href: "/contact",
@@ -289,7 +309,8 @@ export const digitalMarketingFAQs: FAQItem[] = [
   },
   {
     id: "brand-vs-performance-marketing",
-    question: "What's the difference between brand marketing and performance marketing?",
+    question:
+      "What's the difference between brand marketing and performance marketing?",
     answer:
       "Brand marketing builds long-term awareness, perception, and loyalty—think storytelling, values, emotional connection. Performance marketing drives immediate actions—clicks, leads, purchases—with direct ROI measurement. Both matter. Brand marketing makes performance marketing more efficient by creating trust before the ask. Performance marketing provides data that informs brand strategy. We integrate both approaches, balancing short-term conversion goals with long-term brand equity building for sustainable growth.",
   },
@@ -312,4 +333,40 @@ export const digitalMarketingFAQConfig = {
     label: "Book a Free Call",
     href: "/contact",
   },
+};
+
+export const contactFAQs: FAQItem[] = [
+  {
+    id: "ansely-unique-approach",
+    question: "What makes Ansely different from other agencies?",
+    answer:
+      "At Ansely, we merge cutting-edge AI technology with creative design to craft standout, innovative solutions that consistently exceed expectations. Our mission is to transform ideas into impactful realities, blending strategy, creativity, and technology to deliver unparalleled results.",
+  },
+  {
+    id: "working-with-small-businesses",
+    question: "Do you work with small businesses?",
+    answer:
+      "Our goal at Ansely is to empower businesses of all sizes to seamlessly embrace the digital world. We believe in inclusivity and are committed to delivering exceptional solutions, regardless of the scale or scope of your venture.",
+  },
+  {
+    id: "contacting-ansely",
+    question: "How do I get in touch?",
+    answer:
+      "Please complete our contact form or click the WhatsApp link to get in touch. We look forward to connecting with you and assisting with your needs.",
+  },
+  {
+    id: "customized-solutions-offer",
+    question: "Does Ansely offer customized solutions?",
+    answer:
+      "No tech challenge is too complex for us. Give us a call, and we'll make it happen!",
+  },
+];
+export const contactFAQConfig = {
+  categoryTag: "FAQ'S",
+  heading: "Answers",
+  description:
+    "Find answers to common questions about Ansely, our services, and how we can help your business thrive in the digital age.",
+  imageUrl: "/d1.avif",
+  imageAlt: "FAQ illustration",
+  serviceTags: ["Digital Marketing", "Branding", "Social Media"],
 };

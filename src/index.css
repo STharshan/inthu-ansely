@@ -31,7 +31,13 @@
 }
 
 :root {
-  --gradient-color: linear-gradient(to bottom right, #0894ff 0%, #c959dd 34%, #ff2e54 68%, #ff9004);
+  --gradient-color: linear-gradient(
+    to bottom right,
+    #0894ff 0%,
+    #c959dd 34%,
+    #ff2e54 68%,
+    #ff9004
+  );
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -380,7 +386,13 @@ body {
             z-index: -1;
             margin: -5px; /* !important */
             border-radius: 24px; /* !important */
-            background: linear-gradient(91deg, #0096ff 0%, #bb64ff 42%, #f2416b 74%, #eb7500 100%);
+            background: linear-gradient(
+              91deg,
+              #0096ff 0%,
+              #bb64ff 42%,
+              #f2416b 74%,
+              #eb7500 100%
+            );
           }
 
           p {
@@ -595,6 +607,37 @@ body {
   height: 100%;
 }
 
+/* Glass Effect for Contact Form */
+.glass-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Custom select arrow for glass form */
+.glass-container select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1L6 6L11 1' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px 8px;
+}
+
+/* Placeholder color for glass inputs */
+.glass-container input::placeholder,
+.glass-container textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Focus ring for glass inputs */
+.glass-container input:focus,
+.glass-container textarea:focus,
+.glass-container select:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -604,20 +647,146 @@ body {
   }
 }
 
-/* Scroll Optimization */
-html {
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+/* ========================================
+   Navbar Styles
+   ======================================== */
+
+/* Shutter Animations */
+@keyframes shutterDown {
+  0% {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.7;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
 }
 
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@keyframes shutterUp {
+  0% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  100% {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+  }
 }
 
-/* GPU Acceleration Hints */
-[style*="will-change"] {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
+/* Navbar Background */
+.navbar-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
+}
+
+.navbar-bg.active {
+  animation: shutterDown 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.navbar-bg.inactive {
+  animation: shutterUp 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+/* Navbar Divider Line */
+.nav-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  transition: background-color 0.6s ease;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide In Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Social Icon Hover Effect */
+.social-icon {
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.2;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.social-icon:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+/* CTA Button Ripple Effect */
+.cta-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.cta-button:hover::before {
+  width: 300%;
+  height: 300%;
+}
+
+/* Theme Toggle Animation */
+.theme-toggle-icon {
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.theme-toggle-icon.rotate {
+  transform: rotate(360deg);
 }
