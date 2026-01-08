@@ -5,7 +5,6 @@ import HowItWorksSection from "../components/Digitaltransformation/HowItWorksSec
 import ServicePageSection from "../components/Digitaltransformation/ServicePageSection";
 import FAQSection from "../components/Digitaltransformation/FAQSection";
 import ClientReviewsSection from "../components/Digitaltransformation/ClientReviewsSection";
-import LearningGuide from "../components/LearningGuide";
 
 const Digitaltransformation = () => {
   return (
@@ -13,7 +12,6 @@ const Digitaltransformation = () => {
       <WorkspaceCleaningHero />
       <WhatsIncludedSection />
       <HowItWorksSection />
-      <LearningGuide />
       <ServicePageSection />
       <ClientReviewsSection />
       <FAQSection />
