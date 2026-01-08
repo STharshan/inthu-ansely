@@ -8,16 +8,17 @@ import PlatformProcess from "../components/Home/PlatformProcess";
 import { HomeTestimonialsSection } from "../components/organisms/HomeTestimonialsSection";
 import { homeTestimonials } from "../constants/homeTestimonials";
 import Newabout from "../components/Home/Newabout";
-import ShowArea from "../components/Home/ShowArea";
+import { ClientCarousel } from "../components/organisms/ClientCarousel";
+import { clientLogos } from "../constants/clientCarousel";
 import Performance from "../components/Home/Animation";
 
 const Home: React.FC = () => {
   return (
     <div>
       <Hero />
+      <ClientCarousel clients={clientLogos} />
       <Newabout />
       <HeroSection />
-      <ShowArea />
       <CardsSection />
       <VideoSection />
       <TeamCarousel />
