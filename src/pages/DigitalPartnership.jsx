@@ -4,14 +4,12 @@ import DigitalPartnershipService from '../components/DigitalPartnership/DigitalP
 import ServicePageSection from '../components/DigitalPartnership/ServicePageSection'
 import ClientReviewsSection from '../components/DigitalPartnership/ClientReviewsSection'
 import FAQSection from '../components/DigitalPartnership/FAQSection'
-import LearningGuide from '../components/LearningGuide'
 
 const DigitalPartnership = () => {
   return (
     <div>
         <DigitalPartnershipHero />
         <DigitalPartnershipService />
-        <LearningGuide />
         <ServicePageSection />
         <ClientReviewsSection />
         <FAQSection />

@@ -6,14 +6,14 @@ import HowWeWorkSection from "../components/Businessconsultancy/HowWeWorkSection
 import ServicePageSection from "../components/Businessconsultancy/ServicePageSection";
 import ClientReviewsSection from "../components/Businessconsultancy/ClientReviewsSection";
 import FAQSection from "../components/Businessconsultancy/FAQSection";
-import LearningGuide from "../components/LearningGuide";
+import { LearningGuide } from "../components/organisms/LearningGuide";
 
 const Businessconsultancy = () => {
   return (
     <div>
       <FinancialPlanningHeader />
       <FinancialConfidenceSection />
-      <LearningGuide />
+      <LearningGuide service="ai-consulting" />
       <ServicesSection />
       <HowWeWorkSection />
       <ServicePageSection />
