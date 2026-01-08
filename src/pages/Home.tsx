@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import CardsSection from "../components/Home/CardSection";
 import VideoSection from "../components/Home/VideoSection";
 import HeroSection from "../components/Home/Header";
@@ -10,7 +10,9 @@ import { homeTestimonials } from "../constants/homeTestimonials";
 import Newabout from "../components/Home/Newabout";
 import { ClientCarousel } from "../components/organisms/ClientCarousel";
 import { clientLogos } from "../constants/clientCarousel";
-import Performance from "../components/Home/Animation";
+
+// Lazy load heavy components
+const Performance = lazy(() => import("../components/Home/Animation"));
 
 const Home: React.FC = () => {
   return (
@@ -24,7 +26,9 @@ const Home: React.FC = () => {
       <TeamCarousel />
       <PlatformProcess />
       <HomeTestimonialsSection testimonials={homeTestimonials} />
-      <Performance />
+      <Suspense fallback={<div style={{ minHeight: "400px" }} />}>
+        <Performance />
+      </Suspense>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { BlogContentBlock } from "../types/blog";
 
 interface BlogContentProps {
@@ -7,6 +8,58 @@ interface BlogContentProps {
 }
 
 export const BlogContent: React.FC<BlogContentProps> = ({ content, className = "" }) => {
+  // Parse markdown-style links [text](/blog/slug) and convert to React Router Links
+  const parseLinks = (text: string): React.ReactNode[] => {
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const parts: React.ReactNode[] = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+      // Add text before the link
+      if (match.index > lastIndex) {
+        parts.push(text.substring(lastIndex, match.index));
+      }
+
+      // Add the link
+      const linkText = match[1];
+      const linkUrl = match[2];
+      
+      if (linkUrl.startsWith('/blog/')) {
+        parts.push(
+          <Link
+            key={match.index}
+            to={linkUrl}
+            className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline transition-colors duration-300"
+          >
+            {linkText}
+          </Link>
+        );
+      } else {
+        parts.push(
+          <a
+            key={match.index}
+            href={linkUrl}
+            className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline transition-colors duration-300"
+            target={linkUrl.startsWith('http') ? '_blank' : undefined}
+            rel={linkUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
+          >
+            {linkText}
+          </a>
+        );
+      }
+
+      lastIndex = linkRegex.lastIndex;
+    }
+
+    // Add remaining text
+    if (lastIndex < text.length) {
+      parts.push(text.substring(lastIndex));
+    }
+
+    return parts.length > 0 ? parts : [text];
+  };
+
   const renderContent = (block: BlogContentBlock, index: number) => {
     const id =
       block.type === "heading" && block.text
@@ -23,7 +76,7 @@ export const BlogContent: React.FC<BlogContentProps> = ({ content, className = "
             key={index}
             className="text-xl sm:text-2xl font-medium leading-relaxed mb-8 text-gray-900 dark:text-white transition-colors duration-300"
           >
-            {block.text}
+            {parseLinks(block.text)}
           </p>
         );
       case "heading":
@@ -45,7 +98,7 @@ export const BlogContent: React.FC<BlogContentProps> = ({ content, className = "
             key={index}
             className="text-base sm:text-lg leading-relaxed mb-6 text-gray-700 dark:text-gray-300 transition-colors duration-300"
           >
-            {block.text}
+            {parseLinks(block.text)}
           </p>
         );
       default:

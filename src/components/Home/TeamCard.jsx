@@ -1,320 +1,365 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, Linkedin } from "lucide-react";
+import { useTheme } from "../../hooks/useTheme";
 
 export default function TeamCarousel() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isDarkMode, setIsDarkMode] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const isDarkMode = useTheme();
 
-    const teamMembers = [
-        {
-            name: "G. Selva",
-            title: "Everything Guy (Founder)",
-            description:
-                "Founder on paper. Team support in practice. With 16 years of experience building businesses online, driving SaaS companies to billion-dollar annual sales milestones and working at the forefront of technology in surgical robotics. I combine visionary leadership, cutting-edge innovation, and unmatched expertise to create extraordinary results.",
-            image:
-                "https://framerusercontent.com/images/ld1Isq9iOdLryzyA7HZCe7cNgA.jpg",
-        },
-        {
-            name: "D. Copp",
-            title: "Everything Sales",
-            description:
-                "I'm a digital strategist with over a decade of experience helping businesses transition into the digital age. I've worked at one of Europe's largest software companies, where I was rapidly promoted multiple times for performance and impact. My approach blends deep technical expertise with creative, solution-driven thinking to drive growth. I lead a high-performing sales team of five—and when volume ramps up, even the founder gets pulled into sales duty under my direction.",
-            image:
-                "https://framerusercontent.com/images/m1PGVBKWCMad7sb62mX2oeTx8S8.png",
-        },
-        {
-            name: "C. Wooldrige",
-            title: "Everything Marketing ",
-            description:
-                "Outside of running marathons most weekends, I'm driven by creativity and a passion for optimising SEO to help hidden gems get discovered. I've worked in the corporate world helping large companies increase their online visibility and digital performance. That experience allows me to understand what search engines truly reward and how users actually find businesses. I now bring this expertise into everything we build at Ansely. My focus is on turning strong businesses into brands that can't be ignored online.",
-            image:
-                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop",
-        },
-        {
-            name: "S. Bandarai",
-            title: "Everything Tech ",
-            description:
-                "I'm driven by technology and obsessed with turning vision into working, scalable code. Having worked with some of the world's leading AI businesses, I bring clarity, speed, and execution to ambitious ideas. Currently lead a high-performance team of six leaders delivering real-world impact.",
-            image:
-                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop",
-        },
-    ];
+  const teamMembers = [
+    {
+      name: "G. Selva",
+      title: "Everything Guy (Founder)",
+      description:
+        "Founder on paper. Team support in practice. With 16 years of experience building businesses online, driving SaaS companies to billion-dollar annual sales milestones and working at the forefront of technology in surgical robotics. I combine visionary leadership, cutting-edge innovation, and unmatched expertise to create extraordinary results.",
+      image: "https://framerusercontent.com/images/ld1Isq9iOdLryzyA7HZCe7cNgA.jpg",
+    },
+    {
+      name: "D. Copp",
+      title: "Everything Sales",
+      description:
+        "I'm a digital strategist with over a decade of experience helping businesses transition into the digital age. I've worked at one of Europe's largest software companies, where I was rapidly promoted multiple times for performance and impact. My approach blends deep technical expertise with creative, solution-driven thinking to drive growth. I lead a high-performing sales team of five—and when volume ramps up, even the founder gets pulled into sales duty under my direction.",
+      image: "https://framerusercontent.com/images/m1PGVBKWCMad7sb62mX2oeTx8S8.png",
+    },
+    {
+      name: "C. Wooldrige",
+      title: "Everything Marketing ",
+      description:
+        "Outside of running marathons most weekends, I'm driven by creativity and a passion for optimising SEO to help hidden gems get discovered. I've worked in the corporate world helping large companies increase their online visibility and digital performance. That experience allows me to understand what search engines truly reward and how users actually find businesses. I now bring this expertise into everything we build at Ansely. My focus is on turning strong businesses into brands that can't be ignored online.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop",
+    },
+    {
+      name: "S. Bandarai",
+      title: "Everything Tech ",
+      description:
+        "I'm driven by technology and obsessed with turning vision into working, scalable code. Having worked with some of the world's leading AI businesses, I bring clarity, speed, and execution to ambitious ideas. Currently lead a high-performance team of six leaders delivering real-world impact.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop",
+    },
+  ];
 
-    // Listen for theme changes from navbar
-    useEffect(() => {
-        const checkTheme = () => {
-            setIsDarkMode(document.documentElement.classList.contains('dark'));
-        };
-        
-        checkTheme();
+  const prev = () => setCurrentIndex((p) => (p === 0 ? teamMembers.length - 1 : p - 1));
+  const next = () => setCurrentIndex((p) => (p === teamMembers.length - 1 ? 0 : p + 1));
 
-        const observer = new MutationObserver(checkTheme);
-        observer.observe(document.documentElement, {
-            attributes: true,
-            attributeFilter: ['class']
-        });
+  const current = teamMembers[currentIndex];
 
-        return () => observer.disconnect();
-    }, []);
-
-    const prev = () =>
-        setCurrentIndex((p) => (p === 0 ? teamMembers.length - 1 : p - 1));
-    const next = () =>
-        setCurrentIndex((p) => (p === teamMembers.length - 1 ? 0 : p + 1));
-
-    const current = teamMembers[currentIndex];
-
-    return (
-        <div className={`font-sans ${isDarkMode ? 'bg-black text-white' : 'bg-white text-gray-900'}`}>
-            <div className="flex items-center max-w-6xl mx-auto justify-center p-4 sm:p-6 lg:p-8">
-                <div className="rounded-lg w-full">
-
-                    {/* Desktop Layout (lg and above) */}
-                    <div className="hidden lg:grid lg:grid-cols-[7fr_5fr_2fr] gap-2">
-                        {/* Left Section */}
-                        <div className="flex flex-col justify-between">
-                            <div>
-                                <div className={`flex items-center rounded-xl p-10 justify-between mb-1 ${
-                                    isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
-                                }`}>
-                                    <span className={`text-lg font-semibold ${
-                                        isDarkMode ? 'text-gray-400' : 'text-gray-600'
-                                    }`}>Team Platform</span>
-                                    <div className="flex gap-1.5">
-                                        {teamMembers.map((_, i) => (
-                                            <button
-                                                key={i}
-                                                onClick={() => setCurrentIndex(i)}
-                                                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                                                    i === currentIndex
-                                                        ? "bg-[#0045EF] scale-125"
-                                                        : isDarkMode ? "bg-gray-600" : "bg-gray-400"
-                                                }`}
-                                            />
-                                        ))}
-                                    </div>
-                                </div>
-                                <div className={`rounded-xl p-10 h-120 ${
-                                    isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
-                                }`}>
-                                    <h2 className={`text-5xl font-light mb-3 ${
-                                        isDarkMode ? 'text-gray-100' : 'text-gray-900'
-                                    }`}>
-                                        {current.name}
-                                    </h2>
-                                    <p className={`text-xl font-semibold mb-5 ${
-                                        isDarkMode ? 'text-gray-400' : 'text-gray-600'
-                                    }`}>{current.title}</p>
-                                    <p className={`mt-2 text-lg leading-relaxed ${
-                                        isDarkMode ? 'text-gray-300' : 'text-gray-700'
-                                    }`}>
-                                        {current.description}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Center Image Section */}
-                        <div className={`rounded-lg flex items-center justify-center p-8 ${
-                            isDarkMode ? 'bg-gray-900' : 'bg-gray-200'
-                        }`}>
-                            <div className="w-full h-[500px] rounded-lg overflow-hidden">
-                                <img
-                                    src={current.image}
-                                    alt={current.name}
-                                    className="w-full h-[550px] object-cover"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Right Section */}
-                        <div className="flex flex-col">
-                            <div className="flex justify-center">
-                                <div className={`flex gap-6 p-10 rounded-xl ${
-                                    isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
-                                }`}>
-                                    <button
-                                        onClick={prev}
-                                        className={`w-12 h-12 rounded-lg border flex items-center justify-center transition-colors ${
-                                            isDarkMode 
-                                                ? 'border-gray-600 hover:bg-gray-700'
-                                                : 'border-gray-300 hover:bg-gray-200'
-                                        }`}
-                                    >
-                                        <ChevronLeft className="w-6 h-6 text-[#0045EF]" />
-                                    </button>
-                                    <button
-                                        onClick={next}
-                                        className={`w-12 h-12 rounded-lg border flex items-center justify-center transition-colors ${
-                                            isDarkMode 
-                                                ? 'border-gray-600 hover:bg-gray-700'
-                                                : 'border-gray-300 hover:bg-gray-200'
-                                        }`}
-                                    >
-                                        <ChevronRight className="w-6 h-6 text-[#0045EF]" />
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className={`flex-1 flex items-center justify-center mt-1 rounded-xl p-10 ${
-                                isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
-                            }`}>
-                                <div className="flex flex-col gap-6">
-                                    <button className={`w-12 h-12 rounded-lg border flex items-center justify-center transition-colors ${
-                                        isDarkMode 
-                                            ? 'border-gray-600 hover:bg-gray-700 text-gray-400 hover:text-[#0045EF]'
-                                            : 'border-gray-300 hover:bg-gray-200 text-gray-600 hover:text-[#0045EF]'
-                                    }`}>
-                                        <Linkedin className="w-5 h-5" />
-                                    </button>
-                                    <button className={`w-12 h-12 rounded-lg border flex items-center justify-center transition-colors ${
-                                        isDarkMode 
-                                            ? 'border-gray-600 hover:bg-gray-700 text-gray-400 hover:text-[#0045EF]'
-                                            : 'border-gray-300 hover:bg-gray-200 text-gray-600 hover:text-[#0045EF]'
-                                    }`}>
-                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                                        </svg>
-                                    </button>
-                                    <button className={`w-12 h-12 rounded-lg border flex items-center justify-center transition-colors ${
-                                        isDarkMode 
-                                            ? 'border-gray-600 hover:bg-gray-700 text-gray-400 hover:text-[#0045EF]'
-                                            : 'border-gray-300 hover:bg-gray-200 text-gray-600 hover:text-[#0045EF]'
-                                    }`}>
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" strokeWidth="2" />
-                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" strokeWidth="2" />
-                                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" strokeWidth="2" strokeLinecap="round" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Mobile & Tablet Layout (below lg) */}
-                    <div className="lg:hidden flex flex-col gap-3">
-                        {/* Header with Title and Dots */}
-                        <div className={`flex items-center rounded-xl p-4 sm:p-6 justify-between ${
-                            isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
-                        }`}>
-                            <span className={`text-sm sm:text-base font-semibold ${
-                                isDarkMode ? 'text-gray-400' : 'text-gray-600'
-                            }`}>Team Platform</span>
-                            <div className="flex gap-1.5">
-                                {teamMembers.map((_, i) => (
-                                    <div
-                                        key={i}
-                                        className={`w-2 h-2 rounded-full ${
-                                            i === currentIndex 
-                                                ? "bg-[#0045EF]" 
-                                                : isDarkMode ? "bg-gray-600" : "bg-gray-400"
-                                        }`}
-                                    />
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Navigation Buttons */}
-                        <div className={`flex justify-center rounded-xl p-4 ${
-                            isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
-                        }`}>
-                            <div className="flex gap-4">
-                                <button
-                                    onClick={prev}
-                                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg border flex items-center justify-center transition-colors ${
-                                        isDarkMode 
-                                            ? 'border-gray-600 hover:bg-gray-700'
-                                            : 'border-gray-300 hover:bg-gray-200'
-                                    }`}
-                                >
-                                    <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-[#0045EF]" />
-                                </button>
-                                <button
-                                    onClick={next}
-                                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg border flex items-center justify-center transition-colors ${
-                                        isDarkMode 
-                                            ? 'border-gray-600 hover:bg-gray-700'
-                                            : 'border-gray-300 hover:bg-gray-200'
-                                    }`}
-                                >
-                                    <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#0045EF]" />
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Image */}
-                        <div className={`rounded-xl p-4 sm:p-6 ${
-                            isDarkMode ? 'bg-gray-900' : 'bg-gray-200'
-                        }`}>
-                            <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-lg overflow-hidden">
-                                <img
-                                    src={current.image}
-                                    alt={current.name}
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Info Section */}
-                        <div className={`rounded-xl p-4 sm:p-6 md:p-8 ${
-                            isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
-                        }`}>
-                            <h2 className={`text-2xl sm:text-3xl md:text-4xl font-light mb-2 ${
-                                isDarkMode ? 'text-gray-100' : 'text-gray-900'
-                            }`}>
-                                {current.name}
-                            </h2>
-                            <p className={`text-base sm:text-lg md:text-xl font-semibold mb-4 sm:mb-6 ${
-                                isDarkMode ? 'text-gray-400' : 'text-gray-600'
-                            }`}>
-                                {current.title}
-                            </p>
-                            <p className={`text-sm sm:text-base md:text-lg leading-relaxed ${
-                                isDarkMode ? 'text-gray-300' : 'text-gray-700'
-                            }`}>
-                                {current.description}
-                            </p>
-                        </div>
-
-                        {/* Social Icons */}
-                        <div className={`rounded-xl p-4 sm:p-6 ${
-                            isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
-                        }`}>
-                            <div className="flex justify-center gap-4 sm:gap-6">
-                                <button className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg border flex items-center justify-center transition-colors ${
-                                    isDarkMode 
-                                        ? 'border-gray-600 hover:bg-gray-700 text-gray-400 hover:text-[#0045EF]'
-                                        : 'border-gray-300 hover:bg-gray-200 text-gray-600 hover:text-[#0045EF]'
-                                }`}>
-                                    <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
-                                </button>
-                                <button className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg border flex items-center justify-center transition-colors ${
-                                    isDarkMode 
-                                        ? 'border-gray-600 hover:bg-gray-700 text-gray-400 hover:text-[#0045EF]'
-                                        : 'border-gray-300 hover:bg-gray-200 text-gray-600 hover:text-[#0045EF]'
-                                }`}>
-                                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                                    </svg>
-                                </button>
-                                <button className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg border flex items-center justify-center transition-colors ${
-                                    isDarkMode 
-                                        ? 'border-gray-600 hover:bg-gray-700 text-gray-400 hover:text-[#0045EF]'
-                                        : 'border-gray-300 hover:bg-gray-200 text-gray-600 hover:text-[#0045EF]'
-                                }`}>
-                                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" strokeWidth="2" />
-                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" strokeWidth="2" />
-                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" strokeWidth="2" strokeLinecap="round" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
+  return (
+    <div className={`font-sans ${isDarkMode ? "bg-black text-white" : "bg-white text-gray-900"}`}>
+      <div className="flex items-center max-w-6xl mx-auto justify-center p-4 sm:p-6 lg:p-8">
+        <div className="rounded-lg w-full">
+          {/* Desktop Layout (lg and above) */}
+          <div className="hidden lg:grid lg:grid-cols-[7fr_5fr_2fr] gap-2">
+            {/* Left Section */}
+            <div className="flex flex-col justify-between">
+              <div>
+                <div
+                  className={`flex items-center rounded-xl p-10 justify-between mb-1 ${
+                    isDarkMode ? "bg-gray-800" : "bg-gray-100"
+                  }`}
+                >
+                  <span
+                    className={`text-lg font-semibold ${
+                      isDarkMode ? "text-gray-400" : "text-gray-600"
+                    }`}
+                  >
+                    Team Platform
+                  </span>
+                  <div className="flex gap-1.5">
+                    {teamMembers.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setCurrentIndex(i)}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          i === currentIndex
+                            ? "bg-[#0045EF] scale-125"
+                            : isDarkMode
+                            ? "bg-gray-600"
+                            : "bg-gray-400"
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </div>
+                <div
+                  className={`rounded-xl p-10 h-120 ${isDarkMode ? "bg-gray-800" : "bg-gray-100"}`}
+                >
+                  <h2
+                    className={`text-5xl font-light mb-3 ${
+                      isDarkMode ? "text-gray-100" : "text-gray-900"
+                    }`}
+                  >
+                    {current.name}
+                  </h2>
+                  <p
+                    className={`text-xl font-semibold mb-5 ${
+                      isDarkMode ? "text-gray-400" : "text-gray-600"
+                    }`}
+                  >
+                    {current.title}
+                  </p>
+                  <p
+                    className={`mt-2 text-lg leading-relaxed ${
+                      isDarkMode ? "text-gray-300" : "text-gray-700"
+                    }`}
+                  >
+                    {current.description}
+                  </p>
+                </div>
+              </div>
             </div>
+
+            {/* Center Image Section */}
+            <div
+              className={`rounded-lg flex items-center justify-center p-8 ${
+                isDarkMode ? "bg-gray-900" : "bg-gray-200"
+              }`}
+            >
+              <div className="w-full h-[500px] rounded-lg overflow-hidden">
+                <img
+                  src={current.image}
+                  alt={current.name}
+                  className="w-full h-[550px] object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Right Section */}
+            <div className="flex flex-col">
+              <div className="flex justify-center">
+                <div
+                  className={`flex gap-6 p-10 rounded-xl ${
+                    isDarkMode ? "bg-gray-800" : "bg-gray-100"
+                  }`}
+                >
+                  <button
+                    onClick={prev}
+                    className={`w-12 h-12 rounded-lg border flex items-center justify-center transition-colors ${
+                      isDarkMode
+                        ? "border-gray-600 hover:bg-gray-700"
+                        : "border-gray-300 hover:bg-gray-200"
+                    }`}
+                  >
+                    <ChevronLeft className="w-6 h-6 text-[#0045EF]" />
+                  </button>
+                  <button
+                    onClick={next}
+                    className={`w-12 h-12 rounded-lg border flex items-center justify-center transition-colors ${
+                      isDarkMode
+                        ? "border-gray-600 hover:bg-gray-700"
+                        : "border-gray-300 hover:bg-gray-200"
+                    }`}
+                  >
+                    <ChevronRight className="w-6 h-6 text-[#0045EF]" />
+                  </button>
+                </div>
+              </div>
+
+              <div
+                className={`flex-1 flex items-center justify-center mt-1 rounded-xl p-10 ${
+                  isDarkMode ? "bg-gray-800" : "bg-gray-100"
+                }`}
+              >
+                <div className="flex flex-col gap-6">
+                  <button
+                    className={`w-12 h-12 rounded-lg border flex items-center justify-center transition-colors ${
+                      isDarkMode
+                        ? "border-gray-600 hover:bg-gray-700 text-gray-400 hover:text-[#0045EF]"
+                        : "border-gray-300 hover:bg-gray-200 text-gray-600 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </button>
+                  <button
+                    className={`w-12 h-12 rounded-lg border flex items-center justify-center transition-colors ${
+                      isDarkMode
+                        ? "border-gray-600 hover:bg-gray-700 text-gray-400 hover:text-[#0045EF]"
+                        : "border-gray-300 hover:bg-gray-200 text-gray-600 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                  </button>
+                  <button
+                    className={`w-12 h-12 rounded-lg border flex items-center justify-center transition-colors ${
+                      isDarkMode
+                        ? "border-gray-600 hover:bg-gray-700 text-gray-400 hover:text-[#0045EF]"
+                        : "border-gray-300 hover:bg-gray-200 text-gray-600 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" strokeWidth="2" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" strokeWidth="2" />
+                      <line
+                        x1="17.5"
+                        y1="6.5"
+                        x2="17.51"
+                        y2="6.5"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile & Tablet Layout (below lg) */}
+          <div className="lg:hidden flex flex-col gap-3">
+            {/* Header with Title and Dots */}
+            <div
+              className={`flex items-center rounded-xl p-4 sm:p-6 justify-between ${
+                isDarkMode ? "bg-gray-800" : "bg-gray-100"
+              }`}
+            >
+              <span
+                className={`text-sm sm:text-base font-semibold ${
+                  isDarkMode ? "text-gray-400" : "text-gray-600"
+                }`}
+              >
+                Team Platform
+              </span>
+              <div className="flex gap-1.5">
+                {teamMembers.map((_, i) => (
+                  <div
+                    key={i}
+                    className={`w-2 h-2 rounded-full ${
+                      i === currentIndex
+                        ? "bg-[#0045EF]"
+                        : isDarkMode
+                        ? "bg-gray-600"
+                        : "bg-gray-400"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation Buttons */}
+            <div
+              className={`flex justify-center rounded-xl p-4 ${
+                isDarkMode ? "bg-gray-800" : "bg-gray-100"
+              }`}
+            >
+              <div className="flex gap-4">
+                <button
+                  onClick={prev}
+                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg border flex items-center justify-center transition-colors ${
+                    isDarkMode
+                      ? "border-gray-600 hover:bg-gray-700"
+                      : "border-gray-300 hover:bg-gray-200"
+                  }`}
+                >
+                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-[#0045EF]" />
+                </button>
+                <button
+                  onClick={next}
+                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg border flex items-center justify-center transition-colors ${
+                    isDarkMode
+                      ? "border-gray-600 hover:bg-gray-700"
+                      : "border-gray-300 hover:bg-gray-200"
+                  }`}
+                >
+                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#0045EF]" />
+                </button>
+              </div>
+            </div>
+
+            {/* Image */}
+            <div className={`rounded-xl p-4 sm:p-6 ${isDarkMode ? "bg-gray-900" : "bg-gray-200"}`}>
+              <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-lg overflow-hidden">
+                <img
+                  src={current.image}
+                  alt={current.name}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
+            {/* Info Section */}
+            <div
+              className={`rounded-xl p-4 sm:p-6 md:p-8 ${
+                isDarkMode ? "bg-gray-800" : "bg-gray-100"
+              }`}
+            >
+              <h2
+                className={`text-2xl sm:text-3xl md:text-4xl font-light mb-2 ${
+                  isDarkMode ? "text-gray-100" : "text-gray-900"
+                }`}
+              >
+                {current.name}
+              </h2>
+              <p
+                className={`text-base sm:text-lg md:text-xl font-semibold mb-4 sm:mb-6 ${
+                  isDarkMode ? "text-gray-400" : "text-gray-600"
+                }`}
+              >
+                {current.title}
+              </p>
+              <p
+                className={`text-sm sm:text-base md:text-lg leading-relaxed ${
+                  isDarkMode ? "text-gray-300" : "text-gray-700"
+                }`}
+              >
+                {current.description}
+              </p>
+            </div>
+
+            {/* Social Icons */}
+            <div className={`rounded-xl p-4 sm:p-6 ${isDarkMode ? "bg-gray-800" : "bg-gray-100"}`}>
+              <div className="flex justify-center gap-4 sm:gap-6">
+                <button
+                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg border flex items-center justify-center transition-colors ${
+                    isDarkMode
+                      ? "border-gray-600 hover:bg-gray-700 text-gray-400 hover:text-[#0045EF]"
+                      : "border-gray-300 hover:bg-gray-200 text-gray-600 hover:text-[#0045EF]"
+                  }`}
+                >
+                  <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
+                </button>
+                <button
+                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg border flex items-center justify-center transition-colors ${
+                    isDarkMode
+                      ? "border-gray-600 hover:bg-gray-700 text-gray-400 hover:text-[#0045EF]"
+                      : "border-gray-300 hover:bg-gray-200 text-gray-600 hover:text-[#0045EF]"
+                  }`}
+                >
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </button>
+                <button
+                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg border flex items-center justify-center transition-colors ${
+                    isDarkMode
+                      ? "border-gray-600 hover:bg-gray-700 text-gray-400 hover:text-[#0045EF]"
+                      : "border-gray-300 hover:bg-gray-200 text-gray-600 hover:text-[#0045EF]"
+                  }`}
+                >
+                  <svg
+                    className="w-4 h-4 sm:w-5 sm:h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" strokeWidth="2" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" strokeWidth="2" />
+                    <line
+                      x1="17.5"
+                      y1="6.5"
+                      x2="17.51"
+                      y2="6.5"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }

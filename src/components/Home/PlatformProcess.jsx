@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, Calendar } from "lucide-react";
+import { useTheme } from "../../hooks/useTheme";
 
 export default function PlatformProcess() {
     const [currentStep, setCurrentStep] = useState(1);
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const isDarkMode = useTheme();
 
     const steps = [
         {
@@ -89,23 +90,6 @@ export default function PlatformProcess() {
         },
     ];
 
-    // Listen for theme changes from navbar
-    useEffect(() => {
-        const checkTheme = () => {
-            setIsDarkMode(document.documentElement.classList.contains('dark'));
-        };
-
-        checkTheme();
-
-        const observer = new MutationObserver(checkTheme);
-        observer.observe(document.documentElement, {
-            attributes: true,
-            attributeFilter: ['class']
-        });
-
-        return () => observer.disconnect();
-    }, []);
-
     const currentStepData = steps[currentStep];
 
     const nextStep = () => {
@@ -130,6 +114,8 @@ export default function PlatformProcess() {
                             src={currentStepData.image}
                             alt={currentStepData.title}
                             className="absolute inset-0 mt-70 w-400 h-20 rotate-270 object-cover"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
 
