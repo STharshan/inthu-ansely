@@ -17,6 +17,7 @@ export const ClientLogo: React.FC<ClientLogoProps> = ({ client, className = "" }
           alt={client.name}
           className="absolute inset-0 w-full h-full opacity-60 dark:opacity-50 hover:opacity-100 dark:hover:opacity-100 transition-all duration-300 object-cover"
           loading="lazy"
+          decoding="async"
           onError={(e) => {
             console.error(`Failed to load image: ${client.logoUrl}`);
             e.currentTarget.style.display = "none";

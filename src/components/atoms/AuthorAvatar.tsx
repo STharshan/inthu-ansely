@@ -19,6 +19,8 @@ export const AuthorAvatar: React.FC<AuthorAvatarProps> = ({
       alt={alt}
       className={`rounded-full object-cover flex-shrink-0 ${className}`}
       style={{ width: size, height: size }}
+      loading="lazy"
+      decoding="async"
     />
   );
 };

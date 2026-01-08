@@ -26,8 +26,10 @@ const LightPillar = ({
   const mouseRef = useRef(new THREE.Vector2(0, 0));
   const timeRef = useRef(0);
   const [webGLSupported, setWebGLSupported] = useState(true);
+  const [isInViewport, setIsInViewport] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Check WebGL support
+  // Check WebGL support and detect mobile
   useEffect(() => {
     const canvas = document.createElement('canvas');
     const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
@@ -35,6 +37,30 @@ const LightPillar = ({
       setWebGLSupported(false);
       console.warn('WebGL is not supported in this browser');
     }
+
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile, { passive: true });
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // IntersectionObserver to pause when not in viewport
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsInViewport(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -53,7 +79,7 @@ const LightPillar = ({
     let renderer;
     try {
       renderer = new THREE.WebGLRenderer({
-        antialias: false,
+        antialias: !isMobile,
         alpha: true,
         powerPreference: 'high-performance',
         precision: 'lowp',
@@ -67,7 +93,7 @@ const LightPillar = ({
     }
 
     renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
     container.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
@@ -262,6 +288,12 @@ const LightPillar = ({
     const animate = currentTime => {
       if (!materialRef.current || !rendererRef.current || !sceneRef.current || !cameraRef.current) return;
 
+      // Pause rendering when not in viewport
+      if (!isInViewport) {
+        rafRef.current = requestAnimationFrame(animate);
+        return;
+      }
+
       const deltaTime = currentTime - lastTime;
 
       if (deltaTime >= frameTime) {
@@ -334,7 +366,9 @@ const LightPillar = ({
     pillarHeight,
     noiseIntensity,
     pillarRotation,
-    webGLSupported
+    webGLSupported,
+    isInViewport,
+    isMobile
   ]);
 
   if (!webGLSupported) {
@@ -345,7 +379,7 @@ const LightPillar = ({
     );
   }
 
-  return <div ref={containerRef} className={`light-pillar-container ${className}`} style={{ mixBlendMode }} />;
+  return <div ref={containerRef} className={`light-pillar-container ${className}`} style={{ mixBlendMode, willChange: 'transform' }} />;
 };
 
 export default LightPillar;

@@ -15,7 +15,8 @@ export default function ScrollMove({ children, x = 0, y = 0, duration = 0.6, del
   // 根据触发点类型设置不同的视口参数
   const viewportOptions = {
     margin: '-30% 0px -30% 0px', // 上下扩展30%的触发区域
-    amount: 1
+    amount: 1,
+    once: true // Prevent re-triggering
   };
 
   return (
@@ -27,6 +28,7 @@ export default function ScrollMove({ children, x = 0, y = 0, duration = 0.6, del
         transition: { duration, delay }
       }}
       viewport={viewportOptions}
+      style={{ willChange: 'transform' }}
     >
       {children}
     </motion.div>

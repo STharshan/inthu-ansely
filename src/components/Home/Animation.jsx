@@ -25,8 +25,9 @@ const Performance = () => {
             trigger: ".content p",
             start: "top bottom",
             end: "top center",
-            scrub: true,
-            invalidateOnRefresh: true,
+            scrub: 0.5,
+            invalidateOnRefresh: false,
+            markers: false,
           },
         }
       );
@@ -40,8 +41,9 @@ const Performance = () => {
           trigger: sectionEl,
           start: "top bottom",
           end: "bottom top",
-          scrub: 1,
-          invalidateOnRefresh: true,
+          scrub: 0.5,
+          invalidateOnRefresh: false,
+          markers: false,
         },
       });
 
@@ -75,6 +77,9 @@ const Performance = () => {
             src={item.src}
             className={item.id}
             alt={item.alt || `Performance Image #${index + 1}`}
+            loading="lazy"
+            decoding="async"
+            style={{ willChange: "transform" }}
           />
         ))}
       </div>

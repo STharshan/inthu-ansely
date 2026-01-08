@@ -17,12 +17,19 @@ export default function Navbar() {
   const isBlogDetailPage = location.pathname.startsWith('/blog/') && location.pathname !== '/blog';
 
   useEffect(() => {
-    // Check for saved theme preference or default to light mode
-    const savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Check for saved theme preference in localStorage first, then prefers-color-scheme
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    if (savedTheme) {
+    // Priority: localStorage > prefers-color-scheme
+    const shouldBeDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+    
+    if (shouldBeDark) {
       setIsDark(true);
       document.documentElement.classList.add('dark');
+    } else {
+      setIsDark(false);
+      document.documentElement.classList.remove('dark');
     }
 
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -42,12 +49,14 @@ export default function Navbar() {
   }, []);
 
   const toggleTheme = () => {
-    if (isDark) {
-      document.documentElement.classList.remove('dark');
-      setIsDark(false);
-    } else {
+    const newIsDark = !isDark;
+    setIsDark(newIsDark);
+    if (newIsDark) {
       document.documentElement.classList.add('dark');
-      setIsDark(true);
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
   };
 
