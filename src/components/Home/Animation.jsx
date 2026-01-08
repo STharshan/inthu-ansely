@@ -25,8 +25,8 @@ const Performance = () => {
             trigger: ".content p",
             start: "top bottom",
             end: "top center",
-            scrub: 0.5,
-            invalidateOnRefresh: false,
+            scrub: 0.5, // Smoother than scrub: 1, but still responsive
+            invalidateOnRefresh: true, // Required for proper recalculation on resize/mobile toggle
             markers: false,
           },
         }
@@ -41,8 +41,8 @@ const Performance = () => {
           trigger: sectionEl,
           start: "top bottom",
           end: "bottom top",
-          scrub: 0.5,
-          invalidateOnRefresh: false,
+          scrub: 0.5, // Smoother than scrub: 1, but still responsive
+          invalidateOnRefresh: true, // Required for proper recalculation on resize/mobile toggle
           markers: false,
         },
       });
