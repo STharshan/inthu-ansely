@@ -30,11 +30,9 @@ export default function Newabout() {
             </h1>
 
             <h3 className="my-8 max-w-2xl text-xl opacity-80 text-gray-700 dark:text-gray-300">
-              Discover React: a powerful JavaScript framework designed for
-              high-performance, fully custom web applications where speed,
-              scalability, and user experience come first.
+              Discover React: a powerful JavaScript framework designed for high-performance, fully
+              custom web applications where speed, scalability, and user experience come first.
             </h3>
-
 
             <div className="mt-12 grid grid-cols-2 gap-4 font-semibold opacity-80">
               {features.map((feature, index) => (
@@ -64,6 +62,9 @@ export default function Newabout() {
               className="absolute -top-20 left-0 w-full max-w-[200px] -rotate-15 rounded-lg shadow-2xl sm:max-w-sm md:max-w-md"
               src="/kml-desk.png"
               alt="kml website"
+              loading="lazy"
+              decoding="async"
+              style={{ willChange: "transform" }}
             />
 
             <AnimatedScrollMove x={40} y={40}>
@@ -71,6 +72,9 @@ export default function Newabout() {
                 className="absolute -top-10 left-20 w-full max-w-[200px] -rotate-5 rounded-lg shadow-2xl transition-transform duration-500 ease-in-out group-hover:translate-2 sm:max-w-sm md:max-w-md"
                 src="/auto-desk.png"
                 alt="auto-desk. development"
+                loading="lazy"
+                decoding="async"
+                style={{ willChange: "transform" }}
               />
             </AnimatedScrollMove>
 
@@ -79,6 +83,9 @@ export default function Newabout() {
                 className="absolute top-0 left-40 w-full max-w-[200px] rounded-lg shadow-2xl transition-transform duration-500 ease-in-out group-hover:translate-4 sm:max-w-sm md:max-w-md"
                 src="/stonley-desk.png"
                 alt="react ui"
+                loading="lazy"
+                decoding="async"
+                style={{ willChange: "transform" }}
               />
             </AnimatedScrollMove>
           </div>
@@ -89,6 +96,9 @@ export default function Newabout() {
               className="absolute -top-20 left-[10%] w-full max-w-[200px] -rotate-15 rounded-lg shadow-2xl"
               src="/kml-mobile.png"
               alt="react website"
+              loading="lazy"
+              decoding="async"
+              style={{ willChange: "transform" }}
             />
 
             <AnimatedScrollMove x={40} y={40}>
@@ -96,6 +106,9 @@ export default function Newabout() {
                 className="absolute -top-10 left-[20%] w-full max-w-[200px] -rotate-5 rounded-lg shadow-2xl transition-transform duration-500 ease-in-out group-hover:translate-2"
                 src="/auto-mobile.png"
                 alt="react development"
+                loading="lazy"
+                decoding="async"
+                style={{ willChange: "transform" }}
               />
             </AnimatedScrollMove>
 
@@ -104,6 +117,9 @@ export default function Newabout() {
                 className="absolute top-0 left-[30%] w-full max-w-[200px] rounded-lg shadow-2xl transition-transform duration-500 ease-in-out group-hover:translate-4"
                 src="/stonley-mobile.png"
                 alt="react ui"
+                loading="lazy"
+                decoding="async"
+                style={{ willChange: "transform" }}
               />
             </AnimatedScrollMove>
           </div>

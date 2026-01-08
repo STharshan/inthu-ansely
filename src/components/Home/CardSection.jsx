@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../../hooks/useTheme";
 import {
   FaCode,
   FaChartLine,
@@ -87,28 +88,43 @@ const ServicesSection = () => {
   const navigate = useNavigate();
   const [text, setText] = useState("");
   const [charIndex, setCharIndex] = useState(0);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isInViewport, setIsInViewport] = useState(false);
+  const swiperRef = useRef(null);
+  const sectionRef = useRef(null);
+  const isDarkMode = useTheme();
 
   const customWebsiteCard = serviceContent.find((item) => item.code);
 
-  // Listen for theme changes from navbar
+  // IntersectionObserver to pause autoplay when not in viewport
   useEffect(() => {
-    // Check initial theme
-    const checkTheme = () => {
-      setIsDarkMode(document.documentElement.classList.contains('dark'));
-    };
-    
-    checkTheme();
+    if (!sectionRef.current) return;
 
-    // Watch for theme changes
-    const observer = new MutationObserver(checkTheme);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class']
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsInViewport(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
 
+    observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
+
+  // Control autoplay based on viewport visibility
+  useEffect(() => {
+    if (!swiperRef.current) return;
+
+    const swiper = swiperRef.current.swiper;
+    if (!swiper) return;
+
+    if (isInViewport) {
+      swiper.autoplay?.start();
+    } else {
+      swiper.autoplay?.stop();
+    }
+  }, [isInViewport]);
 
   useEffect(() => {
     if (charIndex < customWebsiteCard.code.length) {
@@ -133,6 +149,7 @@ const ServicesSection = () => {
   return (
     <>
       <section
+        ref={sectionRef}
         id="services"
         className={`relative px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 overflow-hidden ${
           isDarkMode ? 'bg-black text-white' : 'bg-white text-gray-900'
@@ -164,6 +181,7 @@ const ServicesSection = () => {
           </div>
 
           <Swiper
+            ref={swiperRef}
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={20}
             slidesPerView={1}
@@ -195,6 +213,7 @@ const ServicesSection = () => {
               },
             }}
             className="services-swiper pb-12 sm:pb-16"
+            style={{ willChange: 'transform' }}
           >
             {serviceContent.map((item, index) => {
               const Icon = item.icon;
@@ -439,27 +458,34 @@ const ServicesSection = () => {
           animation: pulseSoft 2s ease-in-out infinite;
         }
 
-        /* Progress bar animation */
+        /* Progress bar animation - GPU accelerated */
         @keyframes progressFill {
           from {
-            width: 0%;
+            transform: scaleX(0);
+            transform-origin: left;
           }
           to {
-            width: 100%;
+            transform: scaleX(1);
+            transform-origin: left;
           }
         }
         .animate-progressBar {
           animation: progressFill 3s ease-in-out infinite;
+          will-change: transform;
+          contain: layout style paint;
         }
 
-        /* Width expansion animation */
+        /* Width expansion animation - GPU accelerated */
         @keyframes expandWidth {
           from {
-            width: 0%;
+            transform: scaleX(0);
+            transform-origin: left;
           }
         }
         .animate-expandWidth {
           animation: expandWidth 1.5s ease-out forwards;
+          will-change: transform;
+          contain: layout style paint;
         }
 
         /* Float animations for background */
@@ -489,33 +515,37 @@ const ServicesSection = () => {
           animation: floatDelayed 10s ease-in-out infinite;
         }
 
-        /* Slide in animations */
+        /* Slide in animations - GPU accelerated */
         @keyframes slideInLeft {
           from {
             opacity: 0;
-            transform: translateX(-20px);
+            transform: translate3d(-20px, 0, 0);
           }
           to {
             opacity: 1;
-            transform: translateX(0);
+            transform: translate3d(0, 0, 0);
           }
         }
         .animate-slideInLeft {
           animation: slideInLeft 0.5s ease-out forwards;
+          will-change: transform, opacity;
+          contain: layout style paint;
         }
 
         @keyframes slideInRight {
           from {
             opacity: 0;
-            transform: translateX(20px);
+            transform: translate3d(20px, 0, 0);
           }
           to {
             opacity: 1;
-            transform: translateX(0);
+            transform: translate3d(0, 0, 0);
           }
         }
         .animate-slideInRight {
           animation: slideInRight 0.5s ease-out forwards;
+          will-change: transform, opacity;
+          contain: layout style paint;
         }
 
         /* Animation delays */

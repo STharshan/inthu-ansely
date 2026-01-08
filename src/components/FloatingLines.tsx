@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Scene,
   OrthographicCamera,
@@ -292,9 +292,47 @@ export default function FloatingLines({
     return lineDistance[index] ?? 0.1;
   };
 
-  const topLineCount = enabledWaves.includes('top') ? getLineCount('top') : 0;
-  const middleLineCount = enabledWaves.includes('middle') ? getLineCount('middle') : 0;
-  const bottomLineCount = enabledWaves.includes('bottom') ? getLineCount('bottom') : 0;
+  // Use refs to avoid recreating scene when viewport/mobile changes
+  const isInViewportRef = useRef(false);
+  const isMobileRef = useRef(false);
+
+  // Detect mobile and reduce line count
+  useEffect(() => {
+    const checkMobile = () => {
+      isMobileRef.current = window.innerWidth < 768;
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile, { passive: true });
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // IntersectionObserver to pause when not in viewport
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          isInViewportRef.current = entry.isIntersecting;
+        });
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  // Calculate line counts and distances based on initial mobile state
+  const getAdjustedLineCount = (waveType: 'top' | 'middle' | 'bottom'): number => {
+    const baseCount = enabledWaves.includes(waveType) ? getLineCount(waveType) : 0;
+    // Use initial mobile state for scene setup, will be adjusted via refs in render loop
+    return baseCount;
+  };
+
+  const topLineCount = getAdjustedLineCount('top');
+  const middleLineCount = getAdjustedLineCount('middle');
+  const bottomLineCount = getAdjustedLineCount('bottom');
 
   const topLineDistance = enabledWaves.includes('top') ? getLineDistance('top') * 0.01 : 0.01;
   const middleLineDistance = enabledWaves.includes('middle') ? getLineDistance('middle') * 0.01 : 0.01;
@@ -302,14 +340,21 @@ export default function FloatingLines({
 
   useEffect(() => {
     if (!containerRef.current) return;
+    
+    // Get current mobile state for renderer setup (only used once during creation)
+    const currentIsMobile = isMobileRef.current;
 
     const scene = new Scene();
 
     const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1);
     camera.position.z = 1;
 
-    const renderer = new WebGLRenderer({ antialias: true, alpha: false });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    const renderer = new WebGLRenderer({ 
+      antialias: !currentIsMobile, 
+      alpha: false,
+      powerPreference: 'high-performance'
+    });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, currentIsMobile ? 1.5 : 2));
     renderer.domElement.style.width = '100%';
     renderer.domElement.style.height = '100%';
     containerRef.current.appendChild(renderer.domElement);
@@ -408,6 +453,9 @@ export default function FloatingLines({
     }
 
     const handlePointerMove = (event: PointerEvent) => {
+      // Only handle if interactive and in viewport
+      if (!interactive || !isInViewportRef.current) return;
+      
       const rect = renderer.domElement.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
@@ -416,7 +464,7 @@ export default function FloatingLines({
       targetMouseRef.current.set(x * dpr, (rect.height - y) * dpr);
       targetInfluenceRef.current = 1.0;
 
-      if (parallax) {
+      if (parallax && isInViewportRef.current) {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
         const offsetX = (x - centerX) / rect.width;
@@ -430,15 +478,22 @@ export default function FloatingLines({
     };
 
     if (interactive) {
-      renderer.domElement.addEventListener('pointermove', handlePointerMove);
+      renderer.domElement.addEventListener('pointermove', handlePointerMove, { passive: true });
       renderer.domElement.addEventListener('pointerleave', handlePointerLeave);
     }
 
     let raf = 0;
     const renderLoop = () => {
+      // Pause rendering when not in viewport
+      if (!isInViewportRef.current) {
+        raf = requestAnimationFrame(renderLoop);
+        return;
+      }
+
       uniforms.iTime.value = clock.getElapsedTime();
 
-      if (interactive) {
+      // Update interactive features only when enabled and in viewport
+      if (interactive && isInViewportRef.current) {
         currentMouseRef.current.lerp(targetMouseRef.current, mouseDamping);
         uniforms.iMouse.value.copy(currentMouseRef.current);
 
@@ -446,7 +501,7 @@ export default function FloatingLines({
         uniforms.bendInfluence.value = currentInfluenceRef.current;
       }
 
-      if (parallax) {
+      if (parallax && isInViewportRef.current) {
         currentParallaxRef.current.lerp(targetParallaxRef.current, mouseDamping);
         uniforms.parallaxOffset.value.copy(currentParallaxRef.current);
       }
@@ -496,7 +551,8 @@ export default function FloatingLines({
       ref={containerRef}
       className="floating-lines-container"
       style={{
-        mixBlendMode: mixBlendMode
+        mixBlendMode: mixBlendMode,
+        willChange: 'transform'
       }}
     />
   );
