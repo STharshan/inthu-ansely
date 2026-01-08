@@ -17,7 +17,7 @@ export const ClientCarousel: React.FC<ClientCarouselProps> = ({ clients, classNa
       <div className="absolute right-0 top-0 bottom-0 w-32 sm:w-48 md:w-64 lg:w-80 z-10 pointer-events-none bg-gradient-to-l from-white dark:from-black to-transparent" />
 
       {/* Scrolling Container */}
-      <div className="flex items-center gap-8 sm:gap-12 md:gap-16 w-fit">
+      <div className="flex items-center gap-8 sm:gap-12 md:gap-16 w-fit animate-scroll-left">
         {duplicatedClients.map((client, index) => (
           <ClientLogo key={`${client.id}-${index}`} client={client} />
         ))}
