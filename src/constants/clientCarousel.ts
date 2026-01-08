@@ -40,7 +40,7 @@ export const clientLogos: ClientLogo[] = [
   {
     id: "progressworks-gym",
     name: "Progressworks Gym",
-    logoUrl: "/progressworksgym.png",
+    logoUrl: "/progress-work-gym.png",
     websiteUrl: "https://www.progressworksgym.com/",
   },
   {
@@ -72,11 +72,5 @@ export const clientLogos: ClientLogo[] = [
     name: "SL Smart Repair",
     logoUrl: "/sl.png",
     websiteUrl: "https://www.slsmartrepair.co.uk/",
-  },
-  {
-    id: "twentyeighthair",
-    name: "Twenty Eighth Hair",
-    logoUrl: "/twentyeighthair.png",
-    websiteUrl: "https://unsplash.com/@okcdz",
   },
 ];

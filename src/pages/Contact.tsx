@@ -1,6 +1,7 @@
 import React from "react";
 import ContactFormSection from "../components/ContactPage/ContactFormSection";
 import FAQSection from "../components/ContactPage/FAQSection";
+import { ContactDetailsSection } from "../components/ContactPage/ContactDetailsSection";
 
 const Contact: React.FC = () => {
   return (
@@ -11,7 +12,8 @@ const Contact: React.FC = () => {
         heading="Let's Work Together"
         subheading="Ready to transform your business? Share your project details with us and our team will reach out to discuss how we can help bring your vision to life."
       />
-
+      {/*Contact Details*/}
+      <ContactDetailsSection />
       {/* FAQ Section */}
       <FAQSection />
     </div>
