@@ -151,7 +151,11 @@ export default function CoreValuesCarousel() {
             stroke="currentColor"
             strokeWidth="2"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 18l-6-6 6-6" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 18l-6-6 6-6"
+            />
           </svg>
         </button>
 
@@ -168,7 +172,11 @@ export default function CoreValuesCarousel() {
             stroke="currentColor"
             strokeWidth="2"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 18l6-6-6-6"
+            />
           </svg>
         </button>
       </div>
@@ -190,34 +198,6 @@ export default function CoreValuesCarousel() {
             />
           );
         })}
-      </div>
-
-      {/* Action Buttons */}
-      <div className="mt-8 flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-        <a
-          href="/PPCLearningModule"
-          className="px-6 py-3 rounded-lg font-semibold text-sm sm:text-base bg-[#0045EF] text-white hover:bg-[#0038C4] transition-colors duration-300 shadow-md hover:shadow-lg"
-        >
-          PPC Learning Module
-        </a>
-        <a
-          href="/AILearningModule"
-          className="px-6 py-3 rounded-lg font-semibold text-sm sm:text-base bg-[#0045EF] text-white hover:bg-[#0038C4] transition-colors duration-300 shadow-md hover:shadow-lg"
-        >
-          AI Learning Module
-        </a>
-        <a
-          href="/SEOLearningPlatform"
-          className="px-6 py-3 rounded-lg font-semibold text-sm sm:text-base bg-[#0045EF] text-white hover:bg-[#0038C4] transition-colors duration-300 shadow-md hover:shadow-lg"
-        >
-          SEO Learning Platform
-        </a>
-        <a
-          href="/insidecustomsoftwareservice"
-          className="px-6 py-3 rounded-lg font-semibold text-sm sm:text-base bg-[#0045EF] text-white hover:bg-[#0038C4] transition-colors duration-300 shadow-md hover:shadow-lg"
-        >
-          Custom Software Service
-        </a>
       </div>
     </div>
   );
