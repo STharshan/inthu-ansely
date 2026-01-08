@@ -26,8 +26,9 @@ const LightPillar = ({
   const mouseRef = useRef(new THREE.Vector2(0, 0));
   const timeRef = useRef(0);
   const [webGLSupported, setWebGLSupported] = useState(true);
-  const [isInViewport, setIsInViewport] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  // Use refs to avoid recreating scene when viewport/mobile changes
+  const isInViewportRef = useRef(false);
+  const isMobileRef = useRef(false);
 
   // Check WebGL support and detect mobile
   useEffect(() => {
@@ -39,7 +40,7 @@ const LightPillar = ({
     }
 
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      isMobileRef.current = window.innerWidth < 768;
     };
     checkMobile();
     window.addEventListener('resize', checkMobile, { passive: true });
@@ -53,7 +54,7 @@ const LightPillar = ({
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setIsInViewport(entry.isIntersecting);
+          isInViewportRef.current = entry.isIntersecting;
         });
       },
       { threshold: 0.1, rootMargin: '50px' }
@@ -65,6 +66,9 @@ const LightPillar = ({
 
   useEffect(() => {
     if (!containerRef.current || !webGLSupported) return;
+    
+    // Get current mobile state for renderer setup (only used once during creation)
+    const currentIsMobile = isMobileRef.current;
 
     const container = containerRef.current;
     const width = container.clientWidth;
@@ -79,7 +83,7 @@ const LightPillar = ({
     let renderer;
     try {
       renderer = new THREE.WebGLRenderer({
-        antialias: !isMobile,
+        antialias: !currentIsMobile,
         alpha: true,
         powerPreference: 'high-performance',
         precision: 'lowp',
@@ -93,7 +97,7 @@ const LightPillar = ({
     }
 
     renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, currentIsMobile ? 1.5 : 2));
     container.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
@@ -289,7 +293,7 @@ const LightPillar = ({
       if (!materialRef.current || !rendererRef.current || !sceneRef.current || !cameraRef.current) return;
 
       // Pause rendering when not in viewport
-      if (!isInViewport) {
+      if (!isInViewportRef.current) {
         rafRef.current = requestAnimationFrame(animate);
         return;
       }
@@ -366,9 +370,7 @@ const LightPillar = ({
     pillarHeight,
     noiseIntensity,
     pillarRotation,
-    webGLSupported,
-    isInViewport,
-    isMobile
+    webGLSupported
   ]);
 
   if (!webGLSupported) {

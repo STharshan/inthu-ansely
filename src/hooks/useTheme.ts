@@ -24,9 +24,23 @@ export const useTheme = () => {
 
   useEffect(() => {
     // Check initial theme immediately and multiple times to catch Navbar initialization
+    // Follow same priority logic as useState initializer: localStorage > class > prefers-color-scheme
     const checkTheme = () => {
+      const savedTheme = localStorage.getItem('theme');
       const hasDarkClass = document.documentElement.classList.contains('dark');
-      setIsDarkMode(hasDarkClass);
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      // Priority: localStorage > class > prefers-color-scheme
+      let shouldBeDark = false;
+      if (savedTheme) {
+        shouldBeDark = savedTheme === 'dark';
+      } else if (hasDarkClass) {
+        shouldBeDark = true;
+      } else {
+        shouldBeDark = prefersDark;
+      }
+      
+      setIsDarkMode(shouldBeDark);
     };
 
     // Check immediately
