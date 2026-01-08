@@ -2,45 +2,33 @@ import { ClientLogo } from "../components/types/clientCarousel";
 
 export const clientLogos: ClientLogo[] = [
   {
-    id: "kml",
-    name: "KML Accident Repair Centre",
-    logoUrl: "/kml-mobile.png",
-    websiteUrl: "https://kmlaccidentrepaircentre.co.uk/",
-  },
-  {
     id: "auto-plus",
     name: "Auto Plus",
-    logoUrl: "/auto-mobile.png",
+    logoUrl: "/auto-plus.png",
     websiteUrl: "https://autoplusnottingham.co.uk/",
   },
   {
     id: "stoneleys",
     name: "Stoneleys",
-    logoUrl: "/stonley-mobile.png",
+    logoUrl: "/stonelys.jpg",
     websiteUrl: "https://www.stoneleys.co.uk/",
   },
   {
     id: "earwego",
     name: "Earwego",
-    logoUrl: "/earwego-mobile.png",
+    logoUrl: "/ear-we-go.png",
     websiteUrl: "https://earwego.co.uk/",
-  },
-  {
-    id: "broadway-remapping",
-    name: "Broadway Remapping",
-    logoUrl: "/broadwayremapping.png",
-    websiteUrl: "https://broadwayremapping.co.uk/",
   },
   {
     id: "bfc",
     name: "BFC",
-    logoUrl: "/BFC.png",
+    logoUrl: "/bfc.jpg",
     websiteUrl: "https://boxfitcoaching.co.uk/",
   },
   {
     id: "rs-mobile",
     name: "RS Mobile",
-    logoUrl: "/rs-mobile.png",
+    logoUrl: "/rs.png",
     websiteUrl: "https://www.rsmobileservices.co.uk/",
   },
   {
