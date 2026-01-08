@@ -4,7 +4,6 @@ const DigitalTransformationHero = () => {
   return (
     <section className="bg-white mt-20 dark:bg-black text-black dark:text-white py-32 px-6 transition-colors duration-500">
       <div className="max-w-6xl mx-auto">
-
         {/* Top Content */}
         <div className="text-center max-w-4xl mx-auto">
           <p className="text-sm uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-6">
@@ -17,12 +16,16 @@ const DigitalTransformationHero = () => {
           </h1>
 
           <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl mb-14 max-w-3xl mx-auto">
-            Helping hidden gems stand tall in the digital world. We transform how businesses operate by automating repetitive tasks, optimizing workflows, and integrating intelligent systems. Whether you're drowning in manual processes or ready to scale, we build digital ecosystems that work smarter, not harder. Your team deserves technology that amplifies their impact—not adds to their workload.
+            Helping hidden gems stand tall in the digital world. We transform
+            how businesses operate by automating repetitive tasks, optimizing
+            workflows, and integrating intelligent systems. Whether you're
+            drowning in manual processes or ready to scale, we build digital
+            ecosystems that work smarter, not harder. Your team deserves
+            technology that amplifies their impact—not adds to their workload.
           </p>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            
             {/* Outlined Button */}
             <a
               href="/services"
@@ -40,7 +43,7 @@ const DigitalTransformationHero = () => {
 
             {/* Filled Button */}
             <a
-              href="/contact-us"
+              href="/contact"
               className="group px-8 py-4 rounded-lg bg-[#0045EF] text-white
                          font-semibold flex items-center justify-center gap-3
                          transform transition-all duration-300 shadow-lg
@@ -62,7 +65,6 @@ const DigitalTransformationHero = () => {
             className="w-full h-full object-cover rounded-3xl"
           />
         </div>
-
       </div>
     </section>
   );

@@ -108,7 +108,7 @@ export default function HowItWorksTransformation() {
               </p>
 
               <a
-                href="/contact-us"
+                href="/contact"
                 className="group inline-flex items-center gap-3 bg-[#0045EF]
                            text-white px-6 py-3 rounded-full
                            font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl"
