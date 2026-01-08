@@ -1,0 +1,248 @@
+# Cursor AI Project Rules - Intu & Ansely
+
+## Core Development Principles
+
+### 1. Atomic Design Structure
+
+- **Atoms**: Smallest reusable components (Button, Tag, Avatar, Icon, etc.)
+  - Location: `src/components/atoms/`
+  - Single responsibility, no dependencies on other components
+  - Props-based configuration only
+- **Molecules**: Combinations of atoms (ArticleMeta, TestimonialCard, FAQAccordionItem, etc.)
+  - Location: `src/components/molecules/`
+  - Composed of 2+ atoms
+  - Handle simple interactions and state
+- **Organisms**: Complex components combining molecules/atoms (ServicePageTemplate, ClientReviewsSection, BlogContent, etc.)
+  - Location: `src/components/organisms/`
+  - Handle complex logic and state management
+  - May include data fetching or business logic
+- **Templates**: Page-level layouts (if needed)
+- **Pages**: Route-level components in `src/pages/`
+
+### 2. SOLID Principles
+
+- **Single Responsibility**: Each component/function does one thing well
+- **Open/Closed**: Extend via props, not modification
+- **Liskov Substitution**: Components should be interchangeable when they share interfaces
+- **Interface Segregation**: Create focused, specific prop interfaces
+- **Dependency Inversion**: Depend on abstractions (interfaces/types), not concrete implementations
+
+### 3. Code Quality Standards
+
+- **DRY (Don't Repeat Yourself)**: Extract reusable logic into hooks, utilities, or shared components
+- **KISS (Keep It Simple, Stupid)**: Prefer simple, readable solutions over clever ones
+- **YAGNI (You Aren't Gonna Need It)**: Don't add functionality until it's needed
+- **Clean Code**: Self-documenting code with meaningful names, minimal comments
+- **Bug-Free**: Always validate props, handle edge cases, test error scenarios
+
+### 4. Styling Guidelines
+
+- **Tailwind CSS v4**: Use Tailwind utility classes exclusively
+- **No Inline Styles**: Except for dynamic values (shadows, transforms, colors that change at runtime)
+- **Dark Mode**: Always support dark/light mode using `dark:` prefix
+- **Responsive**: Mobile-first approach with `sm:`, `md:`, `lg:`, `xl:` breakpoints
+- **Minimal Custom CSS**: Only add custom CSS in `src/index.css` for global animations or utilities
+- **CSS Variables**: Use for theme values when needed
+
+### 5. Naming Conventions
+
+#### Files & Folders
+
+- **Components**: PascalCase (e.g., `Button.tsx`, `ServiceCard.tsx`)
+- **Hooks**: camelCase with `use` prefix (e.g., `useTheme.ts`, `useScrollThrottle.ts`)
+- **Utilities**: camelCase (e.g., `blogLoader.ts`, `scrollOptimization.ts`)
+- **Types**: camelCase with `.ts` extension (e.g., `blog.ts`, `servicePage.ts`)
+- **Constants**: camelCase (e.g., `blog.ts`, `homeTestimonials.ts`)
+- **Folders**: camelCase for utilities/constants, PascalCase for component folders matching component names
+
+#### Component Naming
+
+- **Atoms**: Single noun (Button, Tag, Avatar, Icon)
+- **Molecules**: Descriptive noun phrase (ArticleMeta, TestimonialCard, FAQAccordionItem)
+- **Organisms**: Descriptive noun phrase (ServicePageTemplate, ClientReviewsSection, BlogContent)
+- **Pages**: PascalCase matching route (Home, Blog, BlogDetail, Digitaltransformation)
+
+#### Variables & Functions
+
+- **Variables**: camelCase (e.g., `isDarkMode`, `activeCategory`, `filteredArticles`)
+- **Functions**: camelCase, verb-based (e.g., `handleClick`, `parseLinks`, `checkTheme`)
+- **Constants**: UPPER_SNAKE_CASE for true constants, camelCase for exported data
+- **Props Interfaces**: PascalCase with `Props` suffix (e.g., `ButtonProps`, `BlogContentProps`)
+
+### 6. TypeScript Standards
+
+- **Always use TypeScript**: Prefer `.tsx` for components, `.ts` for utilities/types
+- **Strict Mode**: Follow `tsconfig.json` strict settings
+- **Type Definitions**: Define interfaces in `src/components/types/` organized by domain
+- **No `any` Types**: Use proper types or `unknown` with type guards
+- **Type Imports**: Use type imports when importing only types: `import type { BlogArticle } from './types/blog'`
+
+### 7. Component Structure Template
+
+```typescript
+import React from "react";
+import { ComponentProps } from "../types/component";
+
+interface ComponentNameProps {
+  // Props definition
+  className?: string;
+}
+
+export const ComponentName: React.FC<ComponentNameProps> = ({
+  // Destructured props
+  className = "",
+}) => {
+  // Hooks
+  // State
+  // Effects
+  // Handlers
+  // Render helpers
+
+  return (
+    <div className={`base-classes dark:dark-classes transition-colors duration-300 ${className}`}>
+      {/* Component content */}
+    </div>
+  );
+};
+```
+
+### 8. Performance Optimization
+
+- **Lazy Loading**: Use `React.lazy()` and `Suspense` for heavy components
+- **Memoization**: Use `useMemo` for expensive calculations, `useCallback` for stable function references
+- **Image Optimization**: Always include `loading="lazy"` and `decoding="async"` on images
+- **WebGL/Animations**: Pause when not in viewport using refs, not state in dependency arrays
+- **Scroll Optimization**: Throttle scroll handlers, use `passive: true` event listeners
+- **GPU Acceleration**: Use `will-change: transform` for animated elements
+
+### 9. Dark/Light Mode Implementation
+
+- **Always Support Both**: Every component must work in dark and light modes
+- **Tailwind Classes**: Use `dark:` prefix for dark mode styles
+- **Dynamic Styles**: Use inline styles only for runtime-calculated values (shadows, colors)
+- **Theme Hook**: Use `useTheme()` hook from `src/hooks/useTheme.ts` for theme detection
+- **Transitions**: Always include `transition-colors duration-300` for theme changes
+
+### 10. Code Organization
+
+- **One Component Per File**: Each file exports one main component
+- **Co-location**: Keep related types, constants, and utilities close to components
+- **Barrel Exports**: Use `index.ts` files sparingly, prefer direct imports
+- **Constants**: Centralize data in `src/constants/` organized by domain
+- **Types**: Centralize in `src/components/types/` organized by domain
+
+### 11. Comments & Documentation
+
+- **Minimal Comments**: Code should be self-documenting through clear naming
+- **When to Comment**:
+  - Complex algorithms or business logic
+  - Non-obvious workarounds or hacks
+  - Public API documentation (JSDoc for exported functions/components)
+- **No Obvious Comments**: Don't comment what the code clearly shows
+
+### 12. Error Handling
+
+- **Prop Validation**: Always validate required props, provide sensible defaults
+- **Edge Cases**: Handle empty arrays, null values, undefined states
+- **Error Boundaries**: Use for critical sections
+- **Graceful Degradation**: Components should degrade gracefully when features aren't available
+
+### 13. Accessibility
+
+- **Semantic HTML**: Use appropriate HTML elements (nav, article, section, etc.)
+- **ARIA Labels**: Include when interactive elements lack visible labels
+- **Keyboard Navigation**: Ensure all interactive elements are keyboard accessible
+- **Focus Management**: Visible focus states for keyboard users
+
+### 14. Testing Considerations
+
+- **Testable Code**: Write components that are easy to test
+- **Pure Functions**: Prefer pure functions for utilities
+- **Controlled Components**: Use controlled components when state management is needed
+
+### 15. Git & Version Control
+
+- **Meaningful Commits**: Clear, descriptive commit messages
+- **Atomic Changes**: One logical change per commit
+- **No Console Logs**: Remove `console.log` statements before committing (use proper error handling)
+
+### 16. React Best Practices
+
+- **Functional Components**: Always use functional components with hooks
+- **Hooks Rules**: Follow React hooks rules (only call at top level, in correct order)
+- **Key Props**: Always provide stable, unique keys for list items
+- **Refs**: Use refs for DOM access, not state
+- **Effect Cleanup**: Always clean up subscriptions, timers, and event listeners in useEffect cleanup
+
+### 17. Project-Specific Patterns
+
+#### Blog Content
+
+- Use markdown-style links: `[text](/blog/slug)` in JSON content
+- Blog articles stored in `src/content/blog/*.json`
+- Use `blogLoader.ts` utility for loading articles
+
+#### Service Pages
+
+- Reusable components in `src/components/organisms/`
+- Service-specific wrappers in `src/components/{ServiceName}/`
+- Constants in `src/constants/` (servicePage.ts, faq.ts, clientReviews.ts)
+
+#### Theme Management
+
+- Use `useTheme()` hook from `src/hooks/useTheme.ts`
+- Theme initialized synchronously in `index.html` before React loads
+- localStorage persistence with priority: localStorage > class > prefers-color-scheme
+
+### 18. Code Review Checklist
+
+Before submitting code, ensure:
+
+- [ ] Follows Atomic Design structure
+- [ ] Implements SOLID principles
+- [ ] Uses Tailwind classes (minimal custom CSS)
+- [ ] Supports dark/light mode
+- [ ] Proper TypeScript types (no `any`)
+- [ ] Consistent naming conventions
+- [ ] Performance optimizations applied
+- [ ] Error handling implemented
+- [ ] Accessibility considerations
+- [ ] No console.logs or debug code
+- [ ] Self-documenting code (minimal comments)
+
+### 19. Architecture Decisions
+
+- **Think Like a Senior Engineer**: Consider scalability, maintainability, and performance
+- **System Architecture**: Design for future growth and change
+- **Best Solutions**: Choose the right tool/pattern for the problem, not the newest trend
+- **Code Reusability**: Top priority - extract common patterns into reusable components/hooks
+
+### 20. Forbidden Patterns
+
+- ❌ Don't use `any` type
+- ❌ Don't mix inline styles with Tailwind (except dynamic values)
+- ❌ Don't create components that violate Single Responsibility
+- ❌ Don't skip dark mode support
+- ❌ Don't use state when refs would work (for non-render values)
+- ❌ Don't recreate expensive resources (WebGL scenes, etc.) unnecessarily
+- ❌ Don't ignore TypeScript errors
+- ❌ Don't add comments that just repeat the code
+
+---
+
+## Quick Reference
+
+**Component Location**: `src/components/{atoms|molecules|organisms}/`
+**Types Location**: `src/components/types/`
+**Constants Location**: `src/constants/`
+**Hooks Location**: `src/hooks/`
+**Utilities Location**: `src/utils/`
+**Pages Location**: `src/pages/`
+
+**Theme Hook**: `import { useTheme } from '../hooks/useTheme'`
+**Tailwind Config**: Use v4 syntax, refer to Tailwind v4 docs only
+**TypeScript Config**: Follow `tsconfig.json` strict settings
+
+---
+
+Remember: Write code as if the next developer is a violent psychopath who knows where you live. Make it clear, maintainable, and bug-free.

@@ -5,7 +5,7 @@ import DigitalMarketingProcess from '../components/DigtalMarketing/DigitalMarket
 import ServicePageSection from '../components/DigtalMarketing/ServicePageSection'
 import ClientReviewsSection from '../components/DigtalMarketing/ClientReviewsSection'
 import FAQSection from '../components/DigtalMarketing/FAQSection'
-import LearningGuide from '../components/LearningGuide'
+import { LearningGuide } from '../components/organisms/LearningGuide'
 
 const DigitalMarketing = () => {
   return (
@@ -13,7 +13,7 @@ const DigitalMarketing = () => {
       <DigitalMarketingHero />
       <DigitalMarketingAbout />
       <DigitalMarketingProcess />
-      <LearningGuide />
+      <LearningGuide service="digital-marketing" />
       <ServicePageSection />
       <ClientReviewsSection />
       <FAQSection />
