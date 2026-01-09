@@ -22,6 +22,8 @@ import TermsConditions from "./components/Term";
 import PrivacyPolicy from "./components/ProvacyPolicy";
 import GDPRConsent from "./components/GDPRButton";
 import ContactForm from "./pages/Contact";
+import Careers from "./pages/Careers";
+import CareerDetail from "./pages/CareerDetail";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,19 +36,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/React" element={<ReactComparisonGuide />} />
-        <Route
-          path="/digital-transformation"
-          element={<Digitaltransformation />}
-        />
+        <Route path="/digital-transformation" element={<Digitaltransformation />} />
         <Route path="/business-consultancy" element={<Businessconsultancy />} />
         <Route path="/digital-marketing" element={<DigitalMarketing />} />
         <Route path="/customwebsite" element={<CustomWebsite />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogDetail />} />
-        <Route
-          path="/insidecustomsoftwareservice"
-          element={<Insidecustomsoftwareservice />}
-        />
+        <Route path="/insidecustomsoftwareservice" element={<Insidecustomsoftwareservice />} />
         <Route path="/digital-partnership" element={<DigitalPartnership />} />
         <Route path="/PPCLearningModule" element={<PPCLearningModule />} />
         <Route path="/AILearningModule" element={<AILearningModule />} />
@@ -55,6 +51,8 @@ function App() {
         <Route path="/terms" element={<TermsConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/contact" element={<ContactForm />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/careers/:id" element={<CareerDetail />} />
       </Routes>
       <Footer />
       <GDPRConsent />
