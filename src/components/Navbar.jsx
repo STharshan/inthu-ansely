@@ -2,12 +2,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { FiChevronDown, FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
-import {
-  FaInstagram,
-  FaFacebookF,
-  FaLinkedinIn,
-  FaTwitter,
-} from "react-icons/fa";
+// import {
+//   FaInstagram,
+//   FaFacebookF,
+//   FaLinkedinIn,
+//   FaTwitter,
+// } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -99,7 +99,7 @@ export default function Navbar() {
 
           {/* Desktop Nav - Center */}
           <nav className="hidden lg:flex items-center justify-center space-x-6 xl:space-x-10">
-            {["Home", "About", "Blog"].map((item) => (
+            {["Home", "About", "Blog", "Careers"].map((item) => (
               <a
                 key={item}
                 href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
@@ -244,9 +244,9 @@ export default function Navbar() {
           {/* Right Section - Social Icons + Theme Toggle + CTA Button */}
           <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-shrink-0 justify-self-end">
             {/* Social Icons - Tablet and Desktop */}
-            <div className="hidden sm:flex items-center gap-2">
+            {/* <div className="hidden sm:flex items-center gap-2">
               {[
-                { Icon: FaInstagram, href: "https://instagram.com/ansely" },
+                // { Icon: FaInstagram, href: "https://instagram.com/ansely" },
                 {
                   Icon: FaLinkedinIn,
                   href: "https://linkedin.com/company/ansely",
@@ -269,7 +269,7 @@ export default function Navbar() {
                   <Icon className="w-[13px] h-[13px] sm:w-[14px] sm:h-[14px] lg:w-[15px] lg:h-[15px] relative z-10" />
                 </a>
               ))}
-            </div>
+            </div> */}
 
             {/* Theme Toggle Button */}
             <button
@@ -467,16 +467,16 @@ export default function Navbar() {
             </div>
 
             {/* Social Icons - Mobile */}
-            <div
+            {/* <div
               className={`flex justify-center gap-4 py-6 border-b ${
                 isDark ? "border-gray-700" : "border-gray-200"
               }`}
             >
               {[
-                { Icon: FaInstagram, href: "#instagram" },
-                { Icon: FaFacebookF, href: "#facebook" },
-                { Icon: FaLinkedinIn, href: "#linkedin" },
-                { Icon: FaTwitter, href: "#twitter" },
+                // { Icon: FaInstagram, href: "#instagram" },
+                // { Icon: FaFacebookF, href: "#facebook" },
+                // { Icon: FaLinkedinIn, href: "#linkedin" },
+                // { Icon: FaTwitter, href: "#twitter" },
               ].map(({ Icon, href }, index) => (
                 <a
                   key={index}
@@ -490,7 +490,7 @@ export default function Navbar() {
                   <Icon className="w-5 h-5" />
                 </a>
               ))}
-            </div>
+            </div> */}
 
             {/* Theme Toggle - Mobile */}
             <div className="flex justify-center py-4">

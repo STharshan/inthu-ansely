@@ -1,5 +1,5 @@
 import React from "react";
-import { Linkedin, Instagram } from "lucide-react";
+// import { Linkedin, Instagram } from "lucide-react";
 
 const Footer = () => {
   const pages = [
@@ -7,6 +7,7 @@ const Footer = () => {
     { name: "About", href: "/about" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
+    { name: "Careers", href: "/careers" },
   ];
 
   const services = [
@@ -114,7 +115,7 @@ const Footer = () => {
           </div>
 
           {/* Social Icons */}
-          <div className="flex gap-4">
+          {/* <div className="flex gap-4">
             <a
               href="https://instagram.com/ansely"
               target="_blank"
@@ -138,7 +139,7 @@ const Footer = () => {
                 className="hover:text-white cursor-pointer transition-colors"
               />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
