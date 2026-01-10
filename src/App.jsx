@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 import gsap from "gsap";
@@ -32,7 +33,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/React" element={<ReactComparisonGuide />} />
         <Route
           path="/digital-transformation"
