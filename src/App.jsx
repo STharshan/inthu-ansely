@@ -23,6 +23,8 @@ import TermsConditions from "./components/Term";
 import PrivacyPolicy from "./components/ProvacyPolicy";
 import GDPRConsent from "./components/GDPRButton";
 import ContactForm from "./pages/Contact";
+import Careers from "./pages/Careers";
+import CareerDetail from "./pages/CareerDetail";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,6 +36,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/careers/:id" element={<CareerDetail />} />
         <Route path="/React" element={<ReactComparisonGuide />} />
         <Route
           path="/digital-transformation"

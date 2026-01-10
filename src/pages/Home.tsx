@@ -10,6 +10,7 @@ import { homeTestimonials } from "../constants/homeTestimonials";
 import Newabout from "../components/Home/Newabout";
 import { ClientCarousel } from "../components/organisms/ClientCarousel";
 import { clientLogos } from "../constants/clientCarousel";
+import OurValues from "../components/About/OurValues";
 
 // Lazy load heavy components
 const Performance = lazy(() => import("../components/Home/Animation"));
@@ -19,12 +20,14 @@ const Home: React.FC = () => {
     <div>
       <Hero />
       <ClientCarousel clients={clientLogos} />
-      <Newabout />
-      <HeroSection />
+      {/* <Newabout /> */}
+      {/* <HeroSection /> */}
+      <OurValues />
       <CardsSection />
+      <PlatformProcess />
       <VideoSection />
       <TeamCarousel />
-      <PlatformProcess />
+
       <HomeTestimonialsSection testimonials={homeTestimonials} />
       <Suspense fallback={<div style={{ minHeight: "400px" }} />}>
         <Performance />
