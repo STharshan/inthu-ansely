@@ -1,13 +1,13 @@
 import React from "react";
-import CustomIntroduction from "../components/CustomWebsite/CutomIntroduction";
-import ProjectChallenges from "../components/CustomWebsite/ProjectChallenges";
-import ProjectSolution from "../components/CustomWebsite/ProjectSolution";
-import ProjectDetails from "../components/CustomWebsite/CustomWebsiteHero";
-// import ViewMoreSection from "../components/CustomWebsite/ViewMoreSection";
-import ServicePageSection from "../components/CustomWebsite/ServicePageSection";
-import ClientReviewsSection from "../components/CustomWebsite/ClientReviewsSection";
-import FAQSection from "../components/CustomWebsite/FAQSection";
-import Newabout from "../components/Home/Newabout";
+import CustomIntroduction from "../features/services/custom-website/CutomIntroduction";
+import ProjectChallenges from "../features/services/custom-website/ProjectChallenges";
+import ProjectSolution from "../features/services/custom-website/ProjectSolution";
+import ProjectDetails from "../features/services/custom-website/CustomWebsiteHero";
+// import ViewMoreSection from "../features/services/custom-website/ViewMoreSection";
+import ServicePageSection from "../features/services/custom-website/ServicePageSection";
+import ClientReviewsSection from "../features/services/custom-website/ClientReviewsSection";
+import FAQSection from "../features/services/custom-website/FAQSection";
+import Newabout from "../features/home/Newabout";
 
 const CustomWebsite = () => {
   return (

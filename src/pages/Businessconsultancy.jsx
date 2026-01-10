@@ -1,11 +1,11 @@
 import React from "react";
-import FinancialPlanningHeader from "../components/Businessconsultancy/FinancialPlanningHeader";
-import FinancialConfidenceSection from "../components/Businessconsultancy/FinancialConfidenceSection";
-import ServicesSection from "../components/Businessconsultancy/ServicesSection";
-import HowWeWorkSection from "../components/Businessconsultancy/HowWeWorkSection";
-import ServicePageSection from "../components/Businessconsultancy/ServicePageSection";
-import ClientReviewsSection from "../components/Businessconsultancy/ClientReviewsSection";
-import FAQSection from "../components/Businessconsultancy/FAQSection";
+import FinancialPlanningHeader from "../features/services/ai-consulting/FinancialPlanningHeader";
+import FinancialConfidenceSection from "../features/services/ai-consulting/FinancialConfidenceSection";
+import ServicesSection from "../features/services/ai-consulting/ServicesSection";
+import HowWeWorkSection from "../features/services/ai-consulting/HowWeWorkSection";
+import ServicePageSection from "../features/services/ai-consulting/ServicePageSection";
+import ClientReviewsSection from "../features/services/ai-consulting/ClientReviewsSection";
+import FAQSection from "../features/services/ai-consulting/FAQSection";
 import { LearningGuide } from "../components/organisms/LearningGuide";
 
 const Businessconsultancy = () => {

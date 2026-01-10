@@ -1,9 +1,9 @@
 import React from 'react'
-import DigitalPartnershipHero from '../components/DigitalPartnership/DigitalPartnershipHero'
-import DigitalPartnershipService from '../components/DigitalPartnership/DigitalPartnershipService'
-import ServicePageSection from '../components/DigitalPartnership/ServicePageSection'
-import ClientReviewsSection from '../components/DigitalPartnership/ClientReviewsSection'
-import FAQSection from '../components/DigitalPartnership/FAQSection'
+import DigitalPartnershipHero from '../features/services/digital-partnership/DigitalPartnershipHero'
+import DigitalPartnershipService from '../features/services/digital-partnership/DigitalPartnershipService'
+import ServicePageSection from '../features/services/digital-partnership/ServicePageSection'
+import ClientReviewsSection from '../features/services/digital-partnership/ClientReviewsSection'
+import FAQSection from '../features/services/digital-partnership/FAQSection'
 
 const DigitalPartnership = () => {
   return (

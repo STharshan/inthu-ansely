@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowLeft, ArrowRight, Sun, Moon } from 'lucide-react';
-import CustomSoftwareModule from '../components/Insidecustomsoftwareservice/CustomSoftwareModule';
-import FounderMindset from '../components/Insidecustomsoftwareservice/FounderMindset';
-import ManualWorkCost from '../components/Insidecustomsoftwareservice/ManualWorkCost';
-import CustomSoftwareMeaning from '../components/Insidecustomsoftwareservice/CustomSoftwareMeaning';
-import BuildWhatMatters from '../components/Insidecustomsoftwareservice/BuildWhatMatters';
-import KeyTakeaway from '../components/Insidecustomsoftwareservice/KeyTakeaway';
+import CustomSoftwareModule from '../features/services/custom-software/CustomSoftwareModule';
+import FounderMindset from '../features/services/custom-software/FounderMindset';
+import ManualWorkCost from '../features/services/custom-software/ManualWorkCost';
+import CustomSoftwareMeaning from '../features/services/custom-software/CustomSoftwareMeaning';
+import BuildWhatMatters from '../features/services/custom-software/BuildWhatMatters';
+import KeyTakeaway from '../features/services/custom-software/KeyTakeaway';
 
 const Insidecustomsoftwareservice = () => {
   const [currentSection, setCurrentSection] = useState(0);

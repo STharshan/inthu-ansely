@@ -5,8 +5,8 @@ const VideoSection = () => {
     <section className="relative w-full">
       <div style={{ width: "100%", height: "600px", position: "relative" }}>
         <LightPillar
-          topColor="#0045EF"
-          bottomColor="#0045EF"
+          topColor="var(--brand-blue)"
+          bottomColor="var(--brand-blue)"
           intensity={1.0}
           rotationSpeed={0.3}
           glowAmount={0.005}

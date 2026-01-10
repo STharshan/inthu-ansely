@@ -12,7 +12,7 @@ export default function Hero() {
           bendStrength={4}
           interactive={true}
           parallax={true}
-          linesGradient={["#001F7F", "#0045EF", "#0066FF", "#3399FF", "#66B3FF"]}
+          linesGradient={["#001F7F", "var(--brand-blue)", "#0066FF", "#3399FF", "#66B3FF"]}
         />
       </div>
 
