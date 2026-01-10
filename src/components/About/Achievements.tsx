@@ -1,0 +1,109 @@
+import React from "react";
+import { motion, easeOut } from "framer-motion";
+
+interface Achievement {
+  number: string;
+  title: string;
+  description: string;
+}
+
+interface AchievementsProps {
+  achievements?: Achievement[];
+}
+
+const defaultAchievements: Achievement[] = [
+  {
+    number: "550K+",
+    title: "Active Users",
+    description:
+      "Trusted by businesses worldwide to deliver exceptional digital experiences.",
+  },
+  {
+    number: "185+",
+    title: "Team Members",
+    description:
+      "Talented professionals dedicated to your success and innovation.",
+  },
+  {
+    number: "$23M",
+    title: "Funding Raised",
+    description: "Investment from leading venture capital firms and partners.",
+  },
+  {
+    number: "7 years",
+    title: "In Business",
+    description:
+      "Proven track record of delivering excellence and driving growth.",
+  },
+];
+
+const Achievements: React.FC<AchievementsProps> = ({
+  achievements = defaultAchievements,
+}) => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: easeOut,
+      },
+    },
+  };
+
+  return (
+    <section className="relative py-12 sm:py-20 md:py-32 bg-white dark:bg-black overflow-hidden transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
+        >
+          {achievements.map((achievement, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              className="group relative bg-white dark:bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-gray-200 dark:border-white/10 hover:border-[#0045EF] dark:hover:border-[#0045EF] transition-all duration-300 hover:shadow-xl hover:shadow-[#0045EF]/10"
+            >
+              {/* Content */}
+              <div className="relative z-10">
+                {/* Number */}
+                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#0045EF] mb-3 sm:mb-4">
+                  {achievement.number}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-black dark:text-white mb-2 sm:mb-3 transition-colors duration-300">
+                  {achievement.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-sm sm:text-base text-gray-600 dark:text-white/60 leading-relaxed transition-colors duration-300">
+                  {achievement.description}
+                </p>
+              </div>
+
+              {/* Decorative Element */}
+              <div className="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 bg-[#0045EF]/5 dark:bg-[#0045EF]/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Achievements;

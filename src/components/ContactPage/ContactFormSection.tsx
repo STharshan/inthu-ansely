@@ -57,11 +57,22 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({
           "phone_number"
         ) as HTMLInputElement | null
       )?.value || "";
-    if (website || phoneNumber) {
+    if (website || phoneNumber) return;
+
+    // Check all required fields
+    const { name, email, company, service, budget, projectDetails } = formData;
+    if (!name || !email || !company || !service || !budget || !projectDetails) {
+      setErrorMsg("Please fill in all required fields.");
+      setFormState("error");
+      setTimeout(() => {
+        setFormState("idle");
+        setErrorMsg("");
+      }, 3000);
       return;
     }
 
-    if (!validateEmail(formData.email)) {
+    // Email validation
+    if (!validateEmail(email)) {
       setErrorMsg("Please enter a valid email address.");
       setFormState("error");
       setTimeout(() => {
@@ -86,12 +97,12 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({
       }
 
       const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        company: formData.company,
-        service: formData.service,
-        budget: formData.budget,
-        message: formData.projectDetails,
+        from_name: name,
+        from_email: email,
+        company,
+        service,
+        budget,
+        message: projectDetails,
       };
 
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, {
@@ -100,9 +111,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({
 
       setFormState("success");
 
-      setTimeout(() => {
-        setFormState("idle");
-      }, 2500);
+      setTimeout(() => setFormState("idle"), 2500);
 
       setFormData({
         name: "",
