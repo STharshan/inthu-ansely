@@ -64,7 +64,7 @@ export const CareerDetailContent: React.FC<CareerDetailContentProps> = ({
       parts.push(
         <span
           key={match.index}
-          className="text-brand-blue dark:text-brand-blue-light font-medium"
+          className="text-[#0045EF] dark:text-blue-400 font-medium"
         >
           {match.text}
         </span>
@@ -85,7 +85,7 @@ export const CareerDetailContent: React.FC<CareerDetailContentProps> = ({
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         {/* Job Description Card */}
-        <div className="bg-white dark:bg-brand-dark rounded-t-[24px] sm:rounded-t-[32px] shadow-xl -mt-16 sm:-mt-24 relative z-10 p-6 sm:p-8 lg:p-12 transition-colors duration-300">
+        <div className="bg-white dark:bg-[#0D0D0D] rounded-t-[24px] sm:rounded-t-[32px] shadow-xl -mt-16 sm:-mt-24 relative z-10 p-6 sm:p-8 lg:p-12 transition-colors duration-300">
           {/* About this position */}
           {job.aboutPosition && (
             <div className="mb-8">
@@ -107,7 +107,7 @@ export const CareerDetailContent: React.FC<CareerDetailContentProps> = ({
                     key={index}
                     className="flex items-start gap-3 text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300 transition-colors duration-300"
                   >
-                    <span className="text-brand-blue dark:text-brand-blue-light font-bold mt-1 flex-shrink-0">
+                    <span className="text-[#0045EF] dark:text-blue-400 font-bold mt-1 flex-shrink-0">
                       •
                     </span>
                     <span>{responsibility}</span>
@@ -142,7 +142,7 @@ export const CareerDetailContent: React.FC<CareerDetailContentProps> = ({
           <div className="mt-12 text-center">
             <a
               href={`mailto:${careersConfig.applyEmail}?subject=Application for ${job.title}`}
-              className="inline-block px-8 py-4 bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+              className="inline-block px-8 py-4 bg-[#0045EF] hover:bg-[#0039CC] text-white font-semibold rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
             >
               Apply for this position
             </a>

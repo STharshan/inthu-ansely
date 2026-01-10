@@ -19,7 +19,7 @@ export const CareersFooter: React.FC<CareersFooterProps> = ({
           {messageParts[0]}
           <a
             href={`mailto:${careersConfig.contactEmail}`}
-            className="text-brand-blue dark:text-brand-blue-light hover:underline transition-colors duration-300"
+            className="text-[#0045EF] dark:text-blue-400 hover:underline transition-colors duration-300"
           >
             {careersConfig.contactEmail}
           </a>

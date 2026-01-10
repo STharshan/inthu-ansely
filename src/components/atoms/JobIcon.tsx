@@ -16,7 +16,7 @@ export const JobIcon: React.FC<JobIconProps> = ({
 
   return (
     <Icon
-      className={`text-brand-blue dark:text-brand-blue-light transition-colors duration-300 ${className}`}
+      className={`text-[#0045EF] dark:text-blue-400 transition-colors duration-300 ${className}`}
       size={size}
     />
   );

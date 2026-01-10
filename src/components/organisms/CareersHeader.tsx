@@ -7,12 +7,12 @@ export const CareersHeader: React.FC<CareersHeaderProps> = ({
 }) => {
   return (
     <section
-      className={`relative w-full overflow-hidden bg-gradient-to-br from-gradient-start via-gradient-middle to-gradient-start text-white transition-colors duration-300 ${className}`}
+      className={`relative w-full overflow-hidden bg-gradient-to-br from-[#001a4d] via-[#0033a0] to-[#001a4d] text-white transition-colors duration-300 ${className}`}
     >
       {/* Abstract Geometric Shapes Overlay */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large circular shape on left */}
-        <div className="absolute left-[-10%] top-[-10%] w-[400px] h-[400px] bg-brand-blue opacity-25 rounded-full blur-3xl" />
+        <div className="absolute left-[-10%] top-[-10%] w-[400px] h-[400px] bg-[#0045EF] opacity-25 rounded-full blur-3xl" />
 
         {/* Grid dots pattern */}
         <div className="absolute left-[15%] top-[20%] w-[200px] h-[200px] opacity-30">
@@ -27,10 +27,10 @@ export const CareersHeader: React.FC<CareersHeaderProps> = ({
         </div>
 
         {/* Smaller circular shape on right */}
-        <div className="absolute right-[10%] top-[10%] w-[150px] h-[150px] bg-gradient-end opacity-80 rounded-full" />
+        <div className="absolute right-[10%] top-[10%] w-[150px] h-[150px] bg-[#002266] opacity-80 rounded-full" />
 
         {/* Rectangular block on right */}
-        <div className="absolute right-[5%] bottom-[20%] w-[120px] h-[80px] bg-gradient-end opacity-70 rounded-lg" />
+        <div className="absolute right-[5%] bottom-[20%] w-[120px] h-[80px] bg-[#002266] opacity-70 rounded-lg" />
       </div>
 
       {/* Content */}

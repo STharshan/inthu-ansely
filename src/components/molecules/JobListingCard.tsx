@@ -28,7 +28,7 @@ export const JobListingCard: React.FC<JobListingCardProps> = ({
       } job details`}
     >
       <div
-        className="bg-white dark:bg-brand-dark rounded-xl w-full py-5 px-6 transition-colors duration-300"
+        className="bg-white dark:bg-[#0D0D0D] rounded-xl w-full py-5 px-6 transition-colors duration-300"
         style={{
           boxShadow:
             "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
@@ -51,9 +51,9 @@ export const JobListingCard: React.FC<JobListingCardProps> = ({
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 flex-1">
             {isOpen ? (
-              <ChevronDown className="text-brand-blue dark:text-brand-blue-light transition-colors duration-300 w-5 h-5 flex-shrink-0" />
+              <ChevronDown className="text-[#0045EF] dark:text-blue-400 transition-colors duration-300 w-5 h-5 flex-shrink-0" />
             ) : (
-              <ChevronRight className="text-brand-blue dark:text-brand-blue-light transition-colors duration-300 w-5 h-5 flex-shrink-0" />
+              <ChevronRight className="text-[#0045EF] dark:text-blue-400 transition-colors duration-300 w-5 h-5 flex-shrink-0" />
             )}
             <h3 className="text-gray-900 dark:text-white font-semibold text-lg transition-colors duration-300">
               {job.title}
@@ -86,7 +86,7 @@ export const JobListingCard: React.FC<JobListingCardProps> = ({
             </p>
             <Link
               to={`/careers/${job.id}`}
-              className="text-brand-blue dark:text-brand-blue-light font-medium hover:underline transition-colors duration-300"
+              className="text-[#0045EF] dark:text-blue-400 font-medium hover:underline transition-colors duration-300"
               onClick={(e) => e.stopPropagation()}
             >
               Apply Now
