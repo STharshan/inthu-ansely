@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Zap, Target, TrendingUp, DollarSign, BarChart3, AlertCircle, Lightbulb, CheckCircle, ArrowRight } from 'lucide-react';
-import PaidAdsIntro from '../components/PPCLearningModule/PaidAdsIntro';
-import CorePlatforms from '../components/PPCLearningModule/CorePlatforms';
-import PPCvsOrganic from '../components/PPCLearningModule/PPCvsOrganic';
-import PaidAdsFunnel from '../components/PPCLearningModule/PaidAdsFunnel';
-import KeyMetrics from '../components/PPCLearningModule/KeyMetrics';
-import PPCMistakes from '../components/PPCLearningModule/PPCMistakes';
-import SmartPPCStrategy from '../components/PPCLearningModule/SmartPPCStrategy';
-import KnowledgeCheck from '../components/PPCLearningModule/KnowledgeCheck';
+import PaidAdsIntro from '../features/learning-modules/ppc/PaidAdsIntro';
+import CorePlatforms from '../features/learning-modules/ppc/CorePlatforms';
+import PPCvsOrganic from '../features/learning-modules/ppc/PPCvsOrganic';
+import PaidAdsFunnel from '../features/learning-modules/ppc/PaidAdsFunnel';
+import KeyMetrics from '../features/learning-modules/ppc/KeyMetrics';
+import PPCMistakes from '../features/learning-modules/ppc/PPCMistakes';
+import SmartPPCStrategy from '../features/learning-modules/ppc/SmartPPCStrategy';
+import KnowledgeCheck from '../features/learning-modules/ppc/KnowledgeCheck';
 
 const PPCLearningModule = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -47,13 +47,13 @@ const PPCLearningModule = () => {
               <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Paid Ads (PPC)</h1>
               <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mt-1">Instant Visibility That Scales</p>
             </div>
-            <span className="inline-flex items-center justify-center rounded-lg border-2 border-[#0045EF]/30 px-4 py-2 font-semibold bg-[#0045EF]/10 text-[#0045EF] text-sm">
+            <span className="inline-flex items-center justify-center rounded-lg border-2 border-[var(--brand-blue)]/30 px-4 py-2 font-semibold bg-[var(--brand-blue)]/10 text-[var(--brand-blue)] text-sm">
               Module {activeTab + 1} of {tabs.length}
             </span>
           </div>
-          <div className="relative w-full overflow-hidden rounded-full h-2.5 bg-[#0045EF]/10">
+          <div className="relative w-full overflow-hidden rounded-full h-2.5 bg-[var(--brand-blue)]/10">
             <div 
-              className="bg-[#0045EF] h-full transition-all duration-500 ease-out"
+              className="bg-[var(--brand-blue)] h-full transition-all duration-500 ease-out"
               style={{ width: `${((activeTab + 1) / tabs.length) * 100}%` }}
             />
           </div>
@@ -72,7 +72,7 @@ const PPCLearningModule = () => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-all whitespace-nowrap shadow-sm ${
                     activeTab === tab.id
-                      ? 'bg-[#0045EF] text-white shadow-md'
+                      ? 'bg-[var(--brand-blue)] text-white shadow-md'
                       : 'bg-white dark:bg-black text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 border border-gray-200 dark:border-gray-700'
                   }`}
                 >
@@ -104,7 +104,7 @@ const PPCLearningModule = () => {
             <button
               onClick={() => setActiveTab(Math.min(tabs.length - 1, activeTab + 1))}
               disabled={activeTab === tabs.length - 1}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium bg-[#0045EF] text-white hover:bg-[#0034cc] disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium bg-[var(--brand-blue)] text-white hover:bg-[#0034cc] disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg"
             >
               Continue
               <ArrowRight className="h-4 w-4" />

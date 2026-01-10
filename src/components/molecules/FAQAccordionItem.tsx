@@ -28,7 +28,7 @@ export const FAQAccordionItem: React.FC<FAQAccordionItemProps> = ({
       }}
     >
       <div
-        className="bg-gray-50 dark:bg-[#0F0F0F] rounded-[15px] w-full opacity-100 py-5 px-6 transition-colors duration-300"
+        className="bg-gray-50 dark:bg-brand-dark-alt rounded-[15px] w-full opacity-100 py-5 px-6 transition-colors duration-300"
         style={{
           boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px',
         }}

@@ -14,7 +14,7 @@ export const CategoryTagWithIcon: React.FC<CategoryTagWithIconProps> = ({
 }) => {
   return (
     <div
-      className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-[#0D0D0D] border border-gray-200 dark:border-white/10 transition-colors duration-300 ${className}`}
+      className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-brand-dark border border-gray-200 dark:border-white/10 transition-colors duration-300 ${className}`}
       style={{
         boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px',
       }}

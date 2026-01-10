@@ -1,18 +1,18 @@
 import React, { Suspense, lazy } from "react";
-import CardsSection from "../components/Home/CardSection";
-import VideoSection from "../components/Home/VideoSection";
-import HeroSection from "../components/Home/Header";
-import Hero from "../components/Home/Hero";
-import TeamCarousel from "../components/Home/TeamCard";
-import PlatformProcess from "../components/Home/PlatformProcess";
+import CardsSection from "../features/home/CardSection";
+import VideoSection from "../features/home/VideoSection";
+import HeroSection from "../features/home/Header";
+import Hero from "../features/home/Hero";
+import TeamCarousel from "../features/home/TeamCard";
+import PlatformProcess from "../features/home/PlatformProcess";
 import { HomeTestimonialsSection } from "../components/organisms/HomeTestimonialsSection";
 import { homeTestimonials } from "../constants/homeTestimonials";
-import Newabout from "../components/Home/Newabout";
+import Newabout from "../features/home/Newabout";
 import { ClientCarousel } from "../components/organisms/ClientCarousel";
 import { clientLogos } from "../constants/clientCarousel";
 
 // Lazy load heavy components
-const Performance = lazy(() => import("../components/Home/Animation"));
+const Performance = lazy(() => import("../features/home/Animation"));
 
 const Home: React.FC = () => {
   return (

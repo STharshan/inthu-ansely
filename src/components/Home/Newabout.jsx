@@ -37,7 +37,7 @@ export default function Newabout() {
             <div className="mt-12 grid grid-cols-2 gap-4 font-semibold opacity-80">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center gap-2">
-                  <div className="flex w-6 h-6 shrink-0 items-center justify-center rounded-full bg-[#0045EF]">
+                  <div className="flex w-6 h-6 shrink-0 items-center justify-center rounded-full bg-[var(--brand-blue)]">
                     <Check className="w-4 h-4 text-black dark:text-white" strokeWidth={2} />
                   </div>
                   <span className="text-gray-900 dark:text-white">{feature}</span>
@@ -49,7 +49,7 @@ export default function Newabout() {
             <div className="mt-12">
               <Link
                 to="/React"
-                className="inline-flex items-center justify-center rounded-lg bg-[#0045EF] px-5 py-2 text-white font-semibold text-lg transition-all duration-300 hover:bg-gray-800  dark:text-black dark:hover:bg-gray-200"
+                className="inline-flex items-center justify-center rounded-lg bg-[var(--brand-blue)] px-5 py-2 text-white font-semibold text-lg transition-all duration-300 hover:bg-gray-800  dark:text-black dark:hover:bg-gray-200"
               >
                 Learn More
               </Link>

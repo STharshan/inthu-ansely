@@ -12,7 +12,7 @@ export const StatisticsGrid: React.FC<StatisticsGridProps> = ({ statistics, clas
 
   return (
     <div
-      className={`bg-gray-50 dark:bg-[#0D0D0D] rounded-[20px] p-4 sm:p-8 transition-colors duration-300 ${className}`}
+      className={`bg-gray-50 dark:bg-brand-dark rounded-[20px] p-4 sm:p-8 transition-colors duration-300 ${className}`}
       style={{
         boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
       }}

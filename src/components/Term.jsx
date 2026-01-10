@@ -78,7 +78,7 @@ const TermsConditions = () => {
                       </p>
                       <div className="text-white">
                           <p><strong>Ansely</strong></p>
-                          {/* <p>Email: <a href="mailto:sam.ferries@rsmobileservices.co.uk" className="text-[#0045EF] hover:underline">sam.ferries@rsmobileservices.co.uk</a></p> */}
+                          {/* <p>Email: <a href="mailto:sam.ferries@rsmobileservices.co.uk" className="text-[var(--brand-blue)] hover:underline">sam.ferries@rsmobileservices.co.uk</a></p> */}
                           {/* <p>Phone: +44 1780 917600</p>
                           <p>Address: 40 Mile Radius From Stamford</p> */}
                       </div>

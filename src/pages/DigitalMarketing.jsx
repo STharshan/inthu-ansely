@@ -1,10 +1,10 @@
 import React from 'react'
-import DigitalMarketingHero from '../components/DigtalMarketing/DigtalMarketingHero'
-import DigitalMarketingAbout from '../components/DigtalMarketing/DigitalMarketingAbout'
-import DigitalMarketingProcess from '../components/DigtalMarketing/DigitalMarketingProcess'
-import ServicePageSection from '../components/DigtalMarketing/ServicePageSection'
-import ClientReviewsSection from '../components/DigtalMarketing/ClientReviewsSection'
-import FAQSection from '../components/DigtalMarketing/FAQSection'
+import DigitalMarketingHero from '../features/services/digital-marketing/DigitalMarketingHero'
+import DigitalMarketingAbout from '../features/services/digital-marketing/DigitalMarketingAbout'
+import DigitalMarketingProcess from '../features/services/digital-marketing/DigitalMarketingProcess'
+import ServicePageSection from '../features/services/digital-marketing/ServicePageSection'
+import ClientReviewsSection from '../features/services/digital-marketing/ClientReviewsSection'
+import FAQSection from '../features/services/digital-marketing/FAQSection'
 import { LearningGuide } from '../components/organisms/LearningGuide'
 
 const DigitalMarketing = () => {

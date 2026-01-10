@@ -11,7 +11,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ card, className = "" }
 
   return (
     <div
-      className={`w-full bg-gray-50 dark:bg-[#0D0D0D] rounded-[20px] will-change-transform opacity-100 p-6 transition-colors duration-300 ${className}`}
+      className={`w-full bg-gray-50 dark:bg-brand-dark rounded-[20px] will-change-transform opacity-100 p-6 transition-colors duration-300 ${className}`}
       style={{
         boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
       }}

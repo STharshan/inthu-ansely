@@ -1,10 +1,10 @@
 import React from "react";
-import ServicesHero from "../components/CustomeSoftware/ServicesHero";
-import ServiceCard from "../components/CustomeSoftware/ServiceCard";
-import StoryCard from "../components/CustomeSoftware/StoryCard";
-import ServicePageSection from "../components/CustomeSoftware/ServicePageSection";
-import ClientReviewsSection from "../components/CustomeSoftware/ClientReviewsSection";
-import FAQSection from "../components/CustomeSoftware/FAQSection";
+import ServicesHero from "../features/services/custom-software/ServicesHero";
+import ServiceCard from "../features/services/custom-software/ServiceCard";
+import StoryCard from "../features/services/custom-software/StoryCard";
+import ServicePageSection from "../features/services/custom-software/ServicePageSection";
+import ClientReviewsSection from "../features/services/custom-software/ClientReviewsSection";
+import FAQSection from "../features/services/custom-software/FAQSection";
 import { LearningGuide } from "../components/organisms/LearningGuide";
 
 const CustomeSoftware = () => {
