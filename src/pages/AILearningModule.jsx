@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { BookOpen, Target, Lightbulb, Rocket, Layers, Search, Shield, Users, ChevronRight, ChevronLeft, Check } from 'lucide-react';
-import FounderBottleneck from '../components/AILearningModule/FounderBottleneck';
-import AIOverview from '../components/AILearningModule/AIOverview';
-import AIValueAreas from '../components/AILearningModule/AIValueAreas';
-import AISoftwareComparison from '../components/AILearningModule/AISoftwareComparison';
-import AIOpportunityChecklist from '../components/AILearningModule/AIOpportunityChecklist';
-import AIImplementationChecklist from '../components/AILearningModule/AIImplementationChecklist';
-import AIStrengthsAndLimits from '../components/AILearningModule/AIStrengthsAndLimits';
-import AINextSteps from '../components/AILearningModule/AINextSteps';
+import FounderBottleneck from '../features/learning-modules/ai/FounderBottleneck';
+import AIOverview from '../features/learning-modules/ai/AIOverview';
+import AIValueAreas from '../features/learning-modules/ai/AIValueAreas';
+import AISoftwareComparison from '../features/learning-modules/ai/AISoftwareComparison';
+import AIOpportunityChecklist from '../features/learning-modules/ai/AIOpportunityChecklist';
+import AIImplementationChecklist from '../features/learning-modules/ai/AIImplementationChecklist';
+import AIStrengthsAndLimits from '../features/learning-modules/ai/AIStrengthsAndLimits';
+import AINextSteps from '../features/learning-modules/ai/AINextSteps';
 
 const AILearningModule = () => {
   const [currentLesson, setCurrentLesson] = useState(0);
@@ -32,7 +32,7 @@ const AILearningModule = () => {
       <div className="border-b border-gray-200 dark:border-gray-800 backdrop-blur-sm sticky top-0 z-10 bg-white/80 dark:bg-black/80 transition-colors duration-300">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-[#0045EF] rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-[var(--brand-blue)] rounded-lg flex items-center justify-center">
               <BookOpen className="w-5 h-5 text-white" />
             </div>
             <h1 className="text-xl font-semibold">AI for Business Growth</h1>
@@ -54,7 +54,7 @@ const AILearningModule = () => {
                 <div className="bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
                   <div
                     className="h-full transition-all duration-500"
-                    style={{ width: `${progress}%`, backgroundColor: '#0045EF' }}
+                    style={{ width: `${progress}%`, backgroundColor: 'var(--brand-blue)' }}
                   ></div>
                 </div>
               </div>
@@ -71,7 +71,7 @@ const AILearningModule = () => {
                       onClick={() => setCurrentLesson(index)}
                       className={`w-full flex items-center gap-3 p-3 rounded-lg text-left transition-all duration-300 ${
                         isActive
-                          ? 'bg-[#0045EF] text-white'
+                          ? 'bg-[var(--brand-blue)] text-white'
                           : 'hover:bg-gray-200 dark:hover:bg-gray-800'
                       }`}
                     >
@@ -103,9 +103,9 @@ const AILearningModule = () => {
             <div className="rounded-xl border border-gray-200 dark:border-gray-800 p-8 md:p-12 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-[#0045EF]/10 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[var(--brand-blue)]/10 rounded-xl flex items-center justify-center">
                     {React.createElement(currentContent.icon, {
-                      className: "w-6 h-6 text-[#0045EF]"
+                      className: "w-6 h-6 text-[var(--brand-blue)]"
                     })}
                   </div>
                   <div>
@@ -139,8 +139,8 @@ const AILearningModule = () => {
                   disabled={currentLesson === lessons.length - 1}
                   className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${
                     currentLesson === lessons.length - 1
-                      ? 'bg-[#0045EF] text-white opacity-50 cursor-not-allowed'
-                      : 'bg-[#0045EF] text-white hover:bg-[#0031B5]'
+                      ? 'bg-[var(--brand-blue)] text-white opacity-50 cursor-not-allowed'
+                      : 'bg-[var(--brand-blue)] text-white hover:bg-[#0031B5]'
                   }`}
                 >
                   Next Lesson

@@ -59,7 +59,7 @@ export const LearningGuide: React.FC<LearningGuideProps> = ({ service, className
                 rel="noopener noreferrer"
                 className="group cursor-pointer p-6 rounded-lg shadow-md bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold mb-2 text-black dark:text-white group-hover:text-[#0045EF] dark:group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-xl font-semibold mb-2 text-black dark:text-white group-hover:text-brand-blue dark:group-hover:text-brand-blue-light transition-colors duration-300">
                   {card.title}
                 </h3>
 
@@ -67,7 +67,7 @@ export const LearningGuide: React.FC<LearningGuideProps> = ({ service, className
                   {card.description}
                 </p>
 
-                <span className="text-[#0045EF] dark:text-blue-400 font-medium group-hover:underline transition-colors duration-300">
+                <span className="text-brand-blue dark:text-brand-blue-light font-medium group-hover:underline transition-colors duration-300">
                   Learn More
                 </span>
               </a>

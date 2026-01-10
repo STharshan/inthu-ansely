@@ -1,10 +1,10 @@
 import React from "react";
-import WorkspaceCleaningHero from "../components/Digitaltransformation/WorkspaceCleaningHero";
-import WhatsIncludedSection from "../components/Digitaltransformation/WhatsIncludedSection";
-import HowItWorksSection from "../components/Digitaltransformation/HowItWorksSection";
-import ServicePageSection from "../components/Digitaltransformation/ServicePageSection";
-import FAQSection from "../components/Digitaltransformation/FAQSection";
-import ClientReviewsSection from "../components/Digitaltransformation/ClientReviewsSection";
+import WorkspaceCleaningHero from "../features/services/digital-transformation/WorkspaceCleaningHero";
+import WhatsIncludedSection from "../features/services/digital-transformation/WhatsIncludedSection";
+import HowItWorksSection from "../features/services/digital-transformation/HowItWorksSection";
+import ServicePageSection from "../features/services/digital-transformation/ServicePageSection";
+import FAQSection from "../features/services/digital-transformation/FAQSection";
+import ClientReviewsSection from "../features/services/digital-transformation/ClientReviewsSection";
 
 const Digitaltransformation = () => {
   return (

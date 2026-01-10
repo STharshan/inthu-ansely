@@ -45,7 +45,7 @@ export const Tag: React.FC<TagProps> = ({
         }}
       >
         <div
-          className="bg-gray-100 dark:bg-[#0D0D0D] rounded-[20px] opacity-100 py-2.5 px-4 inline-flex items-center gap-2.5 transition-colors duration-300"
+          className="bg-gray-100 dark:bg-brand-dark rounded-[20px] opacity-100 py-2.5 px-4 inline-flex items-center gap-2.5 transition-colors duration-300"
           style={{
             boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
           }}
@@ -78,7 +78,7 @@ export const Tag: React.FC<TagProps> = ({
       } ${className}`}
       onClick={onClick}
     >
-      <div className="bg-gray-100 dark:bg-[#0D0D0D] rounded-full opacity-100 flex items-center gap-2 px-4 h-full transition-all duration-300 hover:opacity-90 will-change-transform">
+      <div className="bg-gray-100 dark:bg-brand-dark rounded-full opacity-100 flex items-center gap-2 px-4 h-full transition-all duration-300 hover:opacity-90 will-change-transform">
         {showIcon && (
           <MigrationIcon className="w-5 h-5 text-gray-900 dark:text-white opacity-80 flex-shrink-0 transition-colors duration-300" />
         )}

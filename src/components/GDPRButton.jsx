@@ -48,7 +48,7 @@ export default function GDPRConsent() {
           <p className="mb-3">
             <a
               href="/privacy"
-              className="underline text-[#0045EF] hover:text-blue-600 dark:text-[#0045EF] dark:hover:text-[#007BC2]"
+              className="underline text-[var(--brand-blue)] hover:text-blue-600 dark:text-[var(--brand-blue)] dark:hover:text-[#007BC2]"
             >
               See our Privacy Policy
             </a>
@@ -57,7 +57,7 @@ export default function GDPRConsent() {
           <div className="flex flex-col sm:flex-row justify-center gap-3">
             <button
               onClick={handleReject}
-              className="bg-[#0045EF] text-white px-4 py-2 rounded text-sm hover:bg-blue-600 dark:hover:bg-[#007BC2] transition"
+              className="bg-[var(--brand-blue)] text-white px-4 py-2 rounded text-sm hover:bg-blue-600 dark:hover:bg-[#007BC2] transition"
             >
               Reject
             </button>
@@ -78,7 +78,7 @@ export default function GDPRConsent() {
         <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40">
           <button
             onClick={handleIconClick}
-            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0045EF] shadow-lg border border-white 
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[var(--brand-blue)] shadow-lg border border-white 
                        flex items-center justify-center hover:scale-105 transition cursor-pointer
                        dark:border-gray-800"
             title="Cookie Preferences"
