@@ -1,11 +1,11 @@
-import React from 'react';
-import { CareersFooterProps } from '../types/careers';
-import { careersConfig } from '../../constants/careers';
+import React from "react";
+import { CareersFooterProps } from "../types/careers";
+import { careersConfig } from "../../constants/careers";
 
 export const CareersFooter: React.FC<CareersFooterProps> = ({
-  className = '',
+  className = "",
 }) => {
-  const messageParts = careersConfig.contactMessage.split('{email}');
+  const messageParts = careersConfig.contactMessage.split("{email}");
 
   return (
     <section

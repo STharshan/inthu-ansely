@@ -23,16 +23,20 @@ export const JobListingCard: React.FC<JobListingCardProps> = ({
       }}
       role="button"
       aria-expanded={isOpen}
-      aria-label={`${job.title} - ${isOpen ? "Collapse" : "Expand"} job details`}
+      aria-label={`${job.title} - ${
+        isOpen ? "Collapse" : "Expand"
+      } job details`}
     >
       <div
         className="bg-white dark:bg-[#0D0D0D] rounded-xl w-full py-5 px-6 transition-colors duration-300"
         style={{
-          boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
+          boxShadow:
+            "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
         }}
         onMouseEnter={(e) => {
           if (document.documentElement.classList.contains("dark")) {
-            e.currentTarget.style.boxShadow = "rgba(0, 0, 0, 0.4) 5px 18px 10px 8px";
+            e.currentTarget.style.boxShadow =
+              "rgba(0, 0, 0, 0.4) 5px 18px 10px 8px";
           } else {
             e.currentTarget.style.boxShadow =
               "rgba(0, 0, 0, 0.15) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px";

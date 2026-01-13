@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { CareersJobListingsProps } from '../types/careers';
-import { JobListingCard } from '../molecules/JobListingCard';
+import React, { useState } from "react";
+import { CareersJobListingsProps } from "../types/careers";
+import { JobListingCard } from "../molecules/JobListingCard";
 
 export const CareersJobListings: React.FC<CareersJobListingsProps> = ({
   jobs,
-  className = '',
+  className = "",
 }) => {
   const [openJobId, setOpenJobId] = useState<string | null>(
     jobs.length > 0 ? jobs[0].id : null

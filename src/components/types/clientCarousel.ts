@@ -8,4 +8,6 @@ export interface ClientLogo {
 export interface ClientCarouselProps {
   clients: ClientLogo[];
   className?: string;
+  heading?: string;
+  showHeading?: boolean;
 }

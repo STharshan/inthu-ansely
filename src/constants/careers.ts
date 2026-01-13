@@ -6,7 +6,8 @@ export const careersConfig = {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam ut id nisl tellus rhoncus, imperdiet consequat ornare. Nunc, cursus eget dui, ultricies lacus.",
   contactEmail: "contact@ansely.co.uk",
   contactQuestion: "Isn't your perfect position listed here?",
-  contactMessage: "Send us an email to {email} and we will try to find a perfect role for you!",
+  contactMessage:
+    "Send us an email to {email} and we will try to find a perfect role for you!",
   applyEmail: "contact@ansely.co.uk",
 };
 

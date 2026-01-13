@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { JobPosition } from '../components/types/careers';
-import { getJobById } from '../constants/careers';
-import { CareerDetailHeader } from '../components/organisms/CareerDetailHeader';
-import { CareerDetailContent } from '../components/organisms/CareerDetailContent';
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { JobPosition } from "../components/types/careers";
+import { getJobById } from "../constants/careers";
+import { CareerDetailHeader } from "../components/organisms/CareerDetailHeader";
+import { CareerDetailContent } from "../components/organisms/CareerDetailContent";
 
 const CareerDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -13,13 +13,13 @@ const CareerDetail: React.FC = () => {
 
   useEffect(() => {
     if (!id) {
-      navigate('/careers');
+      navigate("/careers");
       return;
     }
 
     const foundJob = getJobById(id);
     if (!foundJob) {
-      navigate('/careers');
+      navigate("/careers");
       return;
     }
 

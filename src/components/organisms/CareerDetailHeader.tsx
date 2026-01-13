@@ -7,7 +7,10 @@ interface CareerDetailHeaderProps {
   className?: string;
 }
 
-export const CareerDetailHeader: React.FC<CareerDetailHeaderProps> = ({ job, className = "" }) => {
+export const CareerDetailHeader: React.FC<CareerDetailHeaderProps> = ({
+  job,
+  className = "",
+}) => {
   return (
     <section
       className={`relative w-full overflow-hidden bg-gradient-to-br from-[#001a4d] via-[#0033a0] to-[#001a4d] text-white transition-colors duration-300 ${className}`}
@@ -21,7 +24,10 @@ export const CareerDetailHeader: React.FC<CareerDetailHeaderProps> = ({ job, cla
         <div className="absolute left-[15%] top-[20%] w-[200px] h-[200px] opacity-30">
           <div className="grid grid-cols-4 gap-4 w-full h-full">
             {Array.from({ length: 16 }).map((_, i) => (
-              <div key={i} className="w-2 h-2 bg-blue-400 rounded-full opacity-60" />
+              <div
+                key={i}
+                className="w-2 h-2 bg-blue-400 rounded-full opacity-60"
+              />
             ))}
           </div>
         </div>

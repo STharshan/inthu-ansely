@@ -1,9 +1,9 @@
-import React from 'react';
-import { CareersHeaderProps } from '../types/careers';
-import { careersConfig } from '../../constants/careers';
+import React from "react";
+import { CareersHeaderProps } from "../types/careers";
+import { careersConfig } from "../../constants/careers";
 
 export const CareersHeader: React.FC<CareersHeaderProps> = ({
-  className = '',
+  className = "",
 }) => {
   return (
     <section
@@ -13,7 +13,7 @@ export const CareersHeader: React.FC<CareersHeaderProps> = ({
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large circular shape on left */}
         <div className="absolute left-[-10%] top-[-10%] w-[400px] h-[400px] bg-[#0045EF] opacity-25 rounded-full blur-3xl" />
-        
+
         {/* Grid dots pattern */}
         <div className="absolute left-[15%] top-[20%] w-[200px] h-[200px] opacity-30">
           <div className="grid grid-cols-4 gap-4 w-full h-full">
@@ -28,7 +28,7 @@ export const CareersHeader: React.FC<CareersHeaderProps> = ({
 
         {/* Smaller circular shape on right */}
         <div className="absolute right-[10%] top-[10%] w-[150px] h-[150px] bg-[#002266] opacity-80 rounded-full" />
-        
+
         {/* Rectangular block on right */}
         <div className="absolute right-[5%] bottom-[20%] w-[120px] h-[80px] bg-[#002266] opacity-70 rounded-lg" />
       </div>

@@ -1,6 +1,6 @@
-import React from 'react';
-import { JobPosition } from '../types/careers';
-import { careersConfig } from '../../constants/careers';
+import React from "react";
+import { JobPosition } from "../types/careers";
+import { careersConfig } from "../../constants/careers";
 
 interface CareerDetailContentProps {
   job: JobPosition;
@@ -9,14 +9,14 @@ interface CareerDetailContentProps {
 
 export const CareerDetailContent: React.FC<CareerDetailContentProps> = ({
   job,
-  className = '',
+  className = "",
 }) => {
   const parseHighlightedText = (text: string): React.ReactNode[] => {
     // Highlight phrases that match common patterns (this is a simple implementation)
     // In a real scenario, you might want to mark these in the data
     const parts: React.ReactNode[] = [];
     let lastIndex = 0;
-    
+
     // Simple pattern matching for demonstration
     const highlightPatterns = [
       /nunc euismod/gi,
@@ -26,7 +26,7 @@ export const CareerDetailContent: React.FC<CareerDetailContentProps> = ({
     ];
 
     let matches: Array<{ index: number; length: number; text: string }> = [];
-    
+
     highlightPatterns.forEach((pattern) => {
       let match;
       while ((match = pattern.exec(text)) !== null) {
