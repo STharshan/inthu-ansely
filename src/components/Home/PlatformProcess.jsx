@@ -17,10 +17,11 @@ export default function PlatformProcess() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12 lg:mb-16">
-          <div className="inline-flex items-center justify-center mb-6">
-            <span className="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 transition-colors duration-300">
+          <div className="inline-block mb-4 sm:mb-6">
+            <span className="text-xs sm:text-sm font-medium text-[#0045EF] tracking-wider uppercase">
               Services
             </span>
+            <div className="h-0.5 w-12 bg-[#0045EF] mt-2 mx-auto" />
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight text-gray-900 dark:text-white transition-colors duration-300">
             What we do
@@ -37,11 +38,11 @@ export default function PlatformProcess() {
         {/* Main Content - Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left Column - Image */}
-          <div className="relative rounded-2xl overflow-hidden">
+          <div className="relative rounded-2xl overflow-hidden flex items-center justify-center">
             <img
               src={currentStep.image}
               alt={currentStep.title}
-              className="w-full h-full object-cover transition-opacity duration-300"
+              className="w-full h-full object-cover object-center transition-opacity duration-300"
               loading="lazy"
               decoding="async"
             />
@@ -67,7 +68,7 @@ export default function PlatformProcess() {
                   >
                     {/* Icon */}
                     <div className="flex-shrink-0">
-                      <Icon className="w-6 h-6 text-gray-900 dark:text-white transition-colors duration-300" />
+                      <Icon className="w-6 h-6 text-[#0045EF] transition-colors duration-300" />
                     </div>
 
                     {/* Title */}
@@ -93,16 +94,12 @@ export default function PlatformProcess() {
                       </p>
 
                       {/* Stat Display - Pill Design */}
-                      <div className="inline-flex items-baseline gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
-                        <span className="text-2xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
+                      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+                        <span className="text-2xl font-bold text-[#0045EF] transition-colors duration-300">
                           {step.stat}
+                          {step.statUnit && <span>{step.statUnit}</span>}
                         </span>
-                        {step.statUnit && (
-                          <span className="text-lg text-gray-600 dark:text-gray-400 transition-colors duration-300">
-                            {step.statUnit}
-                          </span>
-                        )}
-                        <span className="text-sm text-gray-600 dark:text-gray-400 transition-colors duration-300 ml-1">
+                        <span className="text-sm text-gray-600 dark:text-gray-400 transition-colors duration-300">
                           {step.statLabel}
                         </span>
                       </div>

@@ -11,27 +11,68 @@ import Newabout from "../components/Home/Newabout";
 import { ClientCarousel } from "../components/organisms/ClientCarousel";
 import { clientLogos } from "../constants/clientCarousel";
 import OurValues from "../components/About/OurValues";
+import ScrollIndicator from "../components/molecules/ScrollIndicator";
 
 // Lazy load heavy components
 const Performance = lazy(() => import("../components/Home/Animation"));
 
+const SECTION_IDS = [
+  "home-hero",
+  "home-clients",
+  "home-values",
+  "home-cards",
+  "home-platform",
+  "home-video",
+  "home-team",
+  "home-testimonials",
+  "home-performance",
+];
+
 const Home: React.FC = () => {
   return (
     <div>
-      <Hero />
-      <ClientCarousel clients={clientLogos} />
+      <ScrollIndicator sections={SECTION_IDS} />
+
+      <section id="home-hero">
+        <Hero />
+      </section>
+
+      <section id="home-clients">
+        <ClientCarousel clients={clientLogos} />
+      </section>
+
       {/* <Newabout /> */}
       {/* <HeroSection /> */}
-      <OurValues />
-      <CardsSection />
-      <PlatformProcess />
-      <VideoSection />
-      <TeamCarousel />
 
-      <HomeTestimonialsSection testimonials={homeTestimonials} />
-      <Suspense fallback={<div style={{ minHeight: "400px" }} />}>
-        <Performance />
-      </Suspense>
+      <section id="home-values">
+        <OurValues />
+      </section>
+
+      <section id="home-cards">
+        <CardsSection />
+      </section>
+
+      <section id="home-platform">
+        <PlatformProcess />
+      </section>
+
+      <section id="home-video">
+        <VideoSection />
+      </section>
+
+      <section id="home-team">
+        <TeamCarousel />
+      </section>
+
+      <section id="home-testimonials">
+        <HomeTestimonialsSection testimonials={homeTestimonials} />
+      </section>
+
+      <section id="home-performance">
+        <Suspense fallback={<div style={{ minHeight: "400px" }} />}>
+          <Performance />
+        </Suspense>
+      </section>
     </div>
   );
 };

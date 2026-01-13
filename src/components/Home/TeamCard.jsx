@@ -7,42 +7,36 @@ export default function TeamCarousel() {
   const teamMembers = [
     {
       name: "G. Selva",
-      title: "Everything Guy (Founder)",
+      title: "Everything Guy",
       description:
         "Founder on paper. Team support in practice. With 16 years of experience building businesses online, driving SaaS companies to billion-dollar annual sales milestones and working at the forefront of technology in surgical robotics. I combine visionary leadership, cutting-edge innovation, and unmatched expertise to create extraordinary results.",
-      image:
-        "https://framerusercontent.com/images/ld1Isq9iOdLryzyA7HZCe7cNgA.jpg",
+      image: "https://framerusercontent.com/images/ld1Isq9iOdLryzyA7HZCe7cNgA.jpg",
     },
     {
       name: "D. Copp",
-      title: "Everything Sales",
+      title: "Everything Customer",
       description:
         "I'm a digital strategist with over a decade of experience helping businesses transition into the digital age. I've worked at one of Europe's largest software companies, where I was rapidly promoted multiple times for performance and impact. My approach blends deep technical expertise with creative, solution-driven thinking to drive growth. I lead a high-performing sales team of five—and when volume ramps up, even the founder gets pulled into sales duty under my direction.",
-      image:
-        "https://framerusercontent.com/images/m1PGVBKWCMad7sb62mX2oeTx8S8.png",
+      image: "https://framerusercontent.com/images/m1PGVBKWCMad7sb62mX2oeTx8S8.png",
     },
     {
       name: "C. Wooldrige",
       title: "Everything Marketing ",
       description:
         "Outside of running marathons most weekends, I'm driven by creativity and a passion for optimising SEO to help hidden gems get discovered. I've worked in the corporate world helping large companies increase their online visibility and digital performance. That experience allows me to understand what search engines truly reward and how users actually find businesses. I now bring this expertise into everything we build at Ansely. My focus is on turning strong businesses into brands that can't be ignored online.",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop",
     },
     {
       name: "S. Bandarai",
       title: "Everything Tech ",
       description:
         "I'm driven by technology and obsessed with turning vision into working, scalable code. Having worked with some of the world's leading AI businesses, I bring clarity, speed, and execution to ambitious ideas. Currently lead a high-performance team of six leaders delivering real-world impact.",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop",
     },
   ];
 
-  const prev = () =>
-    setCurrentIndex((p) => (p === 0 ? teamMembers.length - 1 : p - 1));
-  const next = () =>
-    setCurrentIndex((p) => (p === teamMembers.length - 1 ? 0 : p + 1));
+  const prev = () => setCurrentIndex((p) => (p === 0 ? teamMembers.length - 1 : p - 1));
+  const next = () => setCurrentIndex((p) => (p === teamMembers.length - 1 ? 0 : p + 1));
 
   const current = teamMembers[currentIndex];
 
@@ -59,7 +53,7 @@ export default function TeamCarousel() {
               <div>
                 <div className="flex items-center justify-between p-10 mb-1 rounded-xl bg-gray-100 dark:bg-gray-800">
                   <span className="text-lg font-semibold text-gray-600 dark:text-gray-400">
-                    Team Platform
+                    Leadership Team
                   </span>
                   <div className="flex gap-1.5">
                     {teamMembers.map((_, i) => (
@@ -77,9 +71,7 @@ export default function TeamCarousel() {
                 </div>
 
                 <div className="p-10 rounded-xl h-120 bg-gray-100 dark:bg-gray-800">
-                  <h2 className="text-5xl font-light mb-3 text-gray-900 dark:text-gray-100">
-                    {current.name}
-                  </h2>
+                  <h2 className="text-5xl font-light mb-3 text-[#0045EF]">{current.name}</h2>
                   <p className="text-xl font-semibold mb-5 text-gray-600 dark:text-gray-400">
                     {current.title}
                   </p>
@@ -132,16 +124,14 @@ export default function TeamCarousel() {
           <div className="lg:hidden flex flex-col gap-3">
             <div className="flex items-center justify-between p-4 sm:p-6 rounded-xl bg-gray-100 dark:bg-gray-800">
               <span className="text-sm sm:text-base font-semibold text-gray-600 dark:text-gray-400">
-                Team Platform
+                Leadership Team
               </span>
               <div className="flex gap-1.5">
                 {teamMembers.map((_, i) => (
                   <div
                     key={i}
                     className={`w-2 h-2 rounded-full ${
-                      i === currentIndex
-                        ? "bg-[#0045EF]"
-                        : "bg-gray-400 dark:bg-gray-600"
+                      i === currentIndex ? "bg-[#0045EF]" : "bg-gray-400 dark:bg-gray-600"
                     }`}
                   />
                 ))}
@@ -176,7 +166,7 @@ export default function TeamCarousel() {
             </div>
 
             <div className="p-4 sm:p-6 md:p-8 rounded-xl bg-gray-100 dark:bg-gray-800">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-light mb-2 text-gray-900 dark:text-gray-100">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-light mb-2 text-[#0045EF]">
                 {current.name}
               </h2>
               <p className="text-base sm:text-lg md:text-xl font-semibold mb-4 sm:mb-6 text-gray-600 dark:text-gray-400">

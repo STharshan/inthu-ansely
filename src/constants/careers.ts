@@ -1,13 +1,12 @@
 import { JobPosition } from "../components/types/careers";
 
 export const careersConfig = {
-  heading: "Come and join our fast growing team",
+  heading: "Work hard. Build boldly. Grow fast.",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam ut id nisl tellus rhoncus, imperdiet consequat ornare. Nunc, cursus eget dui, ultricies lacus.",
+    "Help us build what tomorrow’s businesses will rely on. Join a fast-growing, hardworking team creating smart solutions for the future.",
   contactEmail: "contact@ansely.co.uk",
   contactQuestion: "Isn't your perfect position listed here?",
-  contactMessage:
-    "Send us an email to {email} and we will try to find a perfect role for you!",
+  contactMessage: "Send us an email to {email} and we will try to find a perfect role for you!",
   applyEmail: "contact@ansely.co.uk",
 };
 

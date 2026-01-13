@@ -46,13 +46,13 @@ export const clientLogos: ClientLogo[] = [
   {
     id: "saneraminds",
     name: "Saneraminds",
-    logoUrl: "/saneraminds.png",
+    logoUrl: "/saneraminds-logo.png",
     websiteUrl: "https://www.saneraminds.com/",
   },
   {
     id: "af-mok-performance",
     name: "AF-MOK Performance",
-    logoUrl: "/af-mokperformance.png",
+    logoUrl: "/afmokperformance-logo.jpeg",
     websiteUrl: "https://www.af-mokperformance.co.uk/",
   },
   {

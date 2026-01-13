@@ -19,7 +19,7 @@ export default function Hero() {
       {/* Headline */}
       <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
         <h1 className="text-4xl md:text-6xl font-bold leading-tight max-w-3xl mx-auto text-white text-center px-6 drop-shadow-[0_0_20px_rgba(0,0,0,0.8)]">
-          Driving Innovation <br /> Pushing Boundaries <br /> Elevated by AI
+          Turning hidden gems into digital powerhouses
         </h1>
       </div>
     </div>
