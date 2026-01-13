@@ -11,8 +11,8 @@ interface AboutHeroProps {
 
 const AboutHero: React.FC<AboutHeroProps> = ({
   subtitle = "About Us",
-  title = "Our mission is to help you scale through smart analytics",
-  description = "We transform businesses through innovative digital solutions, helping companies navigate the complexities of modern technology with confidence and clarity.",
+  title = "Taking businesses into the digital world, leveling the playing field.",
+  description = "We don’t pretend you’re the biggest. We make sure you’re not ignored.While big corporations dominate visibility, we give growing businesses a fair fight—turning real quality into recognition.",
   backgroundImage = "https://cdn.prod.website-files.com/5f723f17079784254fd79f6d/60f8d9cbcf838a29521a7385_background-about-hero-tech-ui-kit-webflow-template.svg",
 }) => {
   return (

@@ -1,78 +1,23 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { coreValues } from "../../constants/coreValues";
 
-const CORE_VALUES = [
-  {
-    key: "A",
-    heading: "Agility",
-    lines: [
-      "We move fast and adapt even faster.",
-      "We stay ahead of trends, embrace new technologies, and thrive in an ever-changing landscape.",
-      "Change isn't something we fear — it's the constant that drives our growth.",
-    ],
-  },
-  {
-    key: "N",
-    heading: "No-Nonsense Honesty",
-    lines: [
-      "We believe in brutal honesty.",
-      "We speak openly and transparently, even when it's uncomfortable.",
-      "Truth builds trust, and trust builds teams.",
-    ],
-  },
-  {
-    key: "S",
-    heading: "Service to Customers",
-    lines: [
-      "Our customers' success is our success.",
-      "We go above and beyond to deliver long-term value, building partnerships that last.",
-      "Every decision starts with what's best for the people we serve.",
-    ],
-  },
-  {
-    key: "E",
-    heading: "Excellence through Effort",
-    lines: [
-      "We work hard, we work smart, and we never settle.",
-      "We believe in meritocracy — where results, contribution, and teamwork drive recognition.",
-      "Every achievement is earned.",
-    ],
-  },
-  {
-    key: "L",
-    heading: "Lifelong Learning",
-    lines: [
-      "Technology never stands still, and neither do we.",
-      "We constantly seek new skills, insights, and ideas to stay at the cutting edge.",
-      "Curiosity fuels our progress.",
-    ],
-  },
-  {
-    key: "Y",
-    heading: "Yes to Change",
-    lines: [
-      "The only constant with us is change.",
-      "We embrace it, initiate it, and lead it — because innovation demands momentum.",
-      "We don't just react to the future; we help build it.",
-    ],
-  },
-];
-
-export default function CoreValuesCarousel() {
+function CoreValuesCarousel() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
-  const active = CORE_VALUES[index];
+  const active = coreValues[index];
 
-  const goPrev = () => {
+  const goPrev = useCallback(() => {
     setDirection(-1);
-    setIndex((i) => (i === 0 ? CORE_VALUES.length - 1 : i - 1));
-  };
-  const goNext = () => {
+    setIndex((i) => (i === 0 ? coreValues.length - 1 : i - 1));
+  }, []);
+
+  const goNext = useCallback(() => {
     setDirection(1);
-    setIndex((i) => (i === CORE_VALUES.length - 1 ? 0 : i + 1));
-  };
+    setIndex((i) => (i === coreValues.length - 1 ? 0 : i + 1));
+  }, []);
 
   const brandWord = useMemo(() => {
     const letters = ["A", "N", "S", "E", "L", "Y"];
@@ -81,10 +26,8 @@ export default function CoreValuesCarousel() {
       return (
         <span
           key={`${ch}-${i}`}
-          className={`transition-all duration-500 ${
-            isActive
-              ? "scale-110 text-[#0045EF]"
-              : "scale-100 text-slate-400 dark:text-slate-500"
+          className={`transition-transform duration-500 will-change-transform ${
+            isActive ? "scale-110 text-[#0045EF]" : "scale-100 text-slate-400 dark:text-slate-500"
           }`}
         >
           {ch}
@@ -94,12 +37,12 @@ export default function CoreValuesCarousel() {
   }, [active.key]);
 
   return (
-    <div className="relative w-full py-5 px-4 sm:px-6 transition-colors duration-500 bg-white dark:bg-black">
+    <div className="relative w-full py-5 px-4 sm:px-6 bg-white dark:bg-black">
       <h1 className="text-center text-2xl sm:text-4xl font-bold text-black dark:text-white mb-10 mt-10">
         Values That Power Everything We Build
       </h1>
 
-      <div className="relative overflow-hidden max-w-5xl mx-auto rounded-2xl bg-[#36383C] px-4 py-10 sm:px-10 sm:py-14 shadow-xl transition-colors duration-500">
+      <div className="relative overflow-hidden max-w-5xl mx-auto rounded-2xl bg-[#36383C] px-4 py-10 sm:px-10 sm:py-14 shadow-xl">
         {/* Content */}
         <div className="relative z-10 max-w-2xl p-6">
           <div className="mb-6 sm:mb-8">
@@ -121,11 +64,10 @@ export default function CoreValuesCarousel() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: direction > 0 ? -80 : 80 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
+                style={{ willChange: "transform, opacity" }}
                 className="absolute inset-0"
               >
-                <h2 className="mb-3 text-xl sm:text-3xl font-bold text-white">
-                  {active.heading}
-                </h2>
+                <h2 className="mb-3 text-xl sm:text-3xl font-bold text-white">{active.heading}</h2>
                 <div className="space-y-2 text-sm sm:text-lg text-slate-200">
                   {active.lines.map((t, i) => (
                     <p key={i} className="leading-relaxed">
@@ -141,7 +83,7 @@ export default function CoreValuesCarousel() {
         {/* Prev Button */}
         <button
           onClick={goPrev}
-          className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-20 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-slate-300/80 dark:bg-slate-800/80 text-black dark:text-white shadow-md backdrop-blur-md hover:scale-110 transition"
+          className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-20 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-slate-300/80 dark:bg-slate-800/80 text-black dark:text-white shadow-md backdrop-blur-md hover:scale-110 transition-transform will-change-transform"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -151,18 +93,14 @@ export default function CoreValuesCarousel() {
             stroke="currentColor"
             strokeWidth="2"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15 18l-6-6 6-6"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 18l-6-6 6-6" />
           </svg>
         </button>
 
         {/* Next Button */}
         <button
           onClick={goNext}
-          className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-20 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-slate-300/80 dark:bg-slate-800/80 text-black dark:text-white shadow-md backdrop-blur-md hover:scale-110 transition"
+          className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-20 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-slate-300/80 dark:bg-slate-800/80 text-black dark:text-white shadow-md backdrop-blur-md hover:scale-110 transition-transform will-change-transform"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -172,18 +110,14 @@ export default function CoreValuesCarousel() {
             stroke="currentColor"
             strokeWidth="2"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 18l6-6-6-6"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6" />
           </svg>
         </button>
       </div>
 
       {/* Dots */}
       <div className="mt-5 flex justify-center gap-2">
-        {CORE_VALUES.map((s, i) => {
+        {coreValues.map((s, i) => {
           const isActive = i === index;
           return (
             <button
@@ -192,7 +126,7 @@ export default function CoreValuesCarousel() {
                 setDirection(i > index ? 1 : -1);
                 setIndex(i);
               }}
-              className={`h-2 rounded-full transition-all duration-300 ${
+              className={`h-2 rounded-full transition-[width,background-color] duration-300 ${
                 isActive ? "w-5 bg-[#0045EF]" : "w-2 bg-[#36383C]"
               }`}
             />
@@ -202,3 +136,5 @@ export default function CoreValuesCarousel() {
     </div>
   );
 }
+
+export default React.memo(CoreValuesCarousel);

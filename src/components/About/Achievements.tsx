@@ -13,33 +13,28 @@ interface AchievementsProps {
 
 const defaultAchievements: Achievement[] = [
   {
-    number: "550K+",
+    number: "3000+",
     title: "Active Users",
-    description:
-      "Trusted by businesses worldwide to deliver exceptional digital experiences.",
+    description: "Trusted by businesses worldwide to deliver exceptional digital experiences.",
   },
   {
-    number: "185+",
+    number: "15+",
     title: "Team Members",
-    description:
-      "Talented professionals dedicated to your success and innovation.",
+    description: "Talented professionals dedicated to your success and innovation.",
   },
   {
-    number: "$23M",
+    number: "£100M+",
     title: "Funding Raised",
-    description: "Investment from leading venture capital firms and partners.",
+    description: "Investment from leading venture caspital firms and partners.",
   },
   {
-    number: "7 years",
-    title: "In Business",
-    description:
-      "Proven track record of delivering excellence and driving growth.",
+    number: "15+ Years",
+    title: "Driving Digital Growth",
+    description: "Forged in obsession, obsessed with scaling businesses digitally.",
   },
 ];
 
-const Achievements: React.FC<AchievementsProps> = ({
-  achievements = defaultAchievements,
-}) => {
+const Achievements: React.FC<AchievementsProps> = ({ achievements = defaultAchievements }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
