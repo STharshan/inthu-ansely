@@ -25,6 +25,7 @@ import GDPRConsent from "./components/GDPRButton";
 import ContactForm from "./pages/Contact";
 import Careers from "./pages/Careers";
 import CareerDetail from "./pages/CareerDetail";
+import LearningDashboard from "./pages/LearningDashboard"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,6 +57,8 @@ function App() {
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/careers/:id" element={<CareerDetail />} />
+         <Route path="/LearningDashboard" element={<LearningDashboard />} />
+
       </Routes>
       <Footer />
       <GDPRConsent />
