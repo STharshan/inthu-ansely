@@ -34,5 +34,14 @@ export const modulesData = [
     description: "On-page and Off-page SEO strategies to rank higher on search engines.",
     icon: "🔍",
     gradient: "from-blue-500 to-[#0045EF]"
+  },
+  {
+    id: 5,
+    title: "Custom Software Service",
+    category: "Development",
+    path: "/insidecustomsoftwareservice",
+    description: "Tailored software solutions, architecture design, and enterprise scaling strategies.",
+    icon: "🛠️",
+    gradient: "from-cyan-600 to-blue-700"
   }
 ];
