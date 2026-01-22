@@ -21,7 +21,7 @@ const LearningDashboard = () => {
   const completed = courses.filter(c => c.progress === 100).length;
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-black p-4 md:p-14 font-sans text-gray-900 dark:text-white transition-colors duration-500 mt-10">
+    <div className="min-h-screen bg-[#F8FAFC] dark:bg-black p-4 md:p-14 font-sans text-gray-900 dark:text-white transition-colors duration-500 mt-20">
       {selected ? (
         <CourseDetail 
           course={selected} 
