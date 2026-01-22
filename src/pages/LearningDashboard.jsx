@@ -46,7 +46,9 @@ const LearningDashboard = () => {
         </div>
 
         {/* Footer info */}
-        
+        <footer className="mt-20 text-center text-gray-400 text-xs font-medium tracking-widest uppercase">
+          © 2026 Learning Platform • Premium Content
+        </footer>
       </div>
     </div>
   );
