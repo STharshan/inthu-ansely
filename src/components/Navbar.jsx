@@ -99,7 +99,7 @@ export default function Navbar() {
 
           {/* Desktop Nav - Center */}
           <nav className="hidden lg:flex items-center justify-center space-x-6 xl:space-x-10">
-            {["Home", "About", "Blog", "Careers"].map((item) => (
+            {["Home", "About", "Blog","Learning" ,"Careers"].map((item) => (
               <a
                 key={item}
                 href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
@@ -341,7 +341,7 @@ export default function Navbar() {
         >
           <div className="max-w-[1350px] mx-auto px-5 sm:px-8">
             {/* Navigation Links */}
-            {["Home", "About", "Blog"].map((item, index) => (
+            {["Home", "About", "Blog","Learning"].map((item, index) => (
               <div
                 key={item}
                 className={`border-b py-4 text-[13px] tracking-[0.18em] uppercase font-medium ${
