@@ -1,3 +1,5 @@
+import { Atom, TrendingUp, Bot, Search, Layout } from 'lucide-react';
+
 export const modulesData = [
   {
     id: 1,
@@ -5,7 +7,7 @@ export const modulesData = [
     category: "Development",
     path: "/React",
     description: "Deep dive into React patterns, hooks, and component lifecycle comparison.",
-    icon: "⚛️",
+    icon: Atom, // Removed emoji, using Lucide component
     gradient: "from-blue-600 to-cyan-500"
   },
   {
@@ -14,7 +16,7 @@ export const modulesData = [
     category: "Marketing",
     path: "/PPCLearningModule",
     description: "Master Pay-Per-Click advertising, keyword bidding, and campaign ROI.",
-    icon: "📈",
+    icon: TrendingUp,
     gradient: "from-blue-700 to-indigo-600"
   },
   {
@@ -23,7 +25,7 @@ export const modulesData = [
     category: "Artificial Intelligence",
     path: "/AILearningModule",
     description: "Explore Generative AI, LLMs, and neural network fundamentals.",
-    icon: "🤖",
+    icon: Bot,
     gradient: "from-indigo-600 to-purple-600"
   },
   {
@@ -32,7 +34,7 @@ export const modulesData = [
     category: "Marketing",
     path: "/SEOLearningPlatform",
     description: "On-page and Off-page SEO strategies to rank higher on search engines.",
-    icon: "🔍",
+    icon: Search,
     gradient: "from-blue-500 to-[#0045EF]"
   },
   {
@@ -41,7 +43,7 @@ export const modulesData = [
     category: "Development",
     path: "/insidecustomsoftwareservice",
     description: "Tailored software solutions, architecture design, and enterprise scaling strategies.",
-    icon: "🛠️",
+    icon: Layout,
     gradient: "from-cyan-600 to-blue-700"
   }
 ];
