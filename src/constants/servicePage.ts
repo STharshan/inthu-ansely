@@ -1,5 +1,17 @@
-import { FaRobot, FaHandshake, FaGlobe, FaLaptopCode, FaBrain, FaPalette } from "react-icons/fa";
-import { ServiceCard, TopicButton, CTAButton } from "../components/ServicePage/types";
+import {
+  FaRobot,
+  FaHandshake,
+  FaGlobe,
+  FaLaptopCode,
+  FaBrain,
+  FaPalette,
+  FaMobile,
+} from "react-icons/fa";
+import {
+  ServiceCard,
+  TopicButton,
+  CTAButton,
+} from "../components/ServicePage/types";
 
 // Shared service cards used across all service pages
 export const serviceCards: ServiceCard[] = [
@@ -44,6 +56,13 @@ export const serviceCards: ServiceCard[] = [
     title: "Digital Marketing, Branding & Social Media",
     description:
       "Elevate your brand with comprehensive digital marketing strategies, compelling brand identity design, and powerful social media campaigns that engage audiences and drive measurable results.",
+  },
+  {
+    id: "mobile-app-development",
+    icon: FaMobile,
+    title: "Mobile App Development",
+    description:
+      "Transform your ideas into powerful mobile applications with native iOS and Android development, cross-platform solutions, intuitive UI/UX design, and seamless backend integration that users love.",
   },
 ];
 
@@ -202,4 +221,50 @@ export const digitalMarketingCTAButtons: CTAButton[] = [
     href: "/projects",
     variant: "secondary",
   },
+];
+
+// Mobile App Development Constants
+export const mobileAppDevelopmentTopicButtons: TopicButton[] = [
+  { id: "native", label: "Native Development" },
+  { id: "cross-platform", label: "Cross-Platform" },
+  { id: "ui-ux", label: "UI/UX Design" },
+  { id: "backend", label: "Backend & APIs" },
+];
+
+export const mobileAppDevelopmentCTAButtons: CTAButton[] = [
+  {
+    id: "book-call",
+    label: "Book a Free Call",
+    href: "/contact",
+    variant: "primary",
+  },
+  {
+    id: "see-projects",
+    label: "See Projects",
+    href: "/projects",
+    variant: "secondary",
+  },
+];
+
+export const mobileAppDevelopmentServiceTags: string[] = [
+  "iOS Development",
+  "Android Development",
+  "React Native",
+  "Flutter",
+  "Swift",
+  "Kotlin",
+  "UI/UX Design",
+  "App Design",
+  "Prototyping",
+  "Backend APIs",
+  "Firebase",
+  "Cloud Integration",
+  "Push Notifications",
+  "Payment Integration",
+  "App Store Optimization",
+  "App Testing",
+  "App Maintenance",
+  "Cross-Platform",
+  "Native Apps",
+  "Mobile Backend",
 ];

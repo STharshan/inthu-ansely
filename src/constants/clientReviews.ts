@@ -61,7 +61,7 @@ export const sampleStatistics: Statistic[] = [
   {
     id: "projects",
     value: "180+",
-    label: "design projects completed.",
+    label: "Projects completed.",
   },
   {
     id: "satisfaction",
@@ -76,8 +76,8 @@ export const sampleStatistics: Statistic[] = [
 ];
 
 export const digitalTransformationClientReviewsConfig = {
-  categoryTag: "00 Reviews",
-  reviewCount: "00 Reviews",
+  categoryTag: "Reviews",
+  reviewCount: "Reviews",
   heading: "Client Reviews",
   description:
     "Real feedback from clients who trusted my design expertise to elevate their brands successfully.",
@@ -86,10 +86,9 @@ export const digitalTransformationClientReviewsConfig = {
   imagePosition: "left" as const,
 };
 
-// Reuse the same reviews and statistics for all services
 export const digitalPartnershipsClientReviewsConfig = {
-  categoryTag: "00 Reviews",
-  reviewCount: "00 Reviews",
+  categoryTag: "Reviews",
+  reviewCount: "Reviews",
   heading: "Client Reviews",
   description:
     "Real feedback from clients who trusted our partnership expertise to expand their market reach and capabilities.",
@@ -99,8 +98,8 @@ export const digitalPartnershipsClientReviewsConfig = {
 };
 
 export const customWebsitesClientReviewsConfig = {
-  categoryTag: "00 Reviews",
-  reviewCount: "00 Reviews",
+  categoryTag: "Reviews",
+  reviewCount: "Reviews",
   heading: "Client Reviews",
   description:
     "Real feedback from clients who trusted our web development expertise to create exceptional online experiences.",
@@ -110,8 +109,8 @@ export const customWebsitesClientReviewsConfig = {
 };
 
 export const customSoftwareClientReviewsConfig = {
-  categoryTag: "00 Reviews",
-  reviewCount: "00 Reviews",
+  categoryTag: "Reviews",
+  reviewCount: "Reviews",
   heading: "Client Reviews",
   description:
     "Real feedback from clients who trusted our software development expertise to build scalable solutions.",
@@ -121,8 +120,8 @@ export const customSoftwareClientReviewsConfig = {
 };
 
 export const businessConsultancyClientReviewsConfig = {
-  categoryTag: "00 Reviews",
-  reviewCount: "00 Reviews",
+  categoryTag: "Reviews",
+  reviewCount: "Reviews",
   heading: "Client Reviews",
   description:
     "Real feedback from clients who trusted our consultancy expertise to optimize their business operations.",
@@ -132,11 +131,22 @@ export const businessConsultancyClientReviewsConfig = {
 };
 
 export const digitalMarketingClientReviewsConfig = {
-  categoryTag: "00 Reviews",
-  reviewCount: "00 Reviews",
+  categoryTag: "Reviews",
+  reviewCount: "Reviews",
   heading: "Client Reviews",
   description:
     "Real feedback from clients who trusted our marketing expertise to elevate their brand and drive growth.",
+  imageUrl: "/d1.avif",
+  imageAlt: "Client reviews illustration",
+  imagePosition: "left" as const,
+};
+
+export const mobileAppDevelopmentClientReviewsConfig = {
+  categoryTag: "Reviews",
+  reviewCount: "Reviews",
+  heading: "Client Reviews",
+  description:
+    "Real feedback from clients who partnered with us to build, launch, and scale successful mobile applications.",
   imageUrl: "/d1.avif",
   imageAlt: "Client reviews illustration",
   imagePosition: "left" as const,
