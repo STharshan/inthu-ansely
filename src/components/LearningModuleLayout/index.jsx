@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BookOpen, ChevronRight, ChevronLeft, Check } from 'lucide-react';
+import { BookOpen, ChevronRight, ChevronLeft, Check, Home } from 'lucide-react';
 
 const LearningModuleLayout = ({
   moduleConfig,
@@ -8,6 +8,7 @@ const LearningModuleLayout = ({
   persistProgress = false,
   storageKey = 'module-progress',
   enableKeyboard = false,
+  onBackClick = null,
 }) => {
   const [currentLesson, setCurrentLesson] = useState(0);
   const [completed, setCompleted] = useState([]);
@@ -75,26 +76,38 @@ const LearningModuleLayout = ({
   return (
     <div className="min-h-screen transition-colors duration-300 bg-white dark:bg-black text-gray-900 dark:text-white mt-20">
       {/* EXACT AI MODULE HEADER - Desktop & Mobile */}
-      <div className="border-b border-gray-200 dark:border-gray-800 backdrop-blur-sm sticky top-0 z-10 bg-white/80 dark:bg-black/80 transition-colors duration-300">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            {moduleConfig.icon && (
-              <div className="w-8 h-8 bg-[#0045EF] rounded-lg flex items-center justify-center">
-                <moduleConfig.icon className="w-5 h-5 text-white" />
-              </div>
-            )}
-            <div>
-              <h1 className="text-xl font-semibold">{moduleConfig.title}</h1>
-              {moduleConfig.subtitle && (
-                <p className="text-sm text-gray-600 dark:text-gray-300">{moduleConfig.subtitle}</p>
+      <div className="border-b border-gray-200 dark:border-gray-800 backdrop-blur-sm sticky top-[80px] z-30 bg-white/95 dark:bg-black/95 transition-colors duration-300">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3 flex-1 min-w-0">
+              {onBackClick && (
+                <button
+                  onClick={onBackClick}
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex-shrink-0"
+                  title="Back to all modules"
+                >
+                  <Home className="h-4 w-4" />
+                  <span className="hidden sm:inline">All Modules</span>
+                </button>
               )}
+              {moduleConfig.icon && (
+                <div className="w-8 h-8 bg-[#0045EF] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <moduleConfig.icon className="w-5 h-5 text-white" />
+                </div>
+              )}
+              <div className="min-w-0">
+                <h1 className="text-xl font-semibold truncate">{moduleConfig.title}</h1>
+                {moduleConfig.subtitle && (
+                  <p className="text-sm text-gray-600 dark:text-gray-300 truncate">{moduleConfig.subtitle}</p>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* EXACT PPC MODULE MOBILE TABS - Hidden on desktop, Fixed and Scrollable */}
-      <div className="lg:hidden sticky top-[73px] z-40 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
+      <div className="lg:hidden sticky top-[153px] z-30 bg-white/95 dark:bg-black/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
         <div className="overflow-x-auto">
           <div className="container mx-auto px-4 py-4">
             <div className="flex gap-2 min-w-max">
@@ -129,7 +142,7 @@ const LearningModuleLayout = ({
 
           {/* EXACT AI MODULE DESKTOP SIDEBAR - Hidden on mobile */}
           <aside className="hidden lg:block">
-            <div className="rounded-xl border border-gray-200 dark:border-gray-800 p-6 sticky top-24 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+            <div className="rounded-xl border border-gray-200 dark:border-gray-800 p-6 sticky top-[180px] bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
               <div className="mb-6">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-gray-500 dark:text-gray-400">Progress</span>
