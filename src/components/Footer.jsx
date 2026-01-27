@@ -6,19 +6,19 @@ const Footer = () => {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Blog", href: "/blog" },
+    { name: "Learn", href: "/learn" },
     { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
     { name: "Careers", href: "/careers" },
   ];
 
   const services = [
-    { name: "Custom Software", href: "/CustomeSoftware" },
+    { name: "Custom Software", href: "/custom-software" },
     { name: "Digital Transformation", href: "/digital-transformation" },
     { name: "Consultancy", href: "/business-consultancy" },
     { name: "Digital Marketing", href: "/digital-marketing" },
-    { name: "Custom Website", href: "/customwebsite" },
+    { name: "Custom Website", href: "/custom-website" },
     { name: "Smart Automation", href: "/smart-automation" },
-    { name: "Digital Branding", href: "/digital-marketing" },
     { name: "Digital Partnerships", href: "/digital-partnership" },
   ];
 

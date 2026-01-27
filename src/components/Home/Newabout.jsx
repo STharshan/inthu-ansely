@@ -48,7 +48,7 @@ export default function Newabout() {
             {/* LEARN MORE BUTTON */}
             <div className="mt-12">
               <Link
-                to="/React"
+                to="/learn/react-comparison"
                 className="inline-flex items-center justify-center rounded-lg bg-[#0045EF] px-5 py-2 text-white font-semibold text-lg transition-all duration-300 hover:bg-gray-800  dark:text-black dark:hover:bg-gray-200"
               >
                 Learn More

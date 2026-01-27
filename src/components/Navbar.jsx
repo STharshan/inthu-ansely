@@ -99,7 +99,7 @@ export default function Navbar() {
 
           {/* Desktop Nav - Center */}
           <nav className="hidden lg:flex items-center justify-center space-x-6 xl:space-x-10">
-            {["Home", "About", "Blog", "Learning", "Careers"].map((item) => (
+            {["Home", "About", "Blog", "Learn", "Careers"].map((item) => (
               <a
                 key={item}
                 href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
@@ -154,7 +154,7 @@ export default function Navbar() {
                   }`}
                 >
                   <a
-                    href="/CustomeSoftware"
+                    href="/custom-software"
                     className={`block px-4 py-2 text-sm transition-colors ${
                       isDark
                         ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
@@ -194,7 +194,7 @@ export default function Navbar() {
                     Digital Marketing
                   </a>
                   <a
-                    href="/customwebsite"
+                    href="/custom-website"
                     className={`block px-4 py-2 text-sm transition-colors ${
                       isDark
                         ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
@@ -213,16 +213,7 @@ export default function Navbar() {
                   >
                     Smart Automation
                   </a>
-                  <a
-                    href="/digital-marketing"
-                    className={`block px-4 py-2 text-sm transition-colors ${
-                      isDark
-                        ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
-                        : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
-                    }`}
-                  >
-                    Digital Branding
-                  </a>
+
                   <a
                     href="/digital-partnership"
                     className={`block px-4 py-2 text-sm transition-colors ${
@@ -351,7 +342,7 @@ export default function Navbar() {
         >
           <div className="max-w-[1350px] mx-auto px-5 sm:px-8">
             {/* Navigation Links */}
-            {["Home", "About", "Blog", "Learning"].map((item, index) => (
+            {["Home", "About", "Blog", "Learn"].map((item, index) => (
               <div
                 key={item}
                 className={`border-b py-4 text-[13px] tracking-[0.18em] uppercase font-medium ${
@@ -393,7 +384,7 @@ export default function Navbar() {
               {isCompanyOpen && (
                 <div className="mt-3 pl-4 space-y-2 animate-[fadeIn_0.3s_ease_forwards]">
                   <a
-                    href="/CustomeSoftware"
+                    href="/custom-software"
                     className={`block py-2 text-sm transition-colors ${
                       isDark
                         ? "text-gray-300 hover:text-blue-400"
@@ -433,14 +424,14 @@ export default function Navbar() {
                     Digital Marketing
                   </a>
                   <a
-                    href="/customwebsite"
+                    href="/custom-website"
                     className={`block py-2 text-sm transition-colors ${
                       isDark
                         ? "text-gray-300 hover:text-blue-400"
                         : "text-gray-600 hover:text-[#0045EF]"
                     }`}
                   >
-                    Custom Website
+                    Custom Website Development
                   </a>
                   <a
                     href="/smart-automation"
@@ -452,16 +443,7 @@ export default function Navbar() {
                   >
                     Smart Automation
                   </a>
-                  <a
-                    href="/digital-marketing"
-                    className={`block py-2 text-sm transition-colors ${
-                      isDark
-                        ? "text-gray-300 hover:text-blue-400"
-                        : "text-gray-600 hover:text-[#0045EF]"
-                    }`}
-                  >
-                    Digital Branding
-                  </a>
+
                   <a
                     href="/digital-partnership"
                     className={`block py-2 text-sm transition-colors ${

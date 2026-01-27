@@ -36,39 +36,37 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <Routes>
+        {/* Main Pages */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/careers" element={<Careers />} />
-        <Route path="/careers/:id" element={<CareerDetail />} />
-        <Route path="/React" element={<ReactComparisonGuide />} />
-        <Route
-          path="/digital-transformation"
-          element={<Digitaltransformation />}
-        />
-        <Route path="/business-consultancy" element={<Businessconsultancy />} />
-        <Route path="/digital-marketing" element={<DigitalMarketing />} />
-        <Route path="/customwebsite" element={<CustomWebsite />} />
-        <Route
-          path="/mobile-app-development"
-          element={<MobileAppDevelopment />}
-        />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:slug" element={<BlogDetail />} />
-        <Route
-          path="/insidecustomsoftwareservice"
-          element={<Insidecustomsoftwareservice />}
-        />
-        <Route path="/digital-partnership" element={<DigitalPartnership />} />
-        <Route path="/PPCLearningModule" element={<PPCLearningModule />} />
-        <Route path="/AILearningModule" element={<AILearningModule />} />
-        <Route path="/SEOLearningPlatform" element={<SEOLearningPlatform />} />
-        <Route path="/CustomeSoftware" element={<CustomeSoftware />} />
-        <Route path="/terms" element={<TermsConditions />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/careers/:id" element={<CareerDetail />} />
-        <Route path="/Learning" element={<LearningDashboard />} />
+
+        {/* Services */}
+        <Route path="/digital-transformation" element={<Digitaltransformation />} />
+        <Route path="/business-consultancy" element={<Businessconsultancy />} />
+        <Route path="/digital-marketing" element={<DigitalMarketing />} />
+        <Route path="/digital-partnership" element={<DigitalPartnership />} />
+        <Route path="/custom-website" element={<CustomWebsite />} />
+        <Route path="/custom-software" element={<CustomeSoftware />} />
+        <Route path="/mobile-app-development" element={<MobileAppDevelopment />} />
+
+        {/* Blog */}
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogDetail />} />
+
+        {/* Learning Modules */}
+        <Route path="/learn" element={<LearningDashboard />} />
+        <Route path="/learn/ai" element={<AILearningModule />} />
+        <Route path="/learn/ppc" element={<PPCLearningModule />} />
+        <Route path="/learn/seo" element={<SEOLearningPlatform />} />
+        <Route path="/learn/react-comparison" element={<ReactComparisonGuide />} />
+        <Route path="/learn/custom-software-guide" element={<Insidecustomsoftwareservice />} />
+
+        {/* Legal */}
+        <Route path="/terms" element={<TermsConditions />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
       <GDPRConsent />

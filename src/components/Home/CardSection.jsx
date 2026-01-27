@@ -23,7 +23,7 @@ const serviceContent = [
     title: "Custom Software",
     subtitle: "Tailored. Scalable. Future-Ready.",
     desc: "We build tailor-made software that grows with your business.",
-    route: "/CustomeSoftware",
+    route: "/custom-software",
   },
   {
     icon: FaChartLine,
@@ -59,7 +59,7 @@ const serviceContent = [
     console.log("Site Live");
   }
 }`,
-    route: "/customwebsite",
+    route: "/custom-website",
   },
   {
     icon: FaRobot,
