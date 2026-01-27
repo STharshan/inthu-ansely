@@ -5,7 +5,6 @@ export default function BottomLine() {
     <section className="py-24 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800 transition-colors text-black dark:text-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="mx-auto max-w-4xl space-y-12">
-
           {/* Header */}
           <div className="space-y-4 text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-[#0045EF]/10 px-4 py-1.5 text-sm border border-[#0045EF]/20">
@@ -67,7 +66,8 @@ export default function BottomLine() {
                 WordPress, Wix, and GoDaddy are fine for{" "}
                 <span className="font-medium text-black dark:text-white">
                   hobby sites
-                </span>.
+                </span>
+                .
               </p>
               <p className="text-xl font-semibold mt-2 text-black dark:text-white">
                 React is built for{" "}
@@ -85,10 +85,12 @@ export default function BottomLine() {
                 If your website is part of your{" "}
                 <span className="font-semibold text-black dark:text-white">
                   sales team
-                </span>,{" "}
+                </span>
+                ,{" "}
                 <span className="font-semibold text-black dark:text-white">
                   brand authority
-                </span>, and{" "}
+                </span>
+                , and{" "}
                 <span className="font-semibold text-black dark:text-white">
                   growth strategy
                 </span>
@@ -99,13 +101,6 @@ export default function BottomLine() {
                 It’s a business advantage.
               </p>
             </div>
-          </div>
-
-          {/* CTA */}
-          <div className="flex justify-center pt-6">
-            <button className="inline-flex items-center justify-center rounded-md bg-[#0045EF] px-6 py-3 text-base font-medium text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-[#0045EF]/50">
-              Get Started with React
-            </button>
           </div>
         </div>
       </div>
