@@ -1,13 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-/**
- * Mobile App Features Section
- * 3 cards with animated SVG icons
- * Dark/Light mode support
- * No CTA buttons (as requested)
- */
-
 export default function MobileAppFeaturesSection() {
   const features = [
     {
@@ -111,7 +104,6 @@ export default function MobileAppFeaturesSection() {
   );
 }
 
-// Feature Card Component
 const FeatureCard = ({ feature, index, isFirst, isLast }) => {
   return (
     <motion.div
