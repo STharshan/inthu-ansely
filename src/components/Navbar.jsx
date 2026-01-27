@@ -25,7 +25,7 @@ export default function Navbar() {
   useEffect(() => {
     // Check for saved theme preference or default to light mode
     const savedTheme = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      "(prefers-color-scheme: dark)",
     ).matches;
 
     if (savedTheme) {
@@ -75,8 +75,8 @@ export default function Navbar() {
               ? "text-white"
               : "text-black"
             : isBlogDetailPage && !isDark
-            ? "text-black"
-            : "text-white"
+              ? "text-black"
+              : "text-white"
         }`}
       >
         {/* Three Column Grid Layout */}
@@ -90,8 +90,8 @@ export default function Navbar() {
                   ? "text-white"
                   : "text-black"
                 : isBlogDetailPage && !isDark
-                ? "text-black"
-                : "text-white"
+                  ? "text-black"
+                  : "text-white"
             }`}
           >
             ANSELY
@@ -99,7 +99,7 @@ export default function Navbar() {
 
           {/* Desktop Nav - Center */}
           <nav className="hidden lg:flex items-center justify-center space-x-6 xl:space-x-10">
-            {["Home", "About", "Blog","Learning" ,"Careers"].map((item) => (
+            {["Home", "About", "Blog", "Learning", "Careers"].map((item) => (
               <a
                 key={item}
                 href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
@@ -109,8 +109,8 @@ export default function Navbar() {
                       ? "text-white hover:text-blue-400"
                       : "text-black hover:text-[#0045EF]"
                     : isBlogDetailPage && !isDark
-                    ? "text-black hover:text-[#0045EF]"
-                    : "text-white hover:text-gray-300"
+                      ? "text-black hover:text-[#0045EF]"
+                      : "text-white hover:text-gray-300"
                 }`}
               >
                 {item}
@@ -133,8 +133,8 @@ export default function Navbar() {
                       ? "text-white hover:text-blue-400"
                       : "text-black hover:text-[#0045EF]"
                     : isBlogDetailPage && !isDark
-                    ? "text-black hover:text-[#0045EF]"
-                    : "text-white hover:text-gray-300"
+                      ? "text-black hover:text-[#0045EF]"
+                      : "text-white hover:text-gray-300"
                 }`}
               >
                 SERVICES
@@ -233,6 +233,16 @@ export default function Navbar() {
                   >
                     Digital Partnerships
                   </a>
+                  <a
+                    href="/mobile-app-development"
+                    className={`block px-4 py-2 text-sm transition-colors ${
+                      isDark
+                        ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
+                        : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    Mobile App Development
+                  </a>
                 </div>
               )}
             </div>
@@ -280,8 +290,8 @@ export default function Navbar() {
                     ? "border-blue-500/30 text-blue-400 hover:border-blue-500 hover:bg-blue-500/10"
                     : "border-[#0045EF]/30 text-[#0045EF] hover:border-[#0045EF] hover:bg-[#0045EF]/10"
                   : isBlogDetailPage && !isDark
-                  ? "border-[#0045EF]/30 text-[#0045EF] hover:border-[#0045EF] hover:bg-[#0045EF]/10"
-                  : "border-white/30 text-white hover:border-white/50 hover:bg-white/10"
+                    ? "border-[#0045EF]/30 text-[#0045EF] hover:border-[#0045EF] hover:bg-[#0045EF]/10"
+                    : "border-white/30 text-white hover:border-white/50 hover:bg-white/10"
               }`}
               aria-label="Toggle theme"
             >
@@ -308,8 +318,8 @@ export default function Navbar() {
                     ? "text-white"
                     : "text-black"
                   : isBlogDetailPage && !isDark
-                  ? "text-black"
-                  : "text-white"
+                    ? "text-black"
+                    : "text-white"
               }`}
               onClick={() => setIsOpen(!isOpen)}
             >
@@ -326,8 +336,8 @@ export default function Navbar() {
                 ? "bg-white/20"
                 : "bg-black/10"
               : isBlogDetailPage && !isDark
-              ? "bg-black/10"
-              : "bg-white/20"
+                ? "bg-black/10"
+                : "bg-white/20"
           }`}
         ></div>
       </div>
@@ -341,7 +351,7 @@ export default function Navbar() {
         >
           <div className="max-w-[1350px] mx-auto px-5 sm:px-8">
             {/* Navigation Links */}
-            {["Home", "About", "Blog","Learning"].map((item, index) => (
+            {["Home", "About", "Blog", "Learning"].map((item, index) => (
               <div
                 key={item}
                 className={`border-b py-4 text-[13px] tracking-[0.18em] uppercase font-medium ${

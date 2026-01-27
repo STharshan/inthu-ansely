@@ -370,3 +370,107 @@ export const contactFAQConfig = {
   imageAlt: "FAQ illustration",
   serviceTags: ["Digital Marketing", "Branding", "Social Media"],
 };
+
+export interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+export const mobileAppDevelopmentFAQs: FAQItem[] = [
+  {
+    id: "app-development-timeline",
+    question: "How long does it take to build a mobile app?",
+    answer:
+      "Timeline varies based on complexity. A simple app (basic features, minimal design) takes 2-3 months. Medium complexity apps (custom UI, API integrations, user accounts) need 4-6 months. Complex apps (advanced features, real-time functionality, AI/ML integration) require 6-12+ months. We break projects into phases—discovery, design, development, testing, launch—with clear milestones. MVP (Minimum Viable Product) approach can get you to market in 8-12 weeks, then iterate based on user feedback.",
+  },
+  {
+    id: "ios-android-or-both",
+    question: "Should we build for iOS, Android, or both platforms?",
+    answer:
+      "It depends on your target audience and budget. If your users are primarily on one platform, start there. iOS users typically have higher engagement and spending power but represent smaller market share. Android dominates globally with 70%+ market share. For most businesses, we recommend cross-platform development (React Native, Flutter) to launch on both simultaneously at 60-70% the cost of building separately. We analyze your user demographics, competitors, and budget to recommend the optimal approach.",
+  },
+  {
+    id: "app-development-cost",
+    question: "What does it cost to develop a mobile app?",
+    answer:
+      "Simple apps start at $25,000-$50,000. Medium complexity apps run $50,000-$150,000. Complex enterprise apps can exceed $200,000+. Costs include design, development, testing, deployment, and project management. Key factors: number of features, custom design complexity, third-party integrations, backend infrastructure, and platform choice. Cross-platform development costs less than building separate native apps. We provide detailed estimates after understanding your requirements, always with transparent pricing and no hidden fees.",
+  },
+  {
+    id: "native-vs-cross-platform",
+    question:
+      "What's the difference between native and cross-platform development?",
+    answer:
+      "Native apps are built specifically for iOS (Swift) or Android (Kotlin), offering best performance, access to all device features, and platform-specific UI. Cross-platform frameworks (React Native, Flutter) use one codebase for both platforms, reducing cost and development time by 30-40%. Trade-offs: cross-platform apps might have minor performance differences and limited access to newest platform features. For most apps, cross-platform is ideal. Native makes sense for apps requiring maximum performance, complex animations, or cutting-edge hardware features.",
+  },
+  {
+    id: "app-maintenance-updates",
+    question: "Do you provide maintenance and updates after launch?",
+    answer:
+      "Yes, we offer ongoing support and maintenance packages. Apps need regular updates for OS compatibility (iOS/Android release new versions annually), security patches, bug fixes, and feature enhancements. Our maintenance plans include: monthly updates, performance monitoring, crash reporting and fixes, OS compatibility updates, analytics review, and feature additions. Most clients invest 15-20% of initial development cost annually in maintenance. We also provide emergency support for critical issues and help with App Store optimization.",
+  },
+  {
+    id: "mvp-vs-full-app",
+    question:
+      "Should we build an MVP first or go straight to a full-featured app?",
+    answer:
+      "We strongly recommend starting with an MVP (Minimum Viable Product). Launch with core features in 8-12 weeks, validate with real users, gather feedback, and iterate based on actual usage data rather than assumptions. This approach reduces risk, gets you to market faster, and ensures you're building what users actually want. Many 'must-have' features turn out to be rarely used. MVP typically costs 40-60% of a full app, and you can add features incrementally based on proven demand and user feedback.",
+  },
+  {
+    id: "app-store-approval",
+    question:
+      "How long does App Store approval take and what are the requirements?",
+    answer:
+      "Apple's App Store review typically takes 24-48 hours but can extend to 7 days for complex apps or if issues are found. Google Play Store is faster, usually 1-3 days. Both require: complete app information, privacy policy, screenshots, app description, adherence to platform guidelines, and no prohibited content. Apps can be rejected for crashes, broken features, misleading descriptions, or guideline violations. We handle the entire submission process, ensure compliance with all requirements, and manage any rejection responses to get your app approved quickly.",
+  },
+  {
+    id: "app-security-data",
+    question: "How do you ensure app security and protect user data?",
+    answer:
+      "Security is built in from day one. We implement: encrypted data transmission (HTTPS/TLS), secure authentication (OAuth 2.0, biometric), encrypted local storage, secure API endpoints, input validation, and regular security audits. For sensitive data, we ensure GDPR/CCPA compliance, implement data minimization principles, and use industry-standard encryption. Backend infrastructure uses secure cloud providers (AWS, Google Cloud) with firewalls, DDoS protection, and regular security patches. We also conduct penetration testing for apps handling payment or health data.",
+  },
+  {
+    id: "backend-infrastructure",
+    question: "Do we need a backend/server for our app, and who builds it?",
+    answer:
+      "Most apps need a backend for user accounts, data storage, push notifications, and API integrations. We build scalable backend infrastructure using modern cloud platforms (AWS, Firebase, Google Cloud). Options include: serverless architecture (cost-effective, auto-scaling), traditional servers (more control, predictable costs), or Backend-as-a-Service (fastest setup, limited customization). We handle everything: database design, API development, server setup, security configuration, and ongoing hosting. For simple apps, we can use Firebase to reduce costs and speed up development.",
+  },
+  {
+    id: "post-launch-marketing",
+    question:
+      "What happens after launch? Do you help with marketing and user acquisition?",
+    answer:
+      "Launching is just the beginning. We provide post-launch support including: App Store Optimization (ASO) to improve discoverability, analytics setup and monitoring, user feedback analysis, crash monitoring and quick fixes, and feature planning based on data. While our core expertise is development, we partner with marketing specialists or can recommend proven strategies: social media campaigns, influencer partnerships, paid ads (Google/Apple), PR outreach, and referral programs. We help track key metrics—downloads, retention, engagement—and iterate the app based on real user behavior.",
+  },
+  {
+    id: "app-monetization",
+    question: "What are the best ways to monetize a mobile app?",
+    answer:
+      "Monetization depends on your app type and audience. Common models: In-app purchases (consumables, subscriptions, unlockable features)—best for gaming and content apps. Subscriptions (recurring revenue)—ideal for SaaS, productivity, or premium content apps. Freemium (free basic + paid premium)—drives downloads while converting engaged users. Advertising (banner, interstitial, rewarded ads)—works for high-traffic free apps but can hurt UX. Paid downloads—viable for unique, high-value apps. We help choose the right model, implement payment systems (Apple Pay, Google Pay, Stripe), and optimize pricing strategy based on market research and competitor analysis.",
+  },
+  {
+    id: "app-analytics-tracking",
+    question: "How do you track app performance and user behavior?",
+    answer:
+      "We integrate comprehensive analytics from day one. Tools include: Firebase Analytics (free, powerful, cross-platform tracking), Mixpanel or Amplitude (advanced user behavior analysis), Crashlytics (crash reporting and diagnostics), and custom event tracking for specific user actions. We track: daily/monthly active users, retention rates, session duration, feature usage, conversion funnels, user flows, and crash-free rates. You get a custom dashboard showing key metrics with monthly reports highlighting insights and recommendations. Data-driven decisions beat guesswork—we help you understand what users love and where they struggle.",
+  },
+];
+
+export const mobileAppDevelopmentFAQConfig = {
+  categoryTag: "FAQ'S",
+  heading: "Common Questions",
+  description:
+    "Find answers to common questions about mobile app development, platforms, costs, timelines, and how we bring your app idea to life.",
+  imageUrl: "/d1.avif",
+  imageAlt: "Mobile app development FAQ illustration",
+  serviceTags: [
+    "Mobile Apps",
+    "iOS Development",
+    "Android Development",
+    "Cross-Platform",
+  ],
+  ctaButton: {
+    label: "Discuss Your App Idea",
+    href: "/contact",
+  },
+};

@@ -10,6 +10,7 @@ import Digitaltransformation from "./pages/Digitaltransformation";
 import Businessconsultancy from "./pages/Businessconsultancy";
 import DigitalMarketing from "./pages/DigitalMarketing";
 import CustomWebsite from "./pages/CustomWebsite";
+import MobileAppDevelopment from "./pages/MobileAppDevelopment";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
 import Insidecustomsoftwareservice from "./pages/Insidecustomsoftwareservice";
@@ -25,7 +26,7 @@ import GDPRConsent from "./components/GDPRButton";
 import ContactForm from "./pages/Contact";
 import Careers from "./pages/Careers";
 import CareerDetail from "./pages/CareerDetail";
-import LearningDashboard from "./pages/LearningDashboard"
+import LearningDashboard from "./pages/LearningDashboard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,13 +41,23 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/careers/:id" element={<CareerDetail />} />
         <Route path="/React" element={<ReactComparisonGuide />} />
-        <Route path="/digital-transformation" element={<Digitaltransformation />} />
+        <Route
+          path="/digital-transformation"
+          element={<Digitaltransformation />}
+        />
         <Route path="/business-consultancy" element={<Businessconsultancy />} />
         <Route path="/digital-marketing" element={<DigitalMarketing />} />
         <Route path="/customwebsite" element={<CustomWebsite />} />
+        <Route
+          path="/mobile-app-development"
+          element={<MobileAppDevelopment />}
+        />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogDetail />} />
-        <Route path="/insidecustomsoftwareservice" element={<Insidecustomsoftwareservice />} />
+        <Route
+          path="/insidecustomsoftwareservice"
+          element={<Insidecustomsoftwareservice />}
+        />
         <Route path="/digital-partnership" element={<DigitalPartnership />} />
         <Route path="/PPCLearningModule" element={<PPCLearningModule />} />
         <Route path="/AILearningModule" element={<AILearningModule />} />
@@ -57,8 +68,7 @@ function App() {
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/careers/:id" element={<CareerDetail />} />
-         <Route path="/Learning" element={<LearningDashboard />} />
-
+        <Route path="/Learning" element={<LearningDashboard />} />
       </Routes>
       <Footer />
       <GDPRConsent />
