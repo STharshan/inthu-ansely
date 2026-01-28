@@ -12,11 +12,13 @@ import { FiChevronDown, FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
+  const [isLearnOpen, setIsLearnOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const location = useLocation();
 
   const companyRef = useRef(null);
+  const learnRef = useRef(null);
 
   // Check if we're on a blog detail page
   const isBlogDetailPage =
@@ -39,6 +41,9 @@ export default function Navbar() {
     const handleClickOutside = (e) => {
       if (companyRef.current && !companyRef.current.contains(e.target)) {
         setIsCompanyOpen(false);
+      }
+      if (learnRef.current && !learnRef.current.contains(e.target)) {
+        setIsLearnOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -99,7 +104,7 @@ export default function Navbar() {
 
           {/* Desktop Nav - Center */}
           <nav className="hidden lg:flex items-center justify-center space-x-6 xl:space-x-10">
-            {["Home", "About", "Blog", "Learn", "Careers"].map((item) => (
+            {["Home", "About", "Blog", "Careers"].map((item) => (
               <a
                 key={item}
                 href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
@@ -237,6 +242,103 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+
+            {/* Learn dropdown */}
+            <div
+              ref={learnRef}
+              className="relative text-[13px] uppercase tracking-[0.18em] font-medium"
+            >
+              <button
+                onClick={() => setIsLearnOpen(!isLearnOpen)}
+                className={`flex items-center gap-1 transition-colors duration-700 whitespace-nowrap ${
+                  scrolled
+                    ? isDark
+                      ? "text-white hover:text-blue-400"
+                      : "text-black hover:text-[#0045EF]"
+                    : isBlogDetailPage && !isDark
+                      ? "text-black hover:text-[#0045EF]"
+                      : "text-white hover:text-gray-300"
+                }`}
+              >
+                LEARN
+                <FiChevronDown
+                  className={`text-sm mt-[2px] transition-transform duration-300 ${
+                    isLearnOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {isLearnOpen && (
+                <div
+                  className={`absolute top-full left-0 mt-3 w-56 rounded-md shadow-lg py-2 animate-[fadeIn_0.3s_ease_forwards] ${
+                    isDark
+                      ? "bg-gray-800 text-white"
+                      : "bg-white text-black border border-gray-200"
+                  }`}
+                >
+                  <a
+                    href="/learn"
+                    className={`block px-4 py-2 text-sm transition-colors ${
+                      isDark
+                        ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
+                        : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    All Courses
+                  </a>
+                  <a
+                    href="/learn/ai"
+                    className={`block px-4 py-2 text-sm transition-colors ${
+                      isDark
+                        ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
+                        : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    AI Learning
+                  </a>
+                  <a
+                    href="/learn/ppc"
+                    className={`block px-4 py-2 text-sm transition-colors ${
+                      isDark
+                        ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
+                        : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    PPC Guide
+                  </a>
+                  <a
+                    href="/learn/seo"
+                    className={`block px-4 py-2 text-sm transition-colors ${
+                      isDark
+                        ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
+                        : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    SEO Guide
+                  </a>
+                  <a
+                    href="/learn/react-comparison"
+                    className={`block px-4 py-2 text-sm transition-colors ${
+                      isDark
+                        ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
+                        : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    React Comparison
+                  </a>
+                  <a
+                    href="/learn/custom-software-guide"
+                    className={`block px-4 py-2 text-sm transition-colors ${
+                      isDark
+                        ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
+                        : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    Custom Software Guide
+                  </a>
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Empty div for mobile to maintain grid */}
@@ -342,7 +444,7 @@ export default function Navbar() {
         >
           <div className="max-w-[1350px] mx-auto px-5 sm:px-8">
             {/* Navigation Links */}
-            {["Home", "About", "Blog", "Learn"].map((item, index) => (
+            {["Home", "About", "Blog"].map((item, index) => (
               <div
                 key={item}
                 className={`border-b py-4 text-[13px] tracking-[0.18em] uppercase font-medium ${
@@ -453,6 +555,90 @@ export default function Navbar() {
                     }`}
                   >
                     Digital Partnerships
+                  </a>
+                </div>
+              )}
+            </div>
+
+            {/* Learn Dropdown */}
+            <div
+              className={`border-b py-4 ${
+                isDark ? "border-gray-700" : "border-gray-200"
+              }`}
+            >
+              <button
+                onClick={() => setIsLearnOpen(!isLearnOpen)}
+                className="flex items-center justify-between w-full text-[13px] tracking-[0.18em] uppercase font-medium"
+              >
+                Learn
+                <FiChevronDown
+                  className={`text-sm transition-transform duration-300 ${
+                    isLearnOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {isLearnOpen && (
+                <div className="mt-3 pl-4 space-y-2 animate-[fadeIn_0.3s_ease_forwards]">
+                  <a
+                    href="/learn"
+                    className={`block py-2 text-sm transition-colors ${
+                      isDark
+                        ? "text-gray-300 hover:text-blue-400"
+                        : "text-gray-600 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    All Courses
+                  </a>
+                  <a
+                    href="/learn/ai"
+                    className={`block py-2 text-sm transition-colors ${
+                      isDark
+                        ? "text-gray-300 hover:text-blue-400"
+                        : "text-gray-600 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    AI Learning
+                  </a>
+                  <a
+                    href="/learn/ppc"
+                    className={`block py-2 text-sm transition-colors ${
+                      isDark
+                        ? "text-gray-300 hover:text-blue-400"
+                        : "text-gray-600 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    PPC Guide
+                  </a>
+                  <a
+                    href="/learn/seo"
+                    className={`block py-2 text-sm transition-colors ${
+                      isDark
+                        ? "text-gray-300 hover:text-blue-400"
+                        : "text-gray-600 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    SEO Guide
+                  </a>
+                  <a
+                    href="/learn/react-comparison"
+                    className={`block py-2 text-sm transition-colors ${
+                      isDark
+                        ? "text-gray-300 hover:text-blue-400"
+                        : "text-gray-600 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    React Comparison
+                  </a>
+                  <a
+                    href="/learn/custom-software-guide"
+                    className={`block py-2 text-sm transition-colors ${
+                      isDark
+                        ? "text-gray-300 hover:text-blue-400"
+                        : "text-gray-600 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    Custom Software Guide
                   </a>
                 </div>
               )}

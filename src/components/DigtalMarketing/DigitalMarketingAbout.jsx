@@ -5,7 +5,6 @@ export default function DigitalMarketingAbout() {
     <section className="bg-white dark:bg-black text-black dark:text-white py-16 sm:py-20 lg:py-28 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
           {/* LEFT CONTENT */}
           <div>
             {/* Badge */}
@@ -23,7 +22,17 @@ export default function DigitalMarketingAbout() {
 
             {/* Description */}
             <p className="mt-6 text-gray-700 dark:text-gray-400 leading-relaxed text-sm sm:text-base transition-colors duration-300">
-             Our digital marketing approach harmoniously blends brand storytelling with data-driven performance, crafting campaigns that are visually compelling and strategically effective. We take a holistic view of every marketing initiative, focusing on brand consistency, audience engagement, conversion optimization, and measurable ROI. From the first touchpoint to customer advocacy, we design experiences that build emotional connections while driving business results. We don't just create content—we architect comprehensive digital ecosystems where every post, ad, and interaction works together to elevate your brand and accelerate growth.
+              Our digital marketing approach harmoniously blends brand
+              storytelling with data-driven performance, crafting campaigns that
+              are visually compelling and strategically effective. We take a
+              holistic view of every marketing initiative, focusing on brand
+              consistency, audience engagement, conversion optimization, and
+              measurable ROI. From the first touchpoint to customer advocacy, we
+              design experiences that build emotional connections while driving
+              business results. We don't just create content—we architect
+              comprehensive digital ecosystems where every post, ad, and
+              interaction works together to elevate your brand and accelerate
+              growth.
             </p>
           </div>
 
@@ -31,13 +40,12 @@ export default function DigitalMarketingAbout() {
           <div className="relative">
             <div className="overflow-hidden rounded-2xl">
               <img
-                src="/d2.avif" // update path
-                alt="Architecture Design"
+                src="/about-digital-marketing.jpeg"
+                alt="About Digital Marketing"
                 className="w-full h-[320px] sm:h-[400px] md:h-[480px] object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
-
         </div>
       </div>
     </section>

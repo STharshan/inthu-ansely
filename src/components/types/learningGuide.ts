@@ -8,4 +8,6 @@ export interface LearningGuideCard {
 export interface LearningGuideProps {
   service: 'custom-software' | 'ai-consulting' | 'digital-marketing';
   className?: string;
+  mediaUrl?: string;
+  mediaType?: 'video' | 'image';
 }
