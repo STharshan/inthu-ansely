@@ -56,14 +56,14 @@ const OurServicesSection = () => {
               Our Services
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white leading-tight">
-              What's included in <br /> this service
+            How We Support You
             </h2>
           </div>
 
           <div className="flex items-end">
             <p className="text-gray-600 dark:text-gray-300 text-lg max-w-md lg:ml-auto">
-              Everything we automate, optimize, and integrate, so your business
-              operates smarter and scales faster.
+            Everything we do is designed to automate, optimise, and integrate your systems – so your business
+            operates smarter and scales faster.
             </p>
           </div>
         </div>
