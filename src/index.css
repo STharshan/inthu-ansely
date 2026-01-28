@@ -67,6 +67,10 @@
   --color-dark-100: #86868b;
   --color-dark-200: #2e2e30;
   --color-light-100: #adb5bd;
+
+  /* Marketing consultancy – soft brown/peach (light and dark) */
+  --color-marketing-peach: #D4A574;
+  --color-marketing-peach-dark: #E8B896;
 }
 
 body {

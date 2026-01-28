@@ -6,6 +6,7 @@ import ServicePageSection from '../components/DigtalMarketing/ServicePageSection
 import ClientReviewsSection from '../components/DigtalMarketing/ClientReviewsSection'
 import FAQSection from '../components/DigtalMarketing/FAQSection'
 import { LearningGuide } from '../components/organisms/LearningGuide'
+import ServicesSection from '@/components/Home/CardSection'
 
 const DigitalMarketing = () => {
   return (
@@ -14,6 +15,7 @@ const DigitalMarketing = () => {
       <DigitalMarketingAbout />
       <DigitalMarketingProcess />
       <LearningGuide service="digital-marketing" />
+      <ServicesSection />
       <ServicePageSection />
       <ClientReviewsSection />
       <FAQSection />

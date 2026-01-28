@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ChevronDown, ChevronUp, Subtitles } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const processData = [
     {
@@ -8,38 +8,45 @@ const processData = [
         Subtitle: "Strategy Development & Creative Concepting",
         description:
             "We begin with deep discovery—understanding your business goals, target audience, competitive landscape, brand history, and market opportunities. Through stakeholder interviews, customer research, and competitive audits, we develop comprehensive insights that inform strategy. We analyze your current digital presence, assess what's working (and what isn't), and identify gaps between where you are and where you want to be. This foundation ensures our recommendations are grounded in your unique reality, not generic best practices.",
-        image: "/w1.jpg",
+        image: "/marketing-consultation.jpg",
     },
     {
         id: "design",
-        title: "DESIGN",
+        title: "Design",
         Subtitle: "Strategy Development & Creative Concepting",
         description:
             "Our strategists and creatives collaborate to develop integrated marketing plans that align brand positioning with tactical execution. We create detailed buyer personas, map customer journeys, develop messaging frameworks, and design content strategies across all relevant channels. You receive a comprehensive marketing playbook including visual identity guidelines, content themes, campaign concepts, channel strategies, budget allocation recommendations, and success metrics. Every element is designed to work together—creating consistent brand experiences that build recognition and trust over time.",
-        image: "/w1.jpg",
+        image: "/marketing-design.jpg",
     },
     {
         id: "execution",
-        title: "EXECUTION",
+        title: "Execution",
         Subtitle: "Campaign Launch & Content Production",
         description:
             "We bring strategies to life through high-quality content creation, campaign setup, and multi-channel deployment. Our team produces engaging social media content, compelling ad creative, persuasive email campaigns, SEO-optimized blog posts, video content, and landing pages—all aligned with your brand voice and strategic objectives. We manage campaign launches across platforms, monitor initial performance, make rapid adjustments based on early data, and ensure flawless execution during critical launch windows. Quality and speed go hand-in-hand as we deliver professional marketing that meets deadlines without compromising excellence.",
-        image: "/w2.jpg",
+        image: "/marketing-execution.jpg",
     },
     {
         id: "communication",
-        title: "COMMUNICATION",
+        title: "Communication",
         Subtitle: "Optimization, Reporting & Continuous Improvement",
         description:
             "Marketing success requires ongoing monitoring, analysis, and refinement. We provide regular performance reports with clear insights—not just data dumps—explaining what's working, why it matters, and what we're doing about it. Through A/B testing, audience feedback, analytics review, and competitive monitoring, we continuously optimize campaigns for better results. We maintain transparent communication about budget pacing, creative performance, and strategic adjustments. Our commitment extends beyond launch—we stay engaged, proactive, and focused on improving your marketing ROI month after month.",
-        image: "/w3.jpg",
+        image: "/marketing-communication.jpg",
     }
 ];
 
 export default function DigitalMarketingProcess() {
-    const [activeId, setActiveId] = useState(processData[0].id);
+    const [activeId, setActiveId] = useState(null);
 
-    const activeItem = processData.find((item) => item.id === activeId);
+    useEffect(() => {
+        processData.forEach((item) => {
+            const img = new Image();
+            img.src = item.image;
+        });
+    }, []);
+
+    const activeItem = processData.find((item) => item.id === activeId) || processData[0];
 
     return (
         <section className="bg-white dark:bg-black text-black dark:text-white py-16 sm:py-20 lg:py-28 transition-colors duration-300">
@@ -50,7 +57,7 @@ export default function DigitalMarketingProcess() {
                     {/* LEFT IMAGE */}
                     <div className="relative overflow-hidden rounded-2xl">
                         <img
-                            key={activeId}
+                            key={activeId ?? "none"}
                             src={activeItem.image}
                             alt={activeItem.title}
                             className="
@@ -95,7 +102,7 @@ export default function DigitalMarketingProcess() {
                         <h1 className="font-bold text-xl sm:text-2xl md:text-3xl leading-relaxed mb-3 text-black dark:text-white transition-colors duration-300">Get market-ready in four strategic phases</h1>
 
                         {/* Heading */}
-                        <h2 className="font-bold text-xl sm:text-2xl  leading-relaxed mb-10 text-black dark:text-white transition-colors duration-300">
+                        <h2 className="!font-normal text-xl sm:text-2xl  leading-relaxed mb-10 text-black dark:text-white transition-colors duration-300">
                             We start by understanding your brand essence and market position, then craft distinctive campaigns tailored to your audience and business goals.
                         </h2>
 
@@ -110,7 +117,7 @@ export default function DigitalMarketingProcess() {
                                         className="border-b border-gray-200 dark:border-white/10 pb-4 transition-colors duration-300"
                                     >
                                         <button
-                                            onClick={() => setActiveId(item.id)}
+                                            onClick={() => setActiveId(isActive ? null : item.id)}
                                             className="w-full flex items-center justify-between text-left"
                                         >
                                             <span className="text-3xl font-semibold text-black dark:text-white transition-colors duration-300">
