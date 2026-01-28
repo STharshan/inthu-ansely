@@ -6,7 +6,7 @@ export const customSoftwareLearningGuides: LearningGuideCard[] = [
     title: "Think Like a Tech Founder",
     description:
       "Transform your business by understanding how custom software creates leverage, eliminates friction, and unlocks scale.",
-    href: "/insidecustomsoftwareservice",
+    href: "/learn/custom-software-guide",
   },
 ];
 
@@ -16,7 +16,7 @@ export const aiConsultingLearningGuides: LearningGuideCard[] = [
     title: "AI for business growth",
     description:
       "Most businesses don't have a growth problem. They have a founder bottleneck.",
-    href: "/AILearningModule",
+    href: "/learn/ai",
   },
 ];
 
@@ -25,13 +25,13 @@ export const digitalMarketingLearningGuides: LearningGuideCard[] = [
     id: "seo-learning-platform",
     title: "SEO Learning Platform",
     description: "Master SEO for your business success",
-    href: "/SEOLearningPlatform",
+    href: "/learn/seo",
   },
   {
     id: "paid-ads-ppc",
     title: "Paid Ads (PPC)",
     description: "Instant Visibility That Scales",
-    href: "PPCLearningModule",
+    href: "/learn/ppc",
   },
 ];
 

@@ -7,7 +7,12 @@ import {
   learningGuideConfig,
 } from "../../constants/learningGuide";
 
-export const LearningGuide: React.FC<LearningGuideProps> = ({ service, className = "" }) => {
+export const LearningGuide: React.FC<LearningGuideProps> = ({
+  service,
+  className = "",
+  mediaUrl = "/learning-guide-video.mp4",
+  mediaType = "video",
+}) => {
   const getLearningGuides = (): typeof customSoftwareLearningGuides => {
     switch (service) {
       case "custom-software":
@@ -28,15 +33,25 @@ export const LearningGuide: React.FC<LearningGuideProps> = ({ service, className
       className={`py-16 px-4 md:px-16 bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 ${className}`}
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch gap-12">
-        {/* Left Image */}
+        {/* Left Media */}
         <div className="md:w-1/2 w-full flex">
-          <img
-            src="/learning-cover.jpg"
-            alt="Learning guides"
-            className="w-full h-full rounded-lg object-cover shadow-lg"
-            loading="lazy"
-            decoding="async"
-          />
+          {mediaType === "video" ? (
+            <video
+              className="w-full h-full rounded-lg object-cover shadow-lg"
+              src={mediaUrl}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            />
+          ) : (
+            <img
+              className="w-full h-full rounded-lg object-cover shadow-lg"
+              src={mediaUrl}
+              alt="Learning guide"
+            />
+          )}
         </div>
 
         {/* Right Content */}

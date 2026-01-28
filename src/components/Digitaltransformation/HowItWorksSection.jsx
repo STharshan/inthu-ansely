@@ -4,7 +4,6 @@ export default function HowItWorksTransformation() {
   return (
     <section className="bg-white dark:bg-black py-20 px-6 transition-colors duration-500">
       <div className="max-w-7xl mx-auto">
-        
         {/* TOP SECTION - HEADER */}
         <div className="grid grid-cols-12 gap-8 mb-20">
           {/* LEFT TEXT */}
@@ -14,8 +13,10 @@ export default function HowItWorksTransformation() {
             </p>
 
             <h2 className="text-5xl leading-tight font-light text-black dark:text-white mb-4">
-              Get transformed<br />
-              in four strategic<br />
+              Get transformed
+              <br />
+              in four strategic
+              <br />
               phases
             </h2>
 
@@ -28,33 +29,51 @@ export default function HowItWorksTransformation() {
           <div className="col-span-12 lg:col-span-7 grid grid-cols-2 gap-6">
             {/* STEP 01 */}
             <div>
-              <span className="text-5xl text-gray-200 dark:text-gray-800 font-light block mb-4">01</span>
+              <span className="text-5xl text-gray-200 dark:text-gray-800 font-light block mb-4">
+                01
+              </span>
               <h4 className="text-xs font-semibold uppercase tracking-wider text-black dark:text-white mb-2">
                 Discovery & Assessment
               </h4>
               <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 leading-relaxed">
-                We audit your current processes, interview stakeholders, and identify high-impact automation opportunities. Our team maps your existing tech stack and uncovers inefficiencies you didn't know existed.
+                We audit your current processes, interview stakeholders, and
+                identify high-impact automation opportunities. Our team maps
+                your existing tech stack and uncovers inefficiencies you didn't
+                know existed.
               </p>
-              <img
-                src="https://framerusercontent.com/images/Tmr74Q4GMC9WmjAM4nqGzmQEcoc.png"
+              <video
                 className="w-full h-52 object-cover rounded-2xl"
-                alt="Discovery & Assessment"
+                src="/discovery-assesment-digital-transformation.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
               />
             </div>
 
             {/* STEP 02 */}
             <div>
-              <span className="text-5xl text-gray-200 dark:text-gray-800 font-light block mb-4">02</span>
+              <span className="text-5xl text-gray-200 dark:text-gray-800 font-light block mb-4">
+                02
+              </span>
               <h4 className="text-xs font-semibold uppercase tracking-wider text-black dark:text-white mb-2">
                 Strategy & Design
               </h4>
               <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 leading-relaxed">
-                We create a custom transformation roadmap with prioritized initiatives, technology recommendations, and clear ROI projections. You'll get a transparent plan with no hidden surprises.
+                We create a custom transformation roadmap with prioritized
+                initiatives, technology recommendations, and clear ROI
+                projections. You'll get a transparent plan with no hidden
+                surprises.
               </p>
-              <img
-                src="https://framerusercontent.com/images/dDXi1embTwgGoK1gBboVZZAsqw4.png"
+              <video
                 className="w-full h-52 object-cover rounded-2xl"
-                alt="Strategy & Design"
+                src="/stratergy-design-digital-transformation.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
               />
             </div>
           </div>
@@ -66,33 +85,53 @@ export default function HowItWorksTransformation() {
           <div className="col-span-12 lg:col-span-7 grid grid-cols-2 gap-6">
             {/* STEP 03 */}
             <div>
-              <span className="text-5xl text-gray-200 dark:text-gray-800 font-light block mb-4">03</span>
+              <span className="text-5xl text-gray-200 dark:text-gray-800 font-light block mb-4">
+                03
+              </span>
+
               <h4 className="text-xs font-semibold uppercase tracking-wider text-black dark:text-white mb-2">
                 Implementation & Integration
               </h4>
+
               <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 leading-relaxed">
-                Our experts build, configure, and integrate automation solutions with your existing systems. We work in agile sprints, delivering value incrementally while minimizing disruption.
+                Our experts build, configure, and integrate automation solutions
+                with your existing systems. We work in agile sprints, delivering
+                value incrementally while minimizing disruption.
               </p>
-              <img
-                src="https://framerusercontent.com/images/euSyhjbuIdbKjFFviKpVTHxG8.jpg"
+
+              <video
                 className="w-full h-52 object-cover rounded-2xl"
-                alt="Implementation & Integration"
+                src="/implementation-integration-digital-transformation.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
               />
             </div>
 
             {/* STEP 04 */}
             <div>
-              <span className="text-5xl text-gray-200 dark:text-gray-800 font-light block mb-4">04</span>
+              <span className="text-5xl text-gray-200 dark:text-gray-800 font-light block mb-4">
+                04
+              </span>
               <h4 className="text-xs font-semibold uppercase tracking-wider text-black dark:text-white mb-2">
                 Optimize & Scale
               </h4>
               <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 leading-relaxed">
-                Enjoy streamlined operations that run smoothly while we monitor performance, gather feedback, and continuously optimize. Your automation improves over time, adapting as your business evolves.
+                Enjoy streamlined operations that run smoothly while we monitor
+                performance, gather feedback, and continuously optimize. Your
+                automation improves over time, adapting as your business
+                evolves.
               </p>
-              <img
-                src="https://framerusercontent.com/images/zj6XEvThavkBIHlYO2umnWZCtc.jpg"
+              <video
                 className="w-full h-52 object-cover rounded-2xl"
-                alt="Optimize & Scale"
+                src="/optimize-scale-digital-transformation.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
               />
             </div>
           </div>
@@ -104,7 +143,8 @@ export default function HowItWorksTransformation() {
                 Ready to get started?
               </p>
               <p className="text-gray-500 dark:text-gray-400 mb-6 text-sm leading-relaxed">
-                Transparent process, measurable results — see how we transform businesses like yours.
+                Transparent process, measurable results — see how we transform
+                businesses like yours.
               </p>
 
               <a
@@ -114,16 +154,17 @@ export default function HowItWorksTransformation() {
                            font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
                 Start your transformation
-                <span className="w-8 h-8 flex items-center justify-center
+                <span
+                  className="w-8 h-8 flex items-center justify-center
                                  bg-white text-[#0045EF] rounded-full text-lg
-                                 transition-transform duration-300 group-hover:translate-x-1">
+                                 transition-transform duration-300 group-hover:translate-x-1"
+                >
                   →
                 </span>
               </a>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

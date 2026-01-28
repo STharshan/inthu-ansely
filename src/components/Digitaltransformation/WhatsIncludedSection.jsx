@@ -7,48 +7,42 @@ const OurServicesSection = () => {
       subtitle: "Digital Transformation Roadmap",
       description:
         "We design comprehensive transformation strategies that align technology with your business goals. Through detailed process mapping, stakeholder interviews, and competitive analysis, we identify automation opportunities and create phased implementation plans. Our roadmaps balance quick wins with long-term vision, ensuring you see value at every stage while building toward sustainable digital maturity. We don't just recommend change—we architect the path forward with clarity, measurable milestones, and realistic timelines that your entire organization can rally behind.",
-      image:
-        "https://framerusercontent.com/images/sDomwMoYpOoZpPWJHDoyUqn3og.png",
+      image: "/system-strategy-digital-transformation.jpeg",
     },
     {
       title: "Infrastructure Design",
       subtitle: "Automation Architecture & Integration",
       description:
         "From workflow automation platforms to cloud infrastructure, we architect the technical backbone that makes automation possible. We design systems that connect your existing tools, eliminate data silos, and create seamless information flow across departments. Our infrastructure solutions are built with scalability in mind—whether you're automating 10 processes today or 1,000 tomorrow. We specialize in API integrations, middleware development, and creating unified platforms that turn disconnected tools into a cohesive digital ecosystem that actually works together.",
-      image:
-        "https://framerusercontent.com/images/F2SWniO8apzocUG50pp8fKzEwa0.png",
+      image: "/infrastructure-digital-transformation.jpeg",
     },
     {
       title: "Execution Support",
       subtitle: "Implementation Acceleration & Optimization",
       description:
         "Transformation stalled mid-flight? We diagnose what's blocking progress and inject momentum back into your initiatives. Our team steps in to troubleshoot failing automations, reconfigure workflows, retrain teams, and get implementations back on track. Whether you're facing technical challenges, user adoption issues, or simply need extra hands during critical phases, we provide tactical support that bridges the gap between planning and execution. We've rescued countless transformation projects from the valley of disillusionment and delivered them to sustainable success.",
-      image:
-        "https://framerusercontent.com/images/2JV0mfakTPp0rG3VIDOpeFUhwWk.jpg",
+      image: "/execution-support-digital-transformation.jpeg",
     },
     {
       title: "AI & Data Integration",
       subtitle: "Intelligent Automation & Machine Learning",
       description:
         "We embed AI into your workflows where it delivers measurable impact—not just for the sake of innovation. From predictive analytics that forecast demand to natural language processing that automates customer service, we implement AI solutions grounded in real business needs. Our approach includes data pipeline design, model training, integration with existing systems, and continuous monitoring to ensure AI tools remain accurate and valuable. We make AI practical, not theoretical, helping your business leverage machine learning to make faster, smarter decisions.",
-      image:
-        "https://framerusercontent.com/images/EwD4z5q2EjaybtToBskVxEQ6Ceo.jpg",
+      image: "/ai-data-digital-transformation.jpeg",
     },
     {
       title: "Regulatory Guidance",
       subtitle: "Compliance Automation & Risk Management",
       description:
         "We help you automate compliance processes while maintaining full regulatory alignment. Our consultants understand industry-specific requirements—from financial regulations to data privacy laws—and build automation frameworks that document, audit, and report automatically. We implement approval workflows, audit trails, and compliance dashboards that give you real-time visibility into risk exposure. By automating compliance tasks, we reduce human error, ensure consistency, and free your team from tedious documentation while maintaining the rigorous standards regulators demand.",
-      image:
-        "https://framerusercontent.com/images/sDomwMoYpOoZpPWJHDoyUqn3og.png",
+      image: "/regulatory-guidence-digital-transformation.jpeg",
     },
     {
       title: "Collaborative Ops",
       subtitle: "Change Management & Team Enablement",
       description:
         "Technology transformation succeeds or fails based on people adoption. We facilitate the human side of digital change through training programs, change management frameworks, and collaborative workshops that bring teams along the journey. Our approach includes identifying automation champions, creating internal documentation, establishing governance structures, and building feedback loops that ensure continuous improvement. We work across departments to align stakeholders, resolve conflicts, and create shared ownership of transformation initiatives, turning potential resistance into enthusiastic participation.",
-      image:
-        "https://framerusercontent.com/images/F2SWniO8apzocUG50pp8fKzEwa0.png",
+      image: "/collaborative-ops-digital-transformation.jpeg",
     },
   ];
 

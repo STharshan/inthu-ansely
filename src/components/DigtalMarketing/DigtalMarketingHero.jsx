@@ -2,12 +2,16 @@ import React from "react";
 
 export default function DigitalMarketingHero() {
   return (
-    <section className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[80vh]">
-      {/* Background Image */}
-      <img
-        src="/d1.avif" // update path if needed
-        alt="Landscape Design"
+    <section className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[80vh] overflow-hidden">
+      {/* Background Video */}
+      <video
         className="absolute inset-0 w-full h-full object-cover"
+        src="/digital-marketing-hero-banner.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
       />
 
       {/* Dark Overlay */}
@@ -22,8 +26,10 @@ export default function DigitalMarketingHero() {
           </p>
 
           {/* Title */}
-          <h1 className="text-white dark:text-white font-bold leading-tight
-            text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl transition-colors duration-300">
+          <h1
+            className="text-white dark:text-white font-bold leading-tight
+        text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl transition-colors duration-300"
+          >
             Helping hidden gems stand tall in the digital world.
           </h1>
         </div>
