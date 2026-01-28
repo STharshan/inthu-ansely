@@ -8,7 +8,7 @@ import ClientReviewsSection from "../components/Digitaltransformation/ClientRevi
 
 const Digitaltransformation = () => {
   return (
-    <div>
+    <div className="w-full overflow-x-hidden">
       <WorkspaceCleaningHero />
       <WhatsIncludedSection />
       <HowItWorksSection />
