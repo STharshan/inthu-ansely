@@ -179,16 +179,6 @@ export default function Navbar() {
                     Digital Transformation
                   </a>
                   <a
-                    href="/business-consultancy"
-                    className={`block px-4 py-2 text-sm transition-colors ${
-                      isDark
-                        ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
-                        : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
-                    }`}
-                  >
-                    Consultancy
-                  </a>
-                  <a
                     href="/digital-marketing"
                     className={`block px-4 py-2 text-sm transition-colors ${
                       isDark
@@ -238,6 +228,16 @@ export default function Navbar() {
                     }`}
                   >
                     Mobile App Development
+                  </a>
+                  <a
+                    href="/business-consultancy"
+                    className={`block px-4 py-2 text-sm transition-colors ${
+                      isDark
+                        ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
+                        : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
+                    }`}
+                  >
+                    Consultancy
                   </a>
                 </div>
               )}

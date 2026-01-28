@@ -36,18 +36,16 @@ export default function FinancialConfidenceSection() {
 
             {/* DESCRIPTION */}
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              Our approach integrates deep market analysis, operational
-              diagnostics, and emerging AI technologies to create comprehensive
-              growth strategies. We focus on helping clients improve
-              decision-making, unlock operational efficiency, and achieve
-              sustainable competitive advantage through data-driven insights
-              and proactive innovation.
+            We start by getting a proper understanding of your market, how your business actually runs day-to-day,
+and where the real friction or missed opportunities are. From there, we bring in the right mix of strategy,
+systems thinking, and AI - only where it genuinely adds value
             </p>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              We don’t just identify problems—we architect solutions that
-              transform how your business operates, competes, and scales in an
-              increasingly intelligent economy.
+            The goal is simple: better decisions, smoother operations, and a business that’s set up to grow without unnecessary complexity. Everything we recommend is rooted in real data and designed to give you a lasting edge, not short-term wins.
+            </p>
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            We don’t just point out problems. We design and implement practical solutions that change how your business operates, competes, and scales - especially as technology becomes a bigger part of how modern businesses work.
             </p>
 
             {/* CTA LINK */}
