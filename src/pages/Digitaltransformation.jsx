@@ -5,14 +5,15 @@ import HowItWorksSection from "../components/Digitaltransformation/HowItWorksSec
 import ServicePageSection from "../components/Digitaltransformation/ServicePageSection";
 import FAQSection from "../components/Digitaltransformation/FAQSection";
 import ClientReviewsSection from "../components/Digitaltransformation/ClientReviewsSection";
+import ServicesSection from "@/components/Home/CardSection";
 
 const Digitaltransformation = () => {
   return (
-    <div>
+    <div className="w-full overflow-x-hidden">
       <WorkspaceCleaningHero />
       <WhatsIncludedSection />
       <HowItWorksSection />
-      <ServicePageSection />
+      <ServicesSection />
       <ClientReviewsSection />
       <FAQSection />
     </div>

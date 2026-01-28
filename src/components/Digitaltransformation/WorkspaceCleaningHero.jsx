@@ -26,20 +26,6 @@ const DigitalTransformationHero = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            {/* Outlined Button */}
-            <a
-              href="/services"
-              className="group relative px-8 py-4 rounded-lg border-2 border-[#0045EF] text-[#0045EF]
-                         font-medium overflow-hidden
-                         before:absolute before:inset-0 before:bg-[#0045EF] before:scale-x-0 before:origin-left
-                         before:transition-transform before:duration-300
-                         hover:before:scale-x-100
-                         shadow-md"
-            >
-              <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
-                Our Services
-              </span>
-            </a>
 
             {/* Filled Button */}
             <a

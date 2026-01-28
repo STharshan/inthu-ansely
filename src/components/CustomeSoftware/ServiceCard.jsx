@@ -27,30 +27,30 @@ const services = [
   },
   {
     id: 3,
-    title: "Development Acceleration",
+    title: "Mid-Development Support",
     description:
-      "Stuck in development limbo? We jump in to diagnose bottlenecks, refactor code, and accelerate delivery.",
+      "We support businesses part-way through development to regain clarity, momentum, and control. From addressing technical challenges to improving delivery workflows, we help teams move forward with confidence.",
     icon: FaRocket,
   },
   {
     id: 4,
-    title: "Intelligent Features & Automation",
+    title: "AI Advisory & Intelligent Automation",
     description:
-      "We embed AI and machine learning into your software where it makes real impact.",
+      "We help businesses identify where AI and automation can genuinely improve day-to-day operations. From introducing proven AI tools to advising on custom solutions, we guide practical adoption that saves time, reduces friction, and supports smarter decision-making.",
     icon: FaRobot,
   },
   {
     id: 5,
-    title: "Compliance & Security Implementation",
+    title: "Security, Compliance & Risk Management",
     description:
-      "From GDPR to SOC 2, we integrate compliance and security into your software from day one.",
+      "We help businesses build security and compliance into their systems from the outset. From GDPR considerations to SOC 2 readiness, we advise on best-practice controls, data protection, and governance to reduce risk and protect your business as it grows",
     icon: FaShieldAlt,
   },
   {
     id: 6,
-    title: "Team Integration & DevOps",
+    title: "Team Integration & DevOps Enablement",
     description:
-      "We bridge the gap between development, operations, and business teams.",
+      "We help align development, operations, and business teams around shared systems and goals. From improving handovers to supporting DevOps practices, we enable smoother collaboration, faster delivery, and more reliable day-to-day operations.",
     icon: FaCogs,
   },
 ];
@@ -166,7 +166,7 @@ export default function ServicesSection() {
         <h2 className={`text-4xl md:text-5xl font-bold mb-16 ${
           isDarkMode ? 'text-white' : 'text-gray-900'
         }`}>
-          Our Services
+          How We Support Your Business Growth
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">

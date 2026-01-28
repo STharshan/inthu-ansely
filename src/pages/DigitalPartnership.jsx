@@ -1,8 +1,7 @@
-import React from 'react'
+import ServicesSection from '@/components/Home/CardSection'
+import ClientReviewsSection from '../components/DigitalPartnership/ClientReviewsSection'
 import DigitalPartnershipHero from '../components/DigitalPartnership/DigitalPartnershipHero'
 import DigitalPartnershipService from '../components/DigitalPartnership/DigitalPartnershipService'
-import ServicePageSection from '../components/DigitalPartnership/ServicePageSection'
-import ClientReviewsSection from '../components/DigitalPartnership/ClientReviewsSection'
 import FAQSection from '../components/DigitalPartnership/FAQSection'
 
 const DigitalPartnership = () => {
@@ -10,7 +9,7 @@ const DigitalPartnership = () => {
     <div>
         <DigitalPartnershipHero />
         <DigitalPartnershipService />
-        <ServicePageSection />
+        <ServicesSection />
         <ClientReviewsSection />
         <FAQSection />
     </div>

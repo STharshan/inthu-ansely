@@ -6,6 +6,7 @@ import ServicePageSection from "../components/CustomeSoftware/ServicePageSection
 import ClientReviewsSection from "../components/CustomeSoftware/ClientReviewsSection";
 import FAQSection from "../components/CustomeSoftware/FAQSection";
 import { LearningGuide } from "../components/organisms/LearningGuide";
+import ServicesSection from "@/components/Home/CardSection";
 
 const CustomeSoftware = () => {
   return (
@@ -14,7 +15,8 @@ const CustomeSoftware = () => {
       <ServiceCard />
       {/* <StoryCard /> */}
       <LearningGuide service="custom-software" />
-      <ServicePageSection />
+      {/* <ServicePageSection /> */}
+      <ServicesSection />
       <ClientReviewsSection />
       <FAQSection />
     </div>

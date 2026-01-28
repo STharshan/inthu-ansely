@@ -11,7 +11,7 @@ export default function FinancialPlanningHero() {
 
           {/* Subheading */}
           <h2 className="text-xl lg:text-2xl font-medium text-[#0045EF] mb-6">
-            Helping hidden gems stand tall in the digital world.
+          Guiding businesses through complexity toward smarter growth.
           </h2>
 
           {/* Description */}
@@ -69,7 +69,7 @@ export default function FinancialPlanningHero() {
             px-8 py-4 rounded-lg font-medium
             hover:bg-blue-700 transition"
           >
-            Start Your Strategy →
+             I like start with a conversation →
           </a>
         </div>
       </div>
