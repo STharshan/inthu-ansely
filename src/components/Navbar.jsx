@@ -74,7 +74,7 @@ export default function Navbar() {
       ></div>
 
       <div
-        className={`relative w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-5 transition-all duration-700 ease-in-out ${
+        className={`relative w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-5 transition-all duration-300 ease-in-out ${
           scrolled
             ? isDark
               ? "text-white"
@@ -89,7 +89,7 @@ export default function Navbar() {
           {/* Logo - Far Left */}
           <a
             href="/"
-            className={`text-[16px] sm:text-[18px] font-bold tracking-[0.25em] transition-all duration-700 flex-shrink-0 justify-self-start ${
+            className={`text-[16px] sm:text-[18px] font-bold tracking-[0.25em] transition-all duration-300 flex-shrink-0 justify-self-start ${
               scrolled
                 ? isDark
                   ? "text-white"
@@ -108,7 +108,7 @@ export default function Navbar() {
               <a
                 key={item}
                 href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className={`relative text-[13px] uppercase tracking-[0.18em] font-medium group transition-colors duration-700 whitespace-nowrap ${
+                className={`relative text-[13px] uppercase tracking-[0.18em] font-medium group transition-colors duration-300 whitespace-nowrap ${
                   scrolled
                     ? isDark
                       ? "text-white hover:text-blue-400"
@@ -132,7 +132,7 @@ export default function Navbar() {
             >
               <button
                 onClick={() => setIsCompanyOpen(!isCompanyOpen)}
-                className={`flex items-center gap-1 transition-colors duration-700 whitespace-nowrap ${
+                className={`flex items-center gap-1 transition-colors duration-300 whitespace-nowrap ${
                   scrolled
                     ? isDark
                       ? "text-white hover:text-blue-400"
@@ -250,7 +250,7 @@ export default function Navbar() {
             >
               <button
                 onClick={() => setIsLearnOpen(!isLearnOpen)}
-                className={`flex items-center gap-1 transition-colors duration-700 whitespace-nowrap ${
+                className={`flex items-center gap-1 transition-colors duration-300 whitespace-nowrap ${
                   scrolled
                     ? isDark
                       ? "text-white hover:text-blue-400"
@@ -398,14 +398,14 @@ export default function Navbar() {
             {/* CTA Button - Tablet and Desktop */}
             <a
               href="/contact"
-              className={`cta-button hidden sm:inline-block rounded-full px-5 sm:px-6 lg:px-8 py-2 sm:py-[10px] text-[11px] lg:text-[12px] tracking-[0.16em] sm:tracking-[0.18em] font-semibold transition-all duration-700 ease-in-out relative whitespace-nowrap bg-[#0045EF] text-white hover:shadow-lg hover:bg-[#0039CC]`}
+              className={`cta-button hidden sm:inline-block rounded-full px-5 sm:px-6 lg:px-8 py-2 sm:py-[10px] text-[11px] lg:text-[12px] tracking-[0.16em] sm:tracking-[0.18em] font-semibold transition-all duration-300 ease-in-out relative whitespace-nowrap bg-[#0045EF] text-white hover:shadow-lg hover:bg-[#0039CC]`}
             >
               <span className="relative z-10">LET'S TALK</span>
             </a>
 
             {/* Mobile Menu Button */}
             <button
-              className={`lg:hidden text-2xl transition-colors duration-700 p-1 ${
+              className={`lg:hidden text-2xl transition-colors duration-300 p-1 ${
                 scrolled
                   ? isDark
                     ? "text-white"
