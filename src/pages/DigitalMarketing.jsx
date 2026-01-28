@@ -16,7 +16,6 @@ const DigitalMarketing = () => {
       <DigitalMarketingProcess />
       <LearningGuide service="digital-marketing" />
       <ServicesSection />
-      <ServicePageSection />
       <ClientReviewsSection />
       <FAQSection />
     </div>

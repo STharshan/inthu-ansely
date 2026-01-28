@@ -1,10 +1,9 @@
-import React from "react";
-import ServicesHero from "../components/MobileAppDevelopment/ServicesHero";
-import ServicePageSection from "../components/MobileAppDevelopment/ServicePageSection";
+import ServicesSection from "@/components/Home/CardSection";
 import ClientReviewsSection from "../components/MobileAppDevelopment/ClientReviewsSection";
+import FAQSection from "../components/MobileAppDevelopment/FAQSection";
 import MobileAppAboutSection from "../components/MobileAppDevelopment/MobileAppAboutSection";
 import MobileAppFeaturesSection from "../components/MobileAppDevelopment/MobileAppFeatureSection";
-import FAQSection from "../components/MobileAppDevelopment/FAQSection";
+import ServicesHero from "../components/MobileAppDevelopment/ServicesHero";
 
 const MobileAppDevelopment = () => {
   return (
@@ -12,7 +11,7 @@ const MobileAppDevelopment = () => {
       <ServicesHero />
       <MobileAppAboutSection />
       <MobileAppFeaturesSection />
-      <ServicePageSection />
+      <ServicesSection />
       <ClientReviewsSection />
       <FAQSection />
     </div>

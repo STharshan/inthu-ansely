@@ -7,6 +7,7 @@ import ServicePageSection from "../components/Businessconsultancy/ServicePageSec
 import ClientReviewsSection from "../components/Businessconsultancy/ClientReviewsSection";
 import FAQSection from "../components/Businessconsultancy/FAQSection";
 import { LearningGuide } from "../components/organisms/LearningGuide";
+import ServicesSection from "@/components/Home/CardSection";
 
 const Businessconsultancy = () => {
   return (
@@ -16,7 +17,7 @@ const Businessconsultancy = () => {
       <LearningGuide service="ai-consulting" />
       <ServicesSection />
       <HowWeWorkSection />
-      <ServicePageSection />
+      <ServicesSection />
       <ClientReviewsSection />
       <FAQSection />
     </div>
