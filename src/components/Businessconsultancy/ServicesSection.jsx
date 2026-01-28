@@ -8,7 +8,7 @@ import {
   FaGlobe,
 } from "react-icons/fa";
 
-const ServicesSection = () => {
+const BusinessConsultancyServicesSection = () => {
   const services = [
     {
       icon: FaCompass,
@@ -109,4 +109,4 @@ const ServicesSection = () => {
   );
 };
 
-export default ServicesSection;
+export default BusinessConsultancyServicesSection;
