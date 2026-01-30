@@ -19,6 +19,8 @@ export default function Navbar() {
 
   const companyRef = useRef(null);
   const learnRef = useRef(null);
+  const mobileCompanyRef = useRef(null);
+  const mobileLearnRef = useRef(null);
 
   // Check if we're on a blog detail page
   const isBlogDetailPage =
@@ -39,10 +41,17 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
 
     const handleClickOutside = (e) => {
-      if (companyRef.current && !companyRef.current.contains(e.target)) {
+      const isInsideCompany =
+        (companyRef.current && companyRef.current.contains(e.target)) ||
+        (mobileCompanyRef.current && mobileCompanyRef.current.contains(e.target));
+      const isInsideLearn =
+        (learnRef.current && learnRef.current.contains(e.target)) ||
+        (mobileLearnRef.current && mobileLearnRef.current.contains(e.target));
+
+      if (!isInsideCompany) {
         setIsCompanyOpen(false);
       }
-      if (learnRef.current && !learnRef.current.contains(e.target)) {
+      if (!isInsideLearn) {
         setIsLearnOpen(false);
       }
     };
@@ -467,6 +476,7 @@ export default function Navbar() {
 
             {/* Service Dropdown */}
             <div
+              ref={mobileCompanyRef}
               className={`border-b py-4 ${
                 isDark ? "border-gray-700" : "border-gray-200"
               }`}
@@ -562,6 +572,7 @@ export default function Navbar() {
 
             {/* Learn Dropdown */}
             <div
+              ref={mobileLearnRef}
               className={`border-b py-4 ${
                 isDark ? "border-gray-700" : "border-gray-200"
               }`}
