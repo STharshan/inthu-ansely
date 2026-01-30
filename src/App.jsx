@@ -61,6 +61,7 @@ function App() {
         <Route path="/learn/ai" element={<AILearningModule />} />
         <Route path="/learn/ppc" element={<PPCLearningModule />} />
         <Route path="/learn/seo" element={<SEOLearningPlatform />} />
+        <Route path="/learn/seo/:moduleSlug" element={<SEOLearningPlatform />} />
         <Route path="/learn/react-comparison" element={<ReactComparisonGuide />} />
         <Route path="/learn/custom-software-guide" element={<Insidecustomsoftwareservice />} />
 

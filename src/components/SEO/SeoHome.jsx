@@ -1,19 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import { MapPin, Users, FileText, Zap, TrendingUp, ChevronRight, ChevronDown, Circle, CheckCircle2, Home } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import {
+  MapPin,
+  Users,
+  FileText,
+  Zap,
+  TrendingUp,
+  ChevronRight,
+  ChevronDown,
+  Circle,
+  CheckCircle2,
+  Home,
+} from "lucide-react";
 
-import Module1Lesson from './Lesson1';
-import Module2Lesson from './Lesson2';
-import Module3Lesson from './Lesson3';
-import Module4Lesson from './Lesson4';
-import Module5Lesson from './Lesson5';
+import Module1Lesson from "./Lesson1";
+import Module2Lesson from "./Lesson2";
+import Module3Lesson from "./Lesson3";
+import Module4Lesson from "./Lesson4";
+import Module5Lesson from "./Lesson5";
 
 const SEOLearningPlatform = () => {
-  const [currentView, setCurrentView] = useState('modules');
+  const { moduleSlug } = useParams();
+  const navigate = useNavigate();
+  const [currentView, setCurrentView] = useState("modules");
   const [selectedModule, setSelectedModule] = useState(null);
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
   const [expandedModules, setExpandedModules] = useState([0, 1, 4]);
   const [completedLessons, setCompletedLessons] = useState([]);
   const [isDark, setIsDark] = useState(false);
+
+  // Module slug mapping
+  const moduleSlugMap = {
+    "local-businesses": 0,
+    "seo-vs-social-media": 1,
+    "content-that-ranks": 2,
+    "technical-seo": 3,
+    "traffic-to-sales": 4,
+  };
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -21,6 +44,19 @@ const SEOLearningPlatform = () => {
     setIsDark(prefersDark);
     document.documentElement.classList.toggle("dark", prefersDark);
   }, []);
+
+  // Handle URL-based module selection
+  useEffect(() => {
+    if (moduleSlug && moduleSlugMap[moduleSlug] !== undefined) {
+      const moduleIndex = moduleSlugMap[moduleSlug];
+      setSelectedModule(moduleIndex);
+      setCurrentLessonIndex(0);
+      setCurrentView("lesson");
+    } else if (!moduleSlug) {
+      setCurrentView("modules");
+      setSelectedModule(null);
+    }
+  }, [moduleSlug]);
 
   const toggleTheme = () => {
     const root = document.documentElement;
@@ -44,8 +80,8 @@ const SEOLearningPlatform = () => {
         { number: 2, title: "The Google Map Pack" },
         { number: 3, title: "Google Business Profile" },
         { number: 4, title: "Local Content Wins" },
-        { number: 5, title: "Exercise" }
-      ]
+        { number: 5, title: "Exercise" },
+      ],
     },
     {
       id: 2,
@@ -60,8 +96,8 @@ const SEOLearningPlatform = () => {
         { number: 2, title: "Traffic Quality Comparison" },
         { number: 3, title: "Why Businesses Burn Money" },
         { number: 4, title: "How They Work Together" },
-        { number: 5, title: "Exercise" }
-      ]
+        { number: 5, title: "Exercise" },
+      ],
     },
     {
       id: 3,
@@ -76,8 +112,8 @@ const SEOLearningPlatform = () => {
         { number: 2, title: "Search Intent Is Everything" },
         { number: 3, title: "High-Performing Page Structure" },
         { number: 4, title: "Content for Small Businesses" },
-        { number: 5, title: "Exercise" }
-      ]
+        { number: 5, title: "Exercise" },
+      ],
     },
     {
       id: 4,
@@ -92,8 +128,8 @@ const SEOLearningPlatform = () => {
         { number: 2, title: "Speed = Rankings + Sales" },
         { number: 3, title: "Mobile Is Non-Negotiable" },
         { number: 4, title: "Clean Structure Helps Google" },
-        { number: 5, title: "Exercise" }
-      ]
+        { number: 5, title: "Exercise" },
+      ],
     },
     {
       id: 5,
@@ -108,51 +144,58 @@ const SEOLearningPlatform = () => {
         { number: 2, title: "What Visitors Need" },
         { number: 3, title: "Conversion Essentials" },
         { number: 4, title: "Think Like a Customer" },
-        { number: 5, title: "Exercise" }
-      ]
-    }
+        { number: 5, title: "Exercise" },
+      ],
+    },
   ];
 
-  const totalLessons = modules.reduce((acc, module) => acc + module.lessons.length, 0);
+  const totalLessons = modules.reduce(
+    (acc, module) => acc + module.lessons.length,
+    0,
+  );
   const completedCount = completedLessons.length;
   const progressPercentage = (completedCount / totalLessons) * 100;
 
   const toggleModule = (index) => {
-    setExpandedModules(prev =>
-      prev.includes(index)
-        ? prev.filter(i => i !== index)
-        : [...prev, index]
+    setExpandedModules((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index],
     );
   };
 
   const getModuleProgress = (moduleId) => {
-    const module = modules.find(m => m.id === moduleId);
+    const module = modules.find((m) => m.id === moduleId);
     const moduleCompleted = module.lessons.filter((_, idx) =>
-      completedLessons.includes(`${moduleId}-${idx}`)
+      completedLessons.includes(`${moduleId}-${idx}`),
     ).length;
     return {
       completed: moduleCompleted,
       total: module.lessons.length,
-      percentage: (moduleCompleted / module.lessons.length) * 100
+      percentage: (moduleCompleted / module.lessons.length) * 100,
     };
   };
 
+  // Reverse slug mapping for navigation
+  const moduleIndexToSlug = {
+    0: "local-businesses",
+    1: "seo-vs-social-media",
+    2: "content-that-ranks",
+    3: "technical-seo",
+    4: "traffic-to-sales",
+  };
+
   const startModule = (moduleIndex) => {
-    setSelectedModule(moduleIndex);
-    setCurrentLessonIndex(0);
-    setCurrentView('lesson');
+    const slug = moduleIndexToSlug[moduleIndex];
+    navigate(`/learn/seo/${slug}`);
   };
 
   const goToLesson = (moduleIndex, lessonIndex) => {
-    setSelectedModule(moduleIndex);
+    const slug = moduleIndexToSlug[moduleIndex];
+    navigate(`/learn/seo/${slug}`);
     setCurrentLessonIndex(lessonIndex);
-    setCurrentView('lesson');
   };
 
   const backToModules = () => {
-    setCurrentView('modules');
-    setSelectedModule(null);
-    setCurrentLessonIndex(0);
+    navigate("/learn/seo");
   };
 
   const handleLessonComplete = (lessonIndex) => {
@@ -181,9 +224,9 @@ const SEOLearningPlatform = () => {
     return completedLessons.includes(`${moduleId}-${lessonIndex}`);
   };
 
-  if (currentView === 'lesson' && selectedModule !== null) {
+  if (currentView === "lesson" && selectedModule !== null) {
     const module = modules[selectedModule];
-    
+
     if (module.LessonComponent) {
       return (
         <module.LessonComponent
@@ -196,7 +239,9 @@ const SEOLearningPlatform = () => {
           onNext={handleNextLesson}
           onPrevious={handlePreviousLesson}
           onBackToModules={backToModules}
-          isLessonCompleted={(lessonIndex) => isLessonCompleted(module.id, lessonIndex)}
+          isLessonCompleted={(lessonIndex) =>
+            isLessonCompleted(module.id, lessonIndex)
+          }
         />
       );
     }
@@ -204,7 +249,6 @@ const SEOLearningPlatform = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-black">
-
       {/* Header */}
       <section className="border-b bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm mt-30 z-10 shadow-sm dark:border-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
@@ -250,7 +294,9 @@ const SEOLearningPlatform = () => {
                 <div className="p-4 sm:p-6">
                   {/* Module Header */}
                   <div className="flex items-start gap-3 sm:gap-4">
-                    <div className={`${module.color} p-2.5 sm:p-3 rounded-lg text-white flex-shrink-0`}>
+                    <div
+                      className={`${module.color} p-2.5 sm:p-3 rounded-lg text-white flex-shrink-0`}
+                    >
                       <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
 
@@ -292,9 +338,9 @@ const SEOLearningPlatform = () => {
                       onClick={() => toggleModule(index)}
                       className="inline-flex items-center justify-center hover:bg-slate-100 dark:hover:bg-gray-800 h-9 rounded-md px-3 sm:px-4 text-sm font-medium text-slate-700 dark:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
                     >
-                      {isExpanded ? 'Hide' : 'Show'} Lessons
+                      {isExpanded ? "Hide" : "Show"} Lessons
                       <ChevronDown
-                        className={`h-4 w-4 ml-1 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                        className={`h-4 w-4 ml-1 transition-transform duration-200 ${isExpanded ? "rotate-180" : ""}`}
                       />
                     </button>
                   </div>
@@ -317,7 +363,9 @@ const SEOLearningPlatform = () => {
                             ) : (
                               <Circle className="h-4 w-4 text-slate-400 dark:text-gray-600 group-hover:text-slate-600 dark:group-hover:text-gray-400 flex-shrink-0" />
                             )}
-                            <span className={`text-sm ${isCompleted ? 'text-slate-500 dark:text-gray-500 line-through' : 'text-slate-700 dark:text-gray-300'}`}>
+                            <span
+                              className={`text-sm ${isCompleted ? "text-slate-500 dark:text-gray-500 line-through" : "text-slate-700 dark:text-gray-300"}`}
+                            >
                               Lesson {lesson.number}: {lesson.title}
                             </span>
                           </button>
@@ -339,10 +387,11 @@ const SEOLearningPlatform = () => {
                 <CheckCircle2 className="h-8 w-8 text-green-600 dark:text-green-400" />
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2">
-                Congratulations! 
+                Congratulations!
               </h2>
               <p className="text-slate-600 dark:text-gray-400 text-sm sm:text-base">
-                You've completed all {totalLessons} lessons. You're now ready to implement SEO strategies for your business!
+                You've completed all {totalLessons} lessons. You're now ready to
+                implement SEO strategies for your business!
               </p>
             </div>
           </div>
