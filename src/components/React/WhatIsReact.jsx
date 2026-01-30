@@ -1,4 +1,5 @@
 import React from "react";
+import { Zap, Rocket, Lightbulb, X, Check } from "lucide-react";
 
 export default function WhatIsReactSection() {
   return (
@@ -54,7 +55,7 @@ export default function WhatIsReactSection() {
               <div className="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#0B0D10] p-6 transition hover:bg-gray-100 dark:hover:bg-[#0F1216]">
                 <div className="space-y-4">
                   <div className="h-12 w-12 rounded-lg bg-blue-100 dark:bg-cyan-400/10 flex items-center justify-center">
-                    <span className="text-blue-600 dark:text-cyan-400 text-xl">⚡</span>
+                    <Zap className="w-6 h-6 text-blue-600 dark:text-cyan-400" />
                   </div>
                   <h3 className="text-xl font-semibold text-black dark:text-white">
                     Lightning Fast
@@ -69,7 +70,7 @@ export default function WhatIsReactSection() {
               <div className="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#0B0D10] p-6 transition hover:bg-gray-100 dark:hover:bg-[#0F1216]">
                 <div className="space-y-4">
                   <div className="h-12 w-12 rounded-lg bg-blue-100 dark:bg-cyan-400/10 flex items-center justify-center">
-                    <span className="text-blue-600 dark:text-cyan-400 text-xl">🚀</span>
+                    <Rocket className="w-6 h-6 text-blue-600 dark:text-cyan-400" />
                   </div>
                   <h3 className="text-xl font-semibold text-black dark:text-white">
                     Growth Engine
@@ -85,19 +86,21 @@ export default function WhatIsReactSection() {
             {/* Think of it as box */}
             <div className="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-white/5 p-6 transition-colors">
               <div className="flex items-start gap-4">
-                <div className="text-3xl">💡</div>
+                <div className="flex-shrink-0">
+                  <Lightbulb className="w-8 h-8 text-yellow-500" />
+                </div>
 
                 <div>
                   <p className="text-lg font-semibold text-black dark:text-white mb-2">
                     Think of it as:
                   </p>
 
-                  <div className="space-y-1">
-                    <p className="text-gray-700 dark:text-gray-400">
-                      ❌ A brochure website
+                  <div className="space-y-2">
+                    <p className="text-gray-700 dark:text-gray-400 flex items-center gap-2">
+                      <X className="w-4 h-4 text-red-500" /> A brochure website
                     </p>
-                    <p className="text-black dark:text-white font-medium">
-                      ✅ A digital growth engine
+                    <p className="text-black dark:text-white font-medium flex items-center gap-2">
+                      <Check className="w-4 h-4 text-green-500" /> A digital growth engine
                     </p>
                   </div>
                 </div>

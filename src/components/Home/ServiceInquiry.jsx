@@ -37,20 +37,20 @@ const ServiceInquiryForm = () => {
     }
   }
 
-  // ✅ Upload files to Google Drive
+  // Upload files to Google Drive
   const uploadToDrive = async (files) => {
     const uploadedLinks = []
     for (const file of files) {
       const metadata = {
         name: file.name,
-        parents: ['YOUR_FOLDER_ID'], // ⚠️ Replace with your folder ID
+        parents: ['YOUR_FOLDER_ID'], // TODO: Replace with your folder ID
       }
 
       const form = new FormData()
       form.append('metadata', new Blob([JSON.stringify(metadata)], { type: 'application/json' }))
       form.append('file', file)
 
-      const accessToken = 'YOUR_OAUTH_ACCESS_TOKEN' // ⚠️ Replace with valid OAuth token
+      const accessToken = 'YOUR_OAUTH_ACCESS_TOKEN' // TODO: Replace with valid OAuth token
 
       const res = await fetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart', {
         method: 'POST',
@@ -96,12 +96,12 @@ const ServiceInquiryForm = () => {
         videoLinks: videoLinks.join(', '),
       }
 
-      console.log('✅ Final submission data:')
+      console.log('Final submission data:')
       console.table(submissionData)
 
       await emailjs.send('your_service_id', 'your_template_id', submissionData, 'your_public_key')
 
-      alert('✅ Form submitted successfully!')
+      alert('Form submitted successfully!')
       setFormData({})
       setImageFiles([])
       setVideoFiles([])
@@ -110,7 +110,7 @@ const ServiceInquiryForm = () => {
       setStep(1)
     } catch (error) {
       console.error('Upload or Email error:', error)
-      alert('❌ Something went wrong. Check console for details.')
+      alert('Something went wrong. Check console for details.')
     } finally {
       setUploading(false)
     }

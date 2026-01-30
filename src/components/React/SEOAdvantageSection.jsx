@@ -1,4 +1,5 @@
 import React from "react";
+import { Search, Check } from "lucide-react";
 
 export default function SEOAdvantageSection() {
   return (
@@ -20,7 +21,7 @@ export default function SEOAdvantageSection() {
               <div className="space-y-4 text-center">
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 rounded-full border border-blue-600/20 dark:border-cyan-400/20 bg-blue-50 dark:bg-cyan-400/10 px-4 py-1.5 text-sm transition-colors">
-                  <span className="text-blue-600 dark:text-cyan-400">🔍</span>
+                  <Search className="w-4 h-4 text-blue-600 dark:text-cyan-400" />
                   <span className="font-medium text-blue-600 dark:text-cyan-300">
                     SEO Advantage
                   </span>
@@ -48,7 +49,7 @@ export default function SEOAdvantageSection() {
                     "Rankings improve organically over time",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <span className="text-blue-600 dark:text-cyan-400 mt-0.5">✔</span>
+                      <Check className="w-4 h-4 text-blue-600 dark:text-cyan-400 mt-0.5 flex-shrink-0" />
                       <span className="text-black dark:text-white leading-relaxed">{item}</span>
                     </div>
                   ))}

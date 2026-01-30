@@ -10,6 +10,7 @@ import {
   FaRobot,
   FaPalette,
   FaArrowRight,
+  FaBolt,
 } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -351,10 +352,10 @@ const ServicesSection = () => {
                                 Output
                               </span>
                             </div>
-                            <p className={`text-xs italic mt-1 ${
+                            <p className={`text-xs italic mt-1 flex items-center gap-1 ${
                               isDarkMode ? 'text-gray-300' : 'text-gray-600'
                             }`}>
-                              ⚡ Automated in real-time
+                              <FaBolt className="text-yellow-400" /> Automated in real-time
                             </p>
                           </div>
                         </div>
