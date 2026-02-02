@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, Linkedin } from "lucide-react";
+import LazyImage from "../LazyImage";
 
 export default function TeamCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -85,10 +86,12 @@ export default function TeamCarousel() {
             {/* Center Image */}
             <div className="flex items-center justify-center p-8 rounded-lg bg-gray-200 dark:bg-gray-900">
               <div className="w-full h-[500px] rounded-lg overflow-hidden">
-                <img
+                <LazyImage
                   src={current.image}
                   alt={current.name}
-                  className="w-full h-[550px] object-cover"
+                  className="w-full h-[550px] rounded-lg"
+                  width={400}
+                  height={550}
                 />
               </div>
             </div>
@@ -155,12 +158,12 @@ export default function TeamCarousel() {
 
             <div className="p-4 sm:p-6 rounded-xl bg-gray-200 dark:bg-gray-900">
               <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-lg overflow-hidden">
-                <img
+                <LazyImage
                   src={current.image}
                   alt={current.name}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  decoding="async"
+                  className="w-full h-full rounded-lg"
+                  width={400}
+                  height={500}
                 />
               </div>
             </div>

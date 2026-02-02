@@ -1,22 +1,32 @@
-import LightPillar from "../LightPillar";
+import { lazy, Suspense } from "react";
+
+// Lazy load the heavy THREE.js WebGL component
+const LightPillar = lazy(() => import("../LightPillar"));
+
+// Simple loading placeholder
+const WebGLPlaceholder = () => (
+  <div className="w-full h-full bg-gradient-to-b from-black via-[#0045EF]/20 to-black" />
+);
 
 const VideoSection = () => {
   return (
     <section className="relative w-full">
       <div style={{ width: "100%", height: "600px", position: "relative" }}>
-        <LightPillar
-          topColor="#0045EF"
-          bottomColor="#0045EF"
-          intensity={1.0}
-          rotationSpeed={0.3}
-          glowAmount={0.005}
-          pillarWidth={3.0}
-          pillarHeight={0.4}
-          noiseIntensity={0.5}
-          pillarRotation={0}
-          interactive={false}
-          mixBlendMode="normal"
-        />
+        <Suspense fallback={<WebGLPlaceholder />}>
+          <LightPillar
+            topColor="#0045EF"
+            bottomColor="#0045EF"
+            intensity={1.0}
+            rotationSpeed={0.3}
+            glowAmount={0.005}
+            pillarWidth={3.0}
+            pillarHeight={0.4}
+            noiseIntensity={0.5}
+            pillarRotation={0}
+            interactive={false}
+            mixBlendMode="normal"
+          />
+        </Suspense>
 
         {/* Overlay Content */}
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
