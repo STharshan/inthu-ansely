@@ -18,7 +18,7 @@ export default function WallScrollContainer({ children, debug = false }) {
   const targetProgressRef = useRef(0);
   const progressRef = useRef(0);
 
-  // ⭐ PURE LENIS (React compatible)
+  // PURE LENIS (React compatible)
   const lenisRef = useRef(null);
 
   useEffect(() => {

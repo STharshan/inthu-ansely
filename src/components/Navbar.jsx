@@ -1,7 +1,14 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import { FiChevronDown, FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
+import {
+  FiChevronDown,
+  FiChevronRight,
+  FiMenu,
+  FiX,
+  FiSun,
+  FiMoon,
+} from "react-icons/fi";
 // import {
 //   FaInstagram,
 //   FaFacebookF,
@@ -13,12 +20,15 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
   const [isLearnOpen, setIsLearnOpen] = useState(false);
+  const [isSeoOpen, setIsSeoOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const location = useLocation();
 
   const companyRef = useRef(null);
   const learnRef = useRef(null);
+  const mobileCompanyRef = useRef(null);
+  const mobileLearnRef = useRef(null);
 
   // Check if we're on a blog detail page
   const isBlogDetailPage =
@@ -39,10 +49,18 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
 
     const handleClickOutside = (e) => {
-      if (companyRef.current && !companyRef.current.contains(e.target)) {
+      const isInsideCompany =
+        (companyRef.current && companyRef.current.contains(e.target)) ||
+        (mobileCompanyRef.current &&
+          mobileCompanyRef.current.contains(e.target));
+      const isInsideLearn =
+        (learnRef.current && learnRef.current.contains(e.target)) ||
+        (mobileLearnRef.current && mobileLearnRef.current.contains(e.target));
+
+      if (!isInsideCompany) {
         setIsCompanyOpen(false);
       }
-      if (learnRef.current && !learnRef.current.contains(e.target)) {
+      if (!isInsideLearn) {
         setIsLearnOpen(false);
       }
     };
@@ -306,16 +324,94 @@ export default function Navbar() {
                   >
                     PPC Guide
                   </a>
-                  <a
-                    href="/learn/seo"
-                    className={`block px-4 py-2 text-sm transition-colors ${
-                      isDark
-                        ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
-                        : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
-                    }`}
-                  >
-                    SEO Guide
-                  </a>
+                  {/* SEO Guide with nested dropdown */}
+                  <div className="relative group/seo">
+                    <button
+                      onClick={() => setIsSeoOpen(!isSeoOpen)}
+                      className={`flex items-center justify-between w-full px-4 py-2 text-sm transition-colors ${
+                        isDark
+                          ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
+                          : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
+                      }`}
+                    >
+                      SEO GUIDE
+                      <FiChevronRight
+                        className={`text-xs transition-transform duration-300 ${
+                          isSeoOpen ? "rotate-90" : ""
+                        }`}
+                      />
+                    </button>
+                    {isSeoOpen && (
+                      <div
+                        className={`absolute left-full top-0 ml-1 w-56 rounded-md shadow-lg py-2 animate-[fadeIn_0.3s_ease_forwards] ${
+                          isDark
+                            ? "bg-gray-800 text-white"
+                            : "bg-white text-black border border-gray-200"
+                        }`}
+                      >
+                        <a
+                          href="/learn/seo"
+                          className={`block px-4 py-2 text-sm transition-colors ${
+                            isDark
+                              ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
+                              : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
+                          }`}
+                        >
+                          All SEO Modules
+                        </a>
+                        <a
+                          href="/learn/seo/local-businesses"
+                          className={`block px-4 py-2 text-sm transition-colors ${
+                            isDark
+                              ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
+                              : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
+                          }`}
+                        >
+                          SEO for Local Businesses
+                        </a>
+                        <a
+                          href="/learn/seo/seo-vs-social-media"
+                          className={`block px-4 py-2 text-sm transition-colors ${
+                            isDark
+                              ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
+                              : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
+                          }`}
+                        >
+                          SEO vs Social Media
+                        </a>
+                        <a
+                          href="/learn/seo/content-that-ranks"
+                          className={`block px-4 py-2 text-sm transition-colors ${
+                            isDark
+                              ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
+                              : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
+                          }`}
+                        >
+                          Content That Ranks & Converts
+                        </a>
+                        <a
+                          href="/learn/seo/technical-seo"
+                          className={`block px-4 py-2 text-sm transition-colors ${
+                            isDark
+                              ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
+                              : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
+                          }`}
+                        >
+                          Technical SEO Explained Simply
+                        </a>
+                        <a
+                          href="/learn/seo/traffic-to-sales"
+                          className={`block px-4 py-2 text-sm transition-colors ${
+                            isDark
+                              ? "text-gray-200 hover:bg-gray-700 hover:text-blue-400"
+                              : "text-gray-700 hover:bg-gray-100 hover:text-[#0045EF]"
+                          }`}
+                        >
+                          Turning SEO Traffic into Sales
+                        </a>
+                      </div>
+                    )}
+                  </div>
                   <a
                     href="/learn/react-comparison"
                     className={`block px-4 py-2 text-sm transition-colors ${
@@ -467,6 +563,7 @@ export default function Navbar() {
 
             {/* Service Dropdown */}
             <div
+              ref={mobileCompanyRef}
               className={`border-b py-4 ${
                 isDark ? "border-gray-700" : "border-gray-200"
               }`}
@@ -562,6 +659,7 @@ export default function Navbar() {
 
             {/* Learn Dropdown */}
             <div
+              ref={mobileLearnRef}
               className={`border-b py-4 ${
                 isDark ? "border-gray-700" : "border-gray-200"
               }`}
@@ -610,16 +708,88 @@ export default function Navbar() {
                   >
                     PPC Guide
                   </a>
-                  <a
-                    href="/learn/seo"
-                    className={`block py-2 text-sm transition-colors ${
-                      isDark
-                        ? "text-gray-300 hover:text-blue-400"
-                        : "text-gray-600 hover:text-[#0045EF]"
-                    }`}
-                  >
-                    SEO Guide
-                  </a>
+                  {/* SEO Guide with nested dropdown */}
+                  <div>
+                    <button
+                      onClick={() => setIsSeoOpen(!isSeoOpen)}
+                      className={`flex items-center justify-between w-full py-2 text-sm transition-colors ${
+                        isDark
+                          ? "text-gray-300 hover:text-blue-400"
+                          : "text-gray-600 hover:text-[#0045EF]"
+                      }`}
+                    >
+                      SEO GUIDE
+                      <FiChevronDown
+                        className={`text-xs transition-transform duration-300 ${
+                          isSeoOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {isSeoOpen && (
+                      <div className="pl-4 space-y-1 mt-1 animate-[fadeIn_0.3s_ease_forwards]">
+                        <a
+                          href="/learn/seo"
+                          className={`block py-2 text-sm transition-colors ${
+                            isDark
+                              ? "text-gray-400 hover:text-blue-400"
+                              : "text-gray-500 hover:text-[#0045EF]"
+                          }`}
+                        >
+                          All SEO Modules
+                        </a>
+                        <a
+                          href="/learn/seo/local-businesses"
+                          className={`block py-2 text-sm transition-colors ${
+                            isDark
+                              ? "text-gray-400 hover:text-blue-400"
+                              : "text-gray-500 hover:text-[#0045EF]"
+                          }`}
+                        >
+                          SEO for Local Businesses
+                        </a>
+                        <a
+                          href="/learn/seo/seo-vs-social-media"
+                          className={`block py-2 text-sm transition-colors ${
+                            isDark
+                              ? "text-gray-400 hover:text-blue-400"
+                              : "text-gray-500 hover:text-[#0045EF]"
+                          }`}
+                        >
+                          SEO vs Social Media
+                        </a>
+                        <a
+                          href="/learn/seo/content-that-ranks"
+                          className={`block py-2 text-sm transition-colors ${
+                            isDark
+                              ? "text-gray-400 hover:text-blue-400"
+                              : "text-gray-500 hover:text-[#0045EF]"
+                          }`}
+                        >
+                          Content That Ranks & Converts
+                        </a>
+                        <a
+                          href="/learn/seo/technical-seo"
+                          className={`block py-2 text-sm transition-colors ${
+                            isDark
+                              ? "text-gray-400 hover:text-blue-400"
+                              : "text-gray-500 hover:text-[#0045EF]"
+                          }`}
+                        >
+                          Technical SEO Explained Simply
+                        </a>
+                        <a
+                          href="/learn/seo/traffic-to-sales"
+                          className={`block py-2 text-sm transition-colors ${
+                            isDark
+                              ? "text-gray-400 hover:text-blue-400"
+                              : "text-gray-500 hover:text-[#0045EF]"
+                          }`}
+                        >
+                          Turning SEO Traffic into Sales
+                        </a>
+                      </div>
+                    )}
+                  </div>
                   <a
                     href="/learn/react-comparison"
                     className={`block py-2 text-sm transition-colors ${

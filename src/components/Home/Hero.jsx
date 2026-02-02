@@ -1,19 +1,29 @@
-import FloatingLines from "../FloatingLines";
+import { lazy, Suspense } from "react";
+
+// Lazy load the heavy WebGL component
+const FloatingLines = lazy(() => import("../FloatingLines"));
+
+// Simple loading placeholder for WebGL
+const WebGLPlaceholder = () => (
+  <div className="w-full h-full bg-gradient-to-b from-[#001F7F] to-black" />
+);
 
 export default function Hero() {
   return (
     <div style={{ width: "100%", height: "100vh", position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: 0, zIndex: 1 }}>
-        <FloatingLines
-          enabledWaves={["top", "middle", "bottom"]}
-          lineCount={[4, 8, 12]}
-          lineDistance={[8, 6, 4]}
-          bendRadius={5.0}
-          bendStrength={4}
-          interactive={true}
-          parallax={true}
-          linesGradient={["#001F7F", "#0045EF", "#0066FF", "#3399FF", "#66B3FF"]}
-        />
+        <Suspense fallback={<WebGLPlaceholder />}>
+          <FloatingLines
+            enabledWaves={["top", "middle", "bottom"]}
+            lineCount={[4, 8, 12]}
+            lineDistance={[8, 6, 4]}
+            bendRadius={5.0}
+            bendStrength={4}
+            interactive={true}
+            parallax={true}
+            linesGradient={["#001F7F", "#0045EF", "#0066FF", "#3399FF", "#66B3FF"]}
+          />
+        </Suspense>
       </div>
 
       {/* Headline */}
