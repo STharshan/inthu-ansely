@@ -27,7 +27,6 @@ const SEOLearningPlatform = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
   const [expandedModules, setExpandedModules] = useState([0, 1, 4]);
   const [completedLessons, setCompletedLessons] = useState([]);
-  const [isDark, setIsDark] = useState(false);
 
   // Module slug mapping
   const moduleSlugMap = {
@@ -41,7 +40,6 @@ const SEOLearningPlatform = () => {
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = savedTheme === "dark";
-    setIsDark(prefersDark);
     document.documentElement.classList.toggle("dark", prefersDark);
   }, []);
 
@@ -57,14 +55,6 @@ const SEOLearningPlatform = () => {
       setSelectedModule(null);
     }
   }, [moduleSlug]);
-
-  const toggleTheme = () => {
-    const root = document.documentElement;
-    const next = !isDark;
-    setIsDark(next);
-    root.classList.toggle("dark", next);
-    localStorage.setItem("theme", next ? "dark" : "light");
-  };
 
   const modules = [
     {
