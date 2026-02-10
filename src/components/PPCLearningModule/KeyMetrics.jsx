@@ -5,6 +5,7 @@ import {
   BarChart3,
   TrendingUp,
   DollarSign,
+  AlertTriangle,
 } from "lucide-react";
 
 const metrics = [
@@ -130,7 +131,7 @@ const KeyMetrics = () => {
       {/* Warning */}
       <div className="bg-[#0045EF]/10 dark:bg-[#0045EF]/20 rounded-xl border-2 border-[#0045EF]/20 shadow-sm p-8">
         <p className="text-xl font-semibold text-center text-[#0045EF] dark:text-[#0045EF]">
-          ⚠️ If you don't track these, you're gambling — not advertising.
+          <AlertTriangle className="h-6 w-6 inline mr-2" />If you don't track these, you're gambling — not advertising.
         </p>
       </div>
     </div>

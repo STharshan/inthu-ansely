@@ -1,4 +1,4 @@
-import { Zap, TrendingUp, Clock, Target } from "lucide-react";
+import { Zap, TrendingUp, Clock, Target, ArrowRight } from "lucide-react";
 
 const PPCvsOrganic = () => {
   return (
@@ -87,7 +87,7 @@ const PPCvsOrganic = () => {
       {/* Conclusion */}
       <div className="bg-[#0045EF]/10 dark:bg-[#0045EF]/20 rounded-xl shadow-sm p-6 border border-[#0045EF]/20">
         <p className="text-lg font-semibold text-center text-gray-900 dark:text-white">
-          👉 Smart businesses use PPC + SEO together
+          <ArrowRight className="h-5 w-5 inline mr-1" /> Smart businesses use PPC + SEO together
         </p>
       </div>
     </div>

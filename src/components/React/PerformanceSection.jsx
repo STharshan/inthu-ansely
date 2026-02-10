@@ -1,4 +1,5 @@
 import React from "react";
+import { Timer, ArrowUp } from "lucide-react";
 
 export default function PerformanceSection() {
   return (
@@ -34,7 +35,7 @@ export default function PerformanceSection() {
 
                 {/* Hint */}
                 <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                  <span>⏱</span>
+                  <Timer className="h-4 w-4" />
                   <span>Hover over bars to see load times</span>
                 </div>
 
@@ -113,7 +114,7 @@ export default function PerformanceSection() {
                 </div>
 
                 <div className="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#0B0D10] p-6 transition-colors">
-                  <div className="text-3xl font-extrabold text-blue-600 dark:text-cyan-400">↑</div>
+                  <div className="text-3xl font-extrabold text-blue-600 dark:text-cyan-400"><ArrowUp className="h-8 w-8 inline" /></div>
                   <p className="text-sm text-gray-700 dark:text-gray-400 mt-1">Better rankings & conversions</p>
                 </div>
               </div>
