@@ -1,4 +1,5 @@
 import React from "react";
+import { Shield, AlertTriangle, Lock } from "lucide-react";
 
 export default function SecuritySection() {
   return (
@@ -20,7 +21,7 @@ export default function SecuritySection() {
               <div className="space-y-4 text-center">
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 rounded-full border border-blue-600/20 dark:border-cyan-400/20 bg-blue-50 dark:bg-cyan-400/10 px-4 py-1.5 text-sm transition-colors">
-                  <span className="text-blue-600 dark:text-cyan-400">🛡️</span>
+                  <Shield className="h-5 w-5 text-blue-600 dark:text-cyan-400" />
                   <span className="font-medium text-blue-600 dark:text-cyan-300">
                     Enterprise-Grade
                   </span>
@@ -43,7 +44,7 @@ export default function SecuritySection() {
                 <div className="rounded-xl border border-red-500/20 bg-red-50 dark:bg-red-500/10 p-8 transition-colors">
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
-                      <span className="text-red-600 dark:text-red-400 text-3xl">⚠️</span>
+                      <AlertTriangle className="h-8 w-8 text-red-600 dark:text-red-400" />
                       <h3 className="text-2xl font-extrabold text-red-600 dark:text-red-400">
                         WordPress Risk
                       </h3>
@@ -78,7 +79,7 @@ export default function SecuritySection() {
                 <div className="rounded-xl border border-blue-600/20 dark:border-cyan-400/20 bg-blue-50 dark:bg-cyan-400/10 p-8 transition-colors">
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
-                      <span className="text-blue-600 dark:text-cyan-400 text-3xl">🔒</span>
+                      <Lock className="h-8 w-8 text-blue-600 dark:text-cyan-400" />
                       <h3 className="text-2xl font-extrabold text-blue-600 dark:text-cyan-400">
                         React Security
                       </h3>

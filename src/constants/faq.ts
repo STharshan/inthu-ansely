@@ -5,7 +5,7 @@ export const digitalTransformationFAQs: FAQItem[] = [
     id: "processes-automation",
     question: "What processes in our business can actually be automated?",
     answer:
-      "Almost any repetitive, rule-based task is a candidate for automation—data entry, invoice processing, customer onboarding, report generation, email responses, inventory updates, appointment scheduling, approval workflows, and much more. During our discovery phase, we map your current processes, identify bottlenecks, and prioritize automations based on time savings, error reduction, and ROI. Most businesses find 30-40% of their manual tasks can be fully or partially automated.",
+      "Almost any repetitive, rule-based task is a candidate for automation—data entry, invoice processing, customer onboarding, report generation, email responses, inventory updates, appointment scheduling, approval workflows, and much more. During our discovery phase, we map your current processes, identify bottlenecks, and prioritise automations based on time savings, error reduction, and ROI. Most businesses find 30-40% of their manual tasks can be fully or partially automated.",
   },
   {
     id: "automation-replace-employees",
@@ -30,7 +30,7 @@ export const digitalTransformationFAQs: FAQItem[] = [
     question:
       "Do we need to replace all our existing software to transform digitally?",
     answer:
-      "Usually not. We typically work with your existing tech stack, adding integration layers, automation tools, and new capabilities that enhance what you already have. Complete system replacement is expensive, disruptive, and rarely necessary. Our approach is evolutionary, not revolutionary—we modernize incrementally, replacing only what truly needs replacement while maximizing value from current investments. Strategic transformation doesn't mean starting from scratch.",
+      "Usually not. We typically work with your existing tech stack, adding integration layers, automation tools, and new capabilities that enhance what you already have. Complete system replacement is expensive, disruptive, and rarely necessary. Our approach is evolutionary, not revolutionary—we modernise incrementally, replacing only what truly needs replacement while maximising value from current investments. Strategic transformation doesn't mean starting from scratch.",
   },
   {
     id: "measure-success",
@@ -44,13 +44,13 @@ export const digitalTransformationFAQConfig = {
   categoryTag: "FAQ'S",
   heading: "Answers",
   description:
-    "Find answers to common questions about digital transformation, automation, and how we help businesses modernize and thrive.",
+    "Find answers to common questions about digital transformation, automation, and how we help businesses modernise and thrive.",
   imageUrl: "/d1.avif",
   imageAlt: "FAQ illustration",
   serviceTags: [
     "Digital Transformation",
     "Smart Automation",
-    "Process Optimization",
+    "Process Optimisation",
   ],
   ctaButton: {
     label: "Book a Free Call",
@@ -58,13 +58,13 @@ export const digitalTransformationFAQConfig = {
   },
 };
 
-// Reuse FAQs for other services (can be customized later)
+// Reuse FAQs for other services (can be customised later)
 export const digitalPartnershipsFAQs: FAQItem[] = [
   {
     id: "partnership-software-solutions",
     question: "What exactly are your digital partnership software solutions?",
     answer:
-      "We offer three specialized, enterprise-ready software platforms available for partnership: a Care Coordination Platform for healthcare providers to manage patient care across teams, a Salon & Spa Booking System for beauty and wellness businesses to manage appointments and customers, and an Enterprise ERP solution for manufacturing and distribution companies to integrate operations. These aren't custom builds—they're proven, tested platforms ready to deploy with customization options to fit specific business needs.",
+      "We offer three specialised, enterprise-ready software platforms available for partnership: a Care Coordination Platform for healthcare providers to manage patient care across teams, a Salon & Spa Booking System for beauty and wellness businesses to manage appointments and customers, and an Enterprise ERP solution for manufacturing and distribution companies to integrate operations. These aren't custom builds—they're proven, tested platforms ready to deploy with customisation options to fit specific business needs.",
   },
   {
     id: "partnership-arrangements",
@@ -74,11 +74,11 @@ export const digitalPartnershipsFAQs: FAQItem[] = [
       "We offer multiple partnership models tailored to your goals. White-label partnerships let you rebrand our software as your own and resell to your clients. Reseller partnerships allow you to sell our solutions under our brand with commission structures. Revenue-sharing arrangements split ongoing subscription revenue. Implementation partner programs connect you with clients while we handle software delivery. We're flexible, structuring partnerships that align with your business model, technical capabilities, and target market.",
   },
   {
-    id: "software-customization",
+    id: "software-customisation",
     question:
-      "Can your software be customized for our specific industry or client needs?",
+      "Can your software be customised for our specific industry or client needs?",
     answer:
-      "Yes—while our platforms are feature-complete out of the box, we designed them with customization in mind. We can modify workflows, add industry-specific features, adjust user interfaces, create custom reports, integrate with industry-specific tools, and configure permissions to match unique business processes. During partnership onboarding, we assess your typical client needs and determine what customizations make sense. Some modifications are included, while extensive custom development is quoted separately.",
+      "Yes—while our platforms are feature-complete out of the box, we designed them with customisation in mind. We can modify workflows, add industry-specific features, adjust user interfaces, create custom reports, integrate with industry-specific tools, and configure permissions to match unique business processes. During partnership onboarding, we assess your typical client needs and determine what customisations make sense. Some modifications are included, while extensive custom development is quoted separately.",
   },
   {
     id: "training-support",
@@ -97,7 +97,7 @@ export const digitalPartnershipsFAQs: FAQItem[] = [
     question:
       "What's the typical ROI and implementation timeline for these solutions?",
     answer:
-      "Implementation timelines vary by solution complexity and customization needs. Standard deployments typically take 4-8 weeks from contract signing to go-live. The Care Coordination Platform helps healthcare organizations improve outcomes and reduce coordination costs by 25-40%. The Salon & Spa system increases booking rates by 30-50% and reduces no-shows through automated reminders. ERP solutions typically deliver 20-35% operational efficiency gains. We provide detailed ROI models during partnership discussions, with real customer case studies demonstrating actual results.",
+      "Implementation timelines vary by solution complexity and customisation needs. Standard deployments typically take 4-8 weeks from contract signing to go-live. The Care Coordination Platform helps healthcare organizations improve outcomes and reduce coordination costs by 25-40%. The Salon & Spa system increases booking rates by 30-50% and reduces no-shows through automated reminders. ERP solutions typically deliver 20-35% operational efficiency gains. We provide detailed ROI models during partnership discussions, with real customer case studies demonstrating actual results.",
   },
 ];
 export const digitalPartnershipsFAQConfig = {
@@ -124,7 +124,7 @@ export const customWebsitesFAQs: FAQItem[] = [
     question:
       "What's the difference between a template website and custom development?",
     answer:
-      "Template websites use pre-built designs with limited customization—they're faster and cheaper upfront but look generic, have functionality constraints, and can't adapt to unique business needs. Custom websites are built from scratch specifically for your brand, giving you complete control over design, features, and user experience. They're more expensive initially but provide competitive differentiation, superior performance, and flexibility to evolve with your business without template limitations holding you back.",
+      "Template websites use pre-built designs with limited customisation—they're faster and cheaper upfront but look generic, have functionality constraints, and can't adapt to unique business needs. Custom websites are built from scratch specifically for your brand, giving you complete control over design, features, and user experience. They're more expensive initially but provide competitive differentiation, superior performance, and flexibility to evolve with your business without template limitations holding you back.",
   },
   {
     id: "mobile-responsive",
@@ -143,7 +143,7 @@ export const customWebsitesFAQs: FAQItem[] = [
     question:
       "How do you ensure our website ranks well in Google search results?",
     answer:
-      "SEO is built into every website we create, not added afterward. We implement technical SEO fundamentals—clean code, fast loading speeds, mobile optimization, proper heading structure, XML sitemaps, schema markup, and security certificates. We conduct keyword research to optimize page content, write SEO-friendly copy, optimize images, and establish internal linking structures. Post-launch, we can provide ongoing SEO services including content strategy, link building, and continuous optimization to improve rankings over time.",
+      "SEO is built into every website we create, not added afterward. We implement technical SEO fundamentals—clean code, fast loading speeds, mobile optimisation, proper heading structure, XML sitemaps, schema markup, and security certificates. We conduct keyword research to optimise page content, write SEO-friendly copy, optimise images, and establish internal linking structures. Post-launch, we can provide ongoing SEO services including content strategy, link building, and continuous optimisation to improve rankings over time.",
   },
   {
     id: "security-hacking",
@@ -190,13 +190,13 @@ export const customSoftwareFAQs: FAQItem[] = [
     id: "maintenance-support",
     question: "Do you provide ongoing maintenance and support after launch?",
     answer:
-      'Absolutely. Software isn\'t "done" after launch—it needs updates, bug fixes, security patches, and feature enhancements as your business evolves. We offer flexible maintenance packages including 24/7 monitoring, regular updates, priority support, and continuous optimization. Most clients choose our managed support plans for peace of mind, but we can also train your internal team for self-maintenance if you prefer.',
+      'Absolutely. Software isn\'t "done" after launch—it needs updates, bug fixes, security patches, and feature enhancements as your business evolves. We offer flexible maintenance packages including 24/7 monitoring, regular updates, priority support, and continuous optimisation. Most clients choose our managed support plans for peace of mind, but we can also train your internal team for self-maintenance if you prefer.',
   },
   {
     id: "system-integration",
     question: "Can you integrate with our existing systems and databases?",
     answer:
-      "Yes, integration is one of our core strengths. We specialize in connecting new software with legacy systems, third-party APIs, CRM platforms, accounting software, payment gateways, and any other tools in your tech stack. We'll audit your current systems during discovery, identify integration requirements, and build secure connections that ensure data flows seamlessly without manual entry or synchronization headaches.",
+      "Yes, integration is one of our core strengths. We specialise in connecting new software with legacy systems, third-party APIs, CRM platforms, accounting software, payment gateways, and any other tools in your tech stack. We'll audit your current systems during discovery, identify integration requirements, and build secure connections that ensure data flows seamlessly without manual entry or synchronisation headaches.",
   },
   {
     id: "security-compliance",
@@ -243,11 +243,11 @@ export const businessConsultancyFAQs: FAQItem[] = [
     id: "consulting-engagement-duration",
     question: "How long does a typical consulting engagement last?",
     answer:
-      "Engagement length varies by scope and objectives. Focused projects like AI feasibility studies or process optimization might take 6-8 weeks. Comprehensive transformations involving strategy development and implementation support often span 6-12 months. We offer flexible engagement models—project-based for defined initiatives, retainer arrangements for ongoing advisory support, or interim executive roles for organizations needing leadership during transition periods. We'll recommend the structure that best serves your needs.",
+      "Engagement length varies by scope and objectives. Focused projects like AI feasibility studies or process optimisation might take 6-8 weeks. Comprehensive transformations involving strategy development and implementation support often span 6-12 months. We offer flexible engagement models—project-based for defined initiatives, retainer arrangements for ongoing advisory support, or interim executive roles for organizations needing leadership during transition periods. We'll recommend the structure that best serves your needs.",
   },
   {
     id: "industry-specialization",
-    question: "What industries do you specialize in?",
+    question: "What industries do you specialise in?",
     answer:
       "We work across diverse sectors including healthcare, financial services, manufacturing, retail, technology, professional services, and logistics. While we bring industry-specific insights, we also leverage cross-industry perspectives that spark innovation—solutions from one sector often solve problems in another. Our consultants have led transformations in multiple industries, bringing battle-tested frameworks while respecting your sector's unique regulatory, competitive, and operational realities.",
   },
@@ -268,13 +268,13 @@ export const businessConsultancyFAQConfig = {
   categoryTag: "FAQ'S",
   heading: "Answers",
   description:
-    "Find answers to common questions about business consultancy, AI implementation, and how we help optimize operations.",
+    "Find answers to common questions about business consultancy, AI implementation, and how we help optimise operations.",
   imageUrl: "/d1.avif",
   imageAlt: "FAQ illustration",
   serviceTags: [
     "Business Consultancy",
     "AI Consultancy",
-    "Process Optimization",
+    "Process Optimisation",
   ],
   ctaButton: {
     label: "Book a Free Call",
@@ -293,13 +293,13 @@ export const digitalMarketingFAQs: FAQItem[] = [
     id: "social-media-platforms",
     question: "Should we focus on all social media platforms or just a few?",
     answer:
-      "Quality over quantity—it's better to excel on 2-3 platforms than spread yourself thin across everything. The right platforms depend on your audience, industry, and content strengths. B2B companies often prioritize LinkedIn. Visual brands thrive on Instagram. Video-first brands leverage YouTube and TikTok. We audit where your audience actually spends time, where competitors succeed, and which platforms align with your content capabilities, then focus resources where they'll deliver maximum impact.",
+      "Quality over quantity—it's better to excel on 2-3 platforms than spread yourself thin across everything. The right platforms depend on your audience, industry, and content strengths. B2B companies often prioritise LinkedIn. Visual brands thrive on Instagram. Video-first brands leverage YouTube and TikTok. We audit where your audience actually spends time, where competitors succeed, and which platforms align with your content capabilities, then focus resources where they'll deliver maximum impact.",
   },
   {
     id: "content-creation",
     question: "Do we need to create all our own content or can you handle it?",
     answer:
-      "We offer both full-service content creation and hybrid models. Many clients prefer us to handle everything—strategy, copywriting, graphic design, video production, and posting—for consistency and quality. Others have internal content creators but need strategic direction and optimization support. We're flexible, working within your preferences and budget constraints. Either way, we ensure content aligns with brand voice, strategic objectives, and platform best practices.",
+      "We offer both full-service content creation and hybrid models. Many clients prefer us to handle everything—strategy, copywriting, graphic design, video production, and posting—for consistency and quality. Others have internal content creators but need strategic direction and optimisation support. We're flexible, working within your preferences and budget constraints. Either way, we ensure content aligns with brand voice, strategic objectives, and platform best practices.",
   },
   {
     id: "marketing-roi-measurement",
@@ -355,8 +355,8 @@ export const contactFAQs: FAQItem[] = [
       "Please complete our contact form or click the WhatsApp link to get in touch. We look forward to connecting with you and assisting with your needs.",
   },
   {
-    id: "customized-solutions-offer",
-    question: "Does Ansely offer customized solutions?",
+    id: "customised-solutions-offer",
+    question: "Does Ansely offer customised solutions?",
     answer:
       "No tech challenge is too complex for us. Give us a call, and we'll make it happen!",
   },
@@ -407,7 +407,7 @@ export const mobileAppDevelopmentFAQs: FAQItem[] = [
     id: "app-maintenance-updates",
     question: "Do you provide maintenance and updates after launch?",
     answer:
-      "Yes, we offer ongoing support and maintenance packages. Apps need regular updates for OS compatibility (iOS/Android release new versions annually), security patches, bug fixes, and feature enhancements. Our maintenance plans include: monthly updates, performance monitoring, crash reporting and fixes, OS compatibility updates, analytics review, and feature additions. Most clients invest 15-20% of initial development cost annually in maintenance. We also provide emergency support for critical issues and help with App Store optimization.",
+      "Yes, we offer ongoing support and maintenance packages. Apps need regular updates for OS compatibility (iOS/Android release new versions annually), security patches, bug fixes, and feature enhancements. Our maintenance plans include: monthly updates, performance monitoring, crash reporting and fixes, OS compatibility updates, analytics review, and feature additions. Most clients invest 15-20% of initial development cost annually in maintenance. We also provide emergency support for critical issues and help with App Store optimisation.",
   },
   {
     id: "mvp-vs-full-app",
@@ -433,26 +433,26 @@ export const mobileAppDevelopmentFAQs: FAQItem[] = [
     id: "backend-infrastructure",
     question: "Do we need a backend/server for our app, and who builds it?",
     answer:
-      "Most apps need a backend for user accounts, data storage, push notifications, and API integrations. We build scalable backend infrastructure using modern cloud platforms (AWS, Firebase, Google Cloud). Options include: serverless architecture (cost-effective, auto-scaling), traditional servers (more control, predictable costs), or Backend-as-a-Service (fastest setup, limited customization). We handle everything: database design, API development, server setup, security configuration, and ongoing hosting. For simple apps, we can use Firebase to reduce costs and speed up development.",
+      "Most apps need a backend for user accounts, data storage, push notifications, and API integrations. We build scalable backend infrastructure using modern cloud platforms (AWS, Firebase, Google Cloud). Options include: serverless architecture (cost-effective, auto-scaling), traditional servers (more control, predictable costs), or Backend-as-a-Service (fastest setup, limited customisation). We handle everything: database design, API development, server setup, security configuration, and ongoing hosting. For simple apps, we can use Firebase to reduce costs and speed up development.",
   },
   {
     id: "post-launch-marketing",
     question:
       "What happens after launch? Do you help with marketing and user acquisition?",
     answer:
-      "Launching is just the beginning. We provide post-launch support including: App Store Optimization (ASO) to improve discoverability, analytics setup and monitoring, user feedback analysis, crash monitoring and quick fixes, and feature planning based on data. While our core expertise is development, we partner with marketing specialists or can recommend proven strategies: social media campaigns, influencer partnerships, paid ads (Google/Apple), PR outreach, and referral programs. We help track key metrics—downloads, retention, engagement—and iterate the app based on real user behavior.",
+      "Launching is just the beginning. We provide post-launch support including: App Store Optimisation (ASO) to improve discoverability, analytics setup and monitoring, user feedback analysis, crash monitoring and quick fixes, and feature planning based on data. While our core expertise is development, we partner with marketing specialists or can recommend proven strategies: social media campaigns, influencer partnerships, paid ads (Google/Apple), PR outreach, and referral programs. We help track key metrics—downloads, retention, engagement—and iterate the app based on real user behaviour.",
   },
   {
     id: "app-monetization",
-    question: "What are the best ways to monetize a mobile app?",
+    question: "What are the best ways to monetise a mobile app?",
     answer:
-      "Monetization depends on your app type and audience. Common models: In-app purchases (consumables, subscriptions, unlockable features)—best for gaming and content apps. Subscriptions (recurring revenue)—ideal for SaaS, productivity, or premium content apps. Freemium (free basic + paid premium)—drives downloads while converting engaged users. Advertising (banner, interstitial, rewarded ads)—works for high-traffic free apps but can hurt UX. Paid downloads—viable for unique, high-value apps. We help choose the right model, implement payment systems (Apple Pay, Google Pay, Stripe), and optimize pricing strategy based on market research and competitor analysis.",
+      "Monetisation depends on your app type and audience. Common models: In-app purchases (consumables, subscriptions, unlockable features)—best for gaming and content apps. Subscriptions (recurring revenue)—ideal for SaaS, productivity, or premium content apps. Freemium (free basic + paid premium)—drives downloads while converting engaged users. Advertising (banner, interstitial, rewarded ads)—works for high-traffic free apps but can hurt UX. Paid downloads—viable for unique, high-value apps. We help choose the right model, implement payment systems (Apple Pay, Google Pay, Stripe), and optimise pricing strategy based on market research and competitor analysis.",
   },
   {
     id: "app-analytics-tracking",
-    question: "How do you track app performance and user behavior?",
+    question: "How do you track app performance and user behaviour?",
     answer:
-      "We integrate comprehensive analytics from day one. Tools include: Firebase Analytics (free, powerful, cross-platform tracking), Mixpanel or Amplitude (advanced user behavior analysis), Crashlytics (crash reporting and diagnostics), and custom event tracking for specific user actions. We track: daily/monthly active users, retention rates, session duration, feature usage, conversion funnels, user flows, and crash-free rates. You get a custom dashboard showing key metrics with monthly reports highlighting insights and recommendations. Data-driven decisions beat guesswork—we help you understand what users love and where they struggle.",
+      "We integrate comprehensive analytics from day one. Tools include: Firebase Analytics (free, powerful, cross-platform tracking), Mixpanel or Amplitude (advanced user behaviour analysis), Crashlytics (crash reporting and diagnostics), and custom event tracking for specific user actions. We track: daily/monthly active users, retention rates, session duration, feature usage, conversion funnels, user flows, and crash-free rates. You get a custom dashboard showing key metrics with monthly reports highlighting insights and recommendations. Data-driven decisions beat guesswork—we help you understand what users love and where they struggle.",
   },
 ];
 

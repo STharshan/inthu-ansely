@@ -11,7 +11,7 @@ const ServicePageSection: React.FC = () => {
     <ServicePageTemplate
       categoryTag="Business Consultancy & AI Consultancy"
       heading="Services"
-      description="Get expert strategic guidance on business optimization, AI implementation, and digital transformation to unlock growth opportunities, improve efficiency, and make data-driven decisions."
+      description="Get expert strategic guidance on business optimisation, AI implementation, and digital transformation to unlock growth opportunities, improve efficiency, and make data-driven decisions."
       topicButtons={businessConsultancyTopicButtons}
       ctaButtons={businessConsultancyCTAButtons}
       imageUrl="/d1.avif"

@@ -18,7 +18,7 @@ const AIStrengthsAndLimits = () => {
   return (
     <div className="prose max-w-none space-y-8 text-gray-900 dark:text-white transition-colors duration-300">
       <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-        Think of AI as a specialized team member with specific strengths and limitations.
+        Think of AI as a specialised team member with specific strengths and limitations.
       </p>
 
       <div className="grid md:grid-cols-2 gap-6">

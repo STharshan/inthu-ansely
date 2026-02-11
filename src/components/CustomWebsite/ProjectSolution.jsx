@@ -28,7 +28,7 @@ const ProjectSolution = () => {
               We take a strategy-first approach to custom website development—designing each website from the ground up to match your brand identity and business goals.
             </p>
             <p className="text-xl leading-relaxed text-gray-500 dark:text-gray-400">
-             By combining modern UI/UX design, responsive development, SEO-ready architecture, and performance optimization, we deliver websites that are fast, scalable, and built to convert.
+             By combining modern UI/UX design, responsive development, SEO-ready architecture, and performance optimisation, we deliver websites that are fast, scalable, and built to convert.
             </p>
           </div>
 

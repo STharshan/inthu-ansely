@@ -19,7 +19,7 @@ const LearningDashboard = () => {
               Explore Modules.
             </h1>
             <p className="text-blue-100 opacity-90 text-lg md:text-xl max-w-xl font-medium">
-              Select a specialized module to start your professional learning
+              Select a specialised module to start your professional learning
               journey.
             </p>
           </div>

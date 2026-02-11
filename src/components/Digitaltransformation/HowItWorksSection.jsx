@@ -116,11 +116,11 @@ export default function HowItWorksTransformation() {
                 04
               </span>
               <h4 className="text-xs font-semibold uppercase tracking-wider text-black dark:text-white mb-2">
-                Optimize & Scale
+                Optimise & Scale
               </h4>
               <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 leading-relaxed">
                 Enjoy streamlined operations that run smoothly while we monitor
-                performance, gather feedback, and continuously optimize. Your
+                performance, gather feedback, and continuously optimise. Your
                 automation improves over time, adapting as your business
                 evolves.
               </p>

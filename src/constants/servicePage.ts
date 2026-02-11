@@ -20,7 +20,7 @@ export const serviceCards: ServiceCard[] = [
     icon: FaRobot,
     title: "Digital Transformation & Smart Automation",
     description:
-      "Modernize your business with comprehensive digital transformation strategies and intelligent automation solutions that streamline operations, reduce costs, and drive innovation across your organization.",
+      "Modernise your business with comprehensive digital transformation strategies and intelligent automation solutions that streamline operations, reduce costs, and drive innovation across your organisation.",
   },
   {
     id: "digital-partnerships",
@@ -41,14 +41,14 @@ export const serviceCards: ServiceCard[] = [
     icon: FaLaptopCode,
     title: "Custom Software Development",
     description:
-      "Develop scalable, enterprise-grade software solutions and applications that perfectly align with your business needs, from cloud applications to mobile apps and legacy system modernization.",
+      "Develop scalable, enterprise-grade software solutions and applications that perfectly align with your business needs, from cloud applications to mobile apps and legacy system modernisation.",
   },
   {
     id: "business-ai-consultancy",
     icon: FaBrain,
     title: "Business Consultancy & AI Consultancy",
     description:
-      "Get expert strategic guidance on business optimization, AI implementation, and digital transformation to unlock growth opportunities, improve efficiency, and make data-driven decisions.",
+      "Get expert strategic guidance on business optimisation, AI implementation, and digital transformation to unlock growth opportunities, improve efficiency, and make data-driven decisions.",
   },
   {
     id: "digital-marketing-branding",
@@ -136,7 +136,7 @@ export const customWebsitesTopicButtons: TopicButton[] = [
   { id: "responsive-design", label: "Responsive Design" },
   { id: "ecommerce", label: "E-Commerce" },
   { id: "cms", label: "CMS Development" },
-  { id: "seo", label: "SEO Optimization" },
+  { id: "seo", label: "SEO Optimisation" },
 ];
 
 export const customWebsitesCTAButtons: CTAButton[] = [
@@ -181,7 +181,7 @@ export const customSoftwareCTAButtons: CTAButton[] = [
 export const businessConsultancyTopicButtons: TopicButton[] = [
   { id: "business-strategy", label: "Business Strategy" },
   { id: "ai-consultancy", label: "AI Consultancy" },
-  { id: "process-optimization", label: "Process Optimization" },
+  { id: "process-optimization", label: "Process Optimisation" },
   { id: "data-strategy", label: "Data Strategy" },
 ];
 
@@ -261,7 +261,7 @@ export const mobileAppDevelopmentServiceTags: string[] = [
   "Cloud Integration",
   "Push Notifications",
   "Payment Integration",
-  "App Store Optimization",
+  "App Store Optimisation",
   "App Testing",
   "App Maintenance",
   "Cross-Platform",

@@ -16,7 +16,7 @@ const features = [
     id: "feature-2",
     title: "Vehicle Jumb Start Service",
     description:
-      "Visualize your spending habits with our powerful expense tracking tool. Easy-to-read charts show exactly where your money goes, categorizing expenses like housing, utilities, and food.",
+      "Visualise your spending habits with our powerful expense tracking tool. Easy-to-read charts show exactly where your money goes, categorising expenses like housing, utilities, and food.",
     image:
       "https://framerusercontent.com/images/g9UtqL0YK4GoykBSin6XkmmzS7o.png",
   },

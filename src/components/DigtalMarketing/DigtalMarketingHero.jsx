@@ -30,7 +30,7 @@ export default function DigitalMarketingHero() {
             className="text-white dark:text-white font-bold leading-tight
         text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl transition-colors duration-300"
           >
-            Elevating brands that deserve to be recognized.
+            Elevating brands that deserve to be recognised.
           </h1>
         </div>
       </div>

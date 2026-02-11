@@ -5,7 +5,7 @@ const CustomSoftwareModule = () => {
     {
       icon: Lightbulb,
       title: "Strategic Thinking",
-      desc: "Learn to question processes and identify what should be automated rather than optimized",
+      desc: "Learn to question processes and identify what should be automated rather than optimised",
     },
     {
       icon: Zap,

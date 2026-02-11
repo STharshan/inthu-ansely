@@ -22,7 +22,7 @@ export const jobPositions: JobPosition[] = [
       "As a Senior Front-End Engineer, you will lead the development of complex React applications, mentor junior developers, and drive best practices across our frontend codebase. You will collaborate with product managers and designers to translate requirements into elegant, performant interfaces that delight our users.",
     responsibilities: [
       "Design and implement scalable React components and architecture patterns.",
-      "Optimize application performance and ensure cross-browser compatibility.",
+      "Optimise application performance and ensure cross-browser compatibility.",
       "Collaborate with backend engineers to integrate RESTful APIs and GraphQL endpoints.",
       "Mentor junior developers and conduct thorough code reviews.",
       "Stay current with React ecosystem trends and introduce improvements to our tech stack.",
@@ -43,7 +43,7 @@ export const jobPositions: JobPosition[] = [
       "As a Senior Backend Engineer, you will be responsible for designing and implementing server-side logic, ensuring high performance and responsiveness to requests from the front-end. You will integrate user-facing elements with server-side logic and build reusable code and libraries for future use.",
     responsibilities: [
       "Design, develop, and maintain scalable backend services and APIs.",
-      "Optimize database queries and ensure data integrity across systems.",
+      "Optimise database queries and ensure data integrity across systems.",
       "Implement security best practices and data protection measures.",
       "Collaborate with front-end developers on API design and integration.",
       "Participate in system architecture decisions and technical planning.",

@@ -20,7 +20,7 @@ const HowWeWorkSection = () => {
     {
       title: "Review & Continuous Improvement",
       description:
-        "Strategic success requires ongoing refinement. We establish performance tracking systems, conduct regular progress reviews, analyze what's working (and what isn't), and adjust strategies based on results and changing conditions. Our commitment extends beyond initial implementation—we ensure your strategy evolves with your business, maintaining relevance and driving continuous improvement over time.",
+        "Strategic success requires ongoing refinement. We establish performance tracking systems, conduct regular progress reviews, analyse what's working (and what isn't), and adjust strategies based on results and changing conditions. Our commitment extends beyond initial implementation—we ensure your strategy evolves with your business, maintaining relevance and driving continuous improvement over time.",
     },
   ];
 

@@ -27,7 +27,7 @@
   "content": [
     {
       "type": "intro",
-      "text": "I spent six months watching a client try to force their unique workflow into a standard CRM. They customized it so heavily that updates broke everything. They spent more time working around limitations than using the system. Finally, they asked us to build something custom. The new system cut their daily admin time from four hours to 30 minutes."
+      "text": "I spent six months watching a client try to force their unique workflow into a standard CRM. They customised it so heavily that updates broke everything. They spent more time working around limitations than using the system. Finally, they asked us to build something custom. The new system cut their daily admin time from four hours to 30 minutes."
     },
     {
       "type": "paragraph",
@@ -105,7 +105,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Software requires ongoing attention. Bug fixes. Security patches. Feature updates. Performance optimization. Budget for maintenance. Typically 15-20% of initial development cost annually. This isn't optional. It's essential."
+      "text": "Software requires ongoing attention. Bug fixes. Security patches. Feature updates. Performance optimisation. Budget for maintenance. Typically 15-20% of initial development cost annually. This isn't optional. It's essential."
     },
     {
       "type": "paragraph",

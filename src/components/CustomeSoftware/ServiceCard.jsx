@@ -22,7 +22,7 @@ const services = [
     id: 2,
     title: "Backend & API Development",
     description:
-      "From robust APIs to cloud-native infrastructures, we build the invisible engines that power your application. Secure, scalable, and optimized for performance—because what's under the hood matters.",
+      "From robust APIs to cloud-native infrastructures, we build the invisible engines that power your application. Secure, scalable, and optimised for performance—because what's under the hood matters.",
     icon: FaServer,
   },
   {

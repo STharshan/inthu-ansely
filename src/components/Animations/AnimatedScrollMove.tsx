@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { motion } from 'motion/react';
-import { ReactNode } from 'react';
+import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
 interface ScrollMoveProps {
   children: ReactNode;
@@ -11,12 +11,17 @@ interface ScrollMoveProps {
   delay?: number;
 }
 
-export default function ScrollMove({ children, x = 0, y = 0, duration = 0.6, delay = 0 }: ScrollMoveProps) {
-  // 根据触发点类型设置不同的视口参数
+export default function ScrollMove({
+  children,
+  x = 0,
+  y = 0,
+  duration = 0.6,
+  delay = 0,
+}: ScrollMoveProps) {
   const viewportOptions = {
-    margin: '-30% 0px -30% 0px', // 上下扩展30%的触发区域
+    margin: "-30% 0px -30% 0px",
     amount: 1,
-    once: true // Prevent re-triggering
+    once: true,
   };
 
   return (
@@ -25,10 +30,10 @@ export default function ScrollMove({ children, x = 0, y = 0, duration = 0.6, del
       whileInView={{
         x,
         y,
-        transition: { duration, delay }
+        transition: { duration, delay },
       }}
       viewport={viewportOptions}
-      style={{ willChange: 'transform' }}
+      style={{ willChange: "transform" }}
     >
       {children}
     </motion.div>

@@ -60,8 +60,8 @@ export default function UserExperienceSection() {
       ),
     },
     personalization: {
-      title: "Dynamic personalization",
-      desc: "Content adapts to user behavior and preferences",
+      title: "Dynamic personalisation",
+      desc: "Content adapts to user behaviour and preferences",
       tip: "Tailored experiences that increase engagement",
       icon: (
         <svg
@@ -101,7 +101,7 @@ export default function UserExperienceSection() {
             ["transitions", "Instant page transitions"],
             ["interactions", "App-like interactions"],
             ["forms", "Smart forms"],
-            ["personalization", "Dynamic personalization"],
+            ["personalization", "Dynamic personalisation"],
           ].map(([key, label]) => (
             <button
               key={key}

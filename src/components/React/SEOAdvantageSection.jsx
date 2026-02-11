@@ -42,7 +42,7 @@ export default function SEOAdvantageSection() {
                 <div className="grid md:grid-cols-2 gap-6">
                   {[
                     "Server-Side Rendered (SSR) or Statically Generated (SSG)",
-                    "Optimized for Core Web Vitals",
+                    "Optimised for Core Web Vitals",
                     "Built with clean, lightweight HTML",
                     "Google can crawl your site faster",
                     "Pages index more reliably",
@@ -82,7 +82,7 @@ export default function SEOAdvantageSection() {
                     </div>
                     <ul className="space-y-2 text-sm text-black dark:text-white">
                       <li>• SEO is engineered, not patched</li>
-                      <li>• Built-in optimization</li>
+                      <li>• Built-in optimisation</li>
                       <li>• No plugin dependencies</li>
                       <li>• Consistent performance</li>
                     </ul>

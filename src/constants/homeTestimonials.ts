@@ -43,7 +43,7 @@ export const homeTestimonials: HomeTestimonial[] = [
     role: 'Analytics Manager',
     company: 'Corelink',
     quote:
-      'Huge time-saver. Data is better organized. The insights we get now are actionable and fast.',
+      'Huge time-saver. Data is better organised. The insights we get now are actionable and fast.',
     avatarUrl: '/w9.png',
   },
   {
