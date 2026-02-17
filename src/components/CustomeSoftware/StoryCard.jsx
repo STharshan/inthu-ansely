@@ -38,6 +38,10 @@ const StoryCard = ({ story }) => {
           <img
             src={story.image}
             alt={story.company}
+            width={600}
+            height={320}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
         </div>

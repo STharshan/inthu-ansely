@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { motion, easeOut } from "framer-motion";
 
 interface Achievement {
@@ -35,7 +35,7 @@ const defaultAchievements: Achievement[] = [
 ];
 
 const Achievements: React.FC<AchievementsProps> = ({ achievements = defaultAchievements }) => {
-  const containerVariants = {
+  const containerVariants = useMemo(() => ({
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -43,9 +43,9 @@ const Achievements: React.FC<AchievementsProps> = ({ achievements = defaultAchie
         staggerChildren: 0.15,
       },
     },
-  };
+  }), []);
 
-  const cardVariants = {
+  const cardVariants = useMemo(() => ({
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -55,7 +55,7 @@ const Achievements: React.FC<AchievementsProps> = ({ achievements = defaultAchie
         ease: easeOut,
       },
     },
-  };
+  }), []);
 
   return (
     <section className="relative py-12 sm:py-20 md:py-32 bg-white dark:bg-black overflow-hidden transition-colors duration-300">

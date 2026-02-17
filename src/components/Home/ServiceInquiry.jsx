@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ArrowRight, ArrowLeft, CheckCircle, Upload } from 'lucide-react'
 import emailjs from '@emailjs/browser'
 
@@ -26,12 +26,23 @@ const ServiceInquiryForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
+  // Revoke object URLs on unmount to prevent memory leaks
+  useEffect(() => {
+    return () => {
+      imagePreviews.forEach((url) => URL.revokeObjectURL(url))
+      videoPreviews.forEach((url) => URL.revokeObjectURL(url))
+    }
+  }, [imagePreviews, videoPreviews])
+
   const handleFileChange = (e, type) => {
     const files = Array.from(e.target.files)
     if (type === 'image') {
+      // Revoke old URLs before creating new ones
+      imagePreviews.forEach((url) => URL.revokeObjectURL(url))
       setImageFiles(files)
       setImagePreviews(files.map((file) => URL.createObjectURL(file)))
     } else {
+      videoPreviews.forEach((url) => URL.revokeObjectURL(url))
       setVideoFiles(files)
       setVideoPreviews(files.map((file) => URL.createObjectURL(file)))
     }

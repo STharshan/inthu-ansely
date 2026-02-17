@@ -4,11 +4,6 @@ import { Shield, AlertTriangle, Lock } from "lucide-react";
 export default function SecuritySection() {
   return (
     <>
-      {/* Inter font – inline only */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-      `}</style>
-
       <div
         className="min-w-full h-full overflow-y-auto bg-white dark:bg-black transition-colors duration-500"
         style={{ fontFamily: "Inter, system-ui, sans-serif" }}

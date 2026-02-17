@@ -1,4 +1,5 @@
 import React from "react";
+import LazyImage from "../LazyImage";
 
 const ProjectSolution = () => {
   return (
@@ -36,10 +37,12 @@ const ProjectSolution = () => {
 
         {/* Bottom Large Image */}
         <div className="w-full overflow-hidden rounded-2xl">
-          <img
+          <LazyImage
             src="/w3.jpeg"
             alt="Solution Visual"
-            className="w-full h-[260px] sm:h-[360px] md:h-[460px] lg:h-[560px] object-cover"
+            width={1200}
+            height={560}
+            className="w-full h-[260px] sm:h-[360px] md:h-[460px] lg:h-[560px]"
           />
         </div>
 
@@ -51,10 +54,12 @@ const ProjectSolution = () => {
 const ImageCard = ({ src }) => {
   return (
     <div className="overflow-hidden rounded-2xl">
-      <img
+      <LazyImage
         src={src}
         alt="Gallery"
-        className="w-full h-[220px] sm:h-[300px] md:h-[360px] object-cover"
+        width={600}
+        height={360}
+        className="w-full h-[220px] sm:h-[300px] md:h-[360px]"
       />
     </div>
   );

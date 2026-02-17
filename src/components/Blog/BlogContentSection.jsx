@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 const BlogContentSection = () => {
   const [activeSection, setActiveSection] = useState('header-2');
+  const ticking = useRef(false);
 
   const tableOfContents = [
     { id: 'header-1', title: 'Why It Matters' },
@@ -10,23 +11,29 @@ const BlogContentSection = () => {
     { id: 'header-4', title: 'Getting Started' }
   ];
 
+  const updateActiveSection = useCallback(() => {
+    const scrollPosition = window.scrollY + 100;
+    for (let i = tableOfContents.length - 1; i >= 0; i--) {
+      const section = document.getElementById(tableOfContents[i].id);
+      if (section && section.offsetTop <= scrollPosition) {
+        setActiveSection(tableOfContents[i].id);
+        break;
+      }
+    }
+    ticking.current = false;
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
-      const sections = tableOfContents.map(item => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 100;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(tableOfContents[i].id);
-          break;
-        }
+      if (!ticking.current) {
+        ticking.current = true;
+        requestAnimationFrame(updateActiveSection);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [updateActiveSection]);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
