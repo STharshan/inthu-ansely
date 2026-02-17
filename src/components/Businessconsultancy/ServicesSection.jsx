@@ -68,7 +68,7 @@ const BusinessConsultancyServicesSection = () => {
           </h2>
 
           <p className="text-gray-700 dark:text-gray-300 max-w-3xl text-lg leading-relaxed">
-            We deliver specialized consulting services that address today’s
+            We deliver specialised consulting services that address today’s
             operational realities while positioning you for tomorrow’s
             opportunities through strategic AI integration.
           </p>

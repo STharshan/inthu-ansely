@@ -18,9 +18,9 @@
     "Why custom beats template",
     "Defining your website goals",
     "User experience design principles",
-    "Performance and optimization",
+    "Performance and optimisation",
     "SEO and discoverability",
-    "Conversion optimization",
+    "Conversion optimisation",
     "Maintenance and evolution",
     "Key takeaways"
   ],
@@ -44,7 +44,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Custom development also means optimized performance, better SEO, enhanced security, and the ability to integrate with your existing tools and systems seamlessly. I've seen custom sites load in under a second while template sites take five seconds. That difference matters. A lot."
+      "text": "Custom development also means optimised performance, better SEO, enhanced security, and the ability to integrate with your existing tools and systems seamlessly. I've seen custom sites load in under a second while template sites take five seconds. That difference matters. A lot."
     },
     {
       "type": "heading",
@@ -75,11 +75,11 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "Performance and optimization"
+      "text": "Performance and optimisation"
     },
     {
       "type": "paragraph",
-      "text": "Speed matters. Every second of load time costs conversions. Optimize images. Minimize code. Leverage caching. Choose hosting that matches your traffic needs. I aim for sub-two-second load times on 3G connections. If it loads fast on slow networks, it'll fly on fast ones."
+      "text": "Speed matters. Every second of load time costs conversions. Optimise images. Minimise code. Leverage caching. Choose hosting that matches your traffic needs. I aim for sub-two-second load times on 3G connections. If it loads fast on slow networks, it'll fly on fast ones."
     },
     {
       "type": "paragraph",
@@ -92,7 +92,7 @@
     },
     {
       "type": "paragraph",
-      "text": "A beautiful website that nobody can find is a missed opportunity. Build SEO into the foundation. Semantic HTML. Proper meta tags. Structured data. Fast load times. Mobile responsiveness. These technical foundations matter more than most people realize."
+      "text": "A beautiful website that nobody can find is a missed opportunity. Build SEO into the foundation. Semantic HTML. Proper meta tags. Structured data. Fast load times. Mobile responsiveness. These technical foundations matter more than most people realise."
     },
     {
       "type": "paragraph",
@@ -101,7 +101,7 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "Conversion optimization"
+      "text": "Conversion optimisation"
     },
     {
       "type": "paragraph",
@@ -131,11 +131,11 @@
     },
     {
       "type": "paragraph",
-      "text": "Custom websites are investments in your brand and business growth. They require upfront planning, ongoing attention, and continuous optimization. But when done right, they become powerful tools that drive measurable business results."
+      "text": "Custom websites are investments in your brand and business growth. They require upfront planning, ongoing attention, and continuous optimisation. But when done right, they become powerful tools that drive measurable business results."
     },
     {
       "type": "paragraph",
-      "text": "The best websites don't just look good. They perform. They convert. They grow your business. Start with clear goals. Build with performance in mind. Optimize continuously. The results will follow."
+      "text": "The best websites don't just look good. They perform. They convert. They grow your business. Start with clear goals. Build with performance in mind. Optimise continuously. The results will follow."
     }
   ]
 }

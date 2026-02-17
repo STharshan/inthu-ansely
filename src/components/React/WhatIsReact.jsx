@@ -4,11 +4,6 @@ import { Zap, Rocket, Lightbulb, X, Check } from "lucide-react";
 export default function WhatIsReactSection() {
   return (
     <>
-      {/* Inline Inter font */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-      `}</style>
-
       <section
         id="what-is-react"
         className="relative py-24 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-black transition-colors duration-500"

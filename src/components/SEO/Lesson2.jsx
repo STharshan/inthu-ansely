@@ -67,7 +67,7 @@ const SEOLesson2 = ({ onBackToModules }) => {
           heading="Why Businesses Burn Money"
           comparison={[
             { title: "Wrong Channel", description: "Spending on social when customers search on Google" },
-            { title: "Ignoring Intent", description: "Not matching marketing to customer behavior" }
+            { title: "Ignoring Intent", description: "Not matching marketing to customer behaviour" }
           ]}
           keyTakeaways={["Match your marketing to how customers buy", "Local services need SEO, not just social"]}
         />

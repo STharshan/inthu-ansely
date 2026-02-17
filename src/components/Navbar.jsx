@@ -92,7 +92,7 @@ export default function Navbar() {
       ></div>
 
       <div
-        className={`relative w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-5 transition-all duration-300 ease-in-out ${
+        className={`relative w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-5 transition-[background-color,box-shadow,border-color] duration-300 ease-in-out ${
           scrolled
             ? isDark
               ? "text-white"

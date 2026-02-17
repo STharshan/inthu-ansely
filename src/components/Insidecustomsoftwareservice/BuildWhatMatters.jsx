@@ -3,7 +3,7 @@ const BuildWhatMatters = () => {
     {
       num: "01",
       title: "Identify tasks wasting founder or staff time",
-      desc: "We analyze your current workflows to find where time is being lost",
+      desc: "We analyse your current workflows to find where time is being lost",
     },
     {
       num: "02",

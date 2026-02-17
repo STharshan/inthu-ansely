@@ -15,7 +15,7 @@ export default function AboutUs() {
         </div>
         <p className="text-gray-600 max-w-4xl mx-auto md:mx-0 mb-12">
           In the ever-evolving world of innovation, our mission is to bridge elegance and precision.
-          From smart automation to optimized solutions, we combine artistry and science to deliver
+          From smart automation to optimised solutions, we combine artistry and science to deliver
           transformative results. Our team continues to push the boundaries of what’s possible.
         </p>
 

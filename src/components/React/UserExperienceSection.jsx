@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ArrowUp } from "lucide-react";
 
 export default function UserExperienceSection() {
   const [active, setActive] = useState("transitions");
@@ -59,8 +60,8 @@ export default function UserExperienceSection() {
       ),
     },
     personalization: {
-      title: "Dynamic personalization",
-      desc: "Content adapts to user behavior and preferences",
+      title: "Dynamic personalisation",
+      desc: "Content adapts to user behaviour and preferences",
       tip: "Tailored experiences that increase engagement",
       icon: (
         <svg
@@ -100,7 +101,7 @@ export default function UserExperienceSection() {
             ["transitions", "Instant page transitions"],
             ["interactions", "App-like interactions"],
             ["forms", "Smart forms"],
-            ["personalization", "Dynamic personalization"],
+            ["personalization", "Dynamic personalisation"],
           ].map(([key, label]) => (
             <button
               key={key}
@@ -135,13 +136,13 @@ export default function UserExperienceSection() {
         {/* Stats */}
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            ["↑ 40%", "Longer session duration"],
-            ["↑ 35%", "Higher engagement rates"],
-            ["↑ 25%", "More enquiries & bookings"],
+            ["40%", "Longer session duration"],
+            ["35%", "Higher engagement rates"],
+            ["25%", "More enquiries & bookings"],
           ].map(([value, label], i) => (
             <div key={i} className="rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 p-6 text-center transition-colors">
-              <div className="text-3xl font-extrabold text-[#0045EF] mb-2">
-                {value}
+              <div className="text-3xl font-extrabold text-[#0045EF] mb-2 flex items-center justify-center gap-1">
+                <ArrowUp className="h-7 w-7" />{value}
               </div>
               <p className="text-sm text-gray-700 dark:text-gray-300">{label}</p>
             </div>

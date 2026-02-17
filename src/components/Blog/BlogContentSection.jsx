@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 const BlogContentSection = () => {
   const [activeSection, setActiveSection] = useState('header-2');
+  const ticking = useRef(false);
 
   const tableOfContents = [
     { id: 'header-1', title: 'Why It Matters' },
@@ -10,23 +11,29 @@ const BlogContentSection = () => {
     { id: 'header-4', title: 'Getting Started' }
   ];
 
+  const updateActiveSection = useCallback(() => {
+    const scrollPosition = window.scrollY + 100;
+    for (let i = tableOfContents.length - 1; i >= 0; i--) {
+      const section = document.getElementById(tableOfContents[i].id);
+      if (section && section.offsetTop <= scrollPosition) {
+        setActiveSection(tableOfContents[i].id);
+        break;
+      }
+    }
+    ticking.current = false;
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
-      const sections = tableOfContents.map(item => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 100;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(tableOfContents[i].id);
-          break;
-        }
+      if (!ticking.current) {
+        ticking.current = true;
+        requestAnimationFrame(updateActiveSection);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [updateActiveSection]);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -119,7 +126,7 @@ const BlogContentSection = () => {
               </h3>
 
               <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                To make adoption simple, Vectura includes a set of thoughtfully designed default roles: Finance Lead, Budget Owner, Approver, and Viewer. These match common patterns we've seen across hundreds of teams. But we know every organization is different — so you can also customize roles to match your unique structure.
+                To make adoption simple, Vectura includes a set of thoughtfully designed default roles: Finance Lead, Budget Owner, Approver, and Viewer. These match common patterns we've seen across hundreds of teams. But we know every organisation is different — so you can also customise roles to match your unique structure.
               </p>
 
               <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
@@ -161,7 +168,7 @@ const BlogContentSection = () => {
               </p>
 
               <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                We've designed the setup to be intuitive, with built-in guides and suggestions to help you get started quickly. And if you're unsure how to organize your roles or permissions, our team is always here to help.
+                We've designed the setup to be intuitive, with built-in guides and suggestions to help you get started quickly. And if you're unsure how to organise your roles or permissions, our team is always here to help.
               </p>
             </div>
           </div>

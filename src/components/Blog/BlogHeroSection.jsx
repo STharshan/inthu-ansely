@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import LazyImage from "../LazyImage";
 
 export default function BlogHeroSection() {
   const tags = ["PERMISSIONS", "ROLE MANAGEMENT", "PROCESSES"];
@@ -41,10 +42,12 @@ export default function BlogHeroSection() {
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <img
+                <LazyImage
                   src="https://framerusercontent.com/images/cmQt0ay0xGNLe9Sc30vSaXtio.jpg"
                   alt="Clara Jensen"
-                  className="w-11 h-11 rounded-full object-cover"
+                  className="w-11 h-11 rounded-full"
+                  width={44}
+                  height={44}
                 />
                 <div>
                   <p className="font-semibold text-black dark:text-white">
@@ -80,10 +83,12 @@ export default function BlogHeroSection() {
 
         {/* Featured Image */}
         <div className="w-full">
-          <img
+          <LazyImage
             src="https://framerusercontent.com/images/2kq6l9zkPi4aa57pKEkSYHd2qU.jpg"
             alt="Featured"
-            className="w-full h-auto max-h-96 object-cover rounded-2xl"
+            className="w-full h-auto max-h-96 rounded-2xl"
+            width={1200}
+            height={384}
           />
         </div>
 

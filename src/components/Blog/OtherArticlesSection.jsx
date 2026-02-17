@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import LazyImage from "../LazyImage";
 
 export default function OtherArticlesSection() {
   const articles = [
@@ -78,16 +79,18 @@ export default function OtherArticlesSection() {
               onMouseLeave={() => setHoveredCard(null)}
             >
               {/* Image */}
-              <div className="relative overflow-hidden">
-                <img
+              <div className="relative overflow-hidden h-56">
+                <LazyImage
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full transition-transform duration-300 group-hover:scale-105"
+                  width={400}
+                  height={224}
                 />
 
                 {/* Read More */}
                 <div
-                  className={`absolute bottom-4 right-4 transition-all duration-300
+                  className={`absolute bottom-4 right-4 transition-all duration-300 z-10
                     ${
                       hoveredCard === article.id
                         ? "opacity-100 translate-y-0"
@@ -124,10 +127,12 @@ export default function OtherArticlesSection() {
 
                 {/* Author */}
                 <div className="flex items-center gap-3">
-                  <img
+                  <LazyImage
                     src={article.authorImage}
                     alt={article.authorName}
-                    className="w-11 h-11 rounded-full object-cover"
+                    className="w-11 h-11 rounded-full"
+                    width={44}
+                    height={44}
                   />
                   <div>
                     <p className="font-semibold text-sm

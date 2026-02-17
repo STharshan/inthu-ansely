@@ -23,7 +23,7 @@ const OurServicesSection = () => {
     },
     {
       title: "Execution Support",
-      subtitle: "Implementation Acceleration & Optimization",
+      subtitle: "Implementation Acceleration & Optimisation",
       shortDesc: "Diagnose blockers and inject momentum into stalled initiatives.",
       description:
         "Transformation stalled mid-flight? We diagnose what's blocking progress and inject momentum back into your initiatives. Our team steps in to troubleshoot failing automations, reconfigure workflows, retrain teams, and get implementations back on track. We've rescued countless transformation projects from the valley of disillusionment.",

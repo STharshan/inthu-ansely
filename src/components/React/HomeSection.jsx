@@ -3,11 +3,6 @@ import React from "react";
 export default function HomeSection() {
   return (
     <>
-      {/* Load Inter font */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-      `}</style>
-
       <section
         className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-black text-black dark:text-white transition-colors duration-500"
         style={{ fontFamily: "Inter, system-ui, sans-serif" }}

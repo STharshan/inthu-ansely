@@ -11,7 +11,7 @@ const ServicePageSection: React.FC = () => {
     <ServicePageTemplate
       categoryTag="Digital Transformation"
       heading="Services"
-      description="Helping businesses modernize and thrive in the digital age through comprehensive transformation strategies that drive innovation, efficiency, and growth."
+      description="Helping businesses modernise and thrive in the digital age through comprehensive transformation strategies that drive innovation, efficiency, and growth."
       topicButtons={digitalTransformationTopicButtons}
       ctaButtons={digitalTransformationCTAButtons}
       imageUrl="/d1.avif"

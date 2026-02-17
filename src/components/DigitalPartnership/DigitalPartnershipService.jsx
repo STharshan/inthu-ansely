@@ -33,7 +33,7 @@ const sectionData = [
     id: "Our Partnership Model",
     heading: "More Than Software. A Long-Term Tech Ally.",
     paragraphs: [
-      "We work as an extension of your team—handling architecture, development, optimization, and ongoing improvements. From idea validation to product scaling, we help turn technology into a competitive advantage.",
+      "We work as an extension of your team—handling architecture, development, optimisation, and ongoing improvements. From idea validation to product scaling, we help turn technology into a competitive advantage.",
       "Build with confidence. Scale with clarity. Compete digitally."
     ],
     image: "d1.avif"
@@ -120,6 +120,10 @@ const Section = ({ section, index }) => {
               <img
                 src={section.image}
                 alt={section.id}
+                width={800}
+                height={450}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </motion.div>

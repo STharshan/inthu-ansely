@@ -2,7 +2,7 @@ import { Check } from "lucide-react";
 
 const AIImplementationChecklist = () => {
   const prerequisites = [
-    { title: "Clean Data", desc: "Your data is organized and accessible" },
+    { title: "Clean Data", desc: "Your data is organised and accessible" },
     { title: "Clear Processes", desc: "You understand your current workflows" },
     { title: "Defined Goals", desc: "You know what success looks like" },
     { title: "Team Buy-in", desc: "Your team is ready for change" },

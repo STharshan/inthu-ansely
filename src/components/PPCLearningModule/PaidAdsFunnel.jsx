@@ -6,6 +6,7 @@ import {
   TrendingUp,
   ArrowDown,
   TriangleAlert,
+  Lightbulb,
 } from "lucide-react";
 
 const funnelSteps = [
@@ -75,7 +76,7 @@ const PaidAdsFunnel = () => {
               Critical Insight
             </h3>
             <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-              💡 Ads don't fail — funnels fail.  
+              <Lightbulb className="h-5 w-5 inline mr-1" /> Ads don't fail — funnels fail.
               If your ads aren't working, check every step of this process.
             </p>
           </div>

@@ -30,7 +30,7 @@ const serviceContent = [
     icon: FaChartLine,
     title: "Digital Transformation",
     subtitle: "Innovate. Adapt. Thrive.",
-    desc: "We help modernize your business for the digital age.",
+    desc: "We help modernise your business for the digital age.",
     route: "/digital-transformation",
   },
   {

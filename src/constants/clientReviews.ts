@@ -124,7 +124,7 @@ export const businessConsultancyClientReviewsConfig = {
   reviewCount: "Reviews",
   heading: "Client Reviews",
   description:
-    "Real feedback from clients who trusted our consultancy expertise to optimize their business operations.",
+    "Real feedback from clients who trusted our consultancy expertise to optimise their business operations.",
   imageUrl: "/d1.avif",
   imageAlt: "Client reviews illustration",
   imagePosition: "left" as const,

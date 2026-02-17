@@ -7,7 +7,7 @@ const processData = [
         title: "Consultation",
         Subtitle: "Strategy Development & Creative Concepting",
         description:
-            "We begin with deep discovery—understanding your business goals, target audience, competitive landscape, brand history, and market opportunities. Through stakeholder interviews, customer research, and competitive audits, we develop comprehensive insights that inform strategy. We analyze your current digital presence, assess what's working (and what isn't), and identify gaps between where you are and where you want to be. This foundation ensures our recommendations are grounded in your unique reality, not generic best practices.",
+            "We begin with deep discovery—understanding your business goals, target audience, competitive landscape, brand history, and market opportunities. Through stakeholder interviews, customer research, and competitive audits, we develop comprehensive insights that inform strategy. We analyse your current digital presence, assess what's working (and what isn't), and identify gaps between where you are and where you want to be. This foundation ensures our recommendations are grounded in your unique reality, not generic best practices.",
         image: "/marketing-consultation.jpg",
     },
     {
@@ -23,15 +23,15 @@ const processData = [
         title: "Execution",
         Subtitle: "Campaign Launch & Content Production",
         description:
-            "We bring strategies to life through high-quality content creation, campaign setup, and multi-channel deployment. Our team produces engaging social media content, compelling ad creative, persuasive email campaigns, SEO-optimized blog posts, video content, and landing pages—all aligned with your brand voice and strategic objectives. We manage campaign launches across platforms, monitor initial performance, make rapid adjustments based on early data, and ensure flawless execution during critical launch windows. Quality and speed go hand-in-hand as we deliver professional marketing that meets deadlines without compromising excellence.",
+            "We bring strategies to life through high-quality content creation, campaign setup, and multi-channel deployment. Our team produces engaging social media content, compelling ad creative, persuasive email campaigns, SEO-optimised blog posts, video content, and landing pages—all aligned with your brand voice and strategic objectives. We manage campaign launches across platforms, monitor initial performance, make rapid adjustments based on early data, and ensure flawless execution during critical launch windows. Quality and speed go hand-in-hand as we deliver professional marketing that meets deadlines without compromising excellence.",
         image: "/marketing-execution.jpg",
     },
     {
         id: "communication",
         title: "Communication",
-        Subtitle: "Optimization, Reporting & Continuous Improvement",
+        Subtitle: "Optimisation, Reporting & Continuous Improvement",
         description:
-            "Marketing success requires ongoing monitoring, analysis, and refinement. We provide regular performance reports with clear insights—not just data dumps—explaining what's working, why it matters, and what we're doing about it. Through A/B testing, audience feedback, analytics review, and competitive monitoring, we continuously optimize campaigns for better results. We maintain transparent communication about budget pacing, creative performance, and strategic adjustments. Our commitment extends beyond launch—we stay engaged, proactive, and focused on improving your marketing ROI month after month.",
+            "Marketing success requires ongoing monitoring, analysis, and refinement. We provide regular performance reports with clear insights—not just data dumps—explaining what's working, why it matters, and what we're doing about it. Through A/B testing, audience feedback, analytics review, and competitive monitoring, we continuously optimise campaigns for better results. We maintain transparent communication about budget pacing, creative performance, and strategic adjustments. Our commitment extends beyond launch—we stay engaged, proactive, and focused on improving your marketing ROI month after month.",
         image: "/marketing-communication.jpg",
     }
 ];

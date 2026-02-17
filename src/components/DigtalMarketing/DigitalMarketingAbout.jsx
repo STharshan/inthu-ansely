@@ -26,7 +26,7 @@ export default function DigitalMarketingAbout() {
               storytelling with data-driven performance, crafting campaigns that
               are visually compelling and strategically effective. We take a
               holistic view of every marketing initiative, focusing on brand
-              consistency, audience engagement, conversion optimization, and
+              consistency, audience engagement, conversion optimisation, and
               measurable ROI. From the first touchpoint to customer advocacy, we
               design experiences that build emotional connections while driving
               business results. We don't just create content—we architect
