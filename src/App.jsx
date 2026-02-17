@@ -4,6 +4,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import GDPRConsent from "./components/GDPRButton";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
@@ -91,6 +92,7 @@ function App() {
       </Suspense>
       <Footer />
       <GDPRConsent />
+      <ScrollToTopButton />
     </Router>
   );
 }
