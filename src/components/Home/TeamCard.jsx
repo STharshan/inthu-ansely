@@ -11,28 +11,28 @@ export default function TeamCarousel() {
       title: "Everything Guy",
       description:
         "Founder on paper. Team support in practice. With 16 years of experience building businesses online, driving SaaS companies to billion-dollar annual sales milestones and working at the forefront of technology in surgical robotics. I combine visionary leadership, cutting-edge innovation, and unmatched expertise to create extraordinary results.",
-      image: "https://framerusercontent.com/images/ld1Isq9iOdLryzyA7HZCe7cNgA.jpg",
+      image: "/team-placeholder.png",
     },
     {
       name: "D. Copp",
       title: "Everything Customer",
       description:
         "I'm a digital strategist with over a decade of experience helping businesses transition into the digital age. I've worked at one of Europe's largest software companies, where I was rapidly promoted multiple times for performance and impact. My approach blends deep technical expertise with creative, solution-driven thinking to drive growth. I lead a high-performing sales team of five—and when volume ramps up, even the founder gets pulled into sales duty under my direction.",
-      image: "https://framerusercontent.com/images/m1PGVBKWCMad7sb62mX2oeTx8S8.png",
+      image: "/team-placeholder.png",
     },
     {
       name: "C. Wooldrige",
       title: "Everything Marketing ",
       description:
         "Outside of running marathons most weekends, I'm driven by creativity and a passion for optimising SEO to help hidden gems get discovered. I've worked in the corporate world helping large companies increase their online visibility and digital performance. That experience allows me to understand what search engines truly reward and how users actually find businesses. I now bring this expertise into everything we build at Ansely. My focus is on turning strong businesses into brands that can't be ignored online.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop",
+      image: "/team-placeholder.png",
     },
     {
       name: "S. Bandarai",
       title: "Everything Tech ",
       description:
         "I'm driven by technology and obsessed with turning vision into working, scalable code. Having worked with some of the world's leading AI businesses, I bring clarity, speed, and execution to ambitious ideas. Currently lead a high-performance team of six leaders delivering real-world impact.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop",
+      image: "/team-placeholder.png",
     },
   ];
 
