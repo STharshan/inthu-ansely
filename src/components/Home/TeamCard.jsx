@@ -71,7 +71,7 @@ export default function TeamCarousel() {
                   </div>
                 </div>
 
-                <div className="p-10 rounded-xl h-120 bg-gray-100 dark:bg-gray-800">
+                <div className="p-10 rounded-xl min-h-120 bg-gray-100 dark:bg-gray-800">
                   <h2 className="text-5xl font-light mb-3 text-[#0045EF]">{current.name}</h2>
                   <p className="text-xl font-semibold mb-5 text-gray-600 dark:text-gray-400">
                     {current.title}
