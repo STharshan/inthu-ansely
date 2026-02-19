@@ -23,7 +23,7 @@ export const ClientReviewsSection: React.FC<ClientReviewsProps> = ({
     >
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <ReviewHeader
             categoryTag={categoryTag || reviewCount}
             heading={heading}
@@ -33,14 +33,14 @@ export const ClientReviewsSection: React.FC<ClientReviewsProps> = ({
             imagePosition={imagePosition}
             ctaButtons={ctaButtons}
           />
-        </div>
+        </div> */}
 
         {/* Testimonials Grid */}
-        {reviews && reviews.length > 0 && (
+        {/* {reviews && reviews.length > 0 && (
           <div className="mb-16">
             <TestimonialsGrid reviews={reviews} />
           </div>
-        )}
+        )} */}
 
         {/* Statistics Grid */}
         {statistics && statistics.length > 0 && (

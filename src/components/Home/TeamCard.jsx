@@ -42,7 +42,7 @@ export default function TeamCarousel() {
   const current = teamMembers[currentIndex];
 
   return (
-    <div className="font-sans bg-white text-gray-900 dark:bg-black dark:text-white min-h-screen relative">
+    <div className="font-sans bg-white text-gray-900 dark:bg-black dark:text-white relative">
       {/* Theme Toggle */}
 
       <div className="flex items-center max-w-6xl mx-auto justify-center p-4 sm:p-6 lg:p-8">
