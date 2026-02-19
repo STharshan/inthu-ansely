@@ -21,7 +21,7 @@ const About: React.FC = () => {
       {/* Our Values Section */}
       <OurValues />
 
-      <HomeTestimonialsSection testimonials={homeTestimonials} />
+      {/* <HomeTestimonialsSection testimonials={homeTestimonials} /> */}
     </div>
   );
 };

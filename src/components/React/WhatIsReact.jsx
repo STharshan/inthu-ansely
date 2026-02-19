@@ -11,7 +11,6 @@ export default function WhatIsReactSection() {
       >
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl space-y-14">
-
             {/* Heading */}
             <div className="space-y-4">
               <h2 className="text-[36px] md:text-[48px] font-extrabold tracking-tight text-black dark:text-white">
@@ -22,10 +21,9 @@ export default function WhatIsReactSection() {
               </h2>
 
               <p className="text-[17px] md:text-[19px] text-gray-700 dark:text-gray-400 leading-relaxed max-w-3xl">
-                React is a JavaScript framework that builds fast, dynamic, app-like
-                websites. Instead of loading entire pages repeatedly (like
-                WordPress), React updates only what&apos;s needed—making your site
-                feel instant.
+                React is a JavaScript framework that builds fast, dynamic, app-like websites.
+                Instead of loading entire pages repeatedly (like traditional builders), React
+                updates only what&apos;s needed—making your site feel instant.
               </p>
             </div>
 
@@ -35,7 +33,9 @@ export default function WhatIsReactSection() {
               <div className="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#0B0D10] p-6 transition hover:bg-gray-100 dark:hover:bg-[#0F1216]">
                 <div className="space-y-4">
                   <div className="h-12 w-12 rounded-lg bg-blue-100 dark:bg-cyan-400/10 flex items-center justify-center">
-                    <span className="text-blue-600 dark:text-cyan-400 text-xl font-bold">&lt;/&gt;</span>
+                    <span className="text-blue-600 dark:text-cyan-400 text-xl font-bold">
+                      &lt;/&gt;
+                    </span>
                   </div>
                   <h3 className="text-xl font-semibold text-black dark:text-white">
                     Modern Framework
@@ -71,8 +71,7 @@ export default function WhatIsReactSection() {
                     Growth Engine
                   </h3>
                   <p className="text-gray-700 dark:text-gray-400 leading-relaxed">
-                    Not just a website—a digital product that drives business
-                    growth
+                    Not just a website—a digital product that drives business growth
                   </p>
                 </div>
               </div>
@@ -101,7 +100,6 @@ export default function WhatIsReactSection() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>

@@ -3,11 +3,11 @@
 export default function SideBySideComparison() {
   const data = [
     { label: "Page Speed", react: 5, wordpress: 2, wix: 2, godaddy: 1 },
-    { label: "SEO Control", react: 5, wordpress: 2, wix: 1, godaddy: 1 },
+    { label: "SEO Control", react: 5, wordpress: 3, wix: 1, godaddy: 1 },
     { label: "Security", react: 5, wordpress: 2, wix: 2, godaddy: 1 },
     { label: "Scalability", react: 5, wordpress: 2, wix: 1, godaddy: 1 },
     { label: "Conversion UX", react: 5, wordpress: 2, wix: 1, godaddy: 1 },
-    { label: "Long-Term Value", react: 5, wordpress: 2, wix: 1, godaddy: 1 },
+    { label: "Long-Term Value", react: 5, wordpress: 3, wix: 1, godaddy: 1 },
   ];
 
   const Stars = ({ rating }) => (

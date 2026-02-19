@@ -64,9 +64,9 @@ const Home: React.FC = () => {
         <TeamCarousel />
       </section>
 
-      <section id="home-testimonials">
+      {/* <section id="home-testimonials">
         <HomeTestimonialsSection testimonials={homeTestimonials} />
-      </section>
+      </section> */}
 
       <section id="home-performance">
         <Suspense fallback={<div style={{ minHeight: "400px" }} />}>

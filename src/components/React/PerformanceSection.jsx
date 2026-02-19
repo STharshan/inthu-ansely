@@ -94,6 +94,11 @@ export default function PerformanceSection() {
                   </div>
 
                 </div>
+
+                {/* Caveat note */}
+                <p className="text-xs text-gray-500 dark:text-gray-500 italic">
+                  * Scores reflect default/typical setups. WordPress performance varies — a well-optimised WordPress site with caching and a quality host can score significantly higher.
+                </p>
               </div>
 
               {/* Bottom Stat Cards */}
