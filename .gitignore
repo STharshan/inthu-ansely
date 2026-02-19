@@ -24,8 +24,6 @@ dist-ssr
 *.sw?
 
 # Environment Variables
-.env
-.env.local
 .env.*.local
 .env.development.local
 .env.test.local
@@ -33,3 +31,4 @@ dist-ssr
 
 # But allow .env.example
 !.env.example
+config.bat

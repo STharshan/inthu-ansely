@@ -19,7 +19,7 @@ export default function ScalabilitySection() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
-                  While WordPress hits limits fast, React scales horizontally
+                  While traditional website builders have scaling limitations, React scales horizontally
                   with your business.
                 </p>
               </div>

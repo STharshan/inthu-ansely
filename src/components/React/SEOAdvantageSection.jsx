@@ -11,7 +11,6 @@ export default function SEOAdvantageSection() {
         <section className="py-24 border-t border-gray-200 dark:border-gray-800 transition-colors">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl space-y-12">
-
               {/* Header */}
               <div className="space-y-4 text-center">
                 {/* Badge */}
@@ -27,8 +26,8 @@ export default function SEOAdvantageSection() {
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
-                  Modern React sites (especially using Next.js) are built for
-                  search engines from the ground up.
+                  Modern React sites (especially using Next.js) are built for search engines from
+                  the ground up.
                 </p>
               </div>
 
@@ -53,12 +52,11 @@ export default function SEOAdvantageSection() {
 
               {/* Comparison Cards */}
               <div className="grid md:grid-cols-2 gap-6">
-
-                {/* WordPress */}
+                {/* Traditional Builders */}
                 <div className="rounded-xl border border-red-500/20 bg-red-50 dark:bg-red-500/10 p-6 transition-colors">
                   <div className="space-y-3">
                     <div className="text-2xl font-extrabold text-red-600 dark:text-red-400">
-                      WordPress
+                      Traditional Builders
                     </div>
                     <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                       <li>• Needs plugins for everything</li>
@@ -83,9 +81,7 @@ export default function SEOAdvantageSection() {
                     </ul>
                   </div>
                 </div>
-
               </div>
-
             </div>
           </div>
         </section>
