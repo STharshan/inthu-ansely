@@ -35,38 +35,42 @@ export default function SecuritySection() {
               {/* Comparison Cards */}
               <div className="grid md:grid-cols-2 gap-8">
 
-                {/* WordPress Risk */}
+                {/* Traditional Builder Risks */}
                 <div className="rounded-xl border border-red-500/20 bg-red-50 dark:bg-red-500/10 p-8 transition-colors">
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
                       <AlertTriangle className="h-8 w-8 text-red-600 dark:text-red-400" />
                       <h3 className="text-2xl font-extrabold text-red-600 dark:text-red-400">
-                        WordPress Risk
+                        Traditional Builder Risks
                       </h3>
                     </div>
 
                     <div className="space-y-4">
                       <div>
-                        <p className="font-medium text-black dark:text-white">40% of the web</p>
+                        <p className="font-medium text-black dark:text-white">Huge attack surface</p>
                         <p className="text-sm text-gray-700 dark:text-gray-400">
-                          Largest attack surface for hackers
+                          WordPress powers 40% of the web — a popular target for hackers
                         </p>
                       </div>
 
                       <div>
-                        <p className="font-medium text-black dark:text-white">Constant updates</p>
+                        <p className="font-medium text-black dark:text-white">Plugin dependency</p>
                         <p className="text-sm text-gray-700 dark:text-gray-400">
-                          Plugin conflicts create vulnerabilities
+                          Plugin conflicts and outdated extensions create vulnerabilities
                         </p>
                       </div>
 
                       <div>
-                        <p className="font-medium text-black dark:text-white">PHP vulnerabilities</p>
+                        <p className="font-medium text-black dark:text-white">PHP exposure</p>
                         <p className="text-sm text-gray-700 dark:text-gray-400">
-                          Exposed admin panels and databases
+                          Exposed admin panels and databases if not properly hardened
                         </p>
                       </div>
                     </div>
+
+                    <p className="text-xs text-gray-500 dark:text-gray-500 italic">
+                      Note: WordPress with managed hosting, regular updates, and minimal plugins can be very secure — especially for smaller sites.
+                    </p>
                   </div>
                 </div>
 

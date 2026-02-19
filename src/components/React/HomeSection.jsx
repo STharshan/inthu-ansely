@@ -31,7 +31,7 @@ export default function HomeSection() {
           {/* Description */}
           <p className="mx-auto max-w-2xl text-[17px] md:text-[19px] font-normal leading-relaxed text-gray-700 dark:text-gray-400">
             Discover why modern web applications built with React outperform
-            WordPress, Wix, and GoDaddy in speed, SEO, security, and scalability.
+            traditional website builders in speed, SEO, security, and scalability.
           </p>
 
           {/* Buttons */}

@@ -24,9 +24,7 @@ export default function BottomLine() {
               <span className="text-[#0045EF]/80">The Bottom Line</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold">
-              React Websites Are:
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold">React Websites Are:</h2>
           </div>
 
           {/* Key Benefits */}
@@ -63,37 +61,29 @@ export default function BottomLine() {
           <div className="space-y-6">
             <div className="rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 p-8 text-center transition-colors">
               <p className="text-gray-700 dark:text-gray-300 text-lg">
-                WordPress, Wix, and GoDaddy are fine for{" "}
+                Traditional website builders are a great starting point —{" "}
                 <span className="font-medium text-black dark:text-white">
-                  hobby sites
-                </span>
-                .
+                  WordPress especially shines
+                </span>{" "}
+                for blogs, content sites, and teams who manage their own copy.
               </p>
               <p className="text-xl font-semibold mt-2 text-black dark:text-white">
-                React is built for{" "}
-                <span className="text-[#0045EF]">serious businesses</span>.
+                React is built for businesses where{" "}
+                <span className="text-[#0045EF]">performance, scalability, and conversion</span> are
+                critical.
               </p>
             </div>
 
             {/* Final Thought */}
             <div className="rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-8 transition-colors">
-              <h3 className="text-2xl font-bold text-center mb-4">
-                Final Thought
-              </h3>
+              <h3 className="text-2xl font-bold text-center mb-4">Final Thought</h3>
 
               <p className="text-lg text-center leading-relaxed text-gray-700 dark:text-gray-300">
                 If your website is part of your{" "}
-                <span className="font-semibold text-black dark:text-white">
-                  sales team
-                </span>
-                ,{" "}
-                <span className="font-semibold text-black dark:text-white">
-                  brand authority
-                </span>
-                , and{" "}
-                <span className="font-semibold text-black dark:text-white">
-                  growth strategy
-                </span>
+                <span className="font-semibold text-black dark:text-white">sales team</span>,{" "}
+                <span className="font-semibold text-black dark:text-white">brand authority</span>,
+                and{" "}
+                <span className="font-semibold text-black dark:text-white">growth strategy</span>
                 —React isn’t an upgrade.
               </p>
 
