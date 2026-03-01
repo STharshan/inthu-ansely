@@ -2,7 +2,7 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 py-20 overflow-hidden bg-white dark:bg-black transition-colors duration-300">
+    <section className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 py-20 overflow-hidden bg-white/90 dark:bg-black transition-colors duration-300">
       
       {/* Background Gradient Effect - Adjusted for Dark Mode */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-gray-200 to-gray-400 opacity-60 dark:from-zinc-800 dark:via-zinc-900 dark:to-black dark:opacity-40"></div>
