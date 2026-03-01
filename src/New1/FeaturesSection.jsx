@@ -4,23 +4,23 @@ import { BarChart3, Briefcase, AtSign } from "lucide-react";
 export default function NewFeaturesSection() {
   const features = [
     {
-      title: "Omnichannel Marketing",
+      title: "Instant Invoicing",
       description:
-        "Get access to all mobile messaging channels in one place for personalized newsletters and promotional emails.",
+        "Create and send invoices directly from your phone in just a few clicks. No laptop needed — invoice customers there and then while you’re with them.",
       icon: BarChart3,
       image: "/n3.png",
     },
     {
-      title: "Automated Marketing",
+      title: "Built for Client-Facing Businesses",
       description:
-        "Create workflows that do the heavy lifting for you. Send out emails at scheduled times, automatically.",
+        "Designed for teams on the move. Whether onsite or meeting clients, send professional invoices immediately without returning to the office.",
       icon: Briefcase,
       image: "/n4.png",
     },
     {
-      title: "Mobile friendly emails",
+      title: "Professional Business Image",
       description:
-        "Send emails responsive on mobile devices. A/B test with subject lines & preview the entire text easily.",
+        "Stop writing invoices on paper. Present your business professionally with clean, branded digital invoices that build trust and credibility.",
       icon: AtSign,
       image: "/n5.png",
     },
@@ -38,12 +38,11 @@ export default function NewFeaturesSection() {
           </p>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-            Only pay for the emails you send.
+            Faster Payments
           </h2>
 
           <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-sm sm:text-base">
-            Get unlimited subscribers on all our plans, and pay only for the
-            emails you actually send.
+            Send invoices instantly after completing work, reducing delays and helping you get paid quicker.
           </p>
         </div>
 
@@ -66,10 +65,10 @@ export default function NewFeaturesSection() {
                   }`}
                 >
                   <div
-                    className={`flex items-center justify-center w-12 h-10 rounded-md transition-colors ${
+                    className={`flex items-center justify-center w-18 h-10 rounded-md transition-colors ${
                       isActive 
-                        ? "bg-white dark:bg-white/20" 
-                        : "bg-gray-200 dark:bg-transparent"
+                        ? "bg-white dark:bg-white/80" 
+                        : "bg-gray-200 dark:bg-white/80"
                     }`}
                   >
                     <Icon
@@ -81,7 +80,7 @@ export default function NewFeaturesSection() {
                     <h4 className="font-semibold text-lg mb-2 text-slate-900 dark:text-white">
                       {feature.title}
                     </h4>
-                    <p className="text-gray-900 text-sm leading-relaxed">
+                    <p className="text-gray-900 dark:text-gray-300 text-sm leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

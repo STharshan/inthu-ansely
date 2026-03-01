@@ -94,7 +94,6 @@ function App() {
           <Route path="/privacy" element={<PrivacyPolicy />} />
         </Routes>
       </Suspense>
-      <CTASection />
       <Footer />
       <GDPRConsent />
       <ScrollToTopButton />
