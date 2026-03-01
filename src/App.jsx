@@ -7,6 +7,8 @@ import GDPRConsent from "./components/GDPRButton";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import New1 from "./pages/New1";
+import CTASection from "./New1/CTA";
 
 // Lazy load all page components for better performance
 const Home = lazy(() => import("./pages/Home"));
@@ -85,11 +87,14 @@ function App() {
           <Route path="/learn/react-comparison" element={<ReactComparisonGuide />} />
           <Route path="/learn/custom-software-guide" element={<Insidecustomsoftwareservice />} />
 
+          <Route path="/new1" element={<New1 />} />
+
           {/* Legal */}
           <Route path="/terms" element={<TermsConditions />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
         </Routes>
       </Suspense>
+      <CTASection />
       <Footer />
       <GDPRConsent />
       <ScrollToTopButton />
