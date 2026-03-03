@@ -1,5 +1,7 @@
 
+import { ArrowRight } from "lucide-react";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const OurServicesSection = () => {
   const [selectedService, setSelectedService] = useState(null);
@@ -112,7 +114,7 @@ const OurServicesSection = () => {
               onClick={() => handleCardClick(index)}
               className="service-card group relative cursor-pointer min-w-0"
             >
-              <div 
+              <div
                 className="relative overflow-hidden rounded-2xl h-[304px] flex flex-col bg-gray-100 dark:bg-[#111] border border-gray-200 dark:border-gray-800/50
                   transition-all duration-300 hover:border-gray-300 hover:bg-gray-50 dark:hover:border-gray-700 dark:hover:bg-[#151515]"
               >
@@ -125,25 +127,25 @@ const OurServicesSection = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-100 dark:from-[#111] via-gray-100/20 dark:via-[#111]/20 to-transparent" />
                 </div>
-                
+
                 {/* Content */}
                 <div className="p-5 pb-8 pr-12 flex flex-col flex-1 min-h-0">
                   {/* Title - Large and Bold */}
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 tracking-tight group-hover:text-[#0045EF] transition-colors duration-300">
                     {service.title}
                   </h3>
-                  
+
                   {/* Subtitle - Blue accent */}
                   <p className="text-[#0045EF] text-xs font-medium mb-3">
                     {service.subtitle}
                   </p>
-                  
+
                   {/* Short Description */}
                   <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed line-clamp-2">
                     {service.shortDesc}
                   </p>
                 </div>
-                
+
                 {/* Learn more indicator (expands on hover) */}
                 <button
                   type="button"
@@ -169,30 +171,31 @@ const OurServicesSection = () => {
           <h3 className="text-2xl font-light text-gray-900 dark:text-white mb-6 tracking-tight">
             Ready to transform your operations?
           </h3>
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0045EF] text-white
-              text-sm font-medium transition-all duration-300 hover:bg-[#0038c7]"
+          <Link
+            to="/contact"
+            className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0045EF] text-white
+             text-sm font-medium transition-all duration-300 hover:bg-[#0038c7] hover:shadow-md"
           >
             Learn More
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
+            <ArrowRight
+              className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+              strokeWidth={2.5}
+            />
+          </Link>
         </div>
       </div>
 
       {/* MODAL OVERLAY */}
       {selectedService !== null && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
           onClick={closeModal}
         >
           {/* Backdrop - dims the cards behind */}
           <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
-          
+
           {/* Modal Content */}
-          <div 
+          <div
             className="relative w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-3xl bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800
               animate-modal-in"
             onClick={(e) => e.stopPropagation()}
@@ -219,36 +222,26 @@ const OurServicesSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-white dark:from-[#111] via-transparent to-transparent opacity-60" />
               </div>
-              
+
               {/* Content Side */}
               <div className="p-8 lg:p-10 flex flex-col justify-center">
                 {/* Title */}
                 <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 dark:text-white mb-2 tracking-tight">
                   {service.title}
                 </h3>
-                
+
                 {/* Subtitle */}
                 <p className="text-[#0045EF] font-medium mb-6">
                   {service.subtitle}
                 </p>
-                
+
                 {/* Full Description */}
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
                   {service.description}
                 </p>
-                
+
                 {/* Action buttons */}
                 <div className="flex flex-wrap gap-3">
-                  {/* <a
-                    href="/contact"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0045EF] text-white
-                      text-sm font-medium transition-all duration-300 hover:bg-[#0038c7]"
-                  >
-                    Learn More
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a> */}
                   <button
                     onClick={closeModal}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300
@@ -269,11 +262,10 @@ const OurServicesSection = () => {
                 <button
                   key={idx}
                   onClick={() => setSelectedService(idx)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    idx === selectedService 
-                      ? 'bg-[#0045EF] w-6' 
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === selectedService
+                      ? 'bg-[#0045EF] w-6'
                       : 'bg-gray-400 hover:bg-gray-500 dark:bg-gray-600 dark:hover:bg-gray-500'
-                  }`}
+                    }`}
                 />
               ))}
             </div>

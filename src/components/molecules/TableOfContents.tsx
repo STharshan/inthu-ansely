@@ -5,6 +5,8 @@ interface TableOfContentsProps {
   className?: string;
 }
 
+const SCROLL_OFFSET = 80; // adjust to match your sticky header height (px)
+
 export const TableOfContents: React.FC<TableOfContentsProps> = ({
   items,
   className = '',
@@ -13,7 +15,8 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
     const id = item.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const top = element.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   };
 
@@ -37,4 +40,3 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
     </nav>
   );
 };
-

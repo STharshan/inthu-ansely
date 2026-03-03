@@ -3,7 +3,7 @@ import CenterContent from "../Animations/CenterContent";
 import AnimatedScrollMove from "../Animations/AnimatedScrollMove";
 import AnimatedShow from "../Animations/AnimatedShow";
 import { Link } from "react-router-dom";
-import { Check } from "lucide-react";
+import { Check, CircleCheckBig } from "lucide-react";
 
 export default function Newabout() {
   const features = [
@@ -37,8 +37,8 @@ export default function Newabout() {
             <div className="mt-12 grid grid-cols-2 gap-4 font-semibold opacity-80">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center gap-2">
-                  <div className="flex w-6 h-6 shrink-0 items-center justify-center rounded-full bg-[#0045EF]">
-                    <Check className="w-4 h-4 text-black dark:text-white" strokeWidth={2} />
+                  <div className="flex w-6 h-6 shrink-0 items-center justify-center rounded-full">
+                    <CircleCheckBig className="w-4 h-4 text-[#0045EF]" strokeWidth={2} />
                   </div>
                   <span className="text-gray-900 dark:text-white">{feature}</span>
                 </div>

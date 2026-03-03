@@ -67,10 +67,15 @@ function App() {
 
           {/* Services */}
           <Route path="/digital-transformation" element={<Digitaltransformation />} />
+
           <Route path="/business-consultancy" element={<Businessconsultancy />} />
+
           <Route path="/digital-marketing" element={<DigitalMarketing />} />
+
           <Route path="/digital-partnership" element={<DigitalPartnership />} />
+          
           <Route path="/custom-website" element={<CustomWebsite />} />
+
           <Route path="/custom-software" element={<CustomeSoftware />} />
           <Route path="/mobile-app-development" element={<MobileAppDevelopment />} />
 

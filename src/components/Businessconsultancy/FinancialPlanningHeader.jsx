@@ -1,3 +1,6 @@
+import { ArrowRight, MessageSquare } from "lucide-react";
+import { Link } from "react-router-dom";
+
 export default function FinancialPlanningHero() {
   return (
     <section className="w-full mt-20 bg-white dark:bg-black transition-colors duration-300">
@@ -11,7 +14,7 @@ export default function FinancialPlanningHero() {
 
           {/* Subheading */}
           <h2 className="text-xl lg:text-2xl font-medium text-[#0045EF] mb-6">
-          Guiding businesses through complexity toward smarter growth.
+            Guiding businesses through complexity toward smarter growth.
           </h2>
 
           {/* Description */}
@@ -62,15 +65,21 @@ export default function FinancialPlanningHero() {
 
         {/* CTA */}
         <div className="mt-12">
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-2
-            bg-[#0045EF] text-white
-            px-8 py-4 rounded-lg font-medium
-            hover:bg-blue-700 transition"
+          <Link
+            to="/contact"
+            className="group inline-flex items-center gap-3
+               bg-[#0045EF] text-white
+               px-8 py-4 rounded-lg font-medium
+               hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/20"
           >
-             I like start with a conversation →
-          </a>
+            <MessageSquare size={18} strokeWidth={2.5} />
+            I’d like to start with a conversation
+            <ArrowRight
+              className="ml-1 transition-transform duration-300 group-hover:translate-x-1"
+              size={18}
+              strokeWidth={2.5}
+            />
+          </Link>
         </div>
       </div>
     </section>

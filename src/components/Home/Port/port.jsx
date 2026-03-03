@@ -1,4 +1,4 @@
-"use client";
+
 import React, { useRef, useEffect, useState } from "react";
 import ScrollStack, { ScrollStackItem } from "./Check";
 import "./Card.css";

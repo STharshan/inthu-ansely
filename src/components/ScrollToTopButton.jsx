@@ -20,9 +20,9 @@ const ScrollToTopButton = () => {
     <button
       onClick={scrollToTop}
       aria-label="Scroll to top"
-      className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-[#0045EF] text-white shadow-lg hover:bg-[#0039CC] transition-opacity duration-300"
+      className="fixed md:bottom-20 md:right-7 bottom-16 right-4 z-50 p-3 rounded-full bg-[#0045EF] text-white shadow-lg hover:bg-[#0039CC] transition-opacity duration-300"
     >
-      <FiArrowUp className="w-5 h-5" />
+      <FiArrowUp className=" sm:w-5 sm:h-5" />
     </button>
   );
 };

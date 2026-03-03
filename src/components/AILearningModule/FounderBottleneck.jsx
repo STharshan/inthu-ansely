@@ -40,7 +40,7 @@ const FounderBottleneck = () => {
       {/* Key shift card */}
       <div className="bg-gray-100 dark:bg-gray-800 rounded-xl border border-gray-300 dark:border-gray-700 p-6 transition-colors duration-300">
         <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Key Shift in Thinking</h3>
-        <p className="text-lg mb-3 italic text-gray-700 dark:text-gray-300">
+        <p className="text-lg mb-3 text-gray-700 dark:text-gray-300">
           "If I had an unlimited team, what would I delegate first?"
         </p>
         <p className="leading-relaxed text-gray-700 dark:text-gray-300">
