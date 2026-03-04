@@ -92,7 +92,7 @@ function App() {
           <Route path="/learn/react-comparison" element={<ReactComparisonGuide />} />
           <Route path="/learn/custom-software-guide" element={<Insidecustomsoftwareservice />} />
 
-          <Route path="/new1" element={<New1 />} />
+          <Route path="/invoice" element={<New1 />} />
 
           {/* Legal */}
           <Route path="/terms" element={<TermsConditions />} />
