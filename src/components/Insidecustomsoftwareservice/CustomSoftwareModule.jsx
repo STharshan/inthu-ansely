@@ -51,7 +51,7 @@ const CustomSoftwareModule = () => {
           return (
             <div
               key={idx}
-              className="bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6 hover:shadow-lg transition-shadow transition-colors"
+              className="bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
                 <Icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />

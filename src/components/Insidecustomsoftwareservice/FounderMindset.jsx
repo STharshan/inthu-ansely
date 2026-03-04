@@ -18,7 +18,7 @@ const FounderMindset = () => {
       {/* Mindset Quotes */}
       <div className="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm p-6 md:p-8 border-2 border-gray-200 dark:border-gray-700 transition-colors">
         <h3 className="text-xl font-semibold mb-4 text-black dark:text-white">The best founders don't ask:</h3>
-        <blockquote className="text-2xl md:text-3xl font-medium text-gray-700 dark:text-gray-300 italic mb-6">
+        <blockquote className="text-2xl md:text-3xl font-medium text-gray-700 dark:text-gray-300 mb-6">
           "How do I do this task faster?"
         </blockquote>
 

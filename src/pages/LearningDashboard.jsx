@@ -12,10 +12,10 @@ const LearningDashboard = () => {
         {/* Header Section */}
         <div className="bg-[#0045EF] text-white p-10 md:p-20 rounded-[3rem] mb-12 shadow-[0_30px_60px_rgba(0,69,239,0.25)] relative overflow-hidden">
           <div className="relative z-10">
-            <span className="text-[10px] font-bold tracking-[0.4em] bg-white/20 px-4 py-2 rounded-full uppercase italic mb-6 inline-block">
+            <span className="text-[10px] font-bold tracking-[0.4em] bg-white/20 px-4 py-2 rounded-full uppercase mb-6 inline-block">
               Interactive Curriculum
             </span>
-            <h1 className="text-4xl md:text-7xl font-black mb-4 tracking-tighter italic">
+            <h1 className="text-4xl md:text-7xl font-black mb-4 tracking-tighter">
               Explore Modules.
             </h1>
             <p className="text-blue-100 opacity-90 text-lg md:text-xl max-w-xl font-medium">

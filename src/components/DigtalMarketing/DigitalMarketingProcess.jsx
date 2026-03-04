@@ -120,7 +120,7 @@ export default function DigitalMarketingProcess() {
                                             onClick={() => setActiveId(isActive ? null : item.id)}
                                             className="w-full flex items-center justify-between text-left"
                                         >
-                                            <span className="text-3xl font-semibold text-black dark:text-white transition-colors duration-300">
+                                            <span className="text-xl sm:text-3xl font-semibold text-black dark:text-white transition-colors duration-300">
                                                 {item.title}
                                             </span>
                                             {isActive ? (

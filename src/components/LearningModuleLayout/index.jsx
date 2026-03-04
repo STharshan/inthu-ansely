@@ -119,11 +119,10 @@ const LearningModuleLayout = ({
                   <button
                     key={item.id}
                     onClick={() => setCurrentLesson(index)}
-                    className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-all whitespace-nowrap shadow-sm ${
-                      isActive
+                    className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-all whitespace-nowrap shadow-sm ${isActive
                         ? 'text-white shadow-md'
                         : 'bg-white dark:bg-black text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 border border-gray-200 dark:border-gray-700'
-                    }`}
+                      }`}
                     style={isActive ? { backgroundColor: moduleConfig.color || '#0045EF' } : {}}
                   >
                     {Icon && <Icon className="h-4 w-4" />}
@@ -166,19 +165,17 @@ const LearningModuleLayout = ({
                     <button
                       key={lesson.id}
                       onClick={() => setCurrentLesson(index)}
-                      className={`w-full flex items-center gap-3 p-3 rounded-lg text-left transition-all duration-300 ${
-                        isActive
+                      className={`w-full flex items-center gap-3 p-3 rounded-lg text-left transition-all duration-300 ${isActive
                           ? 'text-white'
                           : 'hover:bg-gray-200 dark:hover:bg-gray-800'
-                      }`}
+                        }`}
                       style={isActive ? { backgroundColor: moduleConfig.color || '#0045EF' } : {}}
                     >
                       {Icon && (
-                        <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${
-                          isActive
+                        <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${isActive
                             ? 'bg-white/20'
                             : 'bg-gray-200 dark:bg-gray-700'
-                        }`}>
+                          }`}>
                           <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-gray-900 dark:text-white'}`} />
                         </div>
                       )}
@@ -232,32 +229,28 @@ const LearningModuleLayout = ({
                 <button
                   onClick={handlePrevious}
                   disabled={currentLesson === 0}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                    currentLesson === 0
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${currentLesson === 0
                       ? 'opacity-50 cursor-not-allowed border border-gray-300 dark:border-gray-700'
                       : 'border border-gray-300 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-800'
-                  }`}
+                    }`}
                 >
                   <ChevronLeft className="w-4 h-4" />
                   Previous
                 </button>
 
-                <button
-                  onClick={handleNext}
-                  disabled={currentLesson === items.length - 1}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                    currentLesson === items.length - 1
-                      ? 'opacity-50 cursor-not-allowed'
-                      : 'hover:bg-[#0031B5]'
-                  }`}
-                  style={{
-                    backgroundColor: moduleConfig.color || '#0045EF',
-                    color: 'white'
-                  }}
-                >
-                  {currentLesson === items.length - 1 ? 'Complete' : 'Next Lesson'}
-                  <ChevronRight className="w-4 h-4" />
-                </button>
+                {currentLesson < items.length - 1 && (
+                  <button
+                    onClick={handleNext}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 active:scale-95 shadow-md hover:shadow-lg"
+                    style={{
+                      backgroundColor: moduleConfig.color || '#0045EF',
+                      color: 'white'
+                    }}
+                  >
+                    Next Lesson
+                    <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={2.5} />
+                  </button>
+                )}
               </div>
             </div>
           </main>

@@ -109,11 +109,11 @@ const DynamicScrollSection = () => {
                   </p>
 
                   {/* Mobile Image (Hidden on lg+) */}
-                  <div className="mt-10 lg:hidden w-full rounded-2xl overflow-hidden shadow-2xl border border-gray-100 dark:border-zinc-800">
+                  <div className="mt-10 lg:hidden w-full  rounded-2xl overflow-hidden shadow-2xl border border-gray-100 dark:border-zinc-800">
                     <img 
                       src={feature.image} 
                       alt={feature.title} 
-                      className="w-full h-auto object-cover bg-gray-50 dark:bg-zinc-900" 
+                      className="w-full h-10 object-cover bg-gray-50 dark:bg-zinc-900" 
                     />
                   </div>
                 </div>
@@ -122,7 +122,7 @@ const DynamicScrollSection = () => {
           </div>
 
           {/* RIGHT: Sticky Image (Desktop Only) */}
-          <div className="hidden lg:block w-1/2 sticky top-[10vh] xl:top-[15vh] h-[60vh] xl:h-[70vh]">
+          <div className="hidden lg:block w-1/2 sticky top-[10vh] xl:top-[15vh] h-[60vh] xl:h-[100vh]">
             <div className="relative w-full h-full rounded-[40px] overflow-hidden bg-gradient-to-br from-[#0045EF] to-[#002ba3] shadow-2xl flex items-center justify-center">
 
               {/* Glowing Background Details */}
