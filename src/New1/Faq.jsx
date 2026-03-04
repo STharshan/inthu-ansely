@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-// The content structured to match your 'data' prop requirement
 const faqData = {
   heading: "Everything You Need to Know",
   faqs: [
@@ -39,42 +38,44 @@ export default function FAQSection({ data = faqData }) {
   };
 
   return (
-    <section className="py-20 bg-white dark:bg-black transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-black transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
 
-        {/* Dynamic Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-[32px] md:text-[48px] font-bold text-black dark:text-white leading-tight">
+        {/* Heading */}
+        <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold text-black dark:text-white leading-tight px-2">
             {data.heading}
           </h2>
-          <div className="w-20 h-1.5 bg-[#0045EF] mx-auto mt-6 rounded-full"></div>
+          <div className="w-16 sm:w-20 h-1.5 bg-[#0045EF] mx-auto mt-4 sm:mt-6 rounded-full"></div>
         </div>
 
         {/* FAQ List */}
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4">
           {data.faqs.map((item, index) => {
             const isOpen = openIndex === index;
             return (
               <div
                 key={index}
-                className={`transition-all duration-300 rounded-2xl border border-white/10 shadow-lg ${
-                  isOpen 
-                    ? "bg-white/90 scale-[1.02]" 
+                className={`transition-all duration-300 rounded-xl sm:rounded-2xl border border-white/10 shadow-lg ${
+                  isOpen
+                    ? "bg-white/90 scale-[1.01] sm:scale-[1.02]"
                     : "bg-[#0045EF] hover:bg-[#0045EF]/90 cursor-pointer"
                 }`}
               >
                 {/* Question */}
                 <div
-                  className="flex justify-between items-center cursor-pointer group p-6"
+                  className="flex justify-between items-center cursor-pointer gap-3 p-4 sm:p-5 lg:p-6"
                   onClick={() => toggleAnswer(index)}
                 >
-                  <h3 className={`text-[18px] md:text-[22px] font-semibold ${isOpen ? 'text-black' : 'text-white'} transition-colors pr-6`}>
+                  <h3 className={`text-sm sm:text-base md:text-lg lg:text-[20px] font-semibold leading-snug ${
+                    isOpen ? "text-black" : "text-white"
+                  } transition-colors`}>
                     {item.q}
                   </h3>
-                  <div className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${
-                    isOpen ? 'bg-black text-[#0045EF]' : 'bg-white/80 text-black'
+                  <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-full transition-all duration-300 ${
+                    isOpen ? "bg-black text-[#0045EF]" : "bg-white/80 text-black"
                   }`}>
-                    <span className="text-[24px] -mt-1 font-bold">
+                    <span className="text-lg sm:text-xl lg:text-2xl font-bold leading-none">
                       {isOpen ? "−" : "+"}
                     </span>
                   </div>
@@ -82,9 +83,9 @@ export default function FAQSection({ data = faqData }) {
 
                 {/* Answer */}
                 {isOpen && (
-                  <div className="px-6 pb-6 animate-slideIn">
-                    <div className="pt-4 border-t border-white/20">
-                      <p className="text-[16px] md:text-[18px] text-black leading-relaxed font-medium">
+                  <div className="px-4 sm:px-5 lg:px-6 pb-4 sm:pb-5 lg:pb-6 animate-slideIn">
+                    <div className="pt-3 sm:pt-4 border-t border-black/10">
+                      <p className="text-sm sm:text-base lg:text-[17px] text-black leading-relaxed font-medium">
                         {item.a}
                       </p>
                     </div>

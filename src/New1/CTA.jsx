@@ -2,7 +2,7 @@ import React from 'react';
 
 const CTASection = () => {
   return (
-    <div className="w-full bg-white dark:bg-black  h-80 px-4">
+    <div className="w-full bg-white dark:bg-black  h-90 sm:h-80 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Main Blue Card */}
         <div className="relative overflow-hidden bg-[#0045EF] rounded-3xl p-10 md:p-20 text-center text-white">

@@ -10,7 +10,7 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         {/* Top Badge */}
         <p className="text-[10px] md:text-xs pt-20 font-bold tracking-[0.2em] text-[#0045EF] uppercase mb-6">
-          $14M Fund Raised in Initial State
+          Entering the digital world together
         </p>
 
         {/* Main Headline */}
