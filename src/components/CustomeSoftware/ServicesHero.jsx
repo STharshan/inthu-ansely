@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ServicesHero() {
   return (
-    <div className="relative w-full min-h-[80vh] lg:h-screen bg-white dark:bg-black overflow-hidden flex items-center justify-center p-4 sm:p-8 lg:p-12 mt-10 lg:mt-20">
+    <div className="relative w-full min-h-[80vh] lg:h-screen bg-white dark:bg-black flex items-center justify-center p-4 sm:p-8 lg:p-12 mt-15">
       {/* Main Content Card */}
       <div
         className="relative w-full mt-10 max-w-7xl min-h-[500px] lg:h-[650px] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl"
