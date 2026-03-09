@@ -168,8 +168,8 @@ export default function Navbar() {
           </Link>
 
           {/* ── Desktop Nav ── */}
-          <nav className="hidden lg:flex items-center justify-center space-x-6 xl:space-x-10">
-            {["Home", "About", "Blog", "Careers", "Invoice"].map((item) => (
+          <nav className="hidden xl:flex items-center justify-center space-x-4 xl:space-x-4.5">
+            {["Home", "About", "Blog", "Careers", "Invoice", "Card"].map((item) => (
               <Link
                 key={item}
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
@@ -259,7 +259,7 @@ export default function Navbar() {
           </nav>
 
           {/* Empty div for mobile grid */}
-          <div className="lg:hidden" />
+          <div className="xl:hidden" />
 
           {/* ── Right Section ── */}
           <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-shrink-0 justify-self-end">
@@ -293,7 +293,7 @@ export default function Navbar() {
 
             {/* Hamburger */}
             <button
-              className={`lg:hidden text-2xl transition-colors duration-300 p-1 ${
+              className={`xl:hidden text-2xl transition-colors duration-300 p-1 ${
                 scrolled
                   ? isDark ? "text-white" : "text-black"
                   : isBlogDetailPage && !isDark ? "text-black" : "text-white"
@@ -315,13 +315,13 @@ export default function Navbar() {
 
       {/* ── Mobile Menu ── */}
       {isOpen && (
-        <div className={`lg:hidden absolute top-full left-0 w-full shadow-lg animate-[fadeIn_0.4s_ease_forwards] overflow-hidden ${
+        <div className={`xl:hidden absolute top-full left-0 w-full shadow-lg animate-[fadeIn_0.4s_ease_forwards] overflow-hidden ${
           isDark ? "bg-gray-900 text-white" : "bg-white text-black"
         }`}>
           <div className="max-w-[1350px] mx-auto px-5 sm:px-8">
 
             {/* Static links */}
-            {["Home", "About", "Blog", "Careers", "Invoice"].map((item, index) => (
+            {["Home", "About", "Blog", "Careers", "Invoice", "Card"].map((item, index) => (
               <div
                 key={item}
                 className={`border-b py-4 text-[13px] tracking-[0.18em] uppercase font-medium ${isDark ? "border-gray-700" : "border-gray-200"}`}
@@ -406,7 +406,7 @@ export default function Navbar() {
             </div>
 
             {/* Theme Toggle - Mobile */}
-            <div className="flex justify-center py-4">
+            <div className="lg:hidden flex justify-center py-4">
               <button
                 onClick={toggleTheme}
                 className={`p-3 rounded-full border transition-all ${
@@ -423,7 +423,7 @@ export default function Navbar() {
             </div>
 
             {/* CTA - Mobile */}
-            <div className="py-6">
+            <div className="py-6 lg:hidden flex justify-center">
               <Link
                 to="/contact"
                 onClick={closeAll}
