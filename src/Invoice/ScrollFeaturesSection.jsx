@@ -6,21 +6,21 @@ const features = [
     badge: "MOBILE-FIRST WORKFLOW",
     title: "Built for Life on the Move",
     description: "Designed for professionals meeting clients face-to-face, at homes, or on job sites. Create quotes, convert to invoices, and take payment there and then. Close deals faster, reduce delays, and turn conversations into confirmed sales instantly.",
-    image: "i4.png"
+    image: "in4.png"
   },
   {
     id: "02",
     badge: "FRICTIONLESS TRANSACTIONS",
     title: "Instant Payments. Instant Trust.",
     description: "Send professional invoices in seconds and get paid on the spot. Customers feel confident paying a branded, digital invoice immediately — improving cash flow, reducing chasing, and increasing completed transactions.",
-    image: "i5.png"
+    image: "in5.png"
   },
   {
     id: "03",
     badge: "OPERATIONAL FREEDOM",
     title: "Less Admin. More Revenue.",
     description: "No paperwork. No lost invoices. No end-of-day catch-up. Everything is recorded automatically in a few clicks, giving you more time to sell, serve clients, and grow your business instead of managing admin.",
-    image: "i6.png"
+    image: "in6.png"
   }
 ];
 
@@ -127,7 +127,7 @@ const DynamicScrollSection = () => {
           </div>
 
           {/* RIGHT: Sticky Image (Desktop Only) */}
-          <div className="hidden xl:block w-1/2 sticky top-[10vh] xl:top-[15vh] h-[60vh] xl:h-[135vh] flex-shrink-0">
+          <div className="hidden xl:block w-1/2 sticky top-[10vh] xl:top-[15vh] h-[60vh] xl:h-[85vh] flex-shrink-0">
             <div className="relative w-full h-full rounded-[32px] xl:rounded-[40px] overflow-hidden bg-gradient-to-br from-[#0045EF] to-[#002ba3] shadow-2xl flex items-center justify-center">
 
               {/* Glowing Background Details */}
