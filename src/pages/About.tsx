@@ -3,8 +3,6 @@ import AboutHero from "../components/About/AboutHero";
 import Achievements from "../components/About/Achievements";
 import OurStory from "../components/About/OurStory";
 import OurValues from "../components/About/OurValues";
-import { HomeTestimonialsSection } from "../components/organisms/HomeTestimonialsSection";
-import { homeTestimonials } from "../constants/homeTestimonials";
 
 const About: React.FC = () => {
   return (
