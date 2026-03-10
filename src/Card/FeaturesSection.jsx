@@ -8,21 +8,21 @@ export default function NewFeaturesSection() {
       description:
         "Share your photo, bio, socials, and website in a single tap. No scanning. No typing. Just hold your card near their phone and you're done.",
       icon: BarChart3,
-      image: "/i1.png",
+      image: "/c1.png",
     },
     {
       title: "Built for Face-to-Face Business",
       description:
         "Designed for the moments that matter most. Whether you're on a job, at an event, or meeting someone for the first time - your card is always ready.",
       icon: Briefcase,
-      image: "/i2.png",
+      image: "/c2.png",
     },
     {
       title: "A Professional First Impression",
       description:
         "Ditch the paper. Show up with a sleek, branded card that tells people exactly who you are before you've even said a word.",
       icon: AtSign,
-      image: "/i3.png",
+      image: "/c3.png",
     },
   ];
 

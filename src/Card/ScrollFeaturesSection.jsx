@@ -6,21 +6,21 @@ const features = [
     badge: "TAP-AND-GO TECHNOLOGY",
     title: "Your Card Works Before You've Said a Word",
     description: "No fumbling for your phone, no asking them to download an app. Just tap your Ansely Card to their phone and your full digital profile opens instantly. It's the kind of first impression people actually remember.",
-    image: "i4.png"
+    image: "c4.png"
   },
   {
     id: "02",
     badge: "YOUR PROFILE, YOUR WAY",
     title: "More Than a Name. A Whole Picture.",
     description: "Your Ansely Card shows your photo, a short bio, your social links, website, and a one-tap \"Add to Contacts\" button. Everything someone needs to remember you, trust you, and reach back out — all in one place.",
-    image: "i5.png"
+    image: "c5.png"
   },
   {
     id: "03",
     badge: "BUILT TO LAST",
     title: "One Card. Endless Connections.",
     description: "No reprinting when your number changes. No running out of cards mid-event. Update your profile anytime and your card stays current — because the best networking tool is one you never have to replace.",
-    image: "i6.png"
+    image: "c6.png"
   }
 ];
 
@@ -126,7 +126,7 @@ const DynamicScrollSection = () => {
           </div>
 
           {/* RIGHT: Sticky Image (Desktop Only) */}
-          <div className="hidden xl:block w-1/2 sticky top-[10vh] xl:top-[15vh] h-[60vh] xl:h-[135vh] flex-shrink-0">
+          <div className="hidden xl:block w-1/2 sticky top-[10vh] xl:top-[15vh] h-[60vh]  xl:h-[85vh] flex-shrink-0">
             <div className="relative w-full h-full rounded-[32px] xl:rounded-[40px] overflow-hidden bg-gradient-to-br from-[#0045EF] to-[#002ba3] shadow-2xl flex items-center justify-center">
 
               <div className="absolute top-[-10%] right-[-10%] w-48 xl:w-64 h-48 xl:h-64 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
