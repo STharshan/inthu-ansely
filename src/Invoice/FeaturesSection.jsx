@@ -8,21 +8,21 @@ export default function NewFeaturesSection() {
       description:
         "Create and send invoices directly from your phone in just a few clicks. No laptop needed — invoice customers there and then while you're with them.",
       icon: BarChart3,
-      image: "/i1.png",
+      image: "/in1.png",
     },
     {
       title: "Built for Client-Facing Businesses",
       description:
         "Designed for teams on the move. Whether onsite or meeting clients, send professional invoices immediately without returning to the office.",
       icon: Briefcase,
-      image: "/i2.png",
+      image: "/in2.png",
     },
     {
       title: "Professional Business Image",
       description:
         "Stop writing invoices on paper. Present your business professionally with clean, branded digital invoices that build trust and credibility.",
       icon: AtSign,
-      image: "/i3.png",
+      image: "/in3.png",
     },
   ];
 
